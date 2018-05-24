@@ -38,7 +38,7 @@ struct shopItem{
 	// Bit 06 - Industrial
 	// Bit 07 - Mining
 	// Bit 08 - Pious
-    // Bit 09 - Orchard
+    // Bit 09 - Agrigulture
 	// Bit 10 - Rural
 	// Bit 11 - Urban
 	// Bit 14 - Firearms TOBE implemented
@@ -88,7 +88,7 @@ void nameGen(FILE* storeHere, uint16_t flags){
 // Choose a random entry on the list
 
 void shopnameGen(FILE* storeHere){
-	int numElements = 143;
+	int numElements = 154;
 	char adjectives[numElements][NAME_LENGTH];
 	char nouns[numElements][NAME_LENGTH];
 	/////
@@ -224,7 +224,7 @@ void shopnameGen(FILE* storeHere){
 	strcpy(adjectives[128], "Baroness'");
 	strcpy(adjectives[129], "Countess'");
 	strcpy(adjectives[130], "Marchioness'");
-	strcpy(adjectives[131], "Duchess''");
+	strcpy(adjectives[131], "Duchess'");
 	strcpy(adjectives[132], "Wounded");
 	strcpy(adjectives[133], "Dead");
 	strcpy(adjectives[134], "Bent");
@@ -236,6 +236,17 @@ void shopnameGen(FILE* storeHere){
 	strcpy(adjectives[140], "Flaming");
 	strcpy(adjectives[141], "Flaming");
 	strcpy(adjectives[142], "Thirsty");
+	strcpy(adjectives[143], "Olde");
+	strcpy(adjectives[144], "Beautiful");
+	strcpy(adjectives[145], "Rusty");
+	strcpy(adjectives[146], "New");
+	strcpy(adjectives[147], "Spotted");
+	strcpy(adjectives[148], "Prancing");
+	strcpy(adjectives[149], "Dancing");
+	strcpy(adjectives[150], "Broken");
+	strcpy(adjectives[151], "Lovely");
+	strcpy(adjectives[152], "Violent");
+	strcpy(adjectives[153], "Bloody");
 	
 	strcpy(nouns[0], "Trebuechet");
 	strcpy(nouns[1], "Sheep");
@@ -287,109 +298,110 @@ void shopnameGen(FILE* storeHere){
 	strcpy(nouns[47], "Carrot");
 	strcpy(nouns[48], "Tree");
 	strcpy(nouns[49], "Door");
-	strcpy(nouns[40], "Soldier");
-	strcpy(nouns[41], "Messenger");
-	strcpy(nouns[42], "Cannon");
-	strcpy(nouns[43], "Sword");
-	strcpy(nouns[44], "Spear");
-	strcpy(nouns[45], "Plow");
-	strcpy(nouns[46], "Sickle");
-	strcpy(nouns[47], "Priest");
-	strcpy(nouns[48], "Friar");
-	strcpy(nouns[49], "Bow");
-	strcpy(nouns[50], "Hammer");
-	strcpy(nouns[51], "Pot");
-	strcpy(nouns[52], "Barrel");
-	strcpy(nouns[53], "Loom");
-	strcpy(nouns[54], "Mirror");
-	strcpy(nouns[55], "Easel");
-	strcpy(nouns[56], "Brush");
-	strcpy(nouns[57], "Wagon");
-	strcpy(nouns[58], "Boat");
-	strcpy(nouns[59], "Rose");
-	strcpy(nouns[60], "Daisy");
-	strcpy(nouns[61], "Daffodil");
-	strcpy(nouns[62], "Dandelion");
-	strcpy(nouns[63], "Clover");
-	strcpy(nouns[64], "Beast");
-	strcpy(nouns[65], "Deer");
-	strcpy(nouns[66], "Pig");
-	strcpy(nouns[67], "Sow");
-	strcpy(nouns[68], "Sea");
-	strcpy(nouns[69], "Ocean");
-	strcpy(nouns[70], "River");
-	strcpy(nouns[71], "Squirel");
-	strcpy(nouns[72], "Tower");
-	strcpy(nouns[73], "House");
-	strcpy(nouns[74], "Cabin");
-	strcpy(nouns[75], "Place");
-	strcpy(nouns[76], "Box");
-	strcpy(nouns[77], "Gem");
-	strcpy(nouns[78], "Ring");
-	strcpy(nouns[79], "Ram");
-	strcpy(nouns[80], "Drum");
-	strcpy(nouns[81], "Flute");
-	strcpy(nouns[82], "Lute");
-	strcpy(nouns[83], "Basilisk");
-	strcpy(nouns[84], "Fairy");
-	strcpy(nouns[85], "Mermaid");
-	strcpy(nouns[86], "Statue");
-	strcpy(nouns[87], "Mushroom");
-	strcpy(nouns[88], "Hero");
-	strcpy(nouns[89], "Spider");
-	strcpy(nouns[90], "Mouse");
-	strcpy(nouns[91], "Star");
-	strcpy(nouns[92], "Light");
-	strcpy(nouns[93], "Lion");
-	strcpy(nouns[94], "Gorilla");
-	strcpy(nouns[95], "Ranger");
-	strcpy(nouns[96], "Sage");
-	strcpy(nouns[97], "Wizard");
-	strcpy(nouns[98], "Hermit");
-	strcpy(nouns[99], "Shop");
-	strcpy(nouns[100], "Store");
-	strcpy(nouns[101], "Shoppe");
-	strcpy(nouns[102], "Sailor");
-	strcpy(nouns[103], "Mercantile");
-	strcpy(nouns[104], "Mart");
-	strcpy(nouns[105], "Post");
-	strcpy(nouns[106], "Fence");
-	strcpy(nouns[107], "Shelf");
-	strcpy(nouns[108], "Thing");
-	strcpy(nouns[109], "Cricket");
-	strcpy(nouns[110], "Labyrinth");
-	strcpy(nouns[111], "Snake");
-	strcpy(nouns[112], "Pirate");
-	strcpy(nouns[113], "Outlaw");
-	strcpy(nouns[114], "Mother");
-	strcpy(nouns[115], "Father");
-	strcpy(nouns[116], "Son");
-	strcpy(nouns[117], "Daughter");
-	strcpy(nouns[118], "Cousin");
-	strcpy(nouns[119], "Aunt");
-	strcpy(nouns[120], "Uncle");
-	strcpy(nouns[121], "Snipe");
-	strcpy(nouns[122], "Jackrabbit");
-	strcpy(nouns[123], "R.O.U.S.");
-	strcpy(nouns[124], "Stuff");
-	strcpy(nouns[125], "Bistro");
-	strcpy(nouns[126], "Gazebo");
-	strcpy(nouns[127], "Thing-A-Mo-Jigger");
-	strcpy(nouns[128], "Badger");
-	strcpy(nouns[129], "Baby");
-	strcpy(nouns[130], "Ship");
-	strcpy(nouns[131], "Chest");
-	strcpy(nouns[132], "Egg");
-	strcpy(nouns[133], "Whale");
-	strcpy(nouns[134], "Duck");
-	strcpy(nouns[135], "Goose");
-	strcpy(nouns[136], "Bucket");
-	strcpy(nouns[137], "Fox");
-	strcpy(nouns[138], "Bull");
-	strcpy(nouns[139], "Badger");
-	strcpy(nouns[140], "Traveller");
-	strcpy(nouns[141], "Pixie");
-	strcpy(nouns[142], "Sprite");
+	strcpy(nouns[50], "Soldier");
+	strcpy(nouns[51], "Messenger");
+	strcpy(nouns[52], "Cannon");
+	strcpy(nouns[53], "Sword");
+	strcpy(nouns[54], "Spear");
+	strcpy(nouns[55], "Plow");
+	strcpy(nouns[56], "Sickle");
+	strcpy(nouns[57], "Priest");
+	strcpy(nouns[58], "Friar");
+	strcpy(nouns[59], "Bow");
+	strcpy(nouns[60], "Hammer");
+	strcpy(nouns[61], "Pot");
+	strcpy(nouns[62], "Barrel");
+	strcpy(nouns[63], "Loom");
+	strcpy(nouns[64], "Mirror");
+	strcpy(nouns[65], "Easel");
+	strcpy(nouns[66], "Brush");
+	strcpy(nouns[67], "Wagon");
+	strcpy(nouns[68], "Boat");
+	strcpy(nouns[69], "Rose");
+	strcpy(nouns[70], "Daisy");
+	strcpy(nouns[71], "Daffodil");
+	strcpy(nouns[72], "Dandelion");
+	strcpy(nouns[73], "Clover");
+	strcpy(nouns[74], "Beast");
+	strcpy(nouns[75], "Deer");
+	strcpy(nouns[76], "Pig");
+	strcpy(nouns[77], "Sow");
+	strcpy(nouns[78], "Sea");
+	strcpy(nouns[79], "Ocean");
+	strcpy(nouns[80], "River");
+	strcpy(nouns[81], "Squirel");
+	strcpy(nouns[82], "Tower");
+	strcpy(nouns[83], "House");
+	strcpy(nouns[84], "Cabin");
+	strcpy(nouns[85], "Place");
+	strcpy(nouns[86], "Box");
+	strcpy(nouns[87], "Gem");
+	strcpy(nouns[88], "Ring");
+	strcpy(nouns[89], "Ram");
+	strcpy(nouns[90], "Drum");
+	strcpy(nouns[91], "Flute");
+	strcpy(nouns[92], "Lute");
+	strcpy(nouns[93], "Basilisk");
+	strcpy(nouns[94], "Fairy");
+	strcpy(nouns[95], "Mermaid");
+	strcpy(nouns[96], "Statue");
+	strcpy(nouns[97], "Mushroom");
+	strcpy(nouns[98], "Hero");
+	strcpy(nouns[99], "Spider");
+	strcpy(nouns[100], "Mouse");
+	strcpy(nouns[101], "Star");
+	strcpy(nouns[102], "Light");
+	strcpy(nouns[103], "Lion");
+	strcpy(nouns[104], "Gorilla");
+	strcpy(nouns[105], "Ranger");
+	strcpy(nouns[106], "Sage");
+	strcpy(nouns[107], "Wizard");
+	strcpy(nouns[108], "Hermit");
+	strcpy(nouns[109], "Shop");
+	strcpy(nouns[110], "Store");
+	strcpy(nouns[111], "Shoppe");
+	strcpy(nouns[112], "Sailor");
+	strcpy(nouns[113], "Mercantile");
+	strcpy(nouns[114], "Mart");
+	strcpy(nouns[115], "Post");
+	strcpy(nouns[116], "Fence");
+	strcpy(nouns[117], "Shelf");
+	strcpy(nouns[118], "Thing");
+	strcpy(nouns[119], "Cricket");
+	strcpy(nouns[120], "Labyrinth");
+	strcpy(nouns[121], "Snake");
+	strcpy(nouns[122], "Pirate");
+	strcpy(nouns[123], "Outlaw");
+	strcpy(nouns[124], "Mother");
+	strcpy(nouns[125], "Father");
+	strcpy(nouns[126], "Son");
+	strcpy(nouns[127], "Daughter");
+	strcpy(nouns[128], "Cousin");
+	strcpy(nouns[129], "Aunt");
+	strcpy(nouns[130], "Uncle");
+	strcpy(nouns[131], "Snipe");
+	strcpy(nouns[132], "Jackrabbit");
+	strcpy(nouns[133], "R.O.U.S.");
+	strcpy(nouns[134], "Stuff");
+	strcpy(nouns[135], "Bistro");
+	strcpy(nouns[136], "Gazebo");
+	strcpy(nouns[137], "Thing-A-Mo-Jigger");
+	strcpy(nouns[138], "Badger");
+	strcpy(nouns[139], "Baby");
+	strcpy(nouns[140], "Ship");
+	strcpy(nouns[141], "Chest");
+	strcpy(nouns[142], "Egg");
+	strcpy(nouns[143], "Whale");
+	strcpy(nouns[144], "Duck");
+	strcpy(nouns[145], "Goose");
+	strcpy(nouns[146], "Bucket");
+	strcpy(nouns[147], "Fox");
+	strcpy(nouns[148], "Bull");
+	strcpy(nouns[149], "Badger");
+	strcpy(nouns[150], "Traveller");
+	strcpy(nouns[151], "Pixie");
+	strcpy(nouns[152], "Sprite");
+	strcpy(nouns[153], "Pit");
 	
 	fprintf(storeHere,"%s %s\n", adjectives[rand()%numElements],nouns[rand()%numElements]);
 }
@@ -480,14 +492,14 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[12].midPrice = 500;
 	inventory[12].highPrice = 800;
 	inventory[12].stock = 3;
-	inventory[12].biasFlags = 0x20;
+	inventory[12].biasFlags = 0x220;
 	// Light Hammer
 	strcpy(inventory[13].name,"Light Hammer");
 	inventory[13].lowPrice = 100;
 	inventory[13].midPrice = 200;
 	inventory[13].highPrice = 300;
 	inventory[13].stock = 5;
-	inventory[13].biasFlags = 0x80;
+	inventory[13].biasFlags = 0x280;
 	// Quarterstaff
 	strcpy(inventory[14].name,"Quarterstaff");
 	inventory[14].lowPrice = 10;
@@ -501,7 +513,7 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[15].midPrice = 100;
 	inventory[15].highPrice = 200;
 	inventory[15].stock = 2;
-	inventory[15].biasFlags = 0x400;
+	inventory[15].biasFlags = 0x600;
 	// Light Crossbow
 	strcpy(inventory[16].name,"Light Crossbow");
 	inventory[16].lowPrice = 1800;
@@ -522,21 +534,21 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[18].midPrice = 2500;
 	inventory[18].highPrice = 3800;
 	inventory[18].stock = 5;
-	inventory[18].biasFlags = 0x400;
+	inventory[18].biasFlags = 0x600;
 	// Sling
 	strcpy(inventory[19].name,"Sling");
 	inventory[19].lowPrice = 7;
 	inventory[19].midPrice = 10;
 	inventory[19].highPrice = 20;
 	inventory[19].stock = 3;
-	inventory[19].biasFlags = 0x400;
+	inventory[19].biasFlags = 0x600;
 	// Whip
 	strcpy(inventory[20].name,"Whip");
 	inventory[20].lowPrice = 10;
 	inventory[20].midPrice = 20;
 	inventory[20].highPrice = 30;
 	inventory[20].stock = 5;
-	inventory[20].biasFlags = 0x0;
+	inventory[20].biasFlags = 0x200;
 	// Blowgun
 	strcpy(inventory[21].name,"Blowgun");
 	inventory[21].lowPrice = 700;
@@ -564,7 +576,7 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[24].midPrice = 5000;
 	inventory[24].highPrice = 7500;
 	inventory[24].stock = 5;
-	inventory[24].biasFlags = 0x400;
+	inventory[24].biasFlags = 0x600;
 	
 	// Gear Section Name
 	strcpy(inventory[27].name,"GEAR");
@@ -656,7 +668,7 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[39].midPrice = 500;
 	inventory[39].highPrice = 800;
 	inventory[39].stock = 5;
-	inventory[39].biasFlags = 0x0;
+	inventory[39].biasFlags = 0x2C0;
 	// Chest
 	strcpy(inventory[40].name,"Chest");
 	inventory[40].lowPrice = 300;
@@ -670,7 +682,7 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[41].midPrice = 2500;
 	inventory[41].highPrice = 3800;
 	inventory[41].stock = 5;
-	inventory[41].biasFlags = 0x0;
+	inventory[41].biasFlags = 0x80;
 	// Traveler's Clothes
 	strcpy(inventory[42].name,"Traveler's Clothes");
 	inventory[42].lowPrice = 100;
@@ -705,7 +717,7 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[46].midPrice = 100;
 	inventory[46].highPrice = 200;
 	inventory[46].stock = 2;
-	inventory[46].biasFlags = 0x0;
+	inventory[46].biasFlags = 0x2C0;
 	// Healer's Kit
 	strcpy(inventory[47].name,"Healer's Kit");
 	inventory[47].lowPrice = 300;
@@ -770,14 +782,14 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[55].stock = 5;
 	inventory[55].biasFlags = 0x0;
 	// Paper
-	strcpy(inventory[56].name,"Paper");
+	strcpy(inventory[56].name,"Paper (1)");
 	inventory[56].lowPrice = 10;
 	inventory[56].midPrice = 20;
 	inventory[56].highPrice = 30;
 	inventory[56].stock = 18;
 	inventory[56].biasFlags = 0x841;
 	// Parchment
-	strcpy(inventory[57].name,"Parchment");
+	strcpy(inventory[57].name,"Parchment (1)");
 	inventory[57].lowPrice = 7;
 	inventory[57].midPrice = 10;
 	inventory[57].highPrice = 20;
@@ -852,7 +864,7 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[67].midPrice = 100;
 	inventory[67].highPrice = 200;
 	inventory[67].stock = 3;
-	inventory[67].biasFlags = 0xC0;
+	inventory[67].biasFlags = 0x2C0;
 	// Silk Rope
 	strcpy(inventory[68].name,"Silk Rope (50 ft.)");
 	inventory[68].lowPrice = 700;
@@ -873,7 +885,7 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[70].midPrice = 200;
 	inventory[70].highPrice = 300;
 	inventory[70].stock = 3;
-	inventory[70].biasFlags = 0x80;
+	inventory[70].biasFlags = 0x280;
 	// Signal Whistle
 	strcpy(inventory[71].name,"Signal Whistle");
 	inventory[71].lowPrice = 3;
@@ -981,7 +993,7 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[89].midPrice = 500;
 	inventory[89].highPrice = 800;
 	inventory[89].stock = 10;
-	inventory[89].biasFlags = 0x10;
+	inventory[89].biasFlags = 0x210;
 	// Jeweler's Tools
 	strcpy(inventory[90].name,"Jeweler's Tools");
 	inventory[90].lowPrice = 1800;
@@ -996,6 +1008,333 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 	inventory[91].highPrice = 3800;
 	inventory[91].stock = 3;
 	inventory[91].biasFlags = 0x12;
+	
+	// Foodstuffs Section Name
+	strcpy(inventory[105].name,"FOODSTUFFS");
+	inventory[105].lowPrice = 0;
+	inventory[105].midPrice = 0;
+	inventory[105].highPrice = 0;
+	inventory[105].stock = 0;
+	inventory[105].biasFlags = 0x0;
+	// Apples
+	strcpy(inventory[106].name,"Apples (1 lb.)");
+	inventory[106].lowPrice = 1;
+	inventory[106].midPrice = 2;
+	inventory[106].highPrice = 10;
+	inventory[106].stock = 5;
+	inventory[106].biasFlags = 0x220;
+	// Common Brandy
+	strcpy(inventory[107].name,"Common Brandy (1 qt.)");
+	inventory[107].lowPrice = 20;
+	inventory[107].midPrice = 30;
+	inventory[107].highPrice = 50;
+	inventory[107].stock = 10;
+	inventory[107].biasFlags = 0x200;
+	// Good Brandy
+	strcpy(inventory[108].name,"Good Brandy (1 qt.)");
+	inventory[108].lowPrice = 10;
+	inventory[108].midPrice = 150;
+	inventory[108].highPrice = 200;
+	inventory[108].stock = 15;
+	inventory[108].biasFlags = 0x200;
+	// Bread
+	strcpy(inventory[109].name,"Bread (1 lb.)");
+	inventory[109].lowPrice = 5;
+	inventory[109].midPrice = 8;
+	inventory[109].highPrice = 10;
+	inventory[109].stock = 5;
+	inventory[109].biasFlags = 0x200;
+	// Common Cheese
+	strcpy(inventory[110].name,"Common Cheese (1 lb.)");
+	inventory[110].lowPrice = 10;
+	inventory[110].midPrice = 15;
+	inventory[110].highPrice = 20;
+	inventory[110].stock = 7;
+	inventory[110].biasFlags = 0x200;
+	// Cider
+	strcpy(inventory[111].name,"Cider (1 qt.)");
+	inventory[111].lowPrice = 20;
+	inventory[111].midPrice = 30;
+	inventory[111].highPrice = 50;
+	inventory[111].stock = 7;
+	inventory[111].biasFlags = 0x220;
+	// Corn
+	strcpy(inventory[112].name,"Corn (1 lb.)");
+	inventory[112].lowPrice = 4;
+	inventory[112].midPrice = 6;
+	inventory[112].highPrice = 8;
+	inventory[112].stock = 5;
+	inventory[112].biasFlags = 0x200;
+	// Feed Corn
+	strcpy(inventory[113].name,"Feed Corn (1 lb.)");
+	inventory[113].lowPrice = 1;
+	inventory[113].midPrice = 1;
+	inventory[113].highPrice = 2;
+	inventory[113].stock = 1;
+	inventory[113].biasFlags = 0x200;
+	// Cornmeal
+	strcpy(inventory[114].name,"Cornmeal (1 lb.)");
+	inventory[114].lowPrice = 6;
+	inventory[114].midPrice = 8;
+	inventory[114].highPrice = 10;
+	inventory[114].stock = 2;
+	inventory[114].biasFlags = 0x200;
+	// Flour
+	strcpy(inventory[115].name,"Flour (1 lb.)");
+	inventory[115].lowPrice = 4;
+	inventory[115].midPrice = 5;
+	inventory[115].highPrice = 7;
+	inventory[115].stock = 2;
+	inventory[115].biasFlags = 0x200;
+	// Garlic
+	strcpy(inventory[116].name,"Garlic (1 lb.)");
+	inventory[116].lowPrice = 2;
+	inventory[116].midPrice = 3;
+	inventory[116].highPrice = 5;
+	inventory[116].stock = 7;
+	inventory[116].biasFlags = 0x200;
+	// Honey
+	strcpy(inventory[117].name,"Honey (1 qt.)");
+	inventory[117].lowPrice = 6;
+	inventory[117].midPrice = 7;
+	inventory[117].highPrice = 8;
+	inventory[117].stock = 10;
+	inventory[117].biasFlags = 0x200;
+	// Mead
+	strcpy(inventory[118].name,"Mead (1 qt.)");
+	inventory[118].lowPrice = 30;
+	inventory[118].midPrice = 50;
+	inventory[118].highPrice = 80;
+	inventory[118].stock = 10;
+	inventory[118].biasFlags = 0x200;
+	// Nuts
+	strcpy(inventory[119].name,"Nuts (1 lb.)");
+	inventory[119].lowPrice = 3;
+	inventory[119].midPrice = 5;
+	inventory[119].highPrice = 8;
+	inventory[119].stock = 2;
+	inventory[119].biasFlags = 0x200;
+	// Onions
+	strcpy(inventory[120].name,"Onions (1 lb.)");
+	inventory[120].lowPrice = 1;
+	inventory[120].midPrice = 2;
+	inventory[120].highPrice = 5;
+	inventory[120].stock = 2;
+	inventory[120].biasFlags = 0x200;
+	// Popcorn Kernels
+	strcpy(inventory[121].name,"Popcorn Kernels (1 lb.)");
+	inventory[121].lowPrice = 10;
+	inventory[121].midPrice = 12;
+	inventory[121].highPrice = 14;
+	inventory[121].stock = 7;
+	inventory[121].biasFlags = 0x200;
+	// Potatoes
+	strcpy(inventory[122].name,"Potatoes (1 lb.)");
+	inventory[122].lowPrice = 1;
+	inventory[122].midPrice = 2;
+	inventory[122].highPrice = 3;
+	inventory[122].stock = 1;
+	inventory[122].biasFlags = 0x200;
+	// Rice
+	strcpy(inventory[123].name,"Rice (1 lb.)");
+	inventory[123].lowPrice = 1;
+	inventory[123].midPrice = 1;
+	inventory[123].highPrice = 2;
+	inventory[123].stock = 1;
+	inventory[123].biasFlags = 0x200;
+	// Salt
+	strcpy(inventory[124].name,"Salt (1 lb.)");
+	inventory[124].lowPrice = 3;
+	inventory[124].midPrice = 5;
+	inventory[124].highPrice = 8;
+	inventory[124].stock = 5;
+	inventory[124].biasFlags = 0x280;
+	// Common Spirit
+	strcpy(inventory[125].name,"Common Spirit (1 qt.)");
+	inventory[125].lowPrice = 20;
+	inventory[125].midPrice = 30;
+	inventory[125].highPrice = 50;
+	inventory[125].stock = 10;
+	inventory[125].biasFlags = 0x200;
+	// Good Spirit
+	strcpy(inventory[126].name,"Good Spirit (1 qt.)");
+	inventory[126].lowPrice = 50;
+	inventory[126].midPrice = 70;
+	inventory[126].highPrice = 100;
+	inventory[126].stock = 15;
+	inventory[126].biasFlags = 0x200;
+	// Tallow
+	strcpy(inventory[127].name,"Tallow (1 lb.)");
+	inventory[127].lowPrice = 40;
+	inventory[127].midPrice = 60;
+	inventory[127].highPrice = 80;
+	inventory[127].stock = 10;
+	inventory[127].biasFlags = 0x200;
+	// Wheat
+	strcpy(inventory[128].name,"Wheat (1 lb.)");
+	inventory[128].lowPrice = 1;
+	inventory[128].midPrice = 2;
+	inventory[128].highPrice = 3;
+	inventory[128].stock = 2;
+	inventory[128].biasFlags = 0x200;
+	// Common Wine
+	strcpy(inventory[129].name,"Common Wine (1 lb.)");
+	inventory[129].lowPrice = 10;
+	inventory[129].midPrice = 20;
+	inventory[129].highPrice = 30;
+	inventory[129].stock = 10;
+	inventory[129].biasFlags = 0x200;
+	// Good Wine
+	strcpy(inventory[130].name,"Good Wine (1 qt.)");
+	inventory[130].lowPrice = 70;
+	inventory[130].midPrice = 100;
+	inventory[130].highPrice = 150;
+	inventory[130].stock = 15;
+	inventory[130].biasFlags = 0x200;
+	
+	// Dishes Section Header
+	strcpy(inventory[143].name,"DISHES");
+	inventory[143].lowPrice = 0;
+	inventory[143].midPrice = 0;
+	inventory[143].highPrice = 0;
+	inventory[143].stock = 0;
+	inventory[143].biasFlags = 0x0;
+	// Biscuts
+	strcpy(inventory[144].name,"Biscuts");
+	inventory[144].lowPrice = 7;
+	inventory[144].midPrice = 10;
+	inventory[144].highPrice = 20;
+	inventory[144].stock = 10;
+	inventory[144].biasFlags = 0x200;
+	// Hardtack
+	strcpy(inventory[145].name,"Hardtack");
+	inventory[145].lowPrice = 6;
+	inventory[145].midPrice = 8;
+	inventory[145].highPrice = 10;
+	inventory[145].stock = 5;
+	inventory[145].biasFlags = 0x410;
+	// Beef Jerky
+	strcpy(inventory[146].name,"Beef Jerky");
+	inventory[146].lowPrice = 160;
+	inventory[146].midPrice = 200;
+	inventory[146].highPrice = 300;
+	inventory[146].stock = 10;
+	inventory[146].biasFlags = 0x610;
+	// Pemmican
+	strcpy(inventory[147].name,"Pemmican");
+	inventory[147].lowPrice = 160;
+	inventory[147].midPrice = 200;
+	inventory[147].highPrice = 300;
+	inventory[147].stock = 10;
+	inventory[147].biasFlags = 0x10;
+	// Salted Pork
+	strcpy(inventory[148].name,"Salted Pork");
+	inventory[148].lowPrice = 90;
+	inventory[148].midPrice = 120;
+	inventory[148].highPrice = 200;
+	inventory[148].stock = 5;
+	inventory[148].biasFlags = 0x10;
+	// Sauerkraut
+	strcpy(inventory[149].name,"Sauerkraut");
+	inventory[149].lowPrice = 1;
+	inventory[149].midPrice = 2;
+	inventory[149].highPrice = 4;
+	inventory[149].stock = 10;
+	inventory[149].biasFlags = 0x200;
+	// Chorizo
+	strcpy(inventory[150].name,"Chorizo");
+	inventory[150].lowPrice = 20;
+	inventory[150].midPrice = 22;
+	inventory[150].highPrice = 26;
+	inventory[150].stock = 10;
+	inventory[150].biasFlags = 0x208;
+	// Beef Summer Sausage
+	strcpy(inventory[151].name,"Beef Summer Sausage");
+	inventory[151].lowPrice = 32;
+	inventory[151].midPrice = 34;
+	inventory[151].highPrice = 38;
+	inventory[151].stock = 10;
+	inventory[151].biasFlags = 0x610;
+	// Pork Summer Sausage
+	strcpy(inventory[152].name,"Biscuts");
+	inventory[152].lowPrice = 18;
+	inventory[152].midPrice = 20;
+	inventory[152].highPrice = 24;
+	inventory[152].stock = 10;
+	inventory[152].biasFlags = 0x610;
+	
+	if (flags&0x4000){//Firearms
+		// Firearms Section Title
+		strcpy(inventory[167].name,"FIREARMS");
+		inventory[167].lowPrice = 0;
+		inventory[167].midPrice = 0;
+		inventory[167].highPrice = 0;
+		inventory[167].stock = 5;
+		inventory[167].biasFlags = 0x0;
+		// Ball and Powder
+		strcpy(inventory[168].name,"Ball and Powder (20)");
+		inventory[168].lowPrice = 70;
+		inventory[168].midPrice = 100;
+		inventory[168].highPrice = 150;
+		inventory[168].stock = 5;
+		inventory[168].biasFlags = 0x410;
+		// Buckshot
+		strcpy(inventory[169].name,"Buckshot (20)");
+		inventory[169].lowPrice = 70;
+		inventory[169].midPrice = 100;
+		inventory[169].highPrice = 150;
+		inventory[169].stock = 5;
+		inventory[169].biasFlags = 0x410;
+		// Duckshot
+		strcpy(inventory[170].name,"Duckshot (20)");
+		inventory[170].lowPrice = 70;
+		inventory[170].midPrice = 100;
+		inventory[170].highPrice = 150;
+		inventory[170].stock = 5;
+		inventory[170].biasFlags = 0x410;
+		// Revolver Ammo
+		strcpy(inventory[171].name,"Revolver Ammo (20)");
+		inventory[171].lowPrice = 20;
+		inventory[171].midPrice = 50;
+		inventory[171].highPrice = 100;
+		inventory[171].stock = 5;
+		inventory[171].biasFlags = 0x800;
+		// Rifle Ammo
+		strcpy(inventory[172].name,"Rifle Ammo (20)");
+		inventory[172].lowPrice = 100;
+		inventory[172].midPrice = 150;
+		inventory[172].highPrice = 200;
+		inventory[172].stock = 7;
+		inventory[172].biasFlags = 0x410;
+		// Carbine
+		strcpy(inventory[173].name,"Carbine");
+		inventory[173].lowPrice = 1000;
+		inventory[173].midPrice = 1200;
+		inventory[173].highPrice = 1500;
+		inventory[173].stock = 10;
+		inventory[173].biasFlags = 0x410;
+		// Derringer
+		strcpy(inventory[174].name,"Derringer");
+		inventory[174].lowPrice = 500;
+		inventory[174].midPrice = 600;
+		inventory[174].highPrice = 1000;
+		inventory[174].stock = 15;
+		inventory[174].biasFlags = 0x840;
+		// Revolver
+		strcpy(inventory[175].name,"Revolver");
+		inventory[175].lowPrice = 800;
+		inventory[175].midPrice = 1000;
+		inventory[175].highPrice = 1500;
+		inventory[175].stock = 10;
+		inventory[175].biasFlags = 0x800;
+		// Shotgun
+		strcpy(inventory[176].name,"Shotgun");
+		inventory[176].lowPrice = 1600;
+		inventory[176].midPrice = 2000;
+		inventory[176].highPrice = 2500;
+		inventory[176].stock = 7;
+		inventory[176].biasFlags = 0x410;
+	}
 	
 	char dividerChar = ' ';
 	fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
@@ -1043,7 +1382,961 @@ void makeAdventurerEmprium(FILE* storeHere, uint16_t flags){
 			}
 		}
 	}
+	if (flags&0x4000){
+		fprintf(storeHere, "\nQuestions about Firearms? See the Demagus True Reference PDF\n");
+	}
+	
+	fprintf(storeHere, "\nQuestions? See the Demagus True Reference PDF\n");
 }
+
+void makeAlchemist(FILE* storeHere, uint16_t flags){
+	uint8_t inventorySize = 127;
+	struct shopItem inventory[inventorySize];
+	// Father forgive me for i have sinned
+	for(int i = 0; i < inventorySize; ++i){
+		memset(inventory[i].name, '\0', NAME_LENGTH);
+		inventory[i].lowPrice = 0;
+		inventory[i].midPrice = 0;
+		inventory[i].highPrice = 0;
+		inventory[i].stock = 0;
+		inventory[i].biasFlags = 0x8000;
+	}
+	// Armor Section Name
+	strcpy(inventory[0].name,"GEAR");
+	inventory[0].lowPrice = 0;
+	inventory[0].midPrice = 0;
+	inventory[0].highPrice = 0;
+	inventory[0].stock = 0;
+	inventory[0].biasFlags = 0;
+	// Acid
+	strcpy(inventory[2].name,"Acid (vial)");
+	inventory[2].lowPrice = 1800;
+	inventory[2].midPrice = 2500;
+	inventory[2].highPrice = 3800;
+	inventory[2].stock = 5;
+	inventory[2].biasFlags = 0x41;
+	// Alchemist's Fire
+	strcpy(inventory[3].name,"Alchemist's Fire (flask)");
+	inventory[3].lowPrice = 3800;
+	inventory[3].midPrice = 5000;
+	inventory[3].highPrice = 7500;
+	inventory[3].stock = 8;
+	inventory[3].biasFlags = 0x41;
+	// Antitoxen
+	strcpy(inventory[4].name,"Antitoxin (vial)");
+	inventory[4].lowPrice = 3800;
+	inventory[4].midPrice = 5000;
+	inventory[4].highPrice = 7500;
+	inventory[4].stock = 3;
+	inventory[4].biasFlags = 0x1;
+	// Component Pouch
+	strcpy(inventory[5].name,"Component Pouch");
+	inventory[5].lowPrice = 1800;
+	inventory[5].midPrice = 2500;
+	inventory[5].highPrice = 3800;
+	inventory[5].stock = 5;
+	inventory[5].biasFlags = 0x1;
+	// Flask
+	strcpy(inventory[6].name,"Flask");
+	inventory[6].lowPrice = 1;
+	inventory[6].midPrice = 2;
+	inventory[6].highPrice = 3;
+	inventory[6].stock = 1;
+	inventory[6].biasFlags = 0x1;
+	// Glass Bottle
+	strcpy(inventory[7].name,"Glass Bottle");
+	inventory[7].lowPrice = 100;
+	inventory[7].midPrice = 200;
+	inventory[7].highPrice = 300;
+	inventory[7].stock = 1;
+	inventory[7].biasFlags = 0x1;
+	// Healer's Kit
+	strcpy(inventory[8].name,"Healer's Kit");
+	inventory[8].lowPrice = 300;
+	inventory[8].midPrice = 500;
+	inventory[8].highPrice = 800;
+	inventory[8].stock = 5;
+	inventory[8].biasFlags = 0x41;
+	// Ink
+	strcpy(inventory[9].name,"Ink (1 fl. oz.)");
+	inventory[9].lowPrice = 700;
+	inventory[9].midPrice = 1000;
+	inventory[9].highPrice = 1500;
+	inventory[9].stock = 15;
+	inventory[9].biasFlags = 0x41;
+	// Jug
+	strcpy(inventory[10].name,"Jug");
+	inventory[10].lowPrice = 1;
+	inventory[10].midPrice = 2;
+	inventory[10].highPrice = 3;
+	inventory[10].stock = 1;
+	inventory[10].biasFlags = 0x0;
+	// Oil
+	strcpy(inventory[11].name,"Oil (flask)");
+	inventory[11].lowPrice = 7;
+	inventory[11].midPrice = 10;
+	inventory[11].highPrice = 20;
+	inventory[11].stock = 1;
+	inventory[11].biasFlags = 0x40;
+	// Perfume
+	strcpy(inventory[12].name,"Perfume (vial)");
+	inventory[12].lowPrice = 300;
+	inventory[12].midPrice = 500;
+	inventory[12].highPrice = 800;
+	inventory[12].stock = 18;
+	inventory[12].biasFlags = 0x811;
+	// Vial
+	strcpy(inventory[13].name,"Vial");
+	inventory[13].lowPrice = 70;
+	inventory[13].midPrice = 100;
+	inventory[13].highPrice = 200;
+	inventory[13].stock = 1;
+	inventory[13].biasFlags = 0x0;
+	
+	//  Tools Section Header
+	strcpy(inventory[15].name,"TOOLS");
+	inventory[15].lowPrice = 0;
+	inventory[15].midPrice = 0;
+	inventory[15].highPrice = 0;
+	inventory[15].stock = 0;
+	inventory[15].biasFlags = 0x0;
+	//  Alchemist's Supplies
+	strcpy(inventory[16].name,"Alchemist's Supplies");
+	inventory[16].lowPrice = 3800;
+	inventory[16].midPrice = 5000;
+	inventory[16].highPrice = 7500;
+	inventory[16].stock = 5;
+	inventory[16].biasFlags = 0x1;
+	//  Brewer's's Supplies
+	strcpy(inventory[17].name,"Brewer's Supplies");
+	inventory[17].lowPrice = 1500;
+	inventory[17].midPrice = 2000;
+	inventory[17].highPrice = 3000;
+	inventory[17].stock = 2;
+	inventory[17].biasFlags = 0xD51;
+	//  Cook's Utensils
+	strcpy(inventory[18].name,"Cook's Utensils");
+	inventory[18].lowPrice = 70;
+	inventory[18].midPrice = 100;
+	inventory[18].highPrice = 200;
+	inventory[18].stock = 5;
+	inventory[18].biasFlags = 0x0;
+	// Herbalism Kit
+	strcpy(inventory[19].name,"Herbalism Kit");
+	inventory[19].lowPrice = 30;
+	inventory[19].midPrice = 50;
+	inventory[19].highPrice = 80;
+	inventory[19].stock = 5;
+	inventory[19].biasFlags = 0x0;
+	// Poisioner's Kit
+	strcpy(inventory[20].name,"Poisioner's Kit");
+	inventory[20].lowPrice = 3800;
+	inventory[20].midPrice = 5000;
+	inventory[20].highPrice = 7500;
+	inventory[20].stock = 12;
+	inventory[20].biasFlags = 0x0;
+	
+	// Potions Section Header
+	strcpy(inventory[23].name,"POTIONS");
+	inventory[23].lowPrice = 0;
+	inventory[23].midPrice = 0;
+	inventory[23].highPrice = 0;
+	inventory[23].stock = 0;
+	inventory[23].biasFlags = 0x0;
+	// Healing
+	strcpy(inventory[24].name,"Healing");
+	inventory[24].lowPrice = 3800;
+	inventory[24].midPrice = 5000;
+	inventory[24].highPrice = 7500;
+	inventory[24].stock = 3;
+	inventory[24].biasFlags = 0x1;
+	// Climbing
+	strcpy(inventory[25].name,"Climbing");
+	inventory[25].lowPrice = 3800;
+	inventory[25].midPrice = 5000;
+	inventory[25].highPrice = 7500;
+	inventory[25].stock = 3;
+	inventory[25].biasFlags = 0x1;
+	// Water Breathing
+	strcpy(inventory[26].name,"Water Breathing");
+	inventory[26].lowPrice = 17500;
+	inventory[26].midPrice = 25000;
+	inventory[26].highPrice = 37500;
+	inventory[26].stock = 3;
+	inventory[26].biasFlags = 0x1;
+	// Greater Healing
+	strcpy(inventory[27].name,"Greater Healing");
+	inventory[27].lowPrice = 17500;
+	inventory[27].midPrice = 25000;
+	inventory[27].highPrice = 37500;
+	inventory[27].stock = 5;
+	inventory[27].biasFlags = 0x1;
+	// Resistance
+	strcpy(inventory[28].name,"Resistance");
+	inventory[28].lowPrice = 17500;
+	inventory[28].midPrice = 25000;
+	inventory[28].highPrice = 37500;
+	inventory[28].stock = 5;
+	inventory[28].biasFlags = 0x1;
+	// Animal Friendship
+	strcpy(inventory[29].name,"Animal Friendship");
+	inventory[29].lowPrice = 17500;
+	inventory[29].midPrice = 25000;
+	inventory[29].highPrice = 37500;
+	inventory[29].stock = 10;
+	inventory[29].biasFlags = 0x1;
+	// Growth
+	strcpy(inventory[30].name,"Growth");
+	inventory[30].lowPrice = 17500;
+	inventory[30].midPrice = 25000;
+	inventory[30].highPrice = 37500;
+	inventory[30].stock = 10;
+	inventory[30].biasFlags = 0x1;
+	// Oil of Slipperiness
+	strcpy(inventory[31].name,"Oil of Slipperiness");
+	inventory[31].lowPrice = 17500;
+	inventory[31].midPrice = 25000;
+	inventory[31].highPrice = 37500;
+	inventory[31].stock = 16;
+	inventory[31].biasFlags = 0x1;
+	// Philter of Love
+	strcpy(inventory[32].name,"Philter of Love");
+	inventory[32].lowPrice = 17500;
+	inventory[32].midPrice = 25000;
+	inventory[32].highPrice = 37500;
+	inventory[32].stock = 16;
+	inventory[32].biasFlags = 0x1;
+	// Fire Breath
+	strcpy(inventory[33].name,"Fire Breath");
+	inventory[33].lowPrice = 17500;
+	inventory[33].midPrice = 25000;
+	inventory[33].highPrice = 37500;
+	inventory[33].stock = 16;
+	inventory[33].biasFlags = 0x1;
+	// Gaseous Form
+	strcpy(inventory[34].name,"Gaseous Form");
+	inventory[34].lowPrice = 175000;
+	inventory[34].midPrice = 250000;
+	inventory[34].highPrice = 375000;
+	inventory[34].stock = 4;
+	inventory[34].biasFlags = 0x1;
+	// Elixir of Health
+	strcpy(inventory[35].name,"Elixir of Health");
+	inventory[35].lowPrice = 175000;
+	inventory[35].midPrice = 250000;
+	inventory[35].highPrice = 375000;
+	inventory[35].stock = 6;
+	inventory[35].biasFlags = 0x1;
+	// Diminution
+	strcpy(inventory[36].name,"Diminution");
+	inventory[36].lowPrice = 175000;
+	inventory[36].midPrice = 250000;
+	inventory[36].highPrice = 375000;
+	inventory[36].stock = 6;
+	inventory[36].biasFlags = 0x1;
+	// Heroism
+	strcpy(inventory[37].name,"Heroism");
+	inventory[37].lowPrice = 175000;
+	inventory[37].midPrice = 250000;
+	inventory[37].highPrice = 375000;
+	inventory[37].stock = 11;
+	inventory[37].biasFlags = 0x1;
+	// Superior Healing
+	strcpy(inventory[38].name,"Superior Healling");
+	inventory[38].lowPrice = 175000;
+	inventory[38].midPrice = 250000;
+	inventory[38].highPrice = 375000;
+	inventory[38].stock = 11;
+	inventory[38].biasFlags = 0x1;
+	// Clairvoyance`
+	strcpy(inventory[39].name,"Clairvoyance");
+	inventory[39].lowPrice = 175000;
+	inventory[39].midPrice = 250000;
+	inventory[39].highPrice = 375000;
+	inventory[39].stock = 11;
+	inventory[39].biasFlags = 0x1;
+	// Frost Giant 
+	strcpy(inventory[40].name,"Frost Giant Strength");
+	inventory[40].lowPrice = 175000;
+	inventory[40].midPrice = 250000;
+	inventory[40].highPrice = 375000;
+	inventory[40].stock = 11;
+	inventory[40].biasFlags = 0x1;
+	// Stone Giant
+	strcpy(inventory[41].name,"Stone Giant Strength");
+	inventory[41].lowPrice = 175000;
+	inventory[41].midPrice = 250000;
+	inventory[41].highPrice = 375000;
+	inventory[41].stock = 11;
+	inventory[41].biasFlags = 0x1;
+	// Fire Giant
+	strcpy(inventory[42].name,"Fire Giant Strength");
+	inventory[42].lowPrice = 175000;
+	inventory[42].midPrice = 250000;
+	inventory[42].highPrice = 375000;
+	inventory[42].stock = 17;
+	inventory[42].biasFlags = 0x1;
+	// Oil of Etherealness
+	strcpy(inventory[43].name,"Oil of Etherealness");
+	inventory[43].lowPrice = 175000;
+	inventory[43].midPrice = 250000;
+	inventory[43].highPrice = 375000;
+	inventory[43].stock = 17;
+	inventory[43].biasFlags = 0x1;
+	// Invulnerability
+	strcpy(inventory[44].name,"Invulnerability");
+	inventory[44].lowPrice = 175000;
+	inventory[44].midPrice = 250000;
+	inventory[44].highPrice = 375000;
+	inventory[44].stock = 17;
+	inventory[44].biasFlags = 0x1;
+	// Mind Reading
+	strcpy(inventory[45].name,"Mind Reading");
+	inventory[45].lowPrice = 175000;
+	inventory[45].midPrice = 250000;
+	inventory[45].highPrice = 375000;
+	inventory[45].stock = 17;
+	inventory[45].biasFlags = 0x1;
+	
+	
+	char dividerChar = ' ';
+	fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
+	fprintf(storeHere, "%c", dividerChar); 
+	fprintf(storeHere, "     %s  ", "Low"); // low price colum
+	fprintf(storeHere, "%c",dividerChar);
+	fprintf(storeHere, "    %s   ", "Mid"); // mid price colum
+	fprintf(storeHere, "%c",dividerChar);
+	fprintf(storeHere, "   %s   ", "High"); // high price colum
+	fprintf(storeHere, "\n");
+	time_t t;
+	srand(time(NULL));
+	int8_t shopStock = ((rand())%20)+1;
+	//printf("Shop stock num %u", shopStock);
+	
+	for(int i = 0; i < inventorySize; ++i){
+		if (inventory[i].biasFlags == 0x8000){ // There is no name, empty entry
+			continue;
+		}
+		else{
+			if(inventory[i].stock == 0){ // Section Title
+				fprintf(storeHere, "%-32s\n", inventory[i].name);
+			}
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
+				fprintf(storeHere, "%32s", inventory[i].name);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].lowPrice, storeHere);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].midPrice, storeHere);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].highPrice, storeHere);
+				fprintf(storeHere, "\n");
+			}
+			else { // Item is out of stock or error
+				if (inventory[i].stock <= 20){ // Item out of stock
+					/*
+					fprintf(storeHere, "%32s", inventory[i].name);
+					fprintf(storeHere, "%c", dividerChar);
+					fprintf(storeHere, "           OUT OF STOCK         \n");
+					*/
+				}
+				else{// ERROR
+					continue;
+				}
+			}
+		}
+	}
+	if (shopStock >= 17){// Shop has posions
+		fprintf(storeHere,"\nPOSIONS\n");
+		fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
+		fprintf(storeHere, "%c", dividerChar); 
+		fprintf(storeHere, "   %s   ", "Type"); // Type Colum
+		fprintf(storeHere, "%c",dividerChar);
+		fprintf(storeHere, "   %s  ", "Price"); // Price Colum
+		fprintf(storeHere, "%c",dividerChar);
+		fprintf(storeHere, "   %s   ", "Description"); // Description Colum
+		fprintf(storeHere, "\n");
+		if ((rand()%2)==0){// Assassins Blood
+			fprintf(storeHere, "%32s", "Assassins Blood");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Ingested");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(15000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 10 Constitution throw, on fail 1d12(6) poison damage and poisoned for 24 hours. On success half damage,\n                                                     creature isn’t poisoned.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%3)==0){// Burnt Othur Fumes
+			fprintf(storeHere, "%32s", "Burnt Othur Fumes");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Inhaled");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(50000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 13 Constitution or 3d6(10) poison damage, repeating throw at start of each of its turns taking 1d6(3) on\n                                                     successive fails. After three saves poison ends");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%2)==0){// Carrion Crawler Mucus
+			fprintf(storeHere, "%32s", "Carrion Crawler Mucus");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Contact");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(20000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 13 Constitution or be poisoned for 1 minute. Poisoned creature is paralyzed. Repeat throw at end of each turn,\n                                                     ending on success.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%2)==0){// Drow
+			fprintf(storeHere, "%32s", "Drow");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Injury");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(20000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 13 Constitution or poisoned for 1 hour. If throw failed by 5 or more creatures is unconscious. Wakened by damage\n                                                     or if another creature takes an action to shake it awake.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%3)==0){// Essence of Ether
+			fprintf(storeHere, "%32s", "Essence of Ether");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Inhaled");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(30000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 15 Constitution or poisoned for 8 hours. Poisoned creature is unconscious. Wakened by damage or if another\n                                                     creature takes an action to shake it awake.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%2)==0){// Love
+			fprintf(storeHere, "%32s", "Love Stimulant");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Ingested");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(1000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 10 Wisdom, on fail creature becomes infatuated with first creature it sees after ingesting for 1 hour. Creature\n                                                     refuses to leave the side of creature it is infatuated with and will resist violently if necessary.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%2)==0){// Malice
+			fprintf(storeHere, "%32s", "Malice");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Inhaled");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(25000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "Dc 15 Constitution or poisoned for 1 hour. Poisoned creature is blinded.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%4)==0){// Midnight Tears
+			fprintf(storeHere, "%32s", "Midnight Tears");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Inhaled");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(150000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "No effect until midnight. At midnight DC 17 Constitution or 9d6(31) poison damage. Half on success.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%3)==0){// Oil of Taggit
+			fprintf(storeHere, "%32s", "Oil of Taggit");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Contact");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(40000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 13 Constitution or poisoned for 24 hours. Poisoned creature is unconscious. Creature wakes if takes damage.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%2)==0){// Pale Tincture
+			fprintf(storeHere, "%32s", "Pale Tincture");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Ingested");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(25000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 16 Constitution or 1d6(3) poison damage and becomes poisoned. Repeat throw every 24 hours. Take 1d6(3) on\n                                           failed save. Until poison ends damage dealt by poison cannot be healed. 7 successful saves end the effects. ");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%4)==0){// Purple Worm Poison
+			fprintf(storeHere, "%32s", "Purple Worm Poison");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Injury");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(200000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 19 Constitution taking 12d6(42) poison damage on fail, half on success. ");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%10)==0){// Glove Cleaner
+			fprintf(storeHere, "%32s", "Glove Cleaner");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Ingested");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(1000000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "Upon ingestion creature dies. Dose must be ingested within 1 minute of the target coming within 5 feet, or\n                                           they become immune to the dose.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%2)==0){// Serpent Venom
+			fprintf(storeHere, "%32s", "Serpent Venom");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Injury");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(20000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 11 Constitution taking 3d6(10) poison damage on fail, half on success.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%3)==0){// Torpor
+			fprintf(storeHere, "%32s", "Torpor");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Ingested");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(60000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 15 Constitution or poisoned for 4d6 hours. Poisoned creature is incapacitated.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%2)==0){// Truth Serum
+			fprintf(storeHere, "%32s", "Truth Serum");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Ingested");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(15000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "Dc 11 Constitution or poisoned for 1 hour. Poisoned creature can’t knowingly speak a lie.");
+			fprintf(storeHere, "\n");
+		}
+		if ((rand()%5)==0){// Wyvern Posion
+			fprintf(storeHere, "%32s", "Wyvern Posion");
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "%9s", "Injury");
+			fprintf(storeHere, "%c", dividerChar);
+			convertFromCp(120000, storeHere);
+			fprintf(storeHere, "%c", dividerChar);
+			fprintf(storeHere, "DC 15 Constitution taking 7d6(24) poison damage on a fail, half on a success.");
+			fprintf(storeHere, "\n");
+		}
+		fprintf(storeHere, "\nFor more information on posion prices and effects see the Demagus True Reference PDF\n");
+	}
+	fprintf(storeHere, "\nQuestions? See the Demagus True Reference PDF\n");
+}
+
+void makeArcana(FILE* storeHere, uint16_t flags){
+	uint8_t inventorySize = 127;
+	struct shopItem inventory[inventorySize];
+	// Father forgive me for i have sinned
+	for(int i = 0; i < inventorySize; ++i){
+		memset(inventory[i].name, '\0', NAME_LENGTH);
+		inventory[i].lowPrice = 0;
+		inventory[i].midPrice = 0;
+		inventory[i].highPrice = 0;
+		inventory[i].stock = 0;
+		inventory[i].biasFlags = 0x8000;
+	}
+	// Armor Section Name
+	strcpy(inventory[0].name,"WEAPONS");
+	inventory[0].lowPrice = 0;
+	inventory[0].midPrice = 0;
+	inventory[0].highPrice = 0;
+	inventory[0].stock = 0;
+	inventory[0].biasFlags = 0;
+	// Quarterstaff
+	strcpy(inventory[1].name,"Quarterstaff");
+	inventory[1].lowPrice = 10;
+	inventory[1].midPrice = 20;
+	inventory[1].highPrice = 30;
+	inventory[1].stock = 2;
+	inventory[1].biasFlags = 0x20;
+	
+	// Gear
+	strcpy(inventory[2].name,"GEAR");
+	inventory[2].lowPrice = 0;
+	inventory[2].midPrice = 0;
+	inventory[2].highPrice = 0;
+	inventory[2].stock = 0;
+	inventory[2].biasFlags = 0;
+	// Abacus
+	strcpy(inventory[3].name,"Abacus");
+	inventory[3].lowPrice = 100;
+	inventory[3].midPrice = 200;
+	inventory[3].highPrice = 300;
+	inventory[3].stock = 5;
+	inventory[3].biasFlags = 0x41;
+	// Candle
+	strcpy(inventory[4].name,"Candle");
+	inventory[4].lowPrice = 1;
+	inventory[4].midPrice = 1;
+	inventory[4].highPrice = 2;
+	inventory[4].stock = 2;
+	inventory[4].biasFlags = 0x141;
+	// Scroll Case
+	strcpy(inventory[5].name,"Scroll Case");
+	inventory[5].lowPrice = 70;
+	inventory[5].midPrice = 100;
+	inventory[5].highPrice = 200;
+	inventory[5].stock = 5;
+	inventory[5].biasFlags = 0x101;
+	// Crystal
+	strcpy(inventory[6].name,"Crystal");
+	inventory[6].lowPrice = 700;
+	inventory[6].midPrice = 1000;
+	inventory[6].highPrice = 1500;
+	inventory[6].stock = 1;
+	inventory[6].biasFlags = 0x1;
+	// Component Pouch
+	strcpy(inventory[7].name,"Component Pouch");
+	inventory[7].lowPrice = 1800;
+	inventory[7].midPrice = 2500;
+	inventory[7].highPrice = 3800;
+	inventory[7].stock = 15;
+	inventory[7].biasFlags = 0x1;
+	// Glass Bottle
+	strcpy(inventory[8].name,"Glass Bottle");
+	inventory[8].lowPrice = 100;
+	inventory[8].midPrice = 200;
+	inventory[8].highPrice = 300;
+	inventory[8].stock = 1;
+	inventory[8].biasFlags = 0x1;
+	// Hourglass
+	strcpy(inventory[9].name,"Hourglass");
+	inventory[9].lowPrice = 1800;
+	inventory[9].midPrice = 2500;
+	inventory[9].highPrice = 3800;
+	inventory[9].stock = 18;
+	inventory[9].biasFlags = 0x41;
+	// Ink
+	strcpy(inventory[10].name,"Ink (1 fl. oz.)");
+	inventory[10].lowPrice = 700;
+	inventory[10].midPrice = 1000;
+	inventory[10].highPrice = 1500;
+	inventory[10].stock = 5;
+	inventory[10].biasFlags = 0x141;
+	// Ink Pen
+	strcpy(inventory[11].name,"Ink Pen");
+	inventory[11].lowPrice = 1;
+	inventory[11].midPrice = 2;
+	inventory[11].highPrice = 3;
+	inventory[11].stock = 5;
+	inventory[11].biasFlags = 0x141;
+	// Orb
+	strcpy(inventory[12].name,"Orb");
+	inventory[12].lowPrice = 1500;
+	inventory[12].midPrice = 2000;
+	inventory[12].highPrice = 3000;
+	inventory[12].stock = 5;
+	inventory[12].biasFlags = 0x1;
+	// Paper
+	strcpy(inventory[13].name,"Paper (1)");
+	inventory[13].lowPrice = 10;
+	inventory[13].midPrice = 20;
+	inventory[13].highPrice = 30;
+	inventory[13].stock = 5;
+	inventory[13].biasFlags = 0x141;
+	// Parchment
+	strcpy(inventory[14].name,"Parchment (1)");
+	inventory[14].lowPrice = 7;
+	inventory[14].midPrice = 10;
+	inventory[14].highPrice = 20;
+	inventory[14].stock = 1;
+	inventory[14].biasFlags = 0x141;
+	// Pouch
+	strcpy(inventory[15].name,"Pouch");
+	inventory[15].lowPrice = 30;
+	inventory[15].midPrice = 50;
+	inventory[15].highPrice = 80;
+	inventory[15].stock = 5;
+	inventory[15].biasFlags = 0x1;
+	// Robes
+	strcpy(inventory[16].name,"Robes");
+	inventory[16].lowPrice = 70;
+	inventory[16].midPrice = 100;
+	inventory[16].highPrice = 200;
+	inventory[16].stock = 5;
+	inventory[16].biasFlags = 0x101;
+	// Rod
+	strcpy(inventory[17].name,"Rod");
+	inventory[17].lowPrice = 70;
+	inventory[17].midPrice = 100;
+	inventory[17].highPrice = 1500;
+	inventory[17].stock = 5;
+	inventory[17].biasFlags = 0x801;
+	// Spellbook
+	strcpy(inventory[18].name,"Spellbook");
+	inventory[18].lowPrice = 3800;
+	inventory[18].midPrice = 5000;
+	inventory[18].highPrice = 7500;
+	inventory[18].stock = 7;
+	inventory[18].biasFlags = 0x1;
+	// Mistletoe
+	strcpy(inventory[19].name,"Sprig of Mistletoe");
+	inventory[19].lowPrice = 70;
+	inventory[19].midPrice = 100;
+	inventory[19].highPrice = 200;
+	inventory[19].stock = 3;
+	inventory[19].biasFlags = 0x801;
+	// Staff
+	strcpy(inventory[20].name,"Staff");
+	inventory[20].lowPrice = 300;
+	inventory[20].midPrice = 500;
+	inventory[20].highPrice = 800;
+	inventory[20].stock = 3;
+	inventory[20].biasFlags = 0x1;
+	// Wooden Staff
+	strcpy(inventory[21].name,"Wooden Staff");
+	inventory[21].lowPrice = 100;
+	inventory[21].midPrice = 200;
+	inventory[21].highPrice = 300;
+	inventory[21].stock = 2;
+	inventory[21].biasFlags = 0x1;
+	// Totem
+	strcpy(inventory[22].name,"Totem");
+	inventory[22].lowPrice = 70;
+	inventory[22].midPrice = 100;
+	inventory[22].highPrice = 200;
+	inventory[22].stock = 3;
+	inventory[22].biasFlags = 0x401;
+	// Wand
+	strcpy(inventory[23].name,"Abacus");
+	inventory[23].lowPrice = 700;
+	inventory[23].midPrice = 1000;
+	inventory[23].highPrice = 1500;
+	inventory[23].stock = 2;
+	inventory[23].biasFlags = 0x1;
+	// Yew Wand
+	strcpy(inventory[24].name,"Yew Wand");
+	inventory[24].lowPrice = 700;
+	inventory[24].midPrice = 1000;
+	inventory[24].highPrice = 1500;
+	inventory[24].stock = 5;
+	inventory[24].biasFlags = 0x1;
+	
+	// Tools Section Header
+	strcpy(inventory[27].name,"TOOLS");
+	inventory[27].lowPrice = 0;
+	inventory[27].midPrice = 0;
+	inventory[27].highPrice = 0;
+	inventory[27].stock = 0;
+	inventory[27].biasFlags = 0;
+	// Alchemist's Supplies
+	strcpy(inventory[28].name,"Alchemist's Supplies");
+	inventory[28].lowPrice = 3800;
+	inventory[28].midPrice = 5000;
+	inventory[28].highPrice = 7500;
+	inventory[28].stock = 5;
+	inventory[28].biasFlags = 0x0;
+	// Caligrapher's Supplies
+	strcpy(inventory[29].name,"Caligrapher's Supplies");
+	inventory[29].lowPrice = 700;
+	inventory[29].midPrice = 1000;
+	inventory[29].highPrice = 1500;
+	inventory[29].stock = 5;
+	inventory[29].biasFlags = 0x0;
+	// Lute
+	strcpy(inventory[30].name,"Lute");
+	inventory[30].lowPrice = 2600;
+	inventory[30].midPrice = 3500;
+	inventory[30].highPrice = 5300;
+	inventory[30].stock = 10;
+	inventory[30].biasFlags = 0x0;
+	// Lyre
+	strcpy(inventory[31].name,"Lyre");
+	inventory[31].lowPrice = 2600;
+	inventory[31].midPrice = 3500;
+	inventory[31].highPrice = 5300;
+	inventory[31].stock = 18;
+	inventory[31].biasFlags = 0x0;
+	
+	// Magical Items Section Header
+	strcpy(inventory[39].name,"MAGIC SCROLLS");
+	inventory[39].lowPrice = 0;
+	inventory[39].midPrice = 0;
+	inventory[39].highPrice = 0;
+	inventory[39].stock = 0;
+	inventory[39].biasFlags = 0;
+	// Cantrip
+	strcpy(inventory[40].name,"Cantrip");
+	inventory[40].lowPrice = 3800;
+	inventory[40].midPrice = 5000;
+	inventory[40].highPrice = 7500;
+	inventory[40].stock = 3;
+	inventory[40].biasFlags = 0x1;
+	// Level 1
+	strcpy(inventory[41].name,"Level 1");
+	inventory[41].lowPrice = 7500;
+	inventory[41].midPrice = 10000;
+	inventory[41].highPrice = 15000;
+	inventory[41].stock = 5;
+	inventory[41].biasFlags = 0x1;
+	// Level 2
+	strcpy(inventory[42].name,"Level 2");
+	inventory[42].lowPrice = 18700;
+	inventory[42].midPrice = 25000;
+	inventory[42].highPrice = 37500;
+	inventory[42].stock = 8;
+	inventory[42].biasFlags = 0x1;
+	// Level 3
+	strcpy(inventory[43].name,"Level 3");
+	inventory[43].lowPrice = 37500;
+	inventory[43].midPrice = 50000;
+	inventory[43].highPrice = 75000;
+	inventory[43].stock = 11;
+	inventory[43].biasFlags = 0x1;
+	// Level 4
+	strcpy(inventory[44].name,"Level 4");
+	inventory[44].lowPrice = 187000;
+	inventory[44].midPrice = 250000;
+	inventory[44].highPrice = 375000;
+	inventory[44].stock = 14;
+	inventory[44].biasFlags = 0x1;
+	// Level 5
+	strcpy(inventory[45].name,"Level 5");
+	inventory[45].lowPrice = 375000;
+	inventory[45].midPrice = 500000;
+	inventory[45].highPrice = 750000;
+	inventory[45].stock = 17;
+	inventory[45].biasFlags = 0x1;
+	
+	// Services
+	strcpy(inventory[47].name,"SERVICES");
+	inventory[47].lowPrice = 0;
+	inventory[47].midPrice = 0;
+	inventory[47].highPrice = 0;
+	inventory[47].stock = 0;
+	inventory[47].biasFlags = 0;
+	// Identify
+	strcpy(inventory[48].name,"Identify");
+	inventory[48].lowPrice = 7500;
+	inventory[48].midPrice = 10000;
+	inventory[48].highPrice = 15000;
+	inventory[48].stock = 2;
+	inventory[48].biasFlags = 0x1;
+	
+	char dividerChar = ' ';
+	fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
+	fprintf(storeHere, "%c", dividerChar); 
+	fprintf(storeHere, "     %s  ", "Low"); // low price colum
+	fprintf(storeHere, "%c",dividerChar);
+	fprintf(storeHere, "    %s   ", "Mid"); // mid price colum
+	fprintf(storeHere, "%c",dividerChar);
+	fprintf(storeHere, "   %s   ", "High"); // high price colum
+	fprintf(storeHere, "\n");
+	time_t t;
+	srand(time(NULL));
+	int8_t shopStock = ((rand())%20)+1;
+	//printf("Shop stock num %u", shopStock);
+	
+	for(int i = 0; i < inventorySize; ++i){
+		if (inventory[i].biasFlags == 0x8000){ // There is no name, empty entry
+			continue;
+		}
+		else{
+			if(inventory[i].stock == 0){ // Section Title
+				fprintf(storeHere, "%-32s\n", inventory[i].name);
+			}
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
+				fprintf(storeHere, "%32s", inventory[i].name);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].lowPrice, storeHere);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].midPrice, storeHere);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].highPrice, storeHere);
+				fprintf(storeHere, "\n");
+			}
+			else { // Item is out of stock or error
+				if (inventory[i].stock <= 20){ // Item out of stock
+					/*
+					fprintf(storeHere, "%32s", inventory[i].name);
+					fprintf(storeHere, "%c", dividerChar);
+					fprintf(storeHere, "           OUT OF STOCK         \n");
+					*/
+				}
+				else{// ERROR
+					continue;
+				}
+			}
+		}
+	}
+	fprintf(storeHere, "\nQuestions? See the Demagus True Reference PDF\n");
+}
+
+void makeBakery(FILE* storeHere, uint16_t flags){
+	uint8_t inventorySize = 127;
+	struct shopItem inventory[inventorySize];
+	// Father forgive me for i have sinned
+	for(int i = 0; i < inventorySize; ++i){
+		memset(inventory[i].name, '\0', NAME_LENGTH);
+		inventory[i].lowPrice = 0;
+		inventory[i].midPrice = 0;
+		inventory[i].highPrice = 0;
+		inventory[i].stock = 0;
+		inventory[i].biasFlags = 0x8000;
+	}
+	// Armor Section Name
+	strcpy(inventory[0].name,"WEAPONS");
+	inventory[0].lowPrice = 0;
+	inventory[0].midPrice = 0;
+	inventory[0].highPrice = 0;
+	inventory[0].stock = 0;
+	inventory[0].biasFlags = 0;
+	// Quarterstaff
+	strcpy(inventory[1].name,"Quarterstaff");
+	inventory[1].lowPrice = 10;
+	inventory[1].midPrice = 20;
+	inventory[1].highPrice = 30;
+	inventory[1].stock = 2;
+	inventory[1].biasFlags = 0x20;
+	
+	
+	char dividerChar = ' ';
+	fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
+	fprintf(storeHere, "%c", dividerChar); 
+	fprintf(storeHere, "     %s  ", "Low"); // low price colum
+	fprintf(storeHere, "%c",dividerChar);
+	fprintf(storeHere, "    %s   ", "Mid"); // mid price colum
+	fprintf(storeHere, "%c",dividerChar);
+	fprintf(storeHere, "   %s   ", "High"); // high price colum
+	fprintf(storeHere, "\n");
+	time_t t;
+	srand(time(NULL));
+	int8_t shopStock = ((rand())%20)+1;
+	//printf("Shop stock num %u", shopStock);
+	
+	for(int i = 0; i < inventorySize; ++i){
+		if (inventory[i].biasFlags == 0x8000){ // There is no name, empty entry
+			continue;
+		}
+		else{
+			if(inventory[i].stock == 0){ // Section Title
+				fprintf(storeHere, "%-32s\n", inventory[i].name);
+			}
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
+				fprintf(storeHere, "%32s", inventory[i].name);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].lowPrice, storeHere);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].midPrice, storeHere);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].highPrice, storeHere);
+				fprintf(storeHere, "\n");
+			}
+			else { // Item is out of stock or error
+				if (inventory[i].stock <= 20){ // Item out of stock
+					/*
+					fprintf(storeHere, "%32s", inventory[i].name);
+					fprintf(storeHere, "%c", dividerChar);
+					fprintf(storeHere, "           OUT OF STOCK         \n");
+					*/
+				}
+				else{// ERROR
+					continue;
+				}
+			}
+		}
+	}
+	fprintf(storeHere, "\nQuestions? See the Demagus True Reference PDF\n");
+}
+
+
 
 void commandReminder(){
 	printf(".\\programName <storageLoc.txt> <shopType> <flags>\n");
@@ -1074,7 +2367,7 @@ void commandReminder(){
 	printf("Bit 06 - Industrial\n");
 	printf("Bit 07 - Mining\n");
 	printf("Bit 08 - Pious\n");
-    printf("Bit 09 - Orchard\n");
+    printf("Bit 09 - Agriculture\n");
 	printf("Bit 10 - Rural\n");
 	printf("Bit 11 - Urban\n");
 }
@@ -1099,6 +2392,27 @@ int main(int argc, char* argv[]){
 				shopnameGen(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeAdventurerEmprium(shopFile, flags);
+				break;
+			case 1:
+				fprintf(shopFile, "Alchemist's Shop\n");
+				fprintf(shopFile, "The ");
+				shopnameGen(shopFile);// Store Owners Name
+				//nameGen(shopFile, 0xFF);
+				makeAlchemist(shopFile, flags);
+				break;
+			case 2:
+				fprintf(shopFile, "Arcana Shop\n");
+				fprintf(shopFile, "The ");
+				shopnameGen(shopFile);// Store Owners Name
+				//nameGen(shopFile, 0xFF);
+				makeArcana(shopFile, flags);
+				break;
+			case 3:
+				fprintf(shopFile, "Bakery\n");
+				fprintf(shopFile, "The ");
+				shopnameGen(shopFile);// Store Owners Name
+				//nameGen(shopFile, 0xFF);
+				makeBakery(shopFile, flags);
 				break;
 			default:
 				printf("ERROR, INVALID COMMAND\n");
