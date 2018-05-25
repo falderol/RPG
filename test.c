@@ -4374,7 +4374,81 @@ void makeFletcher(FILE* storeHere, uint16_t flags){
 	inventory[24].stock = 15;
 	inventory[24].biasFlags = 0x20;
 	
+	char dividerChar = ' ';
+	fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
+	fprintf(storeHere, "%c", dividerChar); 
+	fprintf(storeHere, "     %s  ", "Low"); // low price colum
+	fprintf(storeHere, "%c",dividerChar);
+	fprintf(storeHere, "    %s   ", "Mid"); // mid price colum
+	fprintf(storeHere, "%c",dividerChar);
+	fprintf(storeHere, "   %s   ", "High"); // high price colum
+	fprintf(storeHere, "\n");
+	time_t t;
+	srand(time(NULL));
+	int8_t shopStock = ((rand())%20)+1;
+	//printf("Shop stock num %u", shopStock);
 	
+	for(int i = 0; i < inventorySize; ++i){
+		if (inventory[i].biasFlags == 0x8000){ // There is no name, empty entry
+			continue;
+		}
+		else{
+			if(inventory[i].stock == 0){ // Section Title
+				fprintf(storeHere, "%-32s\n", inventory[i].name);
+			}
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
+				fprintf(storeHere, "%32s", inventory[i].name);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].lowPrice, storeHere);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].midPrice, storeHere);
+				fprintf(storeHere, "%c", dividerChar);
+				convertFromCp(inventory[i].highPrice, storeHere);
+				fprintf(storeHere, "\n");
+			}
+			else { // Item is out of stock or error
+				if (inventory[i].stock <= 20){ // Item out of stock
+					/*
+					fprintf(storeHere, "%32s", inventory[i].name);
+					fprintf(storeHere, "%c", dividerChar);
+					fprintf(storeHere, "           OUT OF STOCK         \n");
+					*/
+				}
+				else{// ERROR
+					continue;
+				}
+			}
+		}
+	}
+	fprintf(storeHere, "\nQuestions? See the Demagus True Reference PDF\n");
+}
+
+void makeGeneral(FILE* storeHere, uint16_t flags){
+	uint8_t inventorySize = 128;
+	struct shopItem inventory[inventorySize];
+	// Father forgive me for i have sinned
+	for(int i = 0; i < inventorySize; ++i){
+		memset(inventory[i].name, '\0', NAME_LENGTH);
+		inventory[i].lowPrice = 0;
+		inventory[i].midPrice = 0;
+		inventory[i].highPrice = 0;
+		inventory[i].stock = 0;
+		inventory[i].biasFlags = 0x8000;
+	}
+	// Armor Section Name
+	strcpy(inventory[0].name,"WEAPONS");
+	inventory[0].lowPrice = 0;
+	inventory[0].midPrice = 0;
+	inventory[0].highPrice = 0;
+	inventory[0].stock = 0;
+	inventory[0].biasFlags = 0;
+	// Quarterstaff
+	strcpy(inventory[1].name,"Quarterstaff");
+	inventory[1].lowPrice = 10;
+	inventory[1].midPrice = 20;
+	inventory[1].highPrice = 30;
+	inventory[1].stock = 2;
+	inventory[1].biasFlags = 0x20;
 	
 	
 	char dividerChar = ' ';
@@ -4901,12 +4975,13 @@ void commandReminder(){
 	printf("07 - Butcher's Shop\n");
 	//printf("08 - Cobbler's Shop\n");
 	printf("08 - Fletcher\n");
-	printf("09 - Leatherworker's Shop\n");
-	printf("10 - Music Store\n");
-	printf("11 - Tailor\n");
-	printf("12 - Shrine\n");
-	printf("13 - Jeweler\n");
-	printf("14 - Wizard's Tower\n");
+	printf("09 - General Store\n");
+	printf("10 - Leatherworker's Shop\n");
+	printf("11 - Music Store\n");
+	printf("12 - Tailor\n");
+	printf("13 - Shrine\n");
+	printf("14 - Jeweler\n");
+	printf("15 - Wizard's Tower\n");
 	printf("Supported Flags are:\n");
 	printf("Bit 00 - Magical\n");
 	printf("Bit 01 - Costal\n");
@@ -5009,41 +5084,48 @@ int main(int argc, char* argv[]){
 				makeFletcher(shopFile, flags);
 				break;
 			case 9:
+				fprintf(shopFile, "General Store\n");
+				fprintf(shopFile, "The ");
+				shopnameGen(shopFile);// Store Owners Name
+				//nameGen(shopFile, 0xFF);
+				makeFletcher(shopFile, flags);
+				break;
+			case 10:
 				fprintf(shopFile, "Leatherworker's Shop\n");
 				fprintf(shopFile, "The ");
 				shopnameGen(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeLeather(shopFile, flags);
 				break;
-			case 10:
+			case 11:
 				fprintf(shopFile, "Music Store\n");
 				fprintf(shopFile, "The ");
 				shopnameGen(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeMusic(shopFile, flags);
 				break;
-			case 11:
+			case 12:
 				fprintf(shopFile, "Tailor\n");
 				fprintf(shopFile, "The ");
 				shopnameGen(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeTailor(shopFile, flags);
 				break;
-			case 12:
+			case 13:
 				fprintf(shopFile, "Shrine\n");
 				fprintf(shopFile, "The ");
 				shopnameGen(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeShrine(shopFile, flags);
 				break;
-			case 13:
+			case 14:
 				fprintf(shopFile, "Jeweler\n");
 				fprintf(shopFile, "The ");
 				shopnameGen(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeJeweler(shopFile, flags);
 				break;
-			case 14:
+			case 15:
 				fprintf(shopFile, "Wizard's Tower\n");
 				fprintf(shopFile, "The ");
 				shopnameGen(shopFile);// Store Owners Name
