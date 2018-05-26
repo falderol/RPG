@@ -381,7 +381,7 @@ void shopnameGen(FILE* storeHere){
 	strcpy(nouns[130], "Uncle");
 	strcpy(nouns[131], "Snipe");
 	strcpy(nouns[132], "Jackrabbit");
-	strcpy(nouns[133], "R.O.U.S.");
+	strcpy(nouns[133], "Rodent of Unusual Size");
 	strcpy(nouns[134], "Stuff");
 	strcpy(nouns[135], "Bistro");
 	strcpy(nouns[136], "Gazebo");
@@ -4424,7 +4424,7 @@ void makeFletcher(FILE* storeHere, uint16_t flags){
 }
 
 void makeGeneral(FILE* storeHere, uint16_t flags){
-	uint8_t inventorySize = 128;
+	uint8_t inventorySize = 98;
 	struct shopItem inventory[inventorySize];
 	// Father forgive me for i have sinned
 	for(int i = 0; i < inventorySize; ++i){
@@ -4435,20 +4435,652 @@ void makeGeneral(FILE* storeHere, uint16_t flags){
 		inventory[i].stock = 0;
 		inventory[i].biasFlags = 0x8000;
 	}
-	// Armor Section Name
-	strcpy(inventory[0].name,"WEAPONS");
+	// Gear Section Name
+	strcpy(inventory[0].name,"GEAR");
 	inventory[0].lowPrice = 0;
 	inventory[0].midPrice = 0;
 	inventory[0].highPrice = 0;
 	inventory[0].stock = 0;
 	inventory[0].biasFlags = 0;
-	// Quarterstaff
-	strcpy(inventory[1].name,"Quarterstaff");
-	inventory[1].lowPrice = 10;
-	inventory[1].midPrice = 20;
-	inventory[1].highPrice = 30;
-	inventory[1].stock = 2;
-	inventory[1].biasFlags = 0x20;
+	// Abacus
+	strcpy(inventory[1].name,"Abacus");
+	inventory[1].lowPrice = 100;
+	inventory[1].midPrice = 200;
+	inventory[1].highPrice = 300;
+	inventory[1].stock = 7;
+	inventory[1].biasFlags = 0x41;
+	// Barrel
+	strcpy(inventory[2].name,"Barrel");
+	inventory[2].lowPrice = 100;
+	inventory[2].midPrice = 200;
+	inventory[2].highPrice = 300;
+	inventory[2].stock = 5;
+	inventory[2].biasFlags = 0x240;
+	// Blanket
+	strcpy(inventory[3].name,"Blanket");
+	inventory[3].lowPrice = 30;
+	inventory[3].midPrice = 50;
+	inventory[3].highPrice = 80;
+	inventory[3].stock = 1;
+	inventory[3].biasFlags = 0x0;
+	// Bucket
+	strcpy(inventory[4].name,"Bucket");
+	inventory[4].lowPrice = 3;
+	inventory[4].midPrice = 5;
+	inventory[4].highPrice = 8;
+	inventory[4].stock = 3;
+	inventory[4].biasFlags = 0x240;
+	// Candle
+	strcpy(inventory[5].name,"Candle");
+	inventory[5].lowPrice = 1;
+	inventory[5].midPrice = 1;
+	inventory[5].highPrice = 2;
+	inventory[5].stock = 2;
+	inventory[5].biasFlags = 0x45;
+	// Chest
+	strcpy(inventory[6].name,"Chest");
+	inventory[6].lowPrice = 300;
+	inventory[6].midPrice = 500;
+	inventory[6].highPrice = 800;
+	inventory[6].stock = 7;
+	inventory[6].biasFlags = 0x44;
+	// Common Clothes
+	strcpy(inventory[7].name,"Common Clothes");
+	inventory[7].lowPrice = 30;
+	inventory[7].midPrice = 50;
+	inventory[7].highPrice = 80;
+	inventory[7].stock = 5;
+	inventory[7].biasFlags = 0x0;
+	// Fine Clothes
+	strcpy(inventory[8].name,"Fine Clothes");
+	inventory[8].lowPrice = 1100;
+	inventory[8].midPrice = 1500;
+	inventory[8].highPrice = 2300;
+	inventory[8].stock = 18;
+	inventory[8].biasFlags = 0x804;
+	// Flask
+	strcpy(inventory[9].name,"Flask");
+	inventory[9].lowPrice = 1;
+	inventory[9].midPrice = 2;
+	inventory[9].highPrice = 3;
+	inventory[9].stock = 1;
+	inventory[9].biasFlags = 0x0;
+	// Glass Bottle
+	strcpy(inventory[10].name,"Glass Bottle");
+	inventory[10].lowPrice = 100;
+	inventory[10].midPrice = 200;
+	inventory[10].highPrice = 300;
+	inventory[10].stock = 5;
+	inventory[10].biasFlags = 0x65;
+	// Hammer
+	strcpy(inventory[11].name,"Abacus");
+	inventory[11].lowPrice = 70;
+	inventory[11].midPrice = 100;
+	inventory[11].highPrice = 200;
+	inventory[11].stock = 5;
+	inventory[11].biasFlags = 0x40;
+	// Ink
+	strcpy(inventory[12].name,"Ink (1 fl. oz.)");
+	inventory[12].lowPrice = 700;
+	inventory[12].midPrice = 1000;
+	inventory[12].highPrice = 1500;
+	inventory[12].stock = 3;
+	inventory[12].biasFlags = 0x41;
+	// Ink Pen
+	strcpy(inventory[13].name,"Ink Pen");
+	inventory[13].lowPrice = 100;
+	inventory[13].midPrice = 200;
+	inventory[13].highPrice = 300;
+	inventory[13].stock = 7;
+	inventory[13].biasFlags = 0x41;
+	// Jug
+	strcpy(inventory[14].name,"Jug");
+	inventory[14].lowPrice = 1;
+	inventory[14].midPrice = 2;
+	inventory[14].highPrice = 3;
+	inventory[14].stock = 7;
+	inventory[14].biasFlags = 0x0;
+	// Ladder
+	strcpy(inventory[15].name,"Ladder (10 ft.)");
+	inventory[15].lowPrice = 7;
+	inventory[15].midPrice = 10;
+	inventory[15].highPrice = 20;
+	inventory[15].stock = 7;
+	inventory[15].biasFlags = 0x40;
+	// Hooded Lantern
+	strcpy(inventory[16].name,"Lantern (hooded)");
+	inventory[16].lowPrice = 300;
+	inventory[16].midPrice = 500;
+	inventory[16].highPrice = 800;
+	inventory[16].stock = 5;
+	inventory[16].biasFlags = 0x40;
+	// Lamp
+	strcpy(inventory[17].name,"Lamp");
+	inventory[17].lowPrice = 300;
+	inventory[17].midPrice = 500;
+	inventory[17].highPrice = 800;
+	inventory[17].stock = 4;
+	inventory[17].biasFlags = 0xC5;
+	// Lock
+	strcpy(inventory[18].name,"Lock");
+	inventory[18].lowPrice = 700;
+	inventory[18].midPrice = 1000;
+	inventory[18].highPrice = 1500;
+	inventory[18].stock = 15;
+	inventory[18].biasFlags = 0x844;
+	// Mess Kit
+	strcpy(inventory[19].name,"Mess Kit");
+	inventory[19].lowPrice = 10;
+	inventory[19].midPrice = 20;
+	inventory[19].highPrice = 30;
+	inventory[19].stock = 5;
+	inventory[19].biasFlags = 0x40;
+	// Miner's Pick
+	strcpy(inventory[20].name,"Miner's Pick");
+	inventory[20].lowPrice = 100;
+	inventory[20].midPrice = 200;
+	inventory[20].highPrice = 300;
+	inventory[20].stock = 8;
+	inventory[20].biasFlags = 0x80;
+	// Steel Mirror
+	strcpy(inventory[21].name,"Mirror (steel)");
+	inventory[21].lowPrice = 300;
+	inventory[21].midPrice = 500;
+	inventory[21].highPrice = 800;
+	inventory[21].stock = 8;
+	inventory[21].biasFlags = 0x1;
+	// Paper
+	strcpy(inventory[22].name,"Paper (1)");
+	inventory[22].lowPrice = 10;
+	inventory[22].midPrice = 20;
+	inventory[22].highPrice = 30;
+	inventory[22].stock = 7;
+	inventory[22].biasFlags = 0x41;
+	// Parchment
+	strcpy(inventory[23].name,"Parchment (1)");
+	inventory[23].lowPrice = 7;
+	inventory[23].midPrice = 10;
+	inventory[23].highPrice = 20;
+	inventory[23].stock = 2;
+	inventory[23].biasFlags = 0x41;
+	// Pot
+	strcpy(inventory[24].name,"Pot (iron)");
+	inventory[24].lowPrice = 100;
+	inventory[24].midPrice = 200;
+	inventory[24].highPrice = 300;
+	inventory[24].stock = 1;
+	inventory[24].biasFlags = 0x0;
+	// Pouch
+	strcpy(inventory[25].name,"Pouch");
+	inventory[25].lowPrice = 30;
+	inventory[25].midPrice = 50;
+	inventory[25].highPrice = 80;
+	inventory[25].stock = 3;
+	inventory[25].biasFlags = 0x0;
+	// Rope
+	strcpy(inventory[26].name,"Hemp Rope (50 ft.)");
+	inventory[26].lowPrice = 70;
+	inventory[26].midPrice = 100;
+	inventory[26].highPrice = 200;
+	inventory[26].stock = 2;
+	inventory[26].biasFlags = 0x2C2;
+	// Silk Rope
+	strcpy(inventory[27].name,"Silk Rope (50 ft.)");
+	inventory[27].lowPrice = 700;
+	inventory[27].midPrice = 1000;
+	inventory[27].highPrice = 1500;
+	inventory[27].stock = 18;
+	inventory[27].biasFlags = 0xC;
+	// Sack
+	strcpy(inventory[28].name,"Sack");
+	inventory[28].lowPrice = 1;
+	inventory[28].midPrice = 1;
+	inventory[28].highPrice = 2;
+	inventory[28].stock = 1;
+	inventory[28].biasFlags = 0x0;
+	// Scale
+	strcpy(inventory[29].name,"Scale");
+	inventory[29].lowPrice = 300;
+	inventory[29].midPrice = 500;
+	inventory[29].highPrice = 800;
+	inventory[29].stock = 8;
+	inventory[29].biasFlags = 0x45;
+	// Shovel
+	strcpy(inventory[30].name,"Shovel");
+	inventory[30].lowPrice = 100;
+	inventory[30].midPrice = 200;
+	inventory[30].highPrice = 300;
+	inventory[30].stock = 5;
+	inventory[30].biasFlags = 0x280;
+	// Signet Ring
+	strcpy(inventory[31].name,"Signet Ring");
+	inventory[31].lowPrice = 300;
+	inventory[31].midPrice = 500;
+	inventory[31].highPrice = 800;
+	inventory[31].stock = 12;
+	inventory[31].biasFlags = 0x94d;
+	// Soap
+	strcpy(inventory[32].name,"Soap");
+	inventory[32].lowPrice = 1;
+	inventory[32].midPrice = 2;
+	inventory[32].highPrice = 3;
+	inventory[32].stock = 5;
+	inventory[32].biasFlags = 0x5;
+	// Vial
+	strcpy(inventory[33].name,"Vial");
+	inventory[33].lowPrice = 70;
+	inventory[33].midPrice = 100;
+	inventory[33].highPrice = 200;
+	inventory[33].stock = 5;
+	inventory[33].biasFlags = 0x41;
+	
+	// Tools Section Header
+	strcpy(inventory[39].name,"TOOLS");
+	inventory[39].lowPrice = 0;
+	inventory[39].midPrice = 0;
+	inventory[39].highPrice = 0;
+	inventory[39].stock = 0;
+	inventory[39].biasFlags = 0x0;
+	// Carpenter's Tools
+	strcpy(inventory[40].name,"Carpenter's Tools");
+	inventory[40].lowPrice = 1100;
+	inventory[40].midPrice = 1500;
+	inventory[40].highPrice = 2300;
+	inventory[40].stock = 3;
+	inventory[40].biasFlags = 0x40;
+	// Cobbler's Tools
+	strcpy(inventory[41].name,"Cobbler's Tools");
+	inventory[41].lowPrice = 300;
+	inventory[41].midPrice = 500;
+	inventory[41].highPrice = 800;
+	inventory[41].stock = 5;
+	inventory[41].biasFlags = 0x40;
+	// Cook's Utensils
+	strcpy(inventory[42].name,"Cook's Utensils");
+	inventory[42].lowPrice = 70;
+	inventory[42].midPrice = 100;
+	inventory[42].highPrice = 200;
+	inventory[42].stock = 2;
+	inventory[42].biasFlags = 0x40;
+	// Glassblower's Tools
+	strcpy(inventory[43].name,"Glassblower's Tools");
+	inventory[43].lowPrice = 2200;
+	inventory[43].midPrice = 3000;
+	inventory[43].highPrice = 4500;
+	inventory[43].stock = 18;
+	inventory[43].biasFlags = 0x40;
+	// Leatherworker's Tools
+	strcpy(inventory[44].name,"Leatherworker's Tools");
+	inventory[44].lowPrice = 300;
+	inventory[44].midPrice = 500;
+	inventory[44].highPrice = 800;
+	inventory[44].stock = 5;
+	inventory[44].biasFlags = 0x40;
+	// Mason's Tools
+	strcpy(inventory[45].name,"Mason's Tools");
+	inventory[45].lowPrice = 700;
+	inventory[45].midPrice = 1000;
+	inventory[45].highPrice = 1500;
+	inventory[45].stock = 3;
+	inventory[45].biasFlags = 0x40;
+	// Potter's Tools
+	strcpy(inventory[46].name,"Potter's Tools");
+	inventory[46].lowPrice = 700;
+	inventory[46].midPrice = 1000;
+	inventory[46].highPrice = 1500;
+	inventory[46].stock = 5;
+	inventory[46].biasFlags = 0x40;
+	// Smith's Tools
+	strcpy(inventory[47].name,"Smith's Tools");
+	inventory[47].lowPrice = 700;
+	inventory[47].midPrice = 1500;
+	inventory[47].highPrice = 2000;
+	inventory[47].stock = 15;
+	inventory[47].biasFlags = 0x40;
+	// Weaver's Tools
+	strcpy(inventory[48].name,"Weaver's Tools");
+	inventory[48].lowPrice = 70;
+	inventory[48].midPrice = 100;
+	inventory[48].highPrice = 200;
+	inventory[48].stock = 5;
+	inventory[48].biasFlags = 0x40;
+	// Woodcarver's Tools
+	strcpy(inventory[49].name,"Woodcarver's Tools");
+	inventory[49].lowPrice = 70;
+	inventory[49].midPrice = 100;
+	inventory[49].highPrice = 200;
+	inventory[49].stock = 3;
+	inventory[49].biasFlags = 0x40;
+	
+	// Foodstuffs Section Header
+	strcpy(inventory[51].name,"FOODSTUFFS");
+	inventory[51].lowPrice = 0;
+	inventory[51].midPrice = 0;
+	inventory[51].highPrice = 0;
+	inventory[51].stock = 0;
+	inventory[51].biasFlags = 0;
+	// Apples
+	strcpy(inventory[52].name,"Apples (1 lb.)");
+	inventory[52].lowPrice = 1;
+	inventory[52].midPrice = 2;
+	inventory[52].highPrice = 10;
+	inventory[52].stock = 3;
+	inventory[52].biasFlags = 0x400;
+	// Beans
+	strcpy(inventory[53].name,"Beans (1 lb.)");
+	inventory[53].lowPrice = 1;
+	inventory[53].midPrice = 2;
+	inventory[53].highPrice = 3;
+	inventory[53].stock = 2;
+	inventory[53].biasFlags = 0x400;
+	// Beer
+	strcpy(inventory[54].name,"Beer (1 qt.)");
+	inventory[54].lowPrice = 7;
+	inventory[54].midPrice = 10;
+	inventory[54].highPrice = 20;
+	inventory[54].stock = 4;
+	inventory[54].biasFlags = 0x400;
+	// Berries
+	strcpy(inventory[55].name,"Berries (1 lb.)");
+	inventory[55].lowPrice = 3;
+	inventory[55].midPrice = 5;
+	inventory[55].highPrice = 10;
+	inventory[55].stock = 3;
+	inventory[55].biasFlags = 0x400;
+	// Common Brandy
+	strcpy(inventory[56].name,"Common Brandy (1 qt.)");
+	inventory[56].lowPrice = 20;
+	inventory[56].midPrice = 30;
+	inventory[56].highPrice = 50;
+	inventory[56].stock = 12;
+	inventory[56].biasFlags = 0x400;
+	// Good Brandy
+	strcpy(inventory[57].name,"Good Brandy (1 qt.)");
+	inventory[57].lowPrice = 100;
+	inventory[57].midPrice = 150;
+	inventory[57].highPrice = 300;
+	inventory[57].stock = 17;
+	inventory[57].biasFlags = 0x405;
+	// Bread
+	strcpy(inventory[58].name,"Bread (1 lb.)");
+	inventory[58].lowPrice = 5;
+	inventory[58].midPrice = 8;
+	inventory[58].highPrice = 10;
+	inventory[58].stock = 4;
+	inventory[58].biasFlags = 0x400;
+	// White Bread
+	strcpy(inventory[59].name,"White Bread (1 lb.)");
+	inventory[59].lowPrice = 10;
+	inventory[59].midPrice = 15;
+	inventory[59].highPrice = 20;
+	inventory[59].stock = 10;
+	inventory[59].biasFlags = 0x804;
+	// Butter
+	strcpy(inventory[60].name,"Butter (1 lb.)");
+	inventory[60].lowPrice = 10;
+	inventory[60].midPrice = 20;
+	inventory[60].highPrice = 30;
+	inventory[60].stock = 5;
+	inventory[60].biasFlags = 0x400;
+	// Carrots
+	strcpy(inventory[61].name,"Carrots (1 lb.)");
+	inventory[61].lowPrice = 1;
+	inventory[61].midPrice = 2;
+	inventory[61].highPrice = 4;
+	inventory[61].stock = 2;
+	inventory[61].biasFlags = 0x400;
+	// Common Cheese
+	strcpy(inventory[62].name,"Common Cheese (1 lb.)");
+	inventory[62].lowPrice = 10;
+	inventory[62].midPrice = 15;
+	inventory[62].highPrice = 20;
+	inventory[62].stock = 3;
+	inventory[62].biasFlags = 0x400;
+	// Cider
+	strcpy(inventory[63].name,"Cider (1 qt.)");
+	inventory[63].lowPrice = 20;
+	inventory[63].midPrice = 30;
+	inventory[63].highPrice = 50;
+	inventory[63].stock = 5;
+	inventory[63].biasFlags = 0x400;
+	// Coffee
+	strcpy(inventory[64].name,"Coffee (1 lb.)");
+	inventory[64].lowPrice = 20;
+	inventory[64].midPrice = 30;
+	inventory[64].highPrice = 50;
+	inventory[64].stock = 7;
+	inventory[64].biasFlags = 0x401;
+	// Corn
+	strcpy(inventory[65].name,"Corn (1 lb.)");
+	inventory[65].lowPrice = 4;
+	inventory[65].midPrice = 6;
+	inventory[65].highPrice = 8;
+	inventory[65].stock = 3;
+	inventory[65].biasFlags = 0x400;
+	// Feed Corn
+	strcpy(inventory[66].name,"Feed Corn (1 lb.)");
+	inventory[66].lowPrice = 1;
+	inventory[66].midPrice = 1;
+	inventory[66].highPrice = 2;
+	inventory[66].stock = 1;
+	inventory[66].biasFlags = 0x400;
+	// Sweet Corn
+	strcpy(inventory[67].name,"Sweet Corn (1 lb.)");
+	inventory[67].lowPrice = 8;
+	inventory[67].midPrice = 10;
+	inventory[67].highPrice = 12;
+	inventory[67].stock = 15;
+	inventory[67].biasFlags = 0x400;
+	// Eggs
+	strcpy(inventory[68].name,"Eggs (dozen)");
+	inventory[68].lowPrice = 4;
+	inventory[68].midPrice = 6;
+	inventory[68].highPrice = 9;
+	inventory[68].stock = 2;
+	inventory[68].biasFlags = 0x400;
+	// Flour
+	strcpy(inventory[69].name,"Flour (1 lb.)");
+	inventory[69].lowPrice = 4;
+	inventory[69].midPrice = 5;
+	inventory[69].highPrice = 7;
+	inventory[69].stock = 2;
+	inventory[69].biasFlags = 0x400;
+	// White Flour
+	strcpy(inventory[70].name,"White Flour (1 lb.)");
+	inventory[70].lowPrice = 8;
+	inventory[70].midPrice = 10;
+	inventory[70].highPrice = 12;
+	inventory[70].stock = 7;
+	inventory[70].biasFlags = 0x800;
+	// Garlic
+	strcpy(inventory[71].name,"Garlic (1 lb.)");
+	inventory[71].lowPrice = 2;
+	inventory[71].midPrice = 3;
+	inventory[71].highPrice = 5;
+	inventory[71].stock = 5;
+	inventory[71].biasFlags = 0x401;
+	// Gourds
+	strcpy(inventory[72].name,"Gourds (1 lb.)");
+	inventory[72].lowPrice = 7;
+	inventory[72].midPrice = 9;
+	inventory[72].highPrice = 12;
+	inventory[72].stock = 3;
+	inventory[72].biasFlags = 0x400;
+	// Grapes
+	strcpy(inventory[73].name,"Grapes (1 lb.)");
+	inventory[73].lowPrice = 1;
+	inventory[73].midPrice = 2;
+	inventory[73].highPrice = 10;
+	inventory[73].stock = 12;
+	inventory[73].biasFlags = 0x404;
+	// Greens
+	strcpy(inventory[74].name,"Greens (1 lb.)");
+	inventory[74].lowPrice = 2;
+	inventory[74].midPrice = 4;
+	inventory[74].highPrice = 6;
+	inventory[74].stock = 1;
+	inventory[74].biasFlags = 0x400;
+	// Honey
+	strcpy(inventory[75].name,"Honey (1 qt.)");
+	inventory[75].lowPrice = 6;
+	inventory[75].midPrice = 7;
+	inventory[75].highPrice = 8;
+	inventory[75].stock = 10;
+	inventory[75].biasFlags = 0x400;
+	// Mead
+	strcpy(inventory[76].name,"Mead (1 qt.)");
+	inventory[76].lowPrice = 30;
+	inventory[76].midPrice = 50;
+	inventory[76].highPrice = 80;
+	inventory[76].stock = 12;
+	inventory[76].biasFlags = 0x400;
+	// Melons
+	strcpy(inventory[77].name,"Melons (1 lb.)");
+	inventory[77].lowPrice = 7;
+	inventory[77].midPrice = 9;
+	inventory[77].highPrice = 12;
+	inventory[77].stock = 5;
+	inventory[77].biasFlags = 0x400;
+	// Milk
+	strcpy(inventory[78].name,"Milk (1 gal.)");
+	inventory[78].lowPrice = 1;
+	inventory[78].midPrice = 2;
+	inventory[78].highPrice = 4;
+	inventory[78].stock = 2;
+	inventory[78].biasFlags = 0x400;
+	// Nuts
+	strcpy(inventory[79].name,"Nuts (1 lb.)");
+	inventory[79].lowPrice = 3;
+	inventory[79].midPrice = 5;
+	inventory[79].highPrice = 8;
+	inventory[79].stock = 5;
+	inventory[79].biasFlags = 0x400;
+	// Onions
+	strcpy(inventory[80].name,"Onions (1 lb.)");
+	inventory[80].lowPrice = 1;
+	inventory[80].midPrice = 2;
+	inventory[80].highPrice = 5;
+	inventory[80].stock = 2;
+	inventory[80].biasFlags = 0x401;
+	// Orange
+	strcpy(inventory[81].name,"Oranges (1 lb.)");
+	inventory[81].lowPrice = 1;
+	inventory[81].midPrice = 2;
+	inventory[81].highPrice = 10;
+	inventory[81].stock = 15;
+	inventory[81].biasFlags = 0x404;
+	// Popcorn Kernels
+	strcpy(inventory[82].name,"Popcorn Kernels (1 lb.)");
+	inventory[82].lowPrice = 10;
+	inventory[82].midPrice = 12;
+	inventory[82].highPrice = 14;
+	inventory[82].stock = 12;
+	inventory[82].biasFlags = 0x400;
+	// Potatoes
+	strcpy(inventory[83].name,"Potatoes (1 lb.)");
+	inventory[83].lowPrice = 1;
+	inventory[83].midPrice = 2;
+	inventory[83].highPrice = 3;
+	inventory[83].stock = 1;
+	inventory[83].biasFlags = 0x400;
+	// Radish
+	strcpy(inventory[84].name,"Radish (1 lb.)");
+	inventory[84].lowPrice = 1;
+	inventory[84].midPrice = 2;
+	inventory[84].highPrice = 4;
+	inventory[84].stock = 3;
+	inventory[84].biasFlags = 0x400;
+	// Rice
+	strcpy(inventory[85].name,"Rice (1 lb.)");
+	inventory[85].lowPrice = 1;
+	inventory[85].midPrice = 1;
+	inventory[85].highPrice = 2;
+	inventory[85].stock = 2;
+	inventory[85].biasFlags = 0x400;
+	// Salt
+	strcpy(inventory[86].name,"Salt (1 lb.)");
+	inventory[86].lowPrice = 3;
+	inventory[86].midPrice = 5;
+	inventory[86].highPrice = 8;
+	inventory[86].stock = 2;
+	inventory[86].biasFlags = 0x400;
+	// Common Spice 
+	strcpy(inventory[87].name,"Common Spice (1 lb.)");
+	inventory[87].lowPrice = 80;
+	inventory[87].midPrice = 100;
+	inventory[87].highPrice = 200;
+	inventory[87].stock = 2;
+	inventory[87].biasFlags = 0x400;
+	// Uncommon Spice
+	strcpy(inventory[88].name,"Uncommon Spice (1 lb.)");
+	inventory[88].lowPrice = 100;
+	inventory[88].midPrice = 200;
+	inventory[88].highPrice = 400;
+	inventory[88].stock = 7;
+	inventory[88].biasFlags = 0x400;
+	// Common Spirit
+	strcpy(inventory[89].name,"Common Spirit (1 qt.)");
+	inventory[89].lowPrice = 20;
+	inventory[89].midPrice = 30;
+	inventory[89].highPrice = 50;
+	inventory[89].stock = 5;
+	inventory[89].biasFlags = 0x400;
+	// Good Spirit
+	strcpy(inventory[90].name,"Good Spirit (1 qt.)");
+	inventory[90].lowPrice = 50;
+	inventory[90].midPrice = 70;
+	inventory[90].highPrice = 100;
+	inventory[90].stock = 10;
+	inventory[90].biasFlags = 0x400;
+	// Tea
+	strcpy(inventory[91].name,"Tea (1 lb.)");
+	inventory[91].lowPrice = 10;
+	inventory[91].midPrice = 12;
+	inventory[91].highPrice = 15;
+	inventory[91].stock = 7;
+	inventory[91].biasFlags = 0x404;
+	// Tomato
+	strcpy(inventory[92].name,"Tomato (1 lb.)");
+	inventory[92].lowPrice = 7;
+	inventory[92].midPrice = 9;
+	inventory[92].highPrice = 12;
+	inventory[92].stock = 3;
+	inventory[92].biasFlags = 0x400;
+	// Watermelon
+	strcpy(inventory[93].name,"Watermelon (1 lb.)");
+	inventory[93].lowPrice = 5;
+	inventory[93].midPrice = 7;
+	inventory[93].highPrice = 10;
+	inventory[93].stock = 3;
+	inventory[93].biasFlags = 0x400;
+	// Wheat
+	strcpy(inventory[94].name,"Wheat (1 lb.)");
+	inventory[94].lowPrice = 1;
+	inventory[94].midPrice = 2;
+	inventory[94].highPrice = 3;
+	inventory[94].stock = 3;
+	inventory[94].biasFlags = 0x400;
+	// Common Wine
+	strcpy(inventory[95].name,"Common Wine (1 qt.)");
+	inventory[95].lowPrice = 10;
+	inventory[95].midPrice = 20;
+	inventory[95].highPrice = 30;
+	inventory[95].stock = 5;
+	inventory[95].biasFlags = 0x400;
+	// Good Wine
+	strcpy(inventory[96].name,"Good Wine (1 qt.)");
+	inventory[96].lowPrice = 70;
+	inventory[96].midPrice = 100;
+	inventory[96].highPrice = 150;
+	inventory[96].stock = 15;
+	inventory[96].biasFlags = 0x400;
+	// Yams
+	strcpy(inventory[97].name,"Yams (1 lb.)");
+	inventory[97].lowPrice = 1;
+	inventory[97].midPrice = 2;
+	inventory[97].highPrice = 4;
+	inventory[97].stock = 5;
+	inventory[97].biasFlags = 0x400;
 	
 	
 	char dividerChar = ' ';
@@ -4501,7 +5133,7 @@ void makeGeneral(FILE* storeHere, uint16_t flags){
 }
 
 void makeLeather(FILE* storeHere, uint16_t flags){
-	uint8_t inventorySize = 128;
+	uint8_t inventorySize = 28;
 	struct shopItem inventory[inventorySize];
 	// Father forgive me for i have sinned
 	for(int i = 0; i < inventorySize; ++i){
@@ -4512,21 +5144,172 @@ void makeLeather(FILE* storeHere, uint16_t flags){
 		inventory[i].stock = 0;
 		inventory[i].biasFlags = 0x8000;
 	}
-	// Armor Section Name
-	strcpy(inventory[0].name,"WEAPONS");
+	// Light Armor Section Name
+	strcpy(inventory[0].name,"LIGHT ARMOR");
 	inventory[0].lowPrice = 0;
 	inventory[0].midPrice = 0;
 	inventory[0].highPrice = 0;
 	inventory[0].stock = 0;
 	inventory[0].biasFlags = 0;
-	// Quarterstaff
-	strcpy(inventory[1].name,"Quarterstaff");
-	inventory[1].lowPrice = 10;
-	inventory[1].midPrice = 20;
-	inventory[1].highPrice = 30;
+	// Leather
+	strcpy(inventory[1].name,"Leather");
+	inventory[1].lowPrice = 700;
+	inventory[1].midPrice = 1000;
+	inventory[1].highPrice = 1500;
 	inventory[1].stock = 2;
-	inventory[1].biasFlags = 0x20;
+	inventory[1].biasFlags = 0x10;
+	// Studded Leather
+	strcpy(inventory[2].name,"Studded Leather");
+	inventory[2].lowPrice = 3300;
+	inventory[2].midPrice = 4500;
+	inventory[2].highPrice = 6800;
+	inventory[2].stock = 5;
+	inventory[2].biasFlags = 0x10;
 	
+	// Medium Armor Section Name
+	strcpy(inventory[3].name,"MEDIUM ARMOR");
+	inventory[3].lowPrice = 0;
+	inventory[3].midPrice = 0;
+	inventory[3].highPrice = 0;
+	inventory[3].stock = 0;
+	inventory[3].biasFlags = 0;
+	// Hide
+	strcpy(inventory[4].name,"Hide");
+	inventory[4].lowPrice = 700;
+	inventory[4].midPrice = 1000;
+	inventory[4].highPrice = 1500;
+	inventory[4].stock = 2;
+	inventory[4].biasFlags = 0x10;
+	
+	// Shield Armor Section Name
+	strcpy(inventory[5].name,"SHIELD");
+	inventory[5].lowPrice = 0;
+	inventory[5].midPrice = 0;
+	inventory[5].highPrice = 0;
+	inventory[5].stock = 0;
+	inventory[5].biasFlags = 0;
+	// Shield
+	strcpy(inventory[6].name,"Shield");
+	inventory[6].lowPrice = 700;
+	inventory[6].midPrice = 1000;
+	inventory[6].highPrice = 1500;
+	inventory[6].stock = 4;
+	inventory[6].biasFlags = 0x10;
+	
+	// Weapons Section Name
+	strcpy(inventory[7].name,"WEAPONS");
+	inventory[7].lowPrice = 0;
+	inventory[7].midPrice = 0;
+	inventory[7].highPrice = 0;
+	inventory[7].stock = 0;
+	inventory[7].biasFlags = 0;
+	// Hide
+	strcpy(inventory[8].name,"Sling");
+	inventory[8].lowPrice = 7;
+	inventory[8].midPrice = 10;
+	inventory[8].highPrice = 20;
+	inventory[8].stock = 5;
+	inventory[8].biasFlags = 0x10;
+	
+	// Gear Section Name
+	strcpy(inventory[11].name,"GEAR");
+	inventory[11].lowPrice = 0;
+	inventory[11].midPrice = 0;
+	inventory[11].highPrice = 0;
+	inventory[11].stock = 0;
+	inventory[11].biasFlags = 0;
+	// Barding
+	strcpy(inventory[12].name,"Barding (Mount Armor)");
+	inventory[12].lowPrice = 0;
+	inventory[12].midPrice = 0;
+	inventory[12].highPrice = 0;
+	inventory[12].stock = 15;
+	inventory[12].biasFlags = 0x14;
+	// Bit and Bridle
+	strcpy(inventory[13].name,"Bit & Bridle");
+	inventory[13].lowPrice = 100;
+	inventory[13].midPrice = 200;
+	inventory[13].highPrice = 300;
+	inventory[13].stock = 5;
+	inventory[13].biasFlags = 0x14;
+	// Pack Saddle
+	strcpy(inventory[14].name,"Pack Saddle");
+	inventory[14].lowPrice = 300;
+	inventory[14].midPrice = 500;
+	inventory[14].highPrice = 1000;
+	inventory[14].stock = 2;
+	inventory[14].biasFlags = 0x10;
+	// Riding Saddle
+	strcpy(inventory[15].name,"Riding Saddle");
+	inventory[15].lowPrice = 800;
+	inventory[15].midPrice = 1000;
+	inventory[15].highPrice = 1500;
+	inventory[15].stock = 5;
+	inventory[15].biasFlags = 0x04;
+	// Military Saddle
+	strcpy(inventory[16].name,"Military Saddle");
+	inventory[16].lowPrice = 1500;
+	inventory[16].midPrice = 2000;
+	inventory[16].highPrice = 3000;
+	inventory[16].stock = 10;
+	inventory[16].biasFlags = 0x14;
+	// Exotic Saddle
+	strcpy(inventory[17].name,"Exotic Saddle");
+	inventory[17].lowPrice = 5000;
+	inventory[17].midPrice = 6000;
+	inventory[17].highPrice = 8000;
+	inventory[17].stock = 17;
+	inventory[17].biasFlags = 0x1D;
+	// Saddlebags
+	strcpy(inventory[18].name,"Saddlebags");
+	inventory[18].lowPrice = 200;
+	inventory[18].midPrice = 400;
+	inventory[18].highPrice = 700;
+	inventory[18].stock = 5;
+	inventory[18].biasFlags = 0x10;
+	// Waterskin
+	strcpy(inventory[19].name,"Waterskin");
+	inventory[19].lowPrice = 10;
+	inventory[19].midPrice = 20;
+	inventory[19].highPrice = 30;
+	inventory[19].stock = 1;
+	inventory[19].biasFlags = 0x10;
+	
+	// Tools Section Name
+	strcpy(inventory[23].name,"TOOLS");
+	inventory[23].lowPrice = 0;
+	inventory[23].midPrice = 0;
+	inventory[23].highPrice = 0;
+	inventory[23].stock = 0;
+	inventory[23].biasFlags = 0;
+	// Bagpipes
+	strcpy(inventory[24].name,"Bagpipes");
+	inventory[24].lowPrice = 2200;
+	inventory[24].midPrice = 3000;
+	inventory[24].highPrice = 4500;
+	inventory[24].stock = 20;
+	inventory[24].biasFlags = 0x111;
+	// Cobbler's Tools
+	strcpy(inventory[25].name,"Cobbler's Tools");
+	inventory[25].lowPrice = 300;
+	inventory[25].midPrice = 500;
+	inventory[25].highPrice = 800;
+	inventory[25].stock = 5;
+	inventory[25].biasFlags = 0x0;
+	// Drums
+	strcpy(inventory[26].name,"Drums");
+	inventory[26].lowPrice = 400;
+	inventory[26].midPrice = 600;
+	inventory[26].highPrice = 900;
+	inventory[26].stock = 4;
+	inventory[26].biasFlags = 0x0;
+	// Leatherworker's Tools
+	strcpy(inventory[27].name,"Leatherworker's Tools");
+	inventory[27].lowPrice = 300;
+	inventory[27].midPrice = 500;
+	inventory[27].highPrice = 800;
+	inventory[27].stock = 2;
+	inventory[27].biasFlags = 0x0;
 	
 	char dividerChar = ' ';
 	fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
@@ -4551,14 +5334,26 @@ void makeLeather(FILE* storeHere, uint16_t flags){
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
-				fprintf(storeHere, "%32s", inventory[i].name);
-				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
-				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
-				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
-				fprintf(storeHere, "\n");
+				if (strcmp(inventory[i].name,"Barding (Mount Armor)")){
+					fprintf(storeHere, "%32s", inventory[i].name);
+					fprintf(storeHere, "%c", dividerChar);
+					convertFromCp(inventory[i].lowPrice, storeHere);
+					fprintf(storeHere, "%c", dividerChar);
+					convertFromCp(inventory[i].midPrice, storeHere);
+					fprintf(storeHere, "%c", dividerChar);
+					convertFromCp(inventory[i].highPrice, storeHere);
+					fprintf(storeHere, "\n");
+				}
+				else { // Is Barding
+					fprintf(storeHere, "%32s", inventory[i].name);
+					fprintf(storeHere, "%c", dividerChar);
+					fprintf(storeHere, "%9s", "3x MtCost");
+					fprintf(storeHere, "%c", dividerChar);
+					fprintf(storeHere, "%9s", "4x MtCost");
+					fprintf(storeHere, "%c", dividerChar);
+					fprintf(storeHere, "%9s", "5x MtCost");
+					fprintf(storeHere, "\n");
+				}
 			}
 			else { // Item is out of stock or error
 				if (inventory[i].stock <= 20){ // Item out of stock
@@ -4578,7 +5373,7 @@ void makeLeather(FILE* storeHere, uint16_t flags){
 }
 
 void makeMusic(FILE* storeHere, uint16_t flags){
-	uint8_t inventorySize = 128;
+	uint8_t inventorySize = 33;
 	struct shopItem inventory[inventorySize];
 	// Father forgive me for i have sinned
 	for(int i = 0; i < inventorySize; ++i){
@@ -4589,20 +5384,184 @@ void makeMusic(FILE* storeHere, uint16_t flags){
 		inventory[i].stock = 0;
 		inventory[i].biasFlags = 0x8000;
 	}
-	// Armor Section Name
-	strcpy(inventory[0].name,"WEAPONS");
+	// Instruments Section Name
+	strcpy(inventory[0].name,"INSTRUMENTS");
 	inventory[0].lowPrice = 0;
 	inventory[0].midPrice = 0;
 	inventory[0].highPrice = 0;
 	inventory[0].stock = 0;
 	inventory[0].biasFlags = 0;
-	// Quarterstaff
-	strcpy(inventory[1].name,"Quarterstaff");
-	inventory[1].lowPrice = 10;
-	inventory[1].midPrice = 20;
-	inventory[1].highPrice = 30;
-	inventory[1].stock = 2;
-	inventory[1].biasFlags = 0x20;
+	// Bagpipes
+	strcpy(inventory[1].name,"Bagpipes");
+	inventory[1].lowPrice = 2200;
+	inventory[1].midPrice = 3000;
+	inventory[1].highPrice = 4500;
+	inventory[1].stock = 10;
+	inventory[1].biasFlags = 0x10;
+	// Drum
+	strcpy(inventory[2].name,"Drum");
+	inventory[2].lowPrice = 400;
+	inventory[2].midPrice = 600;
+	inventory[2].highPrice = 900;
+	inventory[2].stock = 1;
+	inventory[2].biasFlags = 0x10;
+	// Dulcimer
+	strcpy(inventory[3].name,"Dulcimer");
+	inventory[3].lowPrice = 400;
+	inventory[3].midPrice = 600;
+	inventory[3].highPrice = 900;
+	inventory[3].stock = 7;
+	inventory[3].biasFlags = 0x4;
+	// Flute
+	strcpy(inventory[4].name,"Flute");
+	inventory[4].lowPrice = 100;
+	inventory[4].midPrice = 200;
+	inventory[4].highPrice = 300;
+	inventory[4].stock = 1;
+	inventory[4].biasFlags = 0x1;
+	// Glockenspiel
+	strcpy(inventory[5].name,"Glockenspiel");
+	inventory[5].lowPrice = 800;
+	inventory[5].midPrice = 1000;
+	inventory[5].highPrice = 1500;
+	inventory[5].stock = 5;
+	inventory[5].biasFlags = 0x4;
+	// Horn
+	strcpy(inventory[6].name,"Horn");
+	inventory[6].lowPrice = 200;
+	inventory[6].midPrice = 300;
+	inventory[6].highPrice = 500;
+	inventory[6].stock = 1;
+	inventory[6].biasFlags = 0x4;
+	// Hurdy Gurdy
+	strcpy(inventory[7].name,"Hurdy Gurdy");
+	inventory[7].lowPrice = 2600;
+	inventory[7].midPrice = 3500;
+	inventory[7].highPrice = 5200;
+	inventory[7].stock = 15;
+	inventory[7].biasFlags = 0x4;
+	// Lute
+	strcpy(inventory[8].name,"Lute");
+	inventory[8].lowPrice = 2600;
+	inventory[8].midPrice = 3500;
+	inventory[8].highPrice = 5200;
+	inventory[8].stock = 15;
+	inventory[8].biasFlags = 0x4;
+	// Lyre
+	strcpy(inventory[9].name,"Lyre");
+	inventory[9].lowPrice = 2200;
+	inventory[9].midPrice = 3000;
+	inventory[9].highPrice = 4500;
+	inventory[9].stock = 5;
+	inventory[9].biasFlags = 0x4;
+	// Mandolin
+	strcpy(inventory[10].name,"Mandolin");
+	inventory[10].lowPrice = 2200;
+	inventory[10].midPrice = 3000;
+	inventory[10].highPrice = 4500;
+	inventory[10].stock = 5;
+	inventory[10].biasFlags = 0x4;
+	// Oboe
+	strcpy(inventory[11].name,"Oboe");
+	inventory[11].lowPrice = 1500;
+	inventory[11].midPrice = 2000;
+	inventory[11].highPrice = 3000;
+	inventory[11].stock = 5;
+	inventory[11].biasFlags = 0x4;
+	// Ocarina
+	strcpy(inventory[12].name,"Ocarina");
+	inventory[12].lowPrice = 900;
+	inventory[12].midPrice = 1200;
+	inventory[12].highPrice = 1800;
+	inventory[12].stock = 5;
+	inventory[12].biasFlags = 0x4;
+	// Pan Flute
+	strcpy(inventory[13].name,"Pan Flute");
+	inventory[13].lowPrice = 900;
+	inventory[13].midPrice = 1200;
+	inventory[13].highPrice = 1800;
+	inventory[13].stock = 10;
+	inventory[13].biasFlags = 0x4;
+	// Shawm
+	strcpy(inventory[14].name,"Shawm");
+	inventory[14].lowPrice = 100;
+	inventory[14].midPrice = 200;
+	inventory[14].highPrice = 300;
+	inventory[14].stock = 2;
+	inventory[14].biasFlags = 0x4;
+	// Trombone
+	strcpy(inventory[15].name,"Trombone");
+	inventory[15].lowPrice = 2200;
+	inventory[15].midPrice = 3000;
+	inventory[15].highPrice = 4500;
+	inventory[15].stock = 10;
+	inventory[15].biasFlags = 0x4;
+	// Trumpet
+	strcpy(inventory[16].name,"Trumpet");
+	inventory[16].lowPrice = 1500;
+	inventory[16].midPrice = 2000;
+	inventory[16].highPrice = 3000;
+	inventory[16].stock = 7;
+	inventory[16].biasFlags = 0x14;
+	// Tuba
+	strcpy(inventory[17].name,"Tuba");
+	inventory[17].lowPrice = 2200;
+	inventory[17].midPrice = 3000;
+	inventory[17].highPrice = 4500;
+	inventory[17].stock = 10;
+	inventory[17].biasFlags = 0x4;
+	// Viol
+	strcpy(inventory[18].name,"Viol");
+	inventory[18].lowPrice = 2200;
+	inventory[18].midPrice = 3000;
+	inventory[18].highPrice = 4500;
+	inventory[18].stock = 5;
+	inventory[18].biasFlags = 0x4;
+	
+	// Tools Section Header
+	strcpy(inventory[23].name,"TOOLS");
+	inventory[23].lowPrice = 0;
+	inventory[23].midPrice = 0;
+	inventory[23].highPrice = 0;
+	inventory[23].stock = 0;
+	inventory[23].biasFlags = 0;
+	// Leatherworker's Tools
+	strcpy(inventory[24].name,"Leatherworker's Tools");
+	inventory[24].lowPrice = 300;
+	inventory[24].midPrice = 500;
+	inventory[24].highPrice = 800;
+	inventory[24].stock = 15;
+	inventory[24].biasFlags = 0x4;
+	// Tinker's Tools
+	strcpy(inventory[25].name,"Tinker's Tools");
+	inventory[25].lowPrice = 3800;
+	inventory[25].midPrice = 5000;
+	inventory[25].highPrice = 7500;
+	inventory[25].stock = 12;
+	inventory[25].biasFlags = 0x4;
+	// Leatherworker's Tools
+	strcpy(inventory[26].name,"Smith's Tools");
+	inventory[26].lowPrice = 700;
+	inventory[26].midPrice = 1500;
+	inventory[26].highPrice = 2000;
+	inventory[26].stock = 15;
+	inventory[26].biasFlags = 0x4;
+	
+	// Services Section Header
+	strcpy(inventory[31].name,"SERVICES");
+	inventory[31].lowPrice = 0;
+	inventory[31].midPrice = 0;
+	inventory[31].highPrice = 0;
+	inventory[31].stock = 0;
+	inventory[31].biasFlags = 0;
+	// Leatherworker's Tools
+	strcpy(inventory[32].name,"Music Lesson");
+	inventory[32].lowPrice = 50;
+	inventory[32].midPrice = 100;
+	inventory[32].highPrice = 200;
+	inventory[32].stock = 7;
+	inventory[32].biasFlags = 0x4;
+	
 	
 	
 	char dividerChar = ' ';
@@ -5088,7 +6047,7 @@ int main(int argc, char* argv[]){
 				fprintf(shopFile, "The ");
 				shopnameGen(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
-				makeFletcher(shopFile, flags);
+				makeGeneral(shopFile, flags);
 				break;
 			case 10:
 				fprintf(shopFile, "Leatherworker's Shop\n");
