@@ -1,0 +1,23 @@
+Tailor
+The Ideal Fairy
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Backpack      1 gp      2 gp      3 gp
+                          Basket      3 sp      4 sp      6 sp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                           Pouch      3 sp      5 sp      8 sp
+                            Sack      1 cp      1 cp      2 cp
+                            Tent      1 gp      2 gp      3 gp
+CLOTHES                         
+                          Common      3 sp      5 sp      8 sp
+                            Fine     13 gp     15 gp     23 gp
+                           Robes      7 sp      1 gp      2 gp
+                      Traveler's      1 gp      2 gp      3 gp
+TOOLS                           
+                  Weaver's Tools      7 sp      1 gp      2 gp
+TEXTILES                        
+              Canvas (1 sq. yd.)      7 cp      1 sp      2 sp
+               Linen (1 sq. yd.)      4 gp      5 gp      7 gp
+
+Questions? See the Demagus True Reference PDF

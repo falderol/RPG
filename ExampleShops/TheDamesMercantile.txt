@@ -1,0 +1,87 @@
+Blacksmith
+The Dame's Mercantile
+            Item Name                 Low       Mid       High   
+LIGHT ARMOR                     
+                 Studded Leather     33 gp     45 gp     68 gp
+MEDIUM ARMOR                    
+                     Chain Shirt     38 gp      5 pp     75 gp
+                      Scale Mail     38 gp      5 pp     75 gp
+                     Breastplate     30 pp     40 pp     60 pp
+                       Halfplate     56 pp     75 pp    112 pp
+HEAVY ARMOR                     
+                       Ring Mail     22 gp      3 pp     45 gp
+                      Chain Mail     56 gp     75 gp    112 gp
+                          Splint     15 pp     20 pp     30 pp
+                           Plate   1125 gp    150 pp    225 pp
+SHIELD                          
+                          Shield      7 gp      1 pp     15 gp
+SIMPLE WEAPONS                  
+                          Dagger      1 gp      2 gp      3 gp
+                         Handaxe      3 gp      5 gp      8 gp
+                         Javelin      3 gp      5 gp      8 gp
+                    Light Hammer      1 gp      2 gp      3 gp
+                            Mace      3 gp      5 gp      8 gp
+                          Sickle      7 sp      1 gp      2 gp
+                           Spear      7 sp      1 gp      2 gp
+MARTIAL WEAPONS                 
+                       Battleaxe      7 gp      1 pp     15 gp
+                           Flail      7 gp      1 pp     15 gp
+                          Glaive     15 gp      2 pp      3 pp
+                        Greataxe     22 gp      3 pp     45 gp
+                      Greatsword     38 gp      5 pp     75 gp
+                         Halberd     15 gp      2 pp      3 pp
+                           Lance      7 gp      1 pp     15 gp
+                       Longsword     11 gp     15 gp     22 gp
+                            Maul      7 gp      1 pp     15 gp
+                     Morningstar     15 gp      2 pp      3 pp
+                            Pike      3 gp      5 gp      8 gp
+                          Rapier     18 gp     25 gp     38 gp
+                        Scimitar     18 gp     25 gp     38 gp
+                      Shortsword      7 gp      1 pp     15 gp
+                         Trident      3 gp      5 gp      8 gp
+                        War Pick      3 gp      5 gp      3 pp
+                       Warhammer     11 gp     15 gp     22 gp
+GEAR                            
+           Ball Bearings (1,000)      7 sp      1 gp      2 gp
+                            Bell      7 sp      1 gp      2 gp
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                         Crowbar      1 gp      2 gp      3 gp
+                  Grappling Hook      1 gp      2 gp      3 gp
+                          Hammer      7 sp      1 gp      2 gp
+                    Hunting Trap      3 gp      5 gp      8 gp
+                            Lamp      3 sp      5 sp      8 sp
+              Lantern (bullseye)      7 gp      1 pp     15 gp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                            Lock      7 gp      1 pp     15 gp
+                        Manacles      1 gp      2 gp      3 gp
+                  Mirror (steel)      3 gp      5 gp      8 gp
+                     Mining Pick      1 gp      2 gp      3 gp
+                           Piton      3 cp      5 cp      8 cp
+                      Pot (iron)      1 gp      2 gp      3 gp
+                          Pulley      7 sp      1 gp      2 gp
+                    Sledgehammer      1 gp      2 gp      3 gp
+                   Spikes (iron)      7 sp      1 gp      2 gp
+                       Whetstone      1 cp      1 cp      2 cp
+TOOLS                           
+               Carpenter's Tools      6 gp      8 gp     12 gp
+                            Horn      7 gp      1 pp     15 gp
+                   Mason's Tools      7 gp      1 pp     15 gp
+                   Smith's Tools     15 gp      2 pp      3 pp
+                  Tinker's Tools     38 gp      5 pp     75 gp
+METALS                          
+              Adamantine (1 lb.)     60 pp     80 pp    110 pp
+                Aluminum (1 lb.)      6 gp      1 pp      2 pp
+                  Bronze (1 lb.)      8 sp      1 gp      2 gp
+                  Bronze (1 lb.)      8 sp      1 gp      2 gp
+                  Copper (1 lb.)      3 sp      5 sp      8 sp
+                    Gold (1 lb.)      3 pp      5 pp      8 pp
+                    Iron (1 lb.)      7 cp      1 sp      2 sp
+                    Lead (1 lb.)      3 sp      5 sp      8 sp
+                  Bronze (1 lb.)      5 gp      7 gp      1 pp
+                 Mithral (1 lb.)     30 pp     50 pp     80 pp
+                Platinum (1 lb.)     30 pp     50 pp     80 pp
+                  Silver (1 lb.)      3 gp      5 gp      8 gp
+                   Steel (1 lb.)      1 gp      2 gp      3 gp
+                     Tin (1 lb.)      1 gp      2 gp      4 gp
+
+Questions? See the Demagus True Reference PDF

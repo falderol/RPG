@@ -1,0 +1,20 @@
+Arcana Shop
+The Only Rabbit
+            Item Name                 Low       Mid       High   
+WEAPONS                         
+                    Quarterstaff      1 sp      2 sp      3 sp
+GEAR                            
+                          Candle      1 cp      1 cp      2 cp
+                         Crystal      7 gp      1 pp     15 gp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                           Staff      3 gp      5 gp      8 gp
+                           Totem      7 sp      1 gp      2 gp
+                          Abacus      7 gp      1 pp     15 gp
+TOOLS                           
+MAGIC SCROLLS                   
+                         Cantrip     38 gp      5 pp     75 gp
+SERVICES                        
+                        Identify     75 gp     10 pp     15 pp
+
+Questions? See the Demagus True Reference PDF

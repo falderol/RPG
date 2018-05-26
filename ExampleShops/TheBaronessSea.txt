@@ -1,0 +1,12 @@
+Music Store
+The Baroness' Sea
+            Item Name                 Low       Mid       High   
+INSTRUMENTS                     
+                            Drum      4 gp      6 gp      9 gp
+                           Flute      1 gp      2 gp      3 gp
+                            Horn      2 gp      3 gp      5 gp
+                           Shawm      1 gp      2 gp      3 gp
+TOOLS                           
+SERVICES                        
+
+Questions? See the Demagus True Reference PDF

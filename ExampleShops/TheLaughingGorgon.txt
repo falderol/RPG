@@ -1,0 +1,29 @@
+Bookstore
+The Laughing Gorgon
+            Item Name                 Low       Mid       High   
+GEAR                            
+                          Candle      1 cp      1 cp      2 cp
+                    Case (scroll      7 sp      1 gp      2 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                Magnifying Glass      9 pp     10 pp    125 gp
+                       Spellbook      3 pp      5 pp      7 pp
+TOOLS                           
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+            Cartographer's Tools     11 gp     15 gp     23 gp
+             Draughtsman's Tools     11 gp     15 gp     23 gp
+                  Tinker's Tools     38 gp      5 pp     75 gp
+SERVICES                        
+                  Book Appraisal      0 pp      1 cp      1 cp
+                    Book Binding      7 gp      1 pp     15 gp
+                Book Translation      7 gp      1 pp     15 gp
+BOOKS                           
+                    Common Books      2 pp      3 pp      5 pp
+                  Uncommon Books      7 pp     10 pp     15 pp
+                      Rare Books     90 pp    100 pp    150 pp
+                 Very Rare Books    400 pp    500 pp    750 pp
+                 Legendary Books    900 pp   1000 pp   2000 pp
+
+Questions? See the Demagus True Reference PDF

@@ -1,0 +1,26 @@
+Blacksmith
+The Island Messenger
+            Item Name                 Low       Mid       High   
+LIGHT ARMOR                     
+MEDIUM ARMOR                    
+                     Chain Shirt     38 gp      5 pp     75 gp
+                     Breastplate     30 pp     40 pp     60 pp
+HEAVY ARMOR                     
+SHIELD                          
+                          Shield      7 gp      1 pp     15 gp
+SIMPLE WEAPONS                  
+                         Handaxe      3 gp      5 gp      8 gp
+MARTIAL WEAPONS                 
+                      Greatsword     38 gp      5 pp     75 gp
+                       Longsword     11 gp     15 gp     22 gp
+                      Shortsword      7 gp      1 pp     15 gp
+GEAR                            
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                         Crowbar      1 gp      2 gp      3 gp
+                          Hammer      7 sp      1 gp      2 gp
+                            Lamp      3 sp      5 sp      8 sp
+                       Whetstone      1 cp      1 cp      2 cp
+TOOLS                           
+METALS                          
+
+Questions? See the Demagus True Reference PDF
