@@ -45,6 +45,11 @@ struct shopItem{
 	// Bit 15 - Invalid
 };
 
+struct gemstone{
+	char name[17];
+	uint8_t amount;
+};
+
 void convertFromCp(uint32_t cp, FILE * storeHere){
 	if(cp%10 == 0){ // can convert to sp
 		if(cp%100 == 0){ // can convert to gp
@@ -6449,7 +6454,7 @@ void makeTavern(FILE* storeHere, uint16_t flags){
 }
 
 void makeShrine(FILE* storeHere, uint16_t flags){
-	uint8_t inventorySize = 128;
+	uint8_t inventorySize = 33;
 	struct shopItem inventory[inventorySize];
 	// Father forgive me for i have sinned
 	for(int i = 0; i < inventorySize; ++i){
@@ -6460,21 +6465,224 @@ void makeShrine(FILE* storeHere, uint16_t flags){
 		inventory[i].stock = 0;
 		inventory[i].biasFlags = 0x8000;
 	}
-	// Armor Section Name
-	strcpy(inventory[0].name,"WEAPONS");
+	// Gear Section Name
+	strcpy(inventory[0].name,"GEAR");
 	inventory[0].lowPrice = 0;
 	inventory[0].midPrice = 0;
 	inventory[0].highPrice = 0;
 	inventory[0].stock = 0;
 	inventory[0].biasFlags = 0;
-	// Quarterstaff
-	strcpy(inventory[1].name,"Quarterstaff");
-	inventory[1].lowPrice = 10;
-	inventory[1].midPrice = 20;
-	inventory[1].highPrice = 30;
-	inventory[1].stock = 2;
-	inventory[1].biasFlags = 0x20;
+	// Alms Box
+	strcpy(inventory[1].name,"Alms Box");
+	inventory[1].lowPrice = 300;
+	inventory[1].midPrice = 500;
+	inventory[1].highPrice = 800;
+	inventory[1].stock = 8;
+	inventory[1].biasFlags = 0x104;
+	// Bell
+	strcpy(inventory[2].name,"Bell");
+	inventory[2].lowPrice = 70;
+	inventory[2].midPrice = 100;
+	inventory[2].highPrice = 200;
+	inventory[2].stock = 5;
+	inventory[2].biasFlags = 0x100;
+	// Blanket
+	strcpy(inventory[3].name,"Blanket");
+	inventory[3].lowPrice = 30;
+	inventory[3].midPrice = 50;
+	inventory[3].highPrice = 80;
+	inventory[3].stock = 3;
+	inventory[3].biasFlags = 0x100;
+	// Book of Scripture
+	strcpy(inventory[4].name,"Book of Scripture");
+	inventory[4].lowPrice = 1800;
+	inventory[4].midPrice = 2500;
+	inventory[4].highPrice = 3800;
+	inventory[4].stock = 1;
+	inventory[4].biasFlags = 0x100;
+	// Scroll Case
+	strcpy(inventory[5].name,"Scroll Case");
+	inventory[5].lowPrice = 70;
+	inventory[5].midPrice = 100;
+	inventory[5].highPrice = 200;
+	inventory[5].stock = 5;
+	inventory[5].biasFlags = 0x100;
+	// Censer
+	strcpy(inventory[6].name,"Censer");
+	inventory[6].lowPrice = 30;
+	inventory[6].midPrice = 50;
+	inventory[6].highPrice = 200;
+	inventory[6].stock = 3;
+	inventory[6].biasFlags = 0x100;
+	// Chalk
+	strcpy(inventory[7].name,"Chalk (1)");
+	inventory[7].lowPrice = 1;
+	inventory[7].midPrice = 1;
+	inventory[7].highPrice = 2;
+	inventory[7].stock = 5;
+	inventory[7].biasFlags = 0x100;
+	// Flask
+	strcpy(inventory[8].name,"Flask");
+	inventory[8].lowPrice = 1;
+	inventory[8].midPrice = 2;
+	inventory[8].highPrice = 2;
+	inventory[8].stock = 2;
+	inventory[8].biasFlags = 0x100;
+	// Healer's Kit
+	strcpy(inventory[9].name,"Healer's Kit");
+	inventory[9].lowPrice = 30;
+	inventory[9].midPrice = 50;
+	inventory[9].highPrice = 80;
+	inventory[9].stock = 3;
+	inventory[9].biasFlags = 0x140;
+	// Holy Symbol
+	strcpy(inventory[10].name,"Holy Symbol");
+	inventory[10].lowPrice = 300;
+	inventory[10].midPrice = 500;
+	inventory[10].highPrice = 800;
+	inventory[10].stock = 1;
+	inventory[10].biasFlags = 0x100;
+	// Holy Water
+	strcpy(inventory[11].name,"Holy Water (flask)");
+	inventory[11].lowPrice = 1800;
+	inventory[11].midPrice = 2500;
+	inventory[11].highPrice = 3800;
+	inventory[11].stock = 1;
+	inventory[11].biasFlags = 0x100;
+	// Incense
+	strcpy(inventory[12].name,"Incense (block)");
+	inventory[12].lowPrice = 1;
+	inventory[12].midPrice = 1;
+	inventory[12].highPrice = 2;
+	inventory[12].stock = 8;
+	inventory[12].biasFlags = 0x101;
+	// Ink
+	strcpy(inventory[13].name,"Ink (1 fl. oz.)");
+	inventory[13].lowPrice = 700;
+	inventory[13].midPrice = 1000;
+	inventory[13].highPrice = 1500;
+	inventory[13].stock = 5;
+	inventory[13].biasFlags = 0x141;
+	// Ink Pen
+	strcpy(inventory[14].name,"Ink Pen");
+	inventory[14].lowPrice = 1;
+	inventory[14].midPrice = 2;
+	inventory[14].highPrice = 3;
+	inventory[14].stock = 5;
+	inventory[14].biasFlags = 0x141;
+	// Hooded Lantern
+	strcpy(inventory[15].name,"Lantern (hooded)");
+	inventory[15].lowPrice = 300;
+	inventory[15].midPrice = 500;
+	inventory[15].highPrice = 800;
+	inventory[15].stock = 5;
+	inventory[15].biasFlags = 0x185;
+	// Oil
+	strcpy(inventory[16].name,"Oil (flask)");
+	inventory[16].lowPrice = 7;
+	inventory[16].midPrice = 10;
+	inventory[16].highPrice = 20;
+	inventory[16].stock = 2;
+	inventory[16].biasFlags = 0x100;
+	// Paper
+	strcpy(inventory[17].name,"Paper (1)");
+	inventory[17].lowPrice = 10;
+	inventory[17].midPrice = 20;
+	inventory[17].highPrice = 30;
+	inventory[17].stock = 15;
+	inventory[17].biasFlags = 0x141;
+	// Parchment
+	strcpy(inventory[18].name,"Parchment (1)");
+	inventory[18].lowPrice = 7;
+	inventory[18].midPrice = 10;
+	inventory[18].highPrice = 20;
+	inventory[18].stock = 5;
+	inventory[18].biasFlags = 0x141;
+	// Perfume
+	strcpy(inventory[19].name,"Perfume (vial)");
+	inventory[19].lowPrice = 300;
+	inventory[19].midPrice = 500;
+	inventory[19].highPrice = 800;
+	inventory[19].stock = 18;
+	inventory[19].biasFlags = 0x945;
+	// Potion of Healing
+	strcpy(inventory[20].name,"Potion of Healing");
+	inventory[20].lowPrice = 3800;
+	inventory[20].midPrice = 5000;
+	inventory[20].highPrice = 7500;
+	inventory[20].stock = 15;
+	inventory[20].biasFlags = 0x141;
+	// Ration
+	strcpy(inventory[21].name,"Ration");
+	inventory[21].lowPrice = 30;
+	inventory[21].midPrice = 50;
+	inventory[21].highPrice = 80;
+	inventory[21].stock = 5;
+	inventory[21].biasFlags = 0x110;
+	// Torch
+	strcpy(inventory[22].name,"Torch");
+	inventory[22].lowPrice = 1;
+	inventory[22].midPrice = 1;
+	inventory[22].highPrice = 2;
+	inventory[22].stock = 3;
+	inventory[22].biasFlags = 0x0;
+	// Vial
+	strcpy(inventory[23].name,"Vial");
+	inventory[23].lowPrice = 70;
+	inventory[23].midPrice = 100;
+	inventory[23].highPrice = 200;
+	inventory[23].stock = 2;
+	inventory[23].biasFlags = 0x0;
+	// Waterskin
+	strcpy(inventory[24].name,"Waterskin");
+	inventory[24].lowPrice = 10;
+	inventory[24].midPrice = 20;
+	inventory[24].highPrice = 30;
+	inventory[24].stock = 3;
+	inventory[24].biasFlags = 0x10;
 	
+	// Tools Section Header
+	strcpy(inventory[27].name,"TOOLS");
+	inventory[27].lowPrice = 0;
+	inventory[27].midPrice = 0;
+	inventory[27].highPrice = 0;
+	inventory[27].stock = 0;
+	inventory[27].biasFlags = 0;
+	// Calligrapher's Supplies
+	strcpy(inventory[28].name,"Calligrapher's Supplies");
+	inventory[28].lowPrice = 700;
+	inventory[28].midPrice = 1000;
+	inventory[28].highPrice = 1500;
+	inventory[28].stock = 8;
+	inventory[28].biasFlags = 0x100;
+	// Flute
+	strcpy(inventory[29].name,"Flute");
+	inventory[29].lowPrice = 100;
+	inventory[29].midPrice = 200;
+	inventory[29].highPrice = 300;
+	inventory[29].stock = 15;
+	inventory[29].biasFlags = 0x0;
+	// Herbalism Kit
+	strcpy(inventory[30].name,"Herbalism Kit");
+	inventory[30].lowPrice = 300;
+	inventory[30].midPrice = 500;
+	inventory[30].highPrice = 800;
+	inventory[30].stock = 5;
+	inventory[30].biasFlags = 0x10;
+	// Horn
+	strcpy(inventory[31].name,"Horn");
+	inventory[31].lowPrice = 200;
+	inventory[31].midPrice = 300;
+	inventory[31].highPrice = 500;
+	inventory[31].stock = 15;
+	inventory[31].biasFlags = 0x0;
+	// Lyre
+	strcpy(inventory[32].name,"Lyre");
+	inventory[32].lowPrice = 2200;
+	inventory[32].midPrice = 3000;
+	inventory[32].highPrice = 4500;
+	inventory[32].stock = 18;
+	inventory[32].biasFlags = 0x0;
 	
 	char dividerChar = ' ';
 	fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
@@ -6537,21 +6745,134 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 		inventory[i].stock = 0;
 		inventory[i].biasFlags = 0x8000;
 	}
-	// Armor Section Name
-	strcpy(inventory[0].name,"WEAPONS");
+	// Gear Section Name
+	strcpy(inventory[0].name,"GEAR");
 	inventory[0].lowPrice = 0;
 	inventory[0].midPrice = 0;
 	inventory[0].highPrice = 0;
 	inventory[0].stock = 0;
 	inventory[0].biasFlags = 0;
-	// Quarterstaff
-	strcpy(inventory[1].name,"Quarterstaff");
-	inventory[1].lowPrice = 10;
-	inventory[1].midPrice = 20;
-	inventory[1].highPrice = 30;
-	inventory[1].stock = 2;
-	inventory[1].biasFlags = 0x20;
+	// Arcane Crystal
+	strcpy(inventory[1].name,"Crystal (arcane)");
+	inventory[1].lowPrice = 800;
+	inventory[1].midPrice = 1000;
+	inventory[1].highPrice = 1500;
+	inventory[1].stock = 5;
+	inventory[1].biasFlags = 0x21;
+	// Gold Earrings
+	strcpy(inventory[2].name,"Gold Earings");
+	inventory[2].lowPrice = 300;
+	inventory[2].midPrice = 400;
+	inventory[2].highPrice = 600;
+	inventory[2].stock = 5;
+	inventory[2].biasFlags = 0xC0;
+	// Gold Necklace
+	strcpy(inventory[3].name,"Gold Necklace");
+	inventory[3].lowPrice = 300;
+	inventory[3].midPrice = 500;
+	inventory[3].highPrice = 800;
+	inventory[3].stock = 5;
+	inventory[3].biasFlags = 0xC0;
+	// Gold Ring
+	strcpy(inventory[4].name,"Gold Ring");
+	inventory[4].lowPrice = 200;
+	inventory[4].midPrice = 300;
+	inventory[4].highPrice = 400;
+	inventory[4].stock = 5;
+	inventory[4].biasFlags = 0xC1;
+	// Arcane Orb
+	strcpy(inventory[5].name,"Orb (arcane)");
+	inventory[5].lowPrice = 1500;
+	inventory[5].midPrice = 2000;
+	inventory[5].highPrice = 3000;
+	inventory[5].stock = 15;
+	inventory[5].biasFlags = 0x21;
+	// Platinum Earrings
+	strcpy(inventory[6].name,"Platinum Earings");
+	inventory[6].lowPrice = 3000;
+	inventory[6].midPrice = 4000;
+	inventory[6].highPrice = 6000;
+	inventory[6].stock = 15;
+	inventory[6].biasFlags = 0xC0;
+	// Platinum Necklace
+	strcpy(inventory[7].name,"Platinum Necklace");
+	inventory[7].lowPrice = 3000;
+	inventory[7].midPrice = 5000;
+	inventory[7].highPrice = 8000;
+	inventory[7].stock = 15;
+	inventory[7].biasFlags = 0xC0;
+	// Platinum Ring
+	strcpy(inventory[8].name,"Platinum Ring");
+	inventory[8].lowPrice = 2000;
+	inventory[8].midPrice = 3000;
+	inventory[8].highPrice = 4000;
+	inventory[8].stock = 15;
+	inventory[8].biasFlags = 0xC1;
+	// Signet Ring
+	strcpy(inventory[9].name,"Signet Ring");
+	inventory[9].lowPrice = 300;
+	inventory[9].midPrice = 500;
+	inventory[9].highPrice = 800;
+	inventory[9].stock = 5;
+	inventory[9].biasFlags = 0x145;
+	// Silver Earrings
+	strcpy(inventory[10].name,"Silver Earings");
+	inventory[10].lowPrice = 30;
+	inventory[10].midPrice = 40;
+	inventory[10].highPrice = 60;
+	inventory[10].stock = 2;
+	inventory[10].biasFlags = 0xC0;
+	// Silver Necklace
+	strcpy(inventory[11].name,"Silver Necklace");
+	inventory[11].lowPrice = 30;
+	inventory[11].midPrice = 50;
+	inventory[11].highPrice = 80;
+	inventory[11].stock = 2;
+	inventory[11].biasFlags = 0xC0;
+	// Silver Ring
+	strcpy(inventory[12].name,"Silver Ring");
+	inventory[12].lowPrice = 20;
+	inventory[12].midPrice = 30;
+	inventory[12].highPrice = 40;
+	inventory[12].stock = 2;
+	inventory[12].biasFlags = 0xC1;
 	
+	// Tools Section Header
+	strcpy(inventory[15].name,"TOOLS");
+	inventory[15].lowPrice = 0;
+	inventory[15].midPrice = 0;
+	inventory[15].highPrice = 0;
+	inventory[15].stock = 0;
+	inventory[15].biasFlags = 0;
+	// Jeweler's Tools
+	strcpy(inventory[16].name,"Jeweler's Tools");
+	inventory[16].lowPrice = 1800;
+	inventory[16].midPrice = 2500;
+	inventory[16].highPrice = 3800;
+	inventory[16].stock = 3;
+	inventory[16].biasFlags = 0xC0;
+	
+	// Services Section Header
+	strcpy(inventory[19].name,"SERVICES");
+	inventory[19].lowPrice = 0;
+	inventory[19].midPrice = 0;
+	inventory[19].highPrice = 0;
+	inventory[19].stock = 0;
+	inventory[19].biasFlags = 0;
+	// Gemstone Appraisal
+	strcpy(inventory[19].name,"Gemstone Appraisal");
+	inventory[19].lowPrice = 30;
+	inventory[19].midPrice = 50;
+	inventory[19].highPrice = 80;
+	inventory[19].stock = 1;
+	inventory[19].biasFlags = 0x0;
+	// Resizing Jewelry
+	strcpy(inventory[19].name,"Resizing Jewelry");
+	inventory[19].lowPrice = 800;
+	inventory[19].midPrice = 1000;
+	inventory[19].highPrice = 1500;
+	inventory[19].stock = 2;
+	inventory[19].biasFlags = 0x20;
 	
 	char dividerChar = ' ';
 	fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
@@ -6562,6 +6883,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 	fprintf(storeHere, "%c",dividerChar);
 	fprintf(storeHere, "   %s   ", "High"); // high price colum
 	fprintf(storeHere, "\n");
+	
 	time_t t;
 	srand(time(NULL));
 	int8_t shopStock = ((rand())%20)+1;
@@ -6599,81 +6921,272 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 			}
 		}
 	}
-	fprintf(storeHere, "\nQuestions? See the Demagus True Reference PDF\n");
-}
-
-void makeWizardTower(FILE* storeHere, uint16_t flags){
-	uint8_t inventorySize = 128;
-	struct shopItem inventory[inventorySize];
-	// Father forgive me for i have sinned
-	for(int i = 0; i < inventorySize; ++i){
-		memset(inventory[i].name, '\0', NAME_LENGTH);
-		inventory[i].lowPrice = 0;
-		inventory[i].midPrice = 0;
-		inventory[i].highPrice = 0;
-		inventory[i].stock = 0;
-		inventory[i].biasFlags = 0x8000;
+	if (2 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+		fprintf(storeHere, "%32s", "Set Gem");
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","23% gem");//Low Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","23% gem");//Medium Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","30% gem");//High Jewelry price
+		fprintf(storeHere, "\n");
 	}
-	// Armor Section Name
-	strcpy(inventory[0].name,"WEAPONS");
-	inventory[0].lowPrice = 0;
-	inventory[0].midPrice = 0;
-	inventory[0].highPrice = 0;
-	inventory[0].stock = 0;
-	inventory[0].biasFlags = 0;
-	// Quarterstaff
-	strcpy(inventory[1].name,"Quarterstaff");
-	inventory[1].lowPrice = 10;
-	inventory[1].midPrice = 20;
-	inventory[1].highPrice = 30;
-	inventory[1].stock = 2;
-	inventory[1].biasFlags = 0x20;
+	if (8 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+		fprintf(storeHere, "%32s", "Stonecutting");
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","23% gem");//Low Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","25% gem");//Medium Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","30% gem");//High Jewelry price
+		fprintf(storeHere, "\n");
+	}
+	fprintf(storeHere, "%-32s\n", "JEWELRY");
+	if (19 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+		fprintf(storeHere, "%32s", "Custom Adamantine Jewelry");
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%   9s","Gem+70pp");//Low Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","Gem+80pp");//Medium Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%10s","Gem+100pp");//High Jewelry price
+		fprintf(storeHere, "\n");
+	}
+	if (5 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+		fprintf(storeHere, "%32s", "Custom Gold Jewelry");
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%   9s","Gem+38gp");//Low Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","Gem+50gp");//Medium Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","Gem+75gp");//High Jewelry price
+		fprintf(storeHere, "\n");
+	}
+	if (17 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+		fprintf(storeHere, "%32s", "Custom Mithril Jewelry");
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%   9s","Gem+40pp");//Low Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","Gem+50pp");//Medium Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","Gem+75pp");//High Jewelry price
+		fprintf(storeHere, "\n");
+	}
+	if (15 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+		fprintf(storeHere, "%32s", "Custom Platinum Jewelry");
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%   9s","Gem+38pp");//Low Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","Gem+50pp");//Medium Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","Gem+75pp");//High Jewelry price
+		fprintf(storeHere, "\n");
+	}
+	if (2 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+		fprintf(storeHere, "%32s", "Custom Silver Jewelry");
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%   9s","Gem+4gp");//Low Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","Gem+5gp");//Medium Jewelry Price
+		fprintf(storeHere, "%c", dividerChar);
+		fprintf(storeHere,"%9s","Gem+8gp");//High Jewelry price
+		fprintf(storeHere, "\n");
+	}
+	//Gemstones
+	uint8_t sizeGem10gp = 12;
+	struct gemstone gem10gp[sizeGem10gp];
+	for (int i = 0; i < sizeGem10gp; ++i){
+		gem10gp[i].amount = 0;
+	}
+	strcpy(gem10gp[0].name,"Azurite");
+	strcpy(gem10gp[1].name,"Banded Agate");
+	strcpy(gem10gp[2].name,"Blue Quartz");
+	strcpy(gem10gp[3].name,"Eye Agate");
+	strcpy(gem10gp[4].name,"Hematite");
+	strcpy(gem10gp[5].name,"Lapis Lazuli");
+	strcpy(gem10gp[6].name,"Malachite");
+	strcpy(gem10gp[7].name,"Moss Agate");
+	strcpy(gem10gp[8].name,"Obsidian");
+	strcpy(gem10gp[9].name,"Rhodochrosite");
+	strcpy(gem10gp[10].name,"Tiger Eye");
+	strcpy(gem10gp[11].name,"Turquoise");
 	
+	uint8_t sizeGem50gp = 12;
+	struct gemstone gem50gp[sizeGem50gp];
+	for (int i = 0; i < sizeGem50gp; ++i){
+		gem50gp[i].amount = 0;
+	}
+	strcpy(gem50gp[0].name,"Bloodstone");
+	strcpy(gem50gp[1].name,"Carnelian");
+	strcpy(gem50gp[2].name,"Chalcedony");
+	strcpy(gem50gp[3].name,"Chrysoprase");
+	strcpy(gem50gp[4].name,"Citrine");
+	strcpy(gem50gp[5].name,"Jasper");
+	strcpy(gem50gp[6].name,"Moonstone");
+	strcpy(gem50gp[7].name,"Onyx");
+	strcpy(gem50gp[8].name,"Quartz");
+	strcpy(gem50gp[9].name,"Sardonyx");
+	strcpy(gem50gp[10].name,"Star Rose Quartz");
+	strcpy(gem50gp[11].name,"Zircon");
 	
-	char dividerChar = ' ';
-	fprintf(storeHere, "            %s           ", "Item Name"); // Item name colum
-	fprintf(storeHere, "%c", dividerChar); 
-	fprintf(storeHere, "     %s  ", "Low"); // low price colum
-	fprintf(storeHere, "%c",dividerChar);
-	fprintf(storeHere, "    %s   ", "Mid"); // mid price colum
-	fprintf(storeHere, "%c",dividerChar);
-	fprintf(storeHere, "   %s   ", "High"); // high price colum
-	fprintf(storeHere, "\n");
-	time_t t;
-	srand(time(NULL));
-	int8_t shopStock = ((rand())%20)+1;
-	//printf("Shop stock num %u", shopStock);
+	uint8_t sizeGem100gp = 10;
+	struct gemstone gem100gp[sizeGem100gp];
+	for (int i = 0; i < sizeGem100gp; ++i){
+		gem100gp[i].amount = 0;
+	}
+	strcpy(gem100gp[0].name,"Amber");
+	strcpy(gem100gp[1].name,"Amethyst");
+	strcpy(gem100gp[2].name,"Chrysoberyl");
+	strcpy(gem100gp[3].name,"Coral");
+	strcpy(gem100gp[4].name,"Garnet");
+	strcpy(gem100gp[5].name,"Jade");
+	strcpy(gem100gp[6].name,"Jet");
+	strcpy(gem100gp[7].name,"Pearl");
+	strcpy(gem100gp[8].name,"Spinel");
+	strcpy(gem100gp[9].name,"Tourmaline");
 	
-	for(int i = 0; i < inventorySize; ++i){
-		if (inventory[i].biasFlags == 0x8000){ // There is no name, empty entry
-			continue;
+	uint8_t sizeGem500gp = 6;
+	struct gemstone gem500gp[sizeGem500gp];
+	for (int i = 0; i < sizeGem500gp; ++i){
+		gem500gp[i].amount = 0;
+	}
+	strcpy(gem500gp[0].name,"Alexandrite");
+	strcpy(gem500gp[1].name,"Aquamarine");
+	strcpy(gem500gp[2].name,"Black Pearl");
+	strcpy(gem500gp[3].name,"Blue Spinel");
+	strcpy(gem500gp[4].name,"Peridot");
+	strcpy(gem500gp[5].name,"Topaz");
+	
+	uint8_t sizeGem1000gp = 8;
+	struct gemstone gem1000gp[sizeGem1000gp];
+	for (int i = 0; i < sizeGem1000gp; ++i){
+		gem1000gp[i].amount = 0;
+	}
+	strcpy(gem1000gp[0].name,"Black Opal");
+	strcpy(gem1000gp[1].name,"Blue Sapphire");
+	strcpy(gem1000gp[2].name,"Emerald");
+	strcpy(gem1000gp[3].name,"Fire Opal");
+	strcpy(gem1000gp[4].name,"Opal");
+	strcpy(gem1000gp[5].name,"Star Ruby");
+	strcpy(gem1000gp[6].name,"Star Sapphire");
+	strcpy(gem1000gp[7].name,"Yellow Sapphire");
+	
+	uint8_t sizeGem5000gp = 4;
+	struct gemstone gem5000gp[sizeGem5000gp];
+	for (int i = 0; i < sizeGem5000gp; ++i){
+		gem5000gp[i].amount = 0;
+	}
+	strcpy(gem5000gp[0].name,"Black Sapphire");
+	strcpy(gem5000gp[1].name,"Diamond");
+	strcpy(gem5000gp[2].name,"Jacinth");
+	strcpy(gem5000gp[3].name,"Ruby");
+	
+	/////
+	// Decide amount
+	int tempGem;
+	if(shopStock <8){
+		int temp = (rand()%5)+5;
+		for (int i = 0; i < temp; ++i){
+			tempGem = rand()%sizeGem10gp;
+			gem10gp[tempGem].amount = gem10gp[tempGem].amount + 1;
 		}
-		else{
-			if(inventory[i].stock == 0){ // Section Title
-				fprintf(storeHere, "%-32s\n", inventory[i].name);
-			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
-				fprintf(storeHere, "%32s", inventory[i].name);
-				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
-				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
-				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
-				fprintf(storeHere, "\n");
-			}
-			else { // Item is out of stock or error
-				if (inventory[i].stock <= 20){ // Item out of stock
-					/*
-					fprintf(storeHere, "%32s", inventory[i].name);
-					fprintf(storeHere, "%c", dividerChar);
-					fprintf(storeHere, "           OUT OF STOCK         \n");
-					*/
-				}
-				else{// ERROR
-					continue;
-				}
-			}
+		tempGem = rand()%sizeGem50gp;
+		gem50gp[tempGem].amount+=1;
+	}
+	else if (shopStock < 16){
+		int temp = (rand()%10)+10;
+		for (int i = 0; i < temp; ++i){
+			gem10gp[rand()%sizeGem10gp].amount+=1;
+		}
+		temp = (rand()%5)+5;
+		for (int i = 0; i < temp; ++i){
+			gem50gp[rand()%sizeGem50gp].amount+=1;
+		}
+		gem100gp[rand()%sizeGem100gp].amount+=1;
+		gem100gp[rand()%sizeGem100gp].amount+=1;
+	}
+	else if (shopStock < 18){
+		for (int i = 0; i < sizeGem10gp; ++i){
+			gem10gp[i].amount = 6 + rand()%3 - 1;
+		}
+		int temp = (rand()%10)+10;
+		for (int i = 0; i < temp; ++i){
+			gem50gp[rand()%sizeGem50gp].amount+=1;
+		}
+		temp = (rand()%5)+5;
+		for (int i = 0; i < temp; ++i){
+			gem100gp[rand()%sizeGem100gp].amount+=1;
+		}
+		gem500gp[rand()%sizeGem500gp].amount+=1;
+		gem500gp[rand()%sizeGem500gp].amount+=1;
+		gem500gp[rand()%sizeGem500gp].amount+=1;
+		
+		gem1000gp[rand()%sizeGem1000gp].amount+=1;
+	}
+	else{
+		for (int i = 0; i < sizeGem10gp; ++i){
+			gem10gp[i].amount = 12 + rand()%5 - 3;
+		}
+		for (int i = 0; i < sizeGem50gp; ++i){
+			gem50gp[i].amount = 6 + rand()%3 - 1;
+		}
+		int temp = (rand()%10)+10;
+		for (int i = 0; i < temp; ++i){
+			gem100gp[rand()%sizeGem100gp].amount+=1;
+		}
+		temp = (rand()%5)+5;
+		for (int i = 0; i < temp; ++i){
+			gem500gp[rand()%sizeGem500gp].amount+=1;
+		}
+		gem1000gp[rand()%sizeGem1000gp].amount+=1;
+		gem1000gp[rand()%sizeGem1000gp].amount+=1;
+		gem1000gp[rand()%sizeGem1000gp].amount+=1;
+		gem1000gp[rand()%sizeGem1000gp].amount+=1;
+	}
+	fprintf(storeHere,"\n");
+	fprintf(storeHere,"    Gem Name         Amount         Low       Mid      High\n" );
+	for (int i = 0; i < sizeGem10gp; ++i){
+		if(gem10gp[i].amount != 0){
+			fprintf(storeHere,"%16s", gem10gp[i].name);
+			fprintf(storeHere," %8d      ", gem10gp[i].amount);
+			fprintf(storeHere,"%6s gp ","8");
+			fprintf(storeHere,"%6s gp ","10");
+			fprintf(storeHere,"%6s gp\n","15");
+		}
+	}
+	for (int i = 0; i < sizeGem50gp; ++i){
+		if(gem50gp[i].amount != 0){
+			fprintf(storeHere,"%16s", gem50gp[i].name);
+			fprintf(storeHere," %8d      ", gem50gp[i].amount);
+			fprintf(storeHere,"%6s gp %6s gp %6s gp\n","38","50","75");
+		}
+	}
+	for (int i = 0; i < sizeGem100gp; ++i){
+		if(gem100gp[i].amount != 0){
+			fprintf(storeHere,"%16s", gem100gp[i].name);
+			fprintf(storeHere," %8d      ", gem100gp[i].amount);
+			fprintf(storeHere,"%6s gp %6s gp %6s gp\n","75","100","150");
+		}
+	}
+	for (int i = 0; i < sizeGem500gp; ++i){
+		if(gem500gp[i].amount != 0){
+			fprintf(storeHere,"%16s", gem500gp[i].name);
+			fprintf(storeHere," %8d      ", gem500gp[i].amount);
+			fprintf(storeHere,"%6s gp %6s gp %6s gp\n","375","500","750");
+		}
+	}
+	for (int i = 0; i < sizeGem1000gp; ++i){
+		if(gem1000gp[i].amount != 0){
+			fprintf(storeHere,"%16s", gem1000gp[i].name);
+			fprintf(storeHere," %8d      ", gem1000gp[i].amount);
+			fprintf(storeHere,"%6s gp %6s gp %6s gp\n","750","1000","1500");
+		}
+	}
+	for (int i = 0; i < sizeGem5000gp; ++i){
+		if(gem5000gp[i].amount != 0){
+			fprintf(storeHere,"%16s", gem5000gp[i].name);
+			fprintf(storeHere," %8d      ", gem5000gp[i].amount);
+			fprintf(storeHere,"%6s gp %6s gp %6s gp\n","3750","5000","7500");
 		}
 	}
 	fprintf(storeHere, "\nQuestions? See the Demagus True Reference PDF\n");
@@ -6699,7 +7212,7 @@ void commandReminder(){
 	printf("13 - Tavern\n");
 	printf("14 - Shrine\n");
 	printf("15 - Jeweler\n");
-	printf("16 - Wizard's Tower\n");
+	//printf("16 - Wizard's Tower\n");
 	printf("Supported Flags are:\n");
 	printf("Bit 00 - Magical\n");
 	printf("Bit 01 - Costal\n");
@@ -6838,7 +7351,7 @@ int main(int argc, char* argv[]){
 				break;
 			case 14:
 				fprintf(shopFile, "Shrine\n");
-				fprintf(shopFile, "The ");
+				fprintf(shopFile, "Our ");
 				shopnameGen(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeShrine(shopFile, flags);
