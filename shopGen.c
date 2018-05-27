@@ -7155,7 +7155,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere,"%6s gp %6s gp %6s gp\n","3750","5000","7500");
 		}
 	}
-	fprintf(storeHere, "\nQuestions? See the Demagus True Reference PDF\n");
+	fprintf(storeHere, "\nQuestions? See the Demagus True Reference PDF\n\n");
 }
 
 void commandReminder(){
@@ -7259,15 +7259,6 @@ int shopGen(char* filename,uint8_t shopNum,uint16_t flags, int seed){
 			//nameGen(shopFile, 0xFF);
 			makeButcher(shopFile, flags);
 			break;
-		/*
-		case 8:
-			fprintf(shopFile, "Cobbler's Store\n");
-			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
-			//nameGen(shopFile, 0xFF);
-			makeCobbler(shopFile, flags);
-			break;
-		*/
 		case 8:
 			fprintf(shopFile, "Fletcher\n");
 			fprintf(shopFile, "The ");
