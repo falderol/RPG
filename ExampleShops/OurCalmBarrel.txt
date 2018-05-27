@@ -1,0 +1,36 @@
+Shrine
+Our Calm Barrel
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Alms Box      3 gp      5 gp      8 gp
+                            Bell      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+               Book of Scripture     18 gp     25 gp     38 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                          Censer      3 sp      5 sp      2 gp
+                       Chalk (1)      1 cp      1 cp      2 cp
+                           Flask      1 cp      2 cp      2 cp
+                    Healer's Kit      3 sp      5 sp      8 sp
+                     Holy Symbol      3 gp      5 gp      8 gp
+              Holy Water (flask)     18 gp     25 gp     38 gp
+                 Incense (block)      1 cp      1 cp      2 cp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                  Perfume (vial)      3 gp      5 gp      8 gp
+               Potion of Healing     38 gp      5 pp     75 gp
+                          Ration      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+TOOLS                           
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+                           Flute      1 gp      2 gp      3 gp
+                   Herbalism Kit      3 gp      5 gp      8 gp
+                            Horn      2 gp      3 gp      5 gp
+                            Lyre     22 gp      3 pp     45 gp
+
+Questions? See the Demagus True Reference PDF

@@ -1,0 +1,62 @@
+Alchemist's Shop
+The Mysterious Priest
+            Item Name                 Low       Mid       High   
+GEAR                            
+                     Acid (vial)     18 gp     25 gp     38 gp
+        Alchemist's Fire (flask)     38 gp      5 pp     75 gp
+                Antitoxin (vial)     38 gp      5 pp     75 gp
+                 Component Pouch     18 gp     25 gp     38 gp
+                           Flask      1 cp      2 cp      3 cp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                    Healer's Kit      3 gp      5 gp      8 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                             Jug      1 cp      2 cp      3 cp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                  Perfume (vial)      3 gp      5 gp      8 gp
+                            Vial      7 sp      1 gp      2 gp
+TOOLS                           
+            Alchemist's Supplies     38 gp      5 pp     75 gp
+               Brewer's Supplies     15 gp      2 pp      3 pp
+                 Cook's Utensils      7 sp      1 gp      2 gp
+                   Herbalism Kit      3 sp      5 sp      8 sp
+                 Poisioner's Kit     38 gp      5 pp     75 gp
+POTIONS                         
+                         Healing     38 gp      5 pp     75 gp
+                        Climbing     38 gp      5 pp     75 gp
+                 Water Breathing    175 gp     25 pp    375 gp
+                 Greater Healing    175 gp     25 pp    375 gp
+                      Resistance    175 gp     25 pp    375 gp
+               Animal Friendship    175 gp     25 pp    375 gp
+                          Growth    175 gp     25 pp    375 gp
+             Oil of Slipperiness    175 gp     25 pp    375 gp
+                 Philter of Love    175 gp     25 pp    375 gp
+                     Fire Breath    175 gp     25 pp    375 gp
+                    Gaseous Form    175 pp    250 pp    375 pp
+                Elixir of Health    175 pp    250 pp    375 pp
+                      Diminution    175 pp    250 pp    375 pp
+                         Heroism    175 pp    250 pp    375 pp
+               Superior Healling    175 pp    250 pp    375 pp
+                    Clairvoyance    175 pp    250 pp    375 pp
+            Frost Giant Strength    175 pp    250 pp    375 pp
+            Stone Giant Strength    175 pp    250 pp    375 pp
+             Fire Giant Strength    175 pp    250 pp    375 pp
+             Oil of Etherealness    175 pp    250 pp    375 pp
+                 Invulnerability    175 pp    250 pp    375 pp
+                    Mind Reading    175 pp    250 pp    375 pp
+
+POSIONS
+            Item Name               Type       Price      Description   
+               Burnt Othur Fumes   Inhaled     50 pp DC 13 Constitution or 3d6(10) poison damage, repeating throw at start of each of its turns taking 1d6(3) on
+                                                     successive fails. After three saves poison ends
+                            Drow    Injury     20 pp DC 13 Constitution or poisoned for 1 hour. If throw failed by 5 or more creatures is unconscious. Wakened by damage
+                                                     or if another creature takes an action to shake it awake.
+                Essence of Ether   Inhaled     30 pp DC 15 Constitution or poisoned for 8 hours. Poisoned creature is unconscious. Wakened by damage or if another
+                                                     creature takes an action to shake it awake.
+                  Love Stimulant  Ingested      1 pp DC 10 Wisdom, on fail creature becomes infatuated with first creature it sees after ingesting for 1 hour. Creature
+                                                     refuses to leave the side of creature it is infatuated with and will resist violently if necessary.
+                          Malice   Inhaled     25 pp Dc 15 Constitution or poisoned for 1 hour. Poisoned creature is blinded.
+                   Serpent Venom    Injury     20 pp DC 11 Constitution taking 3d6(10) poison damage on fail, half on success.
+
+For more information on posion prices and effects see the Demagus True Reference PDF
+
+Questions? See the Demagus True Reference PDF

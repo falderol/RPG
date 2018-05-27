@@ -1,0 +1,27 @@
+Jeweler
+The Queen's Camel
+            Item Name                 Low       Mid       High   
+GEAR                            
+                Crystal (arcane)      8 gp      1 pp     15 gp
+                       Gold Ring      2 gp      3 gp      4 gp
+                     Signet Ring      3 gp      5 gp      8 gp
+                  Silver Earings      3 sp      4 sp      6 sp
+                 Silver Necklace      3 sp      5 sp      8 sp
+                     Silver Ring      2 sp      3 sp      4 sp
+TOOLS                           
+                 Jeweler's Tools     18 gp     25 gp     38 gp
+                Resizing Jewelry      8 gp      1 pp     15 gp
+                         Set Gem   23% gem   23% gem   30% gem
+JEWELRY                         
+             Custom Gold Jewelry  Gem+38gp  Gem+50gp  Gem+75gp
+           Custom Silver Jewelry   Gem+4gp   Gem+5gp   Gem+8gp
+
+    Gem Name         Amount         Low       Mid      High
+    Banded Agate        1           8 gp     10 gp     15 gp
+     Blue Quartz        1           8 gp     10 gp     15 gp
+    Lapis Lazuli        1           8 gp     10 gp     15 gp
+      Moss Agate        1           8 gp     10 gp     15 gp
+        Obsidian        1           8 gp     10 gp     15 gp
+       Carnelian        1          38 gp     50 gp     75 gp
+
+Questions? See the Demagus True Reference PDF

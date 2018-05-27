@@ -1,0 +1,28 @@
+Adventurer's Emporium
+The Wooden Bucket
+            Item Name                 Low       Mid       High   
+ARMOR                           
+WEAPONS                         
+                            Club      7 cp      1 sp      2 sp
+                          Dagger      1 gp      2 gp      3 gp
+GEAR                            
+                        Backpack      1 gp      2 gp      3 gp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                             Pot      1 gp      2 gp      3 gp
+                            Tent      1 gp      2 gp      3 gp
+                       Tinderbox      3 sp      5 sp      8 sp
+                       Waterskin      1 sp      2 sp      3 sp
+                  Fishing Tackle      7 sp      1 gp      2 gp
+TOOLS                           
+               Navigator's Tools     18 gp     25 gp     38 gp
+FOODSTUFFS                      
+                Cornmeal (1 lb.)      6 cp      8 cp      1 sp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+                    Rice (1 lb.)      1 cp      1 cp      2 cp
+DISHES                          
+
+Questions? See the Demagus True Reference PDF

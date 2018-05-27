@@ -1,0 +1,183 @@
+The Village of Winthton
+Population: 210
+
+
+Blacksmith
+The Wooden Ox
+            Item Name                 Low       Mid       High   
+LIGHT ARMOR                     
+MEDIUM ARMOR                    
+                     Chain Shirt     38 gp      5 pp     75 gp
+                      Scale Mail     38 gp      5 pp     75 gp
+                     Breastplate     30 pp     40 pp     60 pp
+HEAVY ARMOR                     
+                       Ring Mail     22 gp      3 pp     45 gp
+                      Chain Mail     56 gp     75 gp    112 gp
+                          Splint     15 pp     20 pp     30 pp
+SHIELD                          
+                          Shield      7 gp      1 pp     15 gp
+SIMPLE WEAPONS                  
+                          Dagger      1 gp      2 gp      3 gp
+                         Handaxe      3 gp      5 gp      8 gp
+                         Javelin      3 gp      5 gp      8 gp
+                    Light Hammer      1 gp      2 gp      3 gp
+                            Mace      3 gp      5 gp      8 gp
+                          Sickle      7 sp      1 gp      2 gp
+                           Spear      7 sp      1 gp      2 gp
+MARTIAL WEAPONS                 
+                       Battleaxe      7 gp      1 pp     15 gp
+                           Flail      7 gp      1 pp     15 gp
+                          Glaive     15 gp      2 pp      3 pp
+                        Greataxe     22 gp      3 pp     45 gp
+                      Greatsword     38 gp      5 pp     75 gp
+                         Halberd     15 gp      2 pp      3 pp
+                       Longsword     11 gp     15 gp     22 gp
+                            Maul      7 gp      1 pp     15 gp
+                     Morningstar     15 gp      2 pp      3 pp
+                            Pike      3 gp      5 gp      8 gp
+                      Shortsword      7 gp      1 pp     15 gp
+                       Warhammer     11 gp     15 gp     22 gp
+GEAR                            
+           Ball Bearings (1,000)      7 sp      1 gp      2 gp
+                            Bell      7 sp      1 gp      2 gp
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                         Crowbar      1 gp      2 gp      3 gp
+                  Grappling Hook      1 gp      2 gp      3 gp
+                          Hammer      7 sp      1 gp      2 gp
+                    Hunting Trap      3 gp      5 gp      8 gp
+                            Lamp      3 sp      5 sp      8 sp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                        Manacles      1 gp      2 gp      3 gp
+                  Mirror (steel)      3 gp      5 gp      8 gp
+                     Mining Pick      1 gp      2 gp      3 gp
+                           Piton      3 cp      5 cp      8 cp
+                          Pulley      7 sp      1 gp      2 gp
+                    Sledgehammer      1 gp      2 gp      3 gp
+                       Whetstone      1 cp      1 cp      2 cp
+TOOLS                           
+               Carpenter's Tools      6 gp      8 gp     12 gp
+                   Mason's Tools      7 gp      1 pp     15 gp
+                   Smith's Tools     15 gp      2 pp      3 pp
+METALS                          
+                  Copper (1 lb.)      3 sp      5 sp      8 sp
+                    Iron (1 lb.)      7 cp      1 sp      2 sp
+                    Lead (1 lb.)      3 sp      5 sp      8 sp
+                   Steel (1 lb.)      1 gp      2 gp      3 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Wordly Boat
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                       Apple Pie      1 sp     12 cp     15 cp
+                        Doughnut      1 cp      2 cp      4 cp
+                      Fried Pork     14 cp     18 cp     24 cp
+                       Bratwurst     16 cp     18 cp      2 sp
+                  Shepherd's Pie     25 cp     28 cp     32 cp
+                            Eggs      1 cp      1 cp      2 cp
+                     Spiced Nuts      4 cp      6 cp      1 sp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                          Coffee      1 cp      1 cp      2 cp
+                            Beer      7 cp      1 sp      2 sp
+      Old Fashioned, Traditional      3 sp      5 sp      7 sp
+                   Common Brandy      2 sp      3 sp      5 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Useless River
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                   Beef Sandwich     18 cp     22 cp      3 sp
+                   Pork Sandwich     12 cp     16 cp     22 cp
+             Exotic Cheese Chunk     12 cp     16 cp     24 cp
+                        Biscuits      7 cp      1 sp      2 sp
+                        Porkchop      3 sp      4 sp      5 sp
+                  Meat Dumplings     12 cp     15 cp     18 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                     Common Wine      1 sp      2 sp      3 sp
+                     Good Spirit      5 sp      7 sp      1 gp
+                         Martini      2 sp     25 cp      3 sp
+                       Sweet Tea      2 cp      3 cp      5 cp
+                       Good Wine      7 sp      1 gp     15 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Enraged Sage
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                     Fried Onion      1 cp      1 cp      2 cp
+                       Apple Pie      1 sp     12 cp     15 cp
+                   Baked Potatoe      1 cp      1 cp      2 cp
+                Chicken Sandwich      7 cp      1 sp      2 sp
+                 Sweet Cornbread     15 cp     18 cp     22 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                            Milk      1 cp      1 cp      2 cp
+                         Martini      2 sp     25 cp      3 sp
+                       Good Wine      7 sp      1 gp     15 sp
+
+Questions? See the Demagus True Reference PDF
+
+

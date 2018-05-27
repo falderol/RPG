@@ -1,0 +1,2044 @@
+The City of Chicafield
+Population: 14400
+
+
+Adventurer's Emporium
+The Eager Camel
+            Item Name                 Low       Mid       High   
+ARMOR                           
+                            Hide      7 sp      1 gp     15 gp
+WEAPONS                         
+                            Club      7 cp      1 sp      2 sp
+                          Dagger      1 gp      2 gp      3 gp
+                           Spear      7 sp      1 gp      2 gp
+                           Sling      7 cp      1 sp      2 sp
+GEAR                            
+                     Arrows (20)      7 sp      1 gp      2 gp
+             Crossbow Bolts (20)      7 sp      1 gp      2 gp
+                        Backpack      1 gp      2 gp      3 gp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                    Glass Bottle      1 gp      2 gp      3 gp
+              Traveler's Clothes      1 gp      2 gp      3 gp
+                           Flask      1 cp      2 cp      4 cp
+                          Hammer      7 sp      1 gp      2 gp
+                             Jug      1 cp      2 cp      3 cp
+                 Latern (hooded)      3 gp      5 gp      8 gp
+                             Pot      1 gp      2 gp      3 gp
+                           Pouch      3 sp      5 sp      8 sp
+                          Quiver      7 sp      1 gp      2 gp
+              Hemp Rope (50 ft.)      7 sp      1 gp      2 gp
+                            Sack      1 cp      1 cp      2 cp
+                          Shovel      1 gp      2 gp      3 gp
+                            Tent      1 gp      2 gp      3 gp
+                       Tinderbox      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+                            Bait      3 cp      5 cp      8 cp
+                  Fishing Tackle      7 sp      1 gp      2 gp
+TOOLS                           
+               Navigator's Tools     18 gp     25 gp     38 gp
+FOODSTUFFS                      
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+                Cornmeal (1 lb.)      6 cp      8 cp      1 sp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+                    Rice (1 lb.)      1 cp      1 cp      2 cp
+                   Wheat (1 lb.)      1 cp      2 cp      3 cp
+DISHES                          
+
+Questions? See the Demagus True Reference PDF
+
+
+Adventurer's Emporium
+The Sweet Ring
+            Item Name                 Low       Mid       High   
+ARMOR                           
+                          Padded      3 gp      5 gp      8 gp
+                         Leather      7 gp      1 pp     15 gp
+                         Studded     33 gp     45 gp     68 gp
+                            Hide      7 sp      1 gp     15 gp
+WEAPONS                         
+                            Club      7 cp      1 sp      2 sp
+                          Dagger      1 gp      2 gp      3 gp
+                       Greatclub      1 sp      2 sp      3 sp
+                         Handaxe      3 gp      5 gp      8 gp
+                    Light Hammer      1 gp      2 gp      3 gp
+                    Quarterstaff      1 sp      2 sp      3 sp
+                           Spear      7 sp      1 gp      2 gp
+                  Light Crossbow     18 gp     25 gp     38 gp
+                            Dart      3 cp      5 cp      8 cp
+                        Shortbow     18 gp     25 gp     38 gp
+                           Sling      7 cp      1 sp      2 sp
+                            Whip      1 sp      2 sp      3 sp
+                         Blowgun      7 gp      1 pp     15 gp
+                   Hand Crossbow     56 gp     75 gp    113 gp
+                  Heavy Crossbow     38 gp      5 pp     75 gp
+                         Longbow     38 gp      5 pp     75 gp
+GEAR                            
+                     Arrows (20)      7 sp      1 gp      2 gp
+            Blowgun Needles (50)      7 sp      1 gp      2 gp
+             Crossbow Bolts (20)      7 sp      1 gp      2 gp
+              Sling Bullets (20)      3 cp      4 cp      6 cp
+                        Backpack      1 gp      2 gp      3 gp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                          Candle      1 cp      1 cp      3 cp
+              Crossbow Bolt Case      7 sp      1 gp      2 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                           Chest      3 gp      5 gp      8 gp
+                   Climber's Kit     18 gp     25 gp     38 gp
+              Traveler's Clothes      1 gp      2 gp      3 gp
+                         Crowbar      1 gp      2 gp      3 gp
+                           Flask      1 cp      2 cp      4 cp
+                  Grappling Hook      1 gp      2 gp      3 gp
+                          Hammer      7 sp      1 gp      2 gp
+                    Hunting Trap      3 gp      5 gp      8 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                             Jug      1 cp      2 cp      3 cp
+                 Ladder (10 ft.)      7 cp      1 sp      2 sp
+                 Latern (hooded)      3 gp      5 gp      8 gp
+                        Mess Kit      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                   Pick (mining)      1 gp      2 gp      3 gp
+                           Piton      3 cp      5 cp      8 cp
+                   Pole (10 ft.)      3 cp      5 cp      1 sp
+                             Pot      1 gp      2 gp      3 gp
+                           Pouch      3 sp      5 sp      8 sp
+                          Pulley      7 sp      1 gp      2 gp
+                           Quill      1 cp      2 cp      3 cp
+                          Quiver      7 sp      1 gp      2 gp
+                  Ration (1 day)      3 sp      5 sp      8 sp
+              Hemp Rope (50 ft.)      7 sp      1 gp      2 gp
+                            Sack      1 cp      1 cp      2 cp
+                          Shovel      1 gp      2 gp      3 gp
+                  Signal Whistle      3 cp      5 cp      8 cp
+                            Tent      1 gp      2 gp      3 gp
+                       Tinderbox      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+                            Bait      3 cp      5 cp      8 cp
+                  Fishing Tackle      7 sp      1 gp      2 gp
+                         Rowboat     38 gp      5 pp     75 gp
+TOOLS                           
+            Cartographer's Tools     11 gp     15 gp     23 gp
+                   Herbalism Kit      3 gp      5 gp      8 gp
+               Navigator's Tools     18 gp     25 gp     38 gp
+FOODSTUFFS                      
+                  Apples (1 lb.)      1 cp      2 cp      1 sp
+           Common Brandy (1 qt.)      2 sp      3 sp      5 sp
+                   Bread (1 lb.)      5 cp      8 cp      1 sp
+           Common Cheese (1 lb.)      1 sp     15 cp      2 sp
+                   Cider (1 qt.)      2 sp      3 sp      5 sp
+                    Corn (1 lb.)      4 cp      6 cp      8 cp
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+                Cornmeal (1 lb.)      6 cp      8 cp      1 sp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+                  Garlic (1 lb.)      2 cp      3 cp      5 cp
+                   Honey (1 qt.)      6 cp      7 cp      8 cp
+                    Mead (1 qt.)      3 sp      5 sp      8 sp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+         Popcorn Kernels (1 lb.)      1 sp     12 cp     14 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+                    Rice (1 lb.)      1 cp      1 cp      2 cp
+                    Salt (1 lb.)      3 cp      5 cp      8 cp
+           Common Spirit (1 qt.)      2 sp      3 sp      5 sp
+             Good Spirit (1 qt.)      5 sp      7 sp      1 gp
+                  Tallow (1 lb.)      4 sp      6 sp      8 sp
+                   Wheat (1 lb.)      1 cp      2 cp      3 cp
+             Common Wine (1 lb.)      1 sp      2 sp      3 sp
+               Good Wine (1 qt.)      7 sp      1 gp     15 sp
+DISHES                          
+                        Biscuits      7 cp      1 sp      2 sp
+                        Hardtack      6 cp      8 cp      1 sp
+                      Beef Jerky     16 sp      2 gp      3 gp
+                        Pemmican     16 sp      2 gp      3 gp
+                     Salted Pork      9 sp     12 sp      2 gp
+                      Sauerkraut      1 cp      2 cp      4 cp
+                         Chorizo      2 sp     22 cp     26 cp
+             Beef Summer Sausage     32 cp     34 cp     38 cp
+             Pork Summer Sausage     18 cp      2 sp     24 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+Adventurer's Emporium
+The Winking Bear
+            Item Name                 Low       Mid       High   
+ARMOR                           
+                          Padded      3 gp      5 gp      8 gp
+                         Leather      7 gp      1 pp     15 gp
+                         Studded     33 gp     45 gp     68 gp
+                            Hide      7 sp      1 gp     15 gp
+WEAPONS                         
+                            Club      7 cp      1 sp      2 sp
+                          Dagger      1 gp      2 gp      3 gp
+                       Greatclub      1 sp      2 sp      3 sp
+                         Handaxe      3 gp      5 gp      8 gp
+                    Light Hammer      1 gp      2 gp      3 gp
+                    Quarterstaff      1 sp      2 sp      3 sp
+                           Spear      7 sp      1 gp      2 gp
+                  Light Crossbow     18 gp     25 gp     38 gp
+                            Dart      3 cp      5 cp      8 cp
+                        Shortbow     18 gp     25 gp     38 gp
+                           Sling      7 cp      1 sp      2 sp
+                            Whip      1 sp      2 sp      3 sp
+                         Blowgun      7 gp      1 pp     15 gp
+                   Hand Crossbow     56 gp     75 gp    113 gp
+                  Heavy Crossbow     38 gp      5 pp     75 gp
+                         Longbow     38 gp      5 pp     75 gp
+GEAR                            
+                     Arrows (20)      7 sp      1 gp      2 gp
+            Blowgun Needles (50)      7 sp      1 gp      2 gp
+             Crossbow Bolts (20)      7 sp      1 gp      2 gp
+              Sling Bullets (20)      3 cp      4 cp      6 cp
+                        Backpack      1 gp      2 gp      3 gp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                          Candle      1 cp      1 cp      3 cp
+              Crossbow Bolt Case      7 sp      1 gp      2 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                           Chest      3 gp      5 gp      8 gp
+                   Climber's Kit     18 gp     25 gp     38 gp
+              Traveler's Clothes      1 gp      2 gp      3 gp
+                         Crowbar      1 gp      2 gp      3 gp
+                           Flask      1 cp      2 cp      4 cp
+                  Grappling Hook      1 gp      2 gp      3 gp
+                          Hammer      7 sp      1 gp      2 gp
+                    Healer's Kit      3 gp      5 gp      8 gp
+                       Hourglass     18 gp     25 gp     38 gp
+                    Hunting Trap      3 gp      5 gp      8 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                             Jug      1 cp      2 cp      3 cp
+                 Ladder (10 ft.)      7 cp      1 sp      2 sp
+                 Latern (hooded)      3 gp      5 gp      8 gp
+                            Lock      7 gp      1 pp     15 gp
+                        Mess Kit      1 sp      2 sp      3 sp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                   Pick (mining)      1 gp      2 gp      3 gp
+                           Piton      3 cp      5 cp      8 cp
+                   Pole (10 ft.)      3 cp      5 cp      1 sp
+                             Pot      1 gp      2 gp      3 gp
+                           Pouch      3 sp      5 sp      8 sp
+                          Pulley      7 sp      1 gp      2 gp
+                           Quill      1 cp      2 cp      3 cp
+                          Quiver      7 sp      1 gp      2 gp
+                  Ration (1 day)      3 sp      5 sp      8 sp
+              Hemp Rope (50 ft.)      7 sp      1 gp      2 gp
+              Silk Rope (50 ft.)      7 gp      1 pp      2 pp
+                            Sack      1 cp      1 cp      2 cp
+                          Shovel      1 gp      2 gp      3 gp
+                  Signal Whistle      3 cp      5 cp      8 cp
+                     Signet Ring      3 gp      5 gp      8 gp
+                        Spyglass     75 pp    100 pp    150 pp
+                            Tent      1 gp      2 gp      3 gp
+                       Tinderbox      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+                            Bait      3 cp      5 cp      8 cp
+                  Fishing Tackle      7 sp      1 gp      2 gp
+                         Rowboat     38 gp      5 pp     75 gp
+TOOLS                           
+            Cartographer's Tools     11 gp     15 gp     23 gp
+                   Herbalism Kit      3 gp      5 gp      8 gp
+                 Jeweler's Tools     18 gp     25 gp     38 gp
+               Navigator's Tools     18 gp     25 gp     38 gp
+FOODSTUFFS                      
+                  Apples (1 lb.)      1 cp      2 cp      1 sp
+           Common Brandy (1 qt.)      2 sp      3 sp      5 sp
+             Good Brandy (1 qt.)      1 sp     15 sp      2 gp
+                   Bread (1 lb.)      5 cp      8 cp      1 sp
+           Common Cheese (1 lb.)      1 sp     15 cp      2 sp
+                   Cider (1 qt.)      2 sp      3 sp      5 sp
+                    Corn (1 lb.)      4 cp      6 cp      8 cp
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+                Cornmeal (1 lb.)      6 cp      8 cp      1 sp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+                  Garlic (1 lb.)      2 cp      3 cp      5 cp
+                   Honey (1 qt.)      6 cp      7 cp      8 cp
+                    Mead (1 qt.)      3 sp      5 sp      8 sp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+         Popcorn Kernels (1 lb.)      1 sp     12 cp     14 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+                    Rice (1 lb.)      1 cp      1 cp      2 cp
+                    Salt (1 lb.)      3 cp      5 cp      8 cp
+           Common Spirit (1 qt.)      2 sp      3 sp      5 sp
+             Good Spirit (1 qt.)      5 sp      7 sp      1 gp
+                  Tallow (1 lb.)      4 sp      6 sp      8 sp
+                   Wheat (1 lb.)      1 cp      2 cp      3 cp
+             Common Wine (1 lb.)      1 sp      2 sp      3 sp
+               Good Wine (1 qt.)      7 sp      1 gp     15 sp
+DISHES                          
+                        Biscuits      7 cp      1 sp      2 sp
+                        Hardtack      6 cp      8 cp      1 sp
+                      Beef Jerky     16 sp      2 gp      3 gp
+                        Pemmican     16 sp      2 gp      3 gp
+                     Salted Pork      9 sp     12 sp      2 gp
+                      Sauerkraut      1 cp      2 cp      4 cp
+                         Chorizo      2 sp     22 cp     26 cp
+             Beef Summer Sausage     32 cp     34 cp     38 cp
+             Pork Summer Sausage     18 cp      2 sp     24 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+Adventurer's Emporium
+The High Shop
+            Item Name                 Low       Mid       High   
+ARMOR                           
+WEAPONS                         
+                            Club      7 cp      1 sp      2 sp
+                           Spear      7 sp      1 gp      2 gp
+GEAR                            
+                         Blanket      3 sp      5 sp      8 sp
+                             Pot      1 gp      2 gp      3 gp
+                           Pouch      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+                            Bait      3 cp      5 cp      8 cp
+                  Fishing Tackle      7 sp      1 gp      2 gp
+TOOLS                           
+FOODSTUFFS                      
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+DISHES                          
+
+Questions? See the Demagus True Reference PDF
+
+
+Alchemist's Shop
+The Singing King
+            Item Name                 Low       Mid       High   
+GEAR                            
+                     Acid (vial)     18 gp     25 gp     38 gp
+        Alchemist's Fire (flask)     38 gp      5 pp     75 gp
+                Antitoxin (vial)     38 gp      5 pp     75 gp
+                 Component Pouch     18 gp     25 gp     38 gp
+                           Flask      1 cp      2 cp      3 cp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                    Healer's Kit      3 gp      5 gp      8 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                             Jug      1 cp      2 cp      3 cp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                            Vial      7 sp      1 gp      2 gp
+TOOLS                           
+            Alchemist's Supplies     38 gp      5 pp     75 gp
+               Brewer's Supplies     15 gp      2 pp      3 pp
+                 Cook's Utensils      7 sp      1 gp      2 gp
+                   Herbalism Kit      3 sp      5 sp      8 sp
+                 Poisioner's Kit     38 gp      5 pp     75 gp
+POTIONS                         
+                         Healing     38 gp      5 pp     75 gp
+                        Climbing     38 gp      5 pp     75 gp
+                 Water Breathing    175 gp     25 pp    375 gp
+                 Greater Healing    175 gp     25 pp    375 gp
+                      Resistance    175 gp     25 pp    375 gp
+               Animal Friendship    175 gp     25 pp    375 gp
+                          Growth    175 gp     25 pp    375 gp
+                    Gaseous Form    175 pp    250 pp    375 pp
+                Elixir of Health    175 pp    250 pp    375 pp
+                      Diminution    175 pp    250 pp    375 pp
+                         Heroism    175 pp    250 pp    375 pp
+               Superior Healling    175 pp    250 pp    375 pp
+                    Clairvoyance    175 pp    250 pp    375 pp
+            Frost Giant Strength    175 pp    250 pp    375 pp
+            Stone Giant Strength    175 pp    250 pp    375 pp
+
+Questions? See the Demagus True Reference PDF
+
+
+Arcana Shop
+The Brittle Gazebo
+            Item Name                 Low       Mid       High   
+WEAPONS                         
+                    Quarterstaff      1 sp      2 sp      3 sp
+GEAR                            
+                          Abacus      1 gp      2 gp      3 gp
+                          Candle      1 cp      1 cp      2 cp
+                     Scroll Case      7 sp      1 gp      2 gp
+                         Crystal      7 gp      1 pp     15 gp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                             Orb     15 gp      2 pp      3 pp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                           Pouch      3 sp      5 sp      8 sp
+                           Robes      7 sp      1 gp      2 gp
+                             Rod      7 sp      1 gp     15 gp
+                       Spellbook     38 gp      5 pp     75 gp
+              Sprig of Mistletoe      7 sp      1 gp      2 gp
+                           Staff      3 gp      5 gp      8 gp
+                    Wooden Staff      1 gp      2 gp      3 gp
+                           Totem      7 sp      1 gp      2 gp
+                            Wand      7 gp      1 pp     15 gp
+                        Yew Wand      7 gp      1 pp     15 gp
+TOOLS                           
+            Alchemist's Supplies     38 gp      5 pp     75 gp
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+                            Lute     26 gp     35 gp     53 gp
+MAGIC SCROLLS                   
+                         Cantrip     38 gp      5 pp     75 gp
+                         Level 1     75 gp     10 pp     15 pp
+                         Level 2    187 gp     25 pp    375 gp
+                         Level 3    375 gp     50 pp     75 pp
+SERVICES                        
+                        Identify     75 gp     10 pp     15 pp
+
+Questions? See the Demagus True Reference PDF
+
+
+Arcana Shop
+The Olde Lord
+            Item Name                 Low       Mid       High   
+WEAPONS                         
+                    Quarterstaff      1 sp      2 sp      3 sp
+GEAR                            
+                          Abacus      1 gp      2 gp      3 gp
+                          Candle      1 cp      1 cp      2 cp
+                     Scroll Case      7 sp      1 gp      2 gp
+                         Crystal      7 gp      1 pp     15 gp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                             Orb     15 gp      2 pp      3 pp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                           Pouch      3 sp      5 sp      8 sp
+                           Robes      7 sp      1 gp      2 gp
+                             Rod      7 sp      1 gp     15 gp
+                       Spellbook     38 gp      5 pp     75 gp
+              Sprig of Mistletoe      7 sp      1 gp      2 gp
+                           Staff      3 gp      5 gp      8 gp
+                    Wooden Staff      1 gp      2 gp      3 gp
+                           Totem      7 sp      1 gp      2 gp
+                            Wand      7 gp      1 pp     15 gp
+                        Yew Wand      7 gp      1 pp     15 gp
+TOOLS                           
+            Alchemist's Supplies     38 gp      5 pp     75 gp
+MAGIC SCROLLS                   
+                         Cantrip     38 gp      5 pp     75 gp
+                         Level 1     75 gp     10 pp     15 pp
+SERVICES                        
+                        Identify     75 gp     10 pp     15 pp
+
+Questions? See the Demagus True Reference PDF
+
+
+Arcana Shop
+The Baroness' Star
+            Item Name                 Low       Mid       High   
+WEAPONS                         
+GEAR                            
+                          Candle      1 cp      1 cp      2 cp
+                         Crystal      7 gp      1 pp     15 gp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                           Staff      3 gp      5 gp      8 gp
+                    Wooden Staff      1 gp      2 gp      3 gp
+                           Totem      7 sp      1 gp      2 gp
+                            Wand      7 gp      1 pp     15 gp
+TOOLS                           
+MAGIC SCROLLS                   
+                         Cantrip     38 gp      5 pp     75 gp
+SERVICES                        
+
+Questions? See the Demagus True Reference PDF
+
+
+Arcana Shop
+The Long Ship
+            Item Name                 Low       Mid       High   
+WEAPONS                         
+                    Quarterstaff      1 sp      2 sp      3 sp
+GEAR                            
+                          Abacus      1 gp      2 gp      3 gp
+                          Candle      1 cp      1 cp      2 cp
+                     Scroll Case      7 sp      1 gp      2 gp
+                         Crystal      7 gp      1 pp     15 gp
+                 Component Pouch     18 gp     25 gp     38 gp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                       Hourglass     18 gp     25 gp     38 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                             Orb     15 gp      2 pp      3 pp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                           Pouch      3 sp      5 sp      8 sp
+                           Robes      7 sp      1 gp      2 gp
+                             Rod      7 sp      1 gp     15 gp
+                       Spellbook     38 gp      5 pp     75 gp
+              Sprig of Mistletoe      7 sp      1 gp      2 gp
+                           Staff      3 gp      5 gp      8 gp
+                    Wooden Staff      1 gp      2 gp      3 gp
+                           Totem      7 sp      1 gp      2 gp
+                            Wand      7 gp      1 pp     15 gp
+                        Yew Wand      7 gp      1 pp     15 gp
+TOOLS                           
+            Alchemist's Supplies     38 gp      5 pp     75 gp
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+                            Lute     26 gp     35 gp     53 gp
+                            Lyre     26 gp     35 gp     53 gp
+MAGIC SCROLLS                   
+                         Cantrip     38 gp      5 pp     75 gp
+                         Level 1     75 gp     10 pp     15 pp
+                         Level 2    187 gp     25 pp    375 gp
+                         Level 3    375 gp     50 pp     75 pp
+                         Level 4    187 pp    250 pp    375 pp
+                         Level 5    375 pp    500 pp    750 pp
+SERVICES                        
+                        Identify     75 gp     10 pp     15 pp
+
+Questions? See the Demagus True Reference PDF
+
+
+Bakery
+The Lovely Whale
+            Item Name                 Low       Mid       High   
+FOODSTUFFS                      
+                  Butter (1 lb.)      1 sp      2 sp      3 sp
+                    Corn (1 lb.)      4 cp      6 cp      8 cp
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+              Sweet Corn (1 lb.)      8 cp      1 sp     12 cp
+                Cornmeal (1 lb.)      6 cp      8 cp      1 sp
+          Sweet Cornmeal (1 lb.)     12 cp     15 cp     18 cp
+                  Eggs (1 dozen)      4 cp      6 cp      9 cp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+                   Honey (1 qt.)      6 sp      7 sp      8 sp
+                   Milk (1 gal.)      1 cp      2 cp      4 cp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                    Salt (1 lb.)      3 cp      5 cp      8 cp
+                  Tallow (1 lb.)      4 sp      6 sp      8 sp
+                   Wheat (1 lb.)      1 cp      2 cp      3 cp
+DISHES                          
+                        Biscuits      7 cp      1 sp      2 sp
+                   Bread (slice)      2 cp      3 cp      5 cp
+                    Bread (loaf)      6 cp      8 cp      1 sp
+             White Bread (slice)      4 cp      6 cp      1 sp
+              White Bread (loaf)     14 cp     16 cp      2 sp
+               Cornbread (slice)      3 cp      4 cp      5 cp
+                Cornbread (loaf)      8 cp     11 cp     14 cp
+         Sweet Cornbread (slice)      5 cp      6 cp      7 cp
+          Sweet Cornbread (loaf)     15 cp     18 cp     22 cp
+                        Doughnut      1 cp      2 cp      4 cp
+                       Dumplings      3 cp      4 cp      5 cp
+                Cheese Dumplings     12 cp     15 cp     18 cp
+               Potatoe Dumplings      2 cp      3 cp      4 cp
+                  Meat Dumplings     12 cp     15 cp     18 cp
+             Vegetable Dumplings      7 cp      1 sp     12 cp
+                        Hardtack      6 cp      8 cp      1 sp
+                       Hushpuppy      4 cp      6 cp      1 sp
+                         Pancake      4 cp      6 cp      8 cp
+                       Apple Pie      1 sp     12 cp     15 cp
+                       Berry Pie     26 cp     28 cp     35 cp
+                   Shepherds Pie     25 cp     28 cp     32 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+Barbershop
+The Blue Rabbit
+            Item Name                 Low       Mid       High   
+WEAPONS                         
+                          Dagger      1 gp      2 gp      3 gp
+GEAR                            
+                    Glass Bottle      1 gp      2 gp      3 gp
+                    Healer's kit      3 gp      5 gp      7 gp
+                             Jug      1 cp      2 cp      3 cp
+TOOLS                           
+SERVICES                        
+                      Amputation      3 sp      5 sp      7 sp
+                        Hair Cut      1 sp      2 sp      3 sp
+                 Heal 1 Hit Dice      7 sp      1 gp      2 gp
+                           Shave      1 sp      2 sp      3 sp
+                      Amputation      7 sp      1 gp      2 gp
+FOODSTUFFS                      
+           Common Spirit (1 qt.)      2 sp      3 sp      5 sp
+             Good Spirit (1 qt.)      5 sp      7 sp      1 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Blacksmith
+The White Mercantile
+            Item Name                 Low       Mid       High   
+LIGHT ARMOR                     
+MEDIUM ARMOR                    
+                     Chain Shirt     38 gp      5 pp     75 gp
+                     Breastplate     30 pp     40 pp     60 pp
+HEAVY ARMOR                     
+                      Chain Mail     56 gp     75 gp    112 gp
+                          Splint     15 pp     20 pp     30 pp
+SHIELD                          
+                          Shield      7 gp      1 pp     15 gp
+SIMPLE WEAPONS                  
+                          Dagger      1 gp      2 gp      3 gp
+                         Handaxe      3 gp      5 gp      8 gp
+                         Javelin      3 gp      5 gp      8 gp
+                            Mace      3 gp      5 gp      8 gp
+                          Sickle      7 sp      1 gp      2 gp
+                           Spear      7 sp      1 gp      2 gp
+MARTIAL WEAPONS                 
+                       Battleaxe      7 gp      1 pp     15 gp
+                           Flail      7 gp      1 pp     15 gp
+                          Glaive     15 gp      2 pp      3 pp
+                        Greataxe     22 gp      3 pp     45 gp
+                      Greatsword     38 gp      5 pp     75 gp
+                       Longsword     11 gp     15 gp     22 gp
+                            Maul      7 gp      1 pp     15 gp
+                     Morningstar     15 gp      2 pp      3 pp
+                            Pike      3 gp      5 gp      8 gp
+                      Shortsword      7 gp      1 pp     15 gp
+GEAR                            
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                         Crowbar      1 gp      2 gp      3 gp
+                  Grappling Hook      1 gp      2 gp      3 gp
+                          Hammer      7 sp      1 gp      2 gp
+                    Hunting Trap      3 gp      5 gp      8 gp
+                            Lamp      3 sp      5 sp      8 sp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                  Mirror (steel)      3 gp      5 gp      8 gp
+                     Mining Pick      1 gp      2 gp      3 gp
+                       Whetstone      1 cp      1 cp      2 cp
+TOOLS                           
+               Carpenter's Tools      6 gp      8 gp     12 gp
+                   Smith's Tools     15 gp      2 pp      3 pp
+METALS                          
+                  Copper (1 lb.)      3 sp      5 sp      8 sp
+                    Iron (1 lb.)      7 cp      1 sp      2 sp
+                    Lead (1 lb.)      3 sp      5 sp      8 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Blacksmith
+The Metal Gorgon
+            Item Name                 Low       Mid       High   
+LIGHT ARMOR                     
+MEDIUM ARMOR                    
+                     Chain Shirt     38 gp      5 pp     75 gp
+                     Breastplate     30 pp     40 pp     60 pp
+HEAVY ARMOR                     
+SHIELD                          
+                          Shield      7 gp      1 pp     15 gp
+SIMPLE WEAPONS                  
+                          Dagger      1 gp      2 gp      3 gp
+                         Handaxe      3 gp      5 gp      8 gp
+                           Spear      7 sp      1 gp      2 gp
+MARTIAL WEAPONS                 
+                       Battleaxe      7 gp      1 pp     15 gp
+                       Longsword     11 gp     15 gp     22 gp
+                      Shortsword      7 gp      1 pp     15 gp
+GEAR                            
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                          Hammer      7 sp      1 gp      2 gp
+                            Lamp      3 sp      5 sp      8 sp
+                  Mirror (steel)      3 gp      5 gp      8 gp
+                       Whetstone      1 cp      1 cp      2 cp
+TOOLS                           
+METALS                          
+                    Lead (1 lb.)      3 sp      5 sp      8 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Blacksmith
+The Best Pot
+            Item Name                 Low       Mid       High   
+LIGHT ARMOR                     
+MEDIUM ARMOR                    
+                     Chain Shirt     38 gp      5 pp     75 gp
+                      Scale Mail     38 gp      5 pp     75 gp
+                     Breastplate     30 pp     40 pp     60 pp
+HEAVY ARMOR                     
+                       Ring Mail     22 gp      3 pp     45 gp
+                      Chain Mail     56 gp     75 gp    112 gp
+                          Splint     15 pp     20 pp     30 pp
+SHIELD                          
+                          Shield      7 gp      1 pp     15 gp
+SIMPLE WEAPONS                  
+                          Dagger      1 gp      2 gp      3 gp
+                         Handaxe      3 gp      5 gp      8 gp
+                         Javelin      3 gp      5 gp      8 gp
+                    Light Hammer      1 gp      2 gp      3 gp
+                            Mace      3 gp      5 gp      8 gp
+                          Sickle      7 sp      1 gp      2 gp
+                           Spear      7 sp      1 gp      2 gp
+MARTIAL WEAPONS                 
+                       Battleaxe      7 gp      1 pp     15 gp
+                           Flail      7 gp      1 pp     15 gp
+                          Glaive     15 gp      2 pp      3 pp
+                        Greataxe     22 gp      3 pp     45 gp
+                      Greatsword     38 gp      5 pp     75 gp
+                         Halberd     15 gp      2 pp      3 pp
+                       Longsword     11 gp     15 gp     22 gp
+                            Maul      7 gp      1 pp     15 gp
+                     Morningstar     15 gp      2 pp      3 pp
+                            Pike      3 gp      5 gp      8 gp
+                      Shortsword      7 gp      1 pp     15 gp
+                         Trident      3 gp      5 gp      8 gp
+                        War Pick      3 gp      5 gp      3 pp
+                       Warhammer     11 gp     15 gp     22 gp
+GEAR                            
+           Ball Bearings (1,000)      7 sp      1 gp      2 gp
+                            Bell      7 sp      1 gp      2 gp
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                         Crowbar      1 gp      2 gp      3 gp
+                  Grappling Hook      1 gp      2 gp      3 gp
+                          Hammer      7 sp      1 gp      2 gp
+                    Hunting Trap      3 gp      5 gp      8 gp
+                            Lamp      3 sp      5 sp      8 sp
+              Lantern (bullseye)      7 gp      1 pp     15 gp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                        Manacles      1 gp      2 gp      3 gp
+                  Mirror (steel)      3 gp      5 gp      8 gp
+                     Mining Pick      1 gp      2 gp      3 gp
+                           Piton      3 cp      5 cp      8 cp
+                      Pot (iron)      1 gp      2 gp      3 gp
+                          Pulley      7 sp      1 gp      2 gp
+                    Sledgehammer      1 gp      2 gp      3 gp
+                   Spikes (iron)      7 sp      1 gp      2 gp
+                       Whetstone      1 cp      1 cp      2 cp
+TOOLS                           
+               Carpenter's Tools      6 gp      8 gp     12 gp
+                            Horn      7 gp      1 pp     15 gp
+                   Mason's Tools      7 gp      1 pp     15 gp
+                   Smith's Tools     15 gp      2 pp      3 pp
+                  Tinker's Tools     38 gp      5 pp     75 gp
+METALS                          
+              Adamantine (1 lb.)     60 pp     80 pp    110 pp
+                Aluminum (1 lb.)      6 gp      1 pp      2 pp
+                  Bronze (1 lb.)      8 sp      1 gp      2 gp
+                  Bronze (1 lb.)      8 sp      1 gp      2 gp
+                  Copper (1 lb.)      3 sp      5 sp      8 sp
+                    Gold (1 lb.)      3 pp      5 pp      8 pp
+                    Iron (1 lb.)      7 cp      1 sp      2 sp
+                    Lead (1 lb.)      3 sp      5 sp      8 sp
+                  Bronze (1 lb.)      5 gp      7 gp      1 pp
+                 Mithral (1 lb.)     30 pp     50 pp     80 pp
+                  Silver (1 lb.)      3 gp      5 gp      8 gp
+                   Steel (1 lb.)      1 gp      2 gp      3 gp
+                     Tin (1 lb.)      1 gp      2 gp      4 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Blacksmith
+The Rare Duck
+            Item Name                 Low       Mid       High   
+LIGHT ARMOR                     
+MEDIUM ARMOR                    
+                     Chain Shirt     38 gp      5 pp     75 gp
+HEAVY ARMOR                     
+                      Chain Mail     56 gp     75 gp    112 gp
+SHIELD                          
+                          Shield      7 gp      1 pp     15 gp
+SIMPLE WEAPONS                  
+                         Handaxe      3 gp      5 gp      8 gp
+                           Spear      7 sp      1 gp      2 gp
+MARTIAL WEAPONS                 
+                       Battleaxe      7 gp      1 pp     15 gp
+                      Greatsword     38 gp      5 pp     75 gp
+                      Shortsword      7 gp      1 pp     15 gp
+GEAR                            
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                         Crowbar      1 gp      2 gp      3 gp
+                          Hammer      7 sp      1 gp      2 gp
+                            Lamp      3 sp      5 sp      8 sp
+                       Whetstone      1 cp      1 cp      2 cp
+TOOLS                           
+METALS                          
+                    Iron (1 lb.)      7 cp      1 sp      2 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Bookstore
+The Flaming Badger
+            Item Name                 Low       Mid       High   
+GEAR                            
+                          Candle      1 cp      1 cp      2 cp
+                    Case (scroll      7 sp      1 gp      2 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                Magnifying Glass      9 pp     10 pp    125 gp
+                       Spellbook      3 pp      5 pp      7 pp
+TOOLS                           
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+            Cartographer's Tools     11 gp     15 gp     23 gp
+             Draughtsman's Tools     11 gp     15 gp     23 gp
+                  Tinker's Tools     38 gp      5 pp     75 gp
+SERVICES                        
+                  Book Appraisal      0 pp      1 cp      1 cp
+                    Book Binding      7 gp      1 pp     15 gp
+                Book Translation      7 gp      1 pp     15 gp
+BOOKS                           
+                    Common Books      2 pp      3 pp      5 pp
+                  Uncommon Books      7 pp     10 pp     15 pp
+                      Rare Books     90 pp    100 pp    150 pp
+                 Very Rare Books    400 pp    500 pp    750 pp
+
+Questions? See the Demagus True Reference PDF
+
+
+Bookstore
+The Marchioness' Camel
+            Item Name                 Low       Mid       High   
+GEAR                            
+                          Candle      1 cp      1 cp      2 cp
+                    Case (scroll      7 sp      1 gp      2 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                Magnifying Glass      9 pp     10 pp    125 gp
+                       Spellbook      3 pp      5 pp      7 pp
+TOOLS                           
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+            Cartographer's Tools     11 gp     15 gp     23 gp
+             Draughtsman's Tools     11 gp     15 gp     23 gp
+                  Tinker's Tools     38 gp      5 pp     75 gp
+SERVICES                        
+                  Book Appraisal      0 pp      1 cp      1 cp
+                    Book Binding      7 gp      1 pp     15 gp
+                Book Translation      7 gp      1 pp     15 gp
+BOOKS                           
+                    Common Books      2 pp      3 pp      5 pp
+                  Uncommon Books      7 pp     10 pp     15 pp
+                      Rare Books     90 pp    100 pp    150 pp
+                 Very Rare Books    400 pp    500 pp    750 pp
+                 Legendary Books    900 pp   1000 pp   2000 pp
+
+Questions? See the Demagus True Reference PDF
+
+
+Butcher Shop
+The Summer Baby
+            Item Name                 Low       Mid       High   
+WEAPONS                         
+                          Dagger      1 gp      2 gp      3 gp
+                         Handaxe      3 gp      5 gp      8 gp
+                    Light Hammer      1 gp      2 gp      3 gp
+FOODSTUFFS                      
+                    Beef (1 lb.)      4 sp      6 sp      8 sp
+                    Bread (loaf)      5 cp      8 cp      1 sp
+                  Butter (1 lb.)      1 sp      2 sp      3 sp
+                 Chicken (1 lb.)      1 sp      2 sp      4 sp
+                    Fish (1 lb.)      2 sp      1 gp      2 gp
+                    Eggs (dozen)      4 cp      6 cp      9 cp
+                  Mutton (1 lb.)      1 sp      2 sp      4 sp
+                    Pork (1 lb.)      1 sp      2 sp      4 sp
+                    Salt (1 lb.)      3 cp      5 cp      8 cp
+            Common Spice (1 lb.)      8 sp      1 gp      2 gp
+          Uncommon Spice (1 lb.)      1 gp      2 gp      4 gp
+                  Tallow (1 lb.)      4 sp      6 sp      8 sp
+LIVESTOCK                       
+                         Chicken      4 sp      6 sp      8 sp
+                             Cow     32 gp      4 pp     52 gp
+                            Goat      6 gp      8 gp     12 gp
+                              Ox      4 pp     52 gp      6 pp
+                             Pig     12 gp     15 gp      2 pp
+                          Rabbit      1 sp      3 sp      4 sp
+                           Sheep      6 gp      8 gp     12 gp
+Dishes                          
+                         Chicken     15 cp      2 sp     25 cp
+                Chicken Sandwich     12 cp     16 cp     22 cp
+                   Fried Chicken     17 cp     22 cp     27 cp
+                      Fried Fish     24 cp      1 gp      2 gp
+                     Brown Gravy      1 cp      2 cp      3 cp
+                      Beef Jerky     16 sp      2 gp      3 gp
+                      Mutton Leg     15 cp      2 sp     25 cp
+                   Shepherds Pie     25 cp     28 cp     32 cp
+                      Fried Pork     14 cp     18 cp     24 cp
+                   Pork Sandwich     12 cp     16 cp     22 cp
+                        Porkchop      3 sp      4 sp      5 sp
+                     Salted Pork      9 sp     12 sp      2 gp
+                    Beef Sausage     24 cp     26 cp      3 sp
+                       Bratwurst     16 cp     18 cp      2 sp
+                         Chorizo      2 sp     22 cp     26 cp
+           Indeterminate Sausage      6 cp      8 cp      1 sp
+                 Italian Sausage      2 sp     22 cp     26 cp
+                          Polish     18 cp      2 sp     24 cp
+                    Pork Sausage     11 cp     13 cp     15 cp
+             Beef Summer Sausage     32 cp     34 cp     38 cp
+             Pork Summer Sausage     18 cp      2 sp     24 cp
+                           Steak      4 sp      6 sp      8 sp
+                     Fried Steak      3 sp      5 sp      7 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Fletcher
+The Green Whale
+            Item Name                 Low       Mid       High   
+SIMPLE WEAPONS                  
+                  Light Crossbow     18 gp     25 gp     38 gp
+                        Shortbow     18 gp     25 gp     38 gp
+MARTIAL WEAPONS                 
+                   Hand Crossbow     56 gp     75 gp    113 gp
+                  Heavy Crossbow     38 gp      5 pp     75 gp
+                         Longbow     38 gp      5 pp     75 gp
+GEAR                            
+                     Arrows (20)      7 sp      1 gp      2 gp
+                      Bolts (20)      7 sp      1 gp      2 gp
+                       Bolt Case      7 sp      1 gp      2 gp
+                          Quiver      7 sp      1 gp      2 gp
+WOOD                            
+                     Ash (1 lb.)      1 sp      2 sp      5 sp
+                   Cedar (1 lb.)      3 sp      5 sp      8 sp
+                   Maple (1 lb.)      3 sp      5 sp      8 sp
+                    Pine (1 lb.)      1 sp      2 sp      4 sp
+                     Oak (1 lb.)      1 sp      2 sp      4 sp
+            Osage Orange (1 lb.)      1 gp      2 gp      4 gp
+                     Yew (1 lb.)      1 gp      2 gp      4 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Fletcher
+The Sour Bistro
+            Item Name                 Low       Mid       High   
+SIMPLE WEAPONS                  
+                        Shortbow     18 gp     25 gp     38 gp
+MARTIAL WEAPONS                 
+GEAR                            
+                     Arrows (20)      7 sp      1 gp      2 gp
+                          Quiver      7 sp      1 gp      2 gp
+WOOD                            
+                     Oak (1 lb.)      1 sp      2 sp      4 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+General Store
+The Drunk Sickle
+            Item Name                 Low       Mid       High   
+GEAR                            
+                          Abacus      1 gp      2 gp      3 gp
+                          Barrel      1 gp      2 gp      3 gp
+                         Blanket      3 sp      5 sp      8 sp
+                          Bucket      3 cp      5 cp      8 cp
+                          Candle      1 cp      1 cp      2 cp
+                           Chest      3 gp      5 gp      8 gp
+                  Common Clothes      3 sp      5 sp      8 sp
+                           Flask      1 cp      2 cp      3 cp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                          Abacus      7 sp      1 gp      2 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 gp      2 gp      3 gp
+                             Jug      1 cp      2 cp      3 cp
+                 Ladder (10 ft.)      7 cp      1 sp      2 sp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                            Lamp      3 gp      5 gp      8 gp
+                        Mess Kit      1 sp      2 sp      3 sp
+                    Miner's Pick      1 gp      2 gp      3 gp
+                  Mirror (steel)      3 gp      5 gp      8 gp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                      Pot (iron)      1 gp      2 gp      3 gp
+                           Pouch      3 sp      5 sp      8 sp
+              Hemp Rope (50 ft.)      7 sp      1 gp      2 gp
+                            Sack      1 cp      1 cp      2 cp
+                           Scale      3 gp      5 gp      8 gp
+                          Shovel      1 gp      2 gp      3 gp
+                     Signet Ring      3 gp      5 gp      8 gp
+                            Soap      1 cp      2 cp      3 cp
+                            Vial      7 sp      1 gp      2 gp
+TOOLS                           
+               Carpenter's Tools     11 gp     15 gp     23 gp
+                 Cobbler's Tools      3 gp      5 gp      8 gp
+                 Cook's Utensils      7 sp      1 gp      2 gp
+           Leatherworker's Tools      3 gp      5 gp      8 gp
+                   Mason's Tools      7 gp      1 pp     15 gp
+                  Potter's Tools      7 gp      1 pp     15 gp
+                  Weaver's Tools      7 sp      1 gp      2 gp
+              Woodcarver's Tools      7 sp      1 gp      2 gp
+FOODSTUFFS                      
+                  Apples (1 lb.)      1 cp      2 cp      1 sp
+                   Beans (1 lb.)      1 cp      2 cp      3 cp
+                    Beer (1 qt.)      7 cp      1 sp      2 sp
+                 Berries (1 lb.)      3 cp      5 cp      1 sp
+                   Bread (1 lb.)      5 cp      8 cp      1 sp
+             White Bread (1 lb.)      1 sp     15 cp      2 sp
+                  Butter (1 lb.)      1 sp      2 sp      3 sp
+                 Carrots (1 lb.)      1 cp      2 cp      4 cp
+           Common Cheese (1 lb.)      1 sp     15 cp      2 sp
+                   Cider (1 qt.)      2 sp      3 sp      5 sp
+                  Coffee (1 lb.)      2 sp      3 sp      5 sp
+                    Corn (1 lb.)      4 cp      6 cp      8 cp
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+                    Eggs (dozen)      4 cp      6 cp      9 cp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+             White Flour (1 lb.)      8 cp      1 sp     12 cp
+                  Garlic (1 lb.)      2 cp      3 cp      5 cp
+                  Gourds (1 lb.)      7 cp      9 cp     12 cp
+                  Greens (1 lb.)      2 cp      4 cp      6 cp
+                   Honey (1 qt.)      6 cp      7 cp      8 cp
+                  Melons (1 lb.)      7 cp      9 cp     12 cp
+                   Milk (1 gal.)      1 cp      2 cp      4 cp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+         Popcorn Kernels (1 lb.)      1 sp     12 cp     14 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+                  Radish (1 lb.)      1 cp      2 cp      4 cp
+                    Rice (1 lb.)      1 cp      1 cp      2 cp
+                    Salt (1 lb.)      3 cp      5 cp      8 cp
+            Common Spice (1 lb.)      8 sp      1 gp      2 gp
+          Uncommon Spice (1 lb.)      1 gp      2 gp      4 gp
+           Common Spirit (1 qt.)      2 sp      3 sp      5 sp
+             Good Spirit (1 qt.)      5 sp      7 sp      1 gp
+                     Tea (1 lb.)      1 sp     12 cp     15 cp
+                  Tomato (1 lb.)      7 cp      9 cp     12 cp
+              Watermelon (1 lb.)      5 cp      7 cp      1 sp
+                   Wheat (1 lb.)      1 cp      2 cp      3 cp
+             Common Wine (1 qt.)      1 sp      2 sp      3 sp
+                    Yams (1 lb.)      1 cp      2 cp      4 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+General Store
+The Slimy Store
+            Item Name                 Low       Mid       High   
+GEAR                            
+                          Abacus      1 gp      2 gp      3 gp
+                          Barrel      1 gp      2 gp      3 gp
+                         Blanket      3 sp      5 sp      8 sp
+                          Bucket      3 cp      5 cp      8 cp
+                          Candle      1 cp      1 cp      2 cp
+                           Chest      3 gp      5 gp      8 gp
+                  Common Clothes      3 sp      5 sp      8 sp
+                    Fine Clothes     11 gp     15 gp     23 gp
+                           Flask      1 cp      2 cp      3 cp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                          Abacus      7 sp      1 gp      2 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 gp      2 gp      3 gp
+                             Jug      1 cp      2 cp      3 cp
+                 Ladder (10 ft.)      7 cp      1 sp      2 sp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                            Lamp      3 gp      5 gp      8 gp
+                            Lock      7 gp      1 pp     15 gp
+                        Mess Kit      1 sp      2 sp      3 sp
+                    Miner's Pick      1 gp      2 gp      3 gp
+                  Mirror (steel)      3 gp      5 gp      8 gp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                      Pot (iron)      1 gp      2 gp      3 gp
+                           Pouch      3 sp      5 sp      8 sp
+              Hemp Rope (50 ft.)      7 sp      1 gp      2 gp
+              Silk Rope (50 ft.)      7 gp      1 pp     15 gp
+                            Sack      1 cp      1 cp      2 cp
+                           Scale      3 gp      5 gp      8 gp
+                          Shovel      1 gp      2 gp      3 gp
+                     Signet Ring      3 gp      5 gp      8 gp
+                            Soap      1 cp      2 cp      3 cp
+                            Vial      7 sp      1 gp      2 gp
+TOOLS                           
+               Carpenter's Tools     11 gp     15 gp     23 gp
+                 Cobbler's Tools      3 gp      5 gp      8 gp
+                 Cook's Utensils      7 sp      1 gp      2 gp
+             Glassblower's Tools     22 gp      3 pp     45 gp
+           Leatherworker's Tools      3 gp      5 gp      8 gp
+                   Mason's Tools      7 gp      1 pp     15 gp
+                  Potter's Tools      7 gp      1 pp     15 gp
+                   Smith's Tools      7 gp     15 gp      2 pp
+                  Weaver's Tools      7 sp      1 gp      2 gp
+              Woodcarver's Tools      7 sp      1 gp      2 gp
+FOODSTUFFS                      
+                  Apples (1 lb.)      1 cp      2 cp      1 sp
+                   Beans (1 lb.)      1 cp      2 cp      3 cp
+                    Beer (1 qt.)      7 cp      1 sp      2 sp
+                 Berries (1 lb.)      3 cp      5 cp      1 sp
+           Common Brandy (1 qt.)      2 sp      3 sp      5 sp
+             Good Brandy (1 qt.)      1 gp     15 sp      3 gp
+                   Bread (1 lb.)      5 cp      8 cp      1 sp
+             White Bread (1 lb.)      1 sp     15 cp      2 sp
+                  Butter (1 lb.)      1 sp      2 sp      3 sp
+                 Carrots (1 lb.)      1 cp      2 cp      4 cp
+           Common Cheese (1 lb.)      1 sp     15 cp      2 sp
+                   Cider (1 qt.)      2 sp      3 sp      5 sp
+                  Coffee (1 lb.)      2 sp      3 sp      5 sp
+                    Corn (1 lb.)      4 cp      6 cp      8 cp
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+              Sweet Corn (1 lb.)      8 cp      1 sp     12 cp
+                    Eggs (dozen)      4 cp      6 cp      9 cp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+             White Flour (1 lb.)      8 cp      1 sp     12 cp
+                  Garlic (1 lb.)      2 cp      3 cp      5 cp
+                  Gourds (1 lb.)      7 cp      9 cp     12 cp
+                  Grapes (1 lb.)      1 cp      2 cp      1 sp
+                  Greens (1 lb.)      2 cp      4 cp      6 cp
+                   Honey (1 qt.)      6 cp      7 cp      8 cp
+                    Mead (1 qt.)      3 sp      5 sp      8 sp
+                  Melons (1 lb.)      7 cp      9 cp     12 cp
+                   Milk (1 gal.)      1 cp      2 cp      4 cp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+                 Oranges (1 lb.)      1 cp      2 cp      1 sp
+         Popcorn Kernels (1 lb.)      1 sp     12 cp     14 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+                  Radish (1 lb.)      1 cp      2 cp      4 cp
+                    Rice (1 lb.)      1 cp      1 cp      2 cp
+                    Salt (1 lb.)      3 cp      5 cp      8 cp
+            Common Spice (1 lb.)      8 sp      1 gp      2 gp
+          Uncommon Spice (1 lb.)      1 gp      2 gp      4 gp
+           Common Spirit (1 qt.)      2 sp      3 sp      5 sp
+             Good Spirit (1 qt.)      5 sp      7 sp      1 gp
+                     Tea (1 lb.)      1 sp     12 cp     15 cp
+                  Tomato (1 lb.)      7 cp      9 cp     12 cp
+              Watermelon (1 lb.)      5 cp      7 cp      1 sp
+                   Wheat (1 lb.)      1 cp      2 cp      3 cp
+             Common Wine (1 qt.)      1 sp      2 sp      3 sp
+               Good Wine (1 qt.)      7 sp      1 gp     15 sp
+                    Yams (1 lb.)      1 cp      2 cp      4 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+General Store
+The Grapling Gazebo
+            Item Name                 Low       Mid       High   
+GEAR                            
+                         Blanket      3 sp      5 sp      8 sp
+                          Candle      1 cp      1 cp      2 cp
+                           Flask      1 cp      2 cp      3 cp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                      Pot (iron)      1 gp      2 gp      3 gp
+                           Pouch      3 sp      5 sp      8 sp
+              Hemp Rope (50 ft.)      7 sp      1 gp      2 gp
+                            Sack      1 cp      1 cp      2 cp
+TOOLS                           
+                 Cook's Utensils      7 sp      1 gp      2 gp
+                   Mason's Tools      7 gp      1 pp     15 gp
+FOODSTUFFS                      
+                 Carrots (1 lb.)      1 cp      2 cp      4 cp
+                    Corn (1 lb.)      4 cp      6 cp      8 cp
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+                    Eggs (dozen)      4 cp      6 cp      9 cp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+                  Gourds (1 lb.)      7 cp      9 cp     12 cp
+                  Greens (1 lb.)      2 cp      4 cp      6 cp
+                   Milk (1 gal.)      1 cp      2 cp      4 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+                    Rice (1 lb.)      1 cp      1 cp      2 cp
+                  Tomato (1 lb.)      7 cp      9 cp     12 cp
+              Watermelon (1 lb.)      5 cp      7 cp      1 sp
+                   Wheat (1 lb.)      1 cp      2 cp      3 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+General Store
+The Deaf Melon
+            Item Name                 Low       Mid       High   
+GEAR                            
+                          Abacus      1 gp      2 gp      3 gp
+                          Barrel      1 gp      2 gp      3 gp
+                         Blanket      3 sp      5 sp      8 sp
+                          Bucket      3 cp      5 cp      8 cp
+                          Candle      1 cp      1 cp      2 cp
+                           Chest      3 gp      5 gp      8 gp
+                  Common Clothes      3 sp      5 sp      8 sp
+                           Flask      1 cp      2 cp      3 cp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                          Abacus      7 sp      1 gp      2 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 gp      2 gp      3 gp
+                             Jug      1 cp      2 cp      3 cp
+                 Ladder (10 ft.)      7 cp      1 sp      2 sp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                            Lamp      3 gp      5 gp      8 gp
+                            Lock      7 gp      1 pp     15 gp
+                        Mess Kit      1 sp      2 sp      3 sp
+                    Miner's Pick      1 gp      2 gp      3 gp
+                  Mirror (steel)      3 gp      5 gp      8 gp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                      Pot (iron)      1 gp      2 gp      3 gp
+                           Pouch      3 sp      5 sp      8 sp
+              Hemp Rope (50 ft.)      7 sp      1 gp      2 gp
+                            Sack      1 cp      1 cp      2 cp
+                           Scale      3 gp      5 gp      8 gp
+                          Shovel      1 gp      2 gp      3 gp
+                     Signet Ring      3 gp      5 gp      8 gp
+                            Soap      1 cp      2 cp      3 cp
+                            Vial      7 sp      1 gp      2 gp
+TOOLS                           
+               Carpenter's Tools     11 gp     15 gp     23 gp
+                 Cobbler's Tools      3 gp      5 gp      8 gp
+                 Cook's Utensils      7 sp      1 gp      2 gp
+           Leatherworker's Tools      3 gp      5 gp      8 gp
+                   Mason's Tools      7 gp      1 pp     15 gp
+                  Potter's Tools      7 gp      1 pp     15 gp
+                  Weaver's Tools      7 sp      1 gp      2 gp
+              Woodcarver's Tools      7 sp      1 gp      2 gp
+FOODSTUFFS                      
+                  Apples (1 lb.)      1 cp      2 cp      1 sp
+                   Beans (1 lb.)      1 cp      2 cp      3 cp
+                    Beer (1 qt.)      7 cp      1 sp      2 sp
+                 Berries (1 lb.)      3 cp      5 cp      1 sp
+           Common Brandy (1 qt.)      2 sp      3 sp      5 sp
+                   Bread (1 lb.)      5 cp      8 cp      1 sp
+             White Bread (1 lb.)      1 sp     15 cp      2 sp
+                  Butter (1 lb.)      1 sp      2 sp      3 sp
+                 Carrots (1 lb.)      1 cp      2 cp      4 cp
+           Common Cheese (1 lb.)      1 sp     15 cp      2 sp
+                   Cider (1 qt.)      2 sp      3 sp      5 sp
+                  Coffee (1 lb.)      2 sp      3 sp      5 sp
+                    Corn (1 lb.)      4 cp      6 cp      8 cp
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+                    Eggs (dozen)      4 cp      6 cp      9 cp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+             White Flour (1 lb.)      8 cp      1 sp     12 cp
+                  Garlic (1 lb.)      2 cp      3 cp      5 cp
+                  Gourds (1 lb.)      7 cp      9 cp     12 cp
+                  Grapes (1 lb.)      1 cp      2 cp      1 sp
+                  Greens (1 lb.)      2 cp      4 cp      6 cp
+                   Honey (1 qt.)      6 cp      7 cp      8 cp
+                    Mead (1 qt.)      3 sp      5 sp      8 sp
+                  Melons (1 lb.)      7 cp      9 cp     12 cp
+                   Milk (1 gal.)      1 cp      2 cp      4 cp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+         Popcorn Kernels (1 lb.)      1 sp     12 cp     14 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+                  Radish (1 lb.)      1 cp      2 cp      4 cp
+                    Rice (1 lb.)      1 cp      1 cp      2 cp
+                    Salt (1 lb.)      3 cp      5 cp      8 cp
+            Common Spice (1 lb.)      8 sp      1 gp      2 gp
+          Uncommon Spice (1 lb.)      1 gp      2 gp      4 gp
+           Common Spirit (1 qt.)      2 sp      3 sp      5 sp
+             Good Spirit (1 qt.)      5 sp      7 sp      1 gp
+                     Tea (1 lb.)      1 sp     12 cp     15 cp
+                  Tomato (1 lb.)      7 cp      9 cp     12 cp
+              Watermelon (1 lb.)      5 cp      7 cp      1 sp
+                   Wheat (1 lb.)      1 cp      2 cp      3 cp
+             Common Wine (1 qt.)      1 sp      2 sp      3 sp
+                    Yams (1 lb.)      1 cp      2 cp      4 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+Leatherworker's Shop
+The Little Tree
+            Item Name                 Low       Mid       High   
+LIGHT ARMOR                     
+                         Leather      7 gp      1 pp     15 gp
+                 Studded Leather     33 gp     45 gp     68 gp
+MEDIUM ARMOR                    
+                            Hide      7 gp      1 pp     15 gp
+SHIELD                          
+                          Shield      7 gp      1 pp     15 gp
+WEAPONS                         
+                           Sling      7 cp      1 sp      2 sp
+GEAR                            
+           Barding (Mount Armor) 3x MtCost 4x MtCost 5x MtCost
+                    Bit & Bridle      1 gp      2 gp      3 gp
+                     Pack Saddle      3 gp      5 gp      1 pp
+                   Riding Saddle      8 gp      1 pp     15 gp
+                 Military Saddle     15 gp      2 pp      3 pp
+                   Exotic Saddle      5 pp      6 pp      8 pp
+                      Saddlebags      2 gp      4 gp      7 gp
+                       Waterskin      1 sp      2 sp      3 sp
+TOOLS                           
+                 Cobbler's Tools      3 gp      5 gp      8 gp
+                           Drums      4 gp      6 gp      9 gp
+           Leatherworker's Tools      3 gp      5 gp      8 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Music Store
+The Able Man
+            Item Name                 Low       Mid       High   
+INSTRUMENTS                     
+                            Drum      4 gp      6 gp      9 gp
+                           Flute      1 gp      2 gp      3 gp
+                            Horn      2 gp      3 gp      5 gp
+                           Shawm      1 gp      2 gp      3 gp
+TOOLS                           
+SERVICES                        
+
+Questions? See the Demagus True Reference PDF
+
+
+Tailor
+The Bloated Mirror
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Backpack      1 gp      2 gp      3 gp
+                          Basket      3 sp      4 sp      6 sp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                           Pouch      3 sp      5 sp      8 sp
+                            Sack      1 cp      1 cp      2 cp
+                            Tent      1 gp      2 gp      3 gp
+CLOTHES                         
+                          Common      3 sp      5 sp      8 sp
+                            Fine     13 gp     15 gp     23 gp
+                           Robes      7 sp      1 gp      2 gp
+                      Traveler's      1 gp      2 gp      3 gp
+TOOLS                           
+                  Weaver's Tools      7 sp      1 gp      2 gp
+TEXTILES                        
+              Canvas (1 sq. yd.)      7 cp      1 sp      2 sp
+               Linen (1 sq. yd.)      4 gp      5 gp      7 gp
+                Silk (1 sq. yd.)      8 gp      1 pp     13 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tailor
+The Magical Ox
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Backpack      1 gp      2 gp      3 gp
+                          Basket      3 sp      4 sp      6 sp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                           Pouch      3 sp      5 sp      8 sp
+                            Sack      1 cp      1 cp      2 cp
+                            Tent      1 gp      2 gp      3 gp
+CLOTHES                         
+                          Common      3 sp      5 sp      8 sp
+                         Costume      3 sp      5 sp      8 sp
+                            Fine     13 gp     15 gp     23 gp
+                           Robes      7 sp      1 gp      2 gp
+                      Traveler's      1 gp      2 gp      3 gp
+TOOLS                           
+                  Weaver's Tools      7 sp      1 gp      2 gp
+TEXTILES                        
+              Canvas (1 sq. yd.)      7 cp      1 sp      2 sp
+               Linen (1 sq. yd.)      4 gp      5 gp      7 gp
+                Silk (1 sq. yd.)      8 gp      1 pp     13 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tailor
+The Countess' Lord
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Backpack      1 gp      2 gp      3 gp
+                          Basket      3 sp      4 sp      6 sp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                           Pouch      3 sp      5 sp      8 sp
+                            Sack      1 cp      1 cp      2 cp
+                            Tent      1 gp      2 gp      3 gp
+CLOTHES                         
+                          Common      3 sp      5 sp      8 sp
+                            Fine     13 gp     15 gp     23 gp
+                           Robes      7 sp      1 gp      2 gp
+                      Traveler's      1 gp      2 gp      3 gp
+TOOLS                           
+                  Weaver's Tools      7 sp      1 gp      2 gp
+TEXTILES                        
+              Canvas (1 sq. yd.)      7 cp      1 sp      2 sp
+               Linen (1 sq. yd.)      4 gp      5 gp      7 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The King's Sword
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+               Dumplings (dough)      3 cp      4 cp      5 cp
+                     White Gravy      2 cp      4 cp      6 cp
+                         Kringle     17 cp      2 sp     25 cp
+                     Brown Gravy      1 cp      2 cp      3 cp
+                         Nut Pie     12 cp     15 cp     18 cp
+                    Fried Cheese      5 cp      7 cp      1 sp
+                   Beef Sandwich     18 cp     22 cp      3 sp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+           Old Fashioned, Simple      2 sp      3 sp      5 sp
+                            Mead      3 sp      5 sp      8 sp
+      Old Fashioned, Traditional      3 sp      5 sp      7 sp
+                          Coffee      1 cp      1 cp      2 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Naive Dandelion
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                       Berry Pie     26 cp     28 cp     35 cp
+                   Pork Sandwich     12 cp     16 cp     22 cp
+                      Sauerkraut      1 cp      2 cp      4 cp
+                       Hushpuppy      4 cp      6 cp      1 sp
+             Exotic Cheese Chunk     12 cp     16 cp     24 cp
+                        Biscuits      7 cp      1 sp      2 sp
+                   Beef Sandwich     18 cp     22 cp      3 sp
+                        Porkchop      3 sp      4 sp      5 sp
+               Potatoe Dumplings      2 cp      3 cp      4 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                             Ale      7 cp      1 sp      2 sp
+                       Sweet Tea      2 cp      3 cp      5 cp
+                   Common Brandy      2 sp      3 sp      5 sp
+                       Good Wine      7 sp      1 gp     15 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Royal Sheep
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                     Fried Steak      3 sp      5 sp      7 sp
+                   Beef Sandwich     18 cp     22 cp      3 sp
+                Chicken Sandwich      7 cp      1 sp      2 sp
+                            Eggs      1 cp      1 cp      2 cp
+                         Nut Pie     12 cp     15 cp     18 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                            Grog      2 cp      3 cp      5 cp
+                     Fine Spirit      1 gp     15 sp      3 gp
+                       Good Wine      7 sp      1 gp     15 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Arcadian Horse
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                      Sauerkraut      1 cp      2 cp      4 cp
+                        Pancakes      4 cp      6 cp      8 cp
+                     Fried Steak      3 sp      5 sp      7 sp
+                 Sweet Cornbread     15 cp     18 cp     22 cp
+                 Italian Sausage      2 sp     22 cp     26 cp
+                   Pork Sandwich     12 cp     16 cp     22 cp
+             Exotic Cheese Chunk     12 cp     16 cp     24 cp
+                       Berry Pie     26 cp     28 cp     35 cp
+               Dumplings (dough)      3 cp      4 cp      5 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                         Martini      2 sp     25 cp      3 sp
+      Old Fashioned, Traditional      3 sp      5 sp      7 sp
+                       Good Wine      7 sp      1 gp     15 sp
+                             Tea      1 cp      2 cp      3 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Lovely Soldier
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+           Indeterminate Sausage      6 cp      8 cp      1 sp
+                 Italian Sausage      2 sp     22 cp     26 cp
+                     Brown Gravy      1 cp      2 cp      3 cp
+                     Baked Beans      1 cp      2 cp      3 cp
+                     White Gravy      2 cp      4 cp      6 cp
+                   Fried Chicken     17 cp     22 cp     27 cp
+                            Eggs      1 cp      1 cp      2 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                     Fine Spirit      1 gp     15 sp      3 gp
+                       Manhattan      2 sp      3 sp      5 sp
+                     Good Brandy      1 gp     15 sp      3 gp
+                       Good Wine      7 sp      1 gp     15 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Purple Chest
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                   Fried Chicken     17 cp     22 cp     27 cp
+                Chicken Sandwich      7 cp      1 sp      2 sp
+                         Kringle     17 cp      2 sp     25 cp
+                       Bratwurst     16 cp     18 cp      2 sp
+                     Fried Steak      3 sp      5 sp      7 sp
+                     Brown Gravy      1 cp      2 cp      3 cp
+                     Spiced Nuts      4 cp      6 cp      1 sp
+                    Fried Cheese      5 cp      7 cp      1 sp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                       Sweet Tea      2 cp      3 cp      5 cp
+                     Common Wine      1 sp      2 sp      3 sp
+                          Coffee      1 cp      1 cp      2 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Bubbling Squirel
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                            Eggs      1 cp      1 cp      2 cp
+                 Italian Sausage      2 sp     22 cp     26 cp
+             Vegetable Dumplings      7 cp      1 sp     12 cp
+                   Beef Sandwich     18 cp     22 cp      3 sp
+                   Leg of Mutton     15 cp      2 sp     25 cp
+               Potatoe Dumplings      2 cp      3 cp      4 cp
+                    Fried Cheese      5 cp      7 cp      1 sp
+                      Sauerkraut      1 cp      2 cp      4 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                   Common Spirit      2 sp      3 sp      5 sp
+                             Tea      1 cp      2 cp      3 cp
+                            Grog      2 cp      3 cp      5 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Beautiful Donkey
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                         Nut Pie     12 cp     15 cp     18 cp
+                         Chicken     15 cp      2 sp     25 cp
+                     Brown Gravy      1 cp      2 cp      3 cp
+                  Polish Sausage     18 cp      2 sp     24 cp
+                      Fried Pork     14 cp     18 cp     24 cp
+                Chicken Sandwich      7 cp      1 sp      2 sp
+                     White Gravy      2 cp      4 cp      6 cp
+                      Sauerkraut      1 cp      2 cp      4 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                       Good Wine      7 sp      1 gp     15 sp
+                         Martini      2 sp     25 cp      3 sp
+                     Good Brandy      1 gp     15 sp      3 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Mute Deer
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                        Pancakes      4 cp      6 cp      8 cp
+                     Spiced Nuts      4 cp      6 cp      1 sp
+                  Shepherd's Pie     25 cp     28 cp     32 cp
+                       Berry Pie     26 cp     28 cp     35 cp
+                  Polish Sausage     18 cp      2 sp     24 cp
+                  Meat Dumplings     12 cp     15 cp     18 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                   Common Spirit      2 sp      3 sp      5 sp
+                     Fine Spirit      1 gp     15 sp      3 gp
+           Old Fashioned, Simple      2 sp      3 sp      5 sp
+                             Ale      7 cp      1 sp      2 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Sour Brush
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                   Fried Chicken     17 cp     22 cp     27 cp
+                           Steak      4 sp      6 sp      8 sp
+             Vegetable Dumplings      7 cp      1 sp     12 cp
+                         Chicken     15 cp      2 sp     25 cp
+                       Apple Pie      1 sp     12 cp     15 cp
+               Dumplings (dough)      3 cp      4 cp      5 cp
+                  Polish Sausage     18 cp      2 sp     24 cp
+                     White Gravy      2 cp      4 cp      6 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                       Manhattan      2 sp      3 sp      5 sp
+                            Grog      2 cp      3 cp      5 cp
+                         Martini      2 sp     25 cp      3 sp
+                             Tea      1 cp      2 cp      3 cp
+                   Common Brandy      2 sp      3 sp      5 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The New Aunt
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                        Pancakes      4 cp      6 cp      8 cp
+                       Hushpuppy      4 cp      6 cp      1 sp
+                       Apple Pie      1 sp     12 cp     15 cp
+                        Biscuits      7 cp      1 sp      2 sp
+               Dumplings (dough)      3 cp      4 cp      5 cp
+                      Fried Pork     14 cp     18 cp     24 cp
+                      Fried Fish     24 cp      1 gp      2 gp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                             Tea      1 cp      2 cp      3 cp
+                         Martini      2 sp     25 cp      3 sp
+                     Fine Brandy      1 pp     15 gp      3 pp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tavern
+The Violent Bucket
+
+Squalid     : Sleep in stable, Bowl of questionable stew, roll a 1d6, on 1 get food posioning.
+Poor        : Sleep in storeroom or loft, Unlimited bowls of stew or cheap food.
+Modest      : Bed with blankets and a rough pillow, may have to share, Round meal, little meat, some vegetables, non water drink.
+Comfortable : Your own room with your own comfy bed, A dish, some sides, and a small desert. Not particularly fancy.
+Wealthy     : Silk blanket, feather pillow, room service, Any dish on the menu, some sides, a good drink, and desert. Staff jumps to fufill your needs.
+Aristocratic: You have an attached room for a few servents, everything is fine, Your meal is served in courses, appetizers, main course, deserts and the like with enough for guests. You have a personal staff member assigned to keeping you happy.
+
+        Per Night                  Per Meal       
+Squalid      7 cp         Squalid      3 cp        
+Poor         1 sp         Poor         6 cp        
+Modest       5 sp         Modest       3 sp        
+Comfertable  8 sp         Comfertable  5 sp        
+Wealthy      2 gp         Wealthy      8 sp        
+Aristocratic 4 gp         Aristocratic 2 gp        
+
+                                 MENU
+            Item Name                 Low       Mid       High   
+DISHES                          
+                         Pottage      0 pp      1 cp      1 cp
+                         Kringle     17 cp      2 sp     25 cp
+                   Pork Sandwich     12 cp     16 cp     22 cp
+           Indeterminate Sausage      6 cp      8 cp      1 sp
+                        Biscuits      7 cp      1 sp      2 sp
+                       Apple Pie      1 sp     12 cp     15 cp
+                     Fried Onion      1 cp      1 cp      2 cp
+                       Hushpuppy      4 cp      6 cp      1 sp
+                        Doughnut      1 cp      2 cp      4 cp
+                  Shepherd's Pie     25 cp     28 cp     32 cp
+DRINKS                          
+                           Water      0 pp      0 pp      1 cp
+                       Good Wine      7 sp      1 gp     15 sp
+                     Good Brandy      1 gp     15 sp      3 gp
+                            Beer      7 cp      1 sp      2 sp
+                            Grog      2 cp      3 cp      5 cp
+
+Questions? See the Demagus True Reference PDF
+
+
+Shrine
+Our Green Friar
+            Item Name                 Low       Mid       High   
+GEAR                            
+                            Bell      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+               Book of Scripture     18 gp     25 gp     38 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                          Censer      3 sp      5 sp      2 gp
+                       Chalk (1)      1 cp      1 cp      2 cp
+                           Flask      1 cp      2 cp      2 cp
+                    Healer's Kit      3 sp      5 sp      8 sp
+                     Holy Symbol      3 gp      5 gp      8 gp
+              Holy Water (flask)     18 gp     25 gp     38 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                          Ration      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+TOOLS                           
+                   Herbalism Kit      3 gp      5 gp      8 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Shrine
+Our Young Woman
+            Item Name                 Low       Mid       High   
+GEAR                            
+                         Blanket      3 sp      5 sp      8 sp
+               Book of Scripture     18 gp     25 gp     38 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                          Censer      3 sp      5 sp      2 gp
+                           Flask      1 cp      2 cp      2 cp
+                    Healer's Kit      3 sp      5 sp      8 sp
+                     Holy Symbol      3 gp      5 gp      8 gp
+              Holy Water (flask)     18 gp     25 gp     38 gp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                          Ration      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+TOOLS                           
+
+Questions? See the Demagus True Reference PDF
+
+
+Shrine
+Our Flaming Jackrabbit
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Alms Box      3 gp      5 gp      8 gp
+                            Bell      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+               Book of Scripture     18 gp     25 gp     38 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                          Censer      3 sp      5 sp      2 gp
+                       Chalk (1)      1 cp      1 cp      2 cp
+                           Flask      1 cp      2 cp      2 cp
+                    Healer's Kit      3 sp      5 sp      8 sp
+                     Holy Symbol      3 gp      5 gp      8 gp
+              Holy Water (flask)     18 gp     25 gp     38 gp
+                 Incense (block)      1 cp      1 cp      2 cp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+               Potion of Healing     38 gp      5 pp     75 gp
+                          Ration      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+TOOLS                           
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+                           Flute      1 gp      2 gp      3 gp
+                   Herbalism Kit      3 gp      5 gp      8 gp
+                            Horn      2 gp      3 gp      5 gp
+                            Lyre     22 gp      3 pp     45 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Shrine
+Our Common Tower
+            Item Name                 Low       Mid       High   
+GEAR                            
+               Book of Scripture     18 gp     25 gp     38 gp
+                    Healer's Kit      3 sp      5 sp      8 sp
+                     Holy Symbol      3 gp      5 gp      8 gp
+              Holy Water (flask)     18 gp     25 gp     38 gp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                            Vial      7 sp      1 gp      2 gp
+TOOLS                           
+
+Questions? See the Demagus True Reference PDF
+
+
+Shrine
+Our Lukewarm Horse
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Alms Box      3 gp      5 gp      8 gp
+                            Bell      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+               Book of Scripture     18 gp     25 gp     38 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                          Censer      3 sp      5 sp      2 gp
+                       Chalk (1)      1 cp      1 cp      2 cp
+                           Flask      1 cp      2 cp      2 cp
+                    Healer's Kit      3 sp      5 sp      8 sp
+                     Holy Symbol      3 gp      5 gp      8 gp
+              Holy Water (flask)     18 gp     25 gp     38 gp
+                 Incense (block)      1 cp      1 cp      2 cp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                          Ration      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+TOOLS                           
+                   Herbalism Kit      3 gp      5 gp      8 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Shrine
+Our Prancing Cricket
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Alms Box      3 gp      5 gp      8 gp
+                            Bell      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+               Book of Scripture     18 gp     25 gp     38 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                          Censer      3 sp      5 sp      2 gp
+                       Chalk (1)      1 cp      1 cp      2 cp
+                           Flask      1 cp      2 cp      2 cp
+                    Healer's Kit      3 sp      5 sp      8 sp
+                     Holy Symbol      3 gp      5 gp      8 gp
+              Holy Water (flask)     18 gp     25 gp     38 gp
+                 Incense (block)      1 cp      1 cp      2 cp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                  Perfume (vial)      3 gp      5 gp      8 gp
+               Potion of Healing     38 gp      5 pp     75 gp
+                          Ration      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+TOOLS                           
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+                           Flute      1 gp      2 gp      3 gp
+                   Herbalism Kit      3 gp      5 gp      8 gp
+                            Horn      2 gp      3 gp      5 gp
+                            Lyre     22 gp      3 pp     45 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Shrine
+Our Green Donkey
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Alms Box      3 gp      5 gp      8 gp
+                            Bell      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+               Book of Scripture     18 gp     25 gp     38 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                          Censer      3 sp      5 sp      2 gp
+                       Chalk (1)      1 cp      1 cp      2 cp
+                           Flask      1 cp      2 cp      2 cp
+                    Healer's Kit      3 sp      5 sp      8 sp
+                     Holy Symbol      3 gp      5 gp      8 gp
+              Holy Water (flask)     18 gp     25 gp     38 gp
+                 Incense (block)      1 cp      1 cp      2 cp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                       Paper (1)      1 sp      2 sp      3 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                  Perfume (vial)      3 gp      5 gp      8 gp
+               Potion of Healing     38 gp      5 pp     75 gp
+                          Ration      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+TOOLS                           
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+                           Flute      1 gp      2 gp      3 gp
+                   Herbalism Kit      3 gp      5 gp      8 gp
+                            Horn      2 gp      3 gp      5 gp
+
+Questions? See the Demagus True Reference PDF
+
+

@@ -1,0 +1,74 @@
+Jeweler
+The Wounded Brush
+            Item Name                 Low       Mid       High   
+GEAR                            
+                Crystal (arcane)      8 gp      1 pp     15 gp
+                    Gold Earings      3 gp      4 gp      6 gp
+                   Gold Necklace      3 gp      5 gp      8 gp
+                       Gold Ring      2 gp      3 gp      4 gp
+                    Orb (arcane)     15 gp      2 pp      3 pp
+                Platinum Earings      3 pp      4 pp      6 pp
+               Platinum Necklace      3 pp      5 pp      8 pp
+                   Platinum Ring      2 pp      3 pp      4 pp
+                     Signet Ring      3 gp      5 gp      8 gp
+                  Silver Earings      3 sp      4 sp      6 sp
+                 Silver Necklace      3 sp      5 sp      8 sp
+                     Silver Ring      2 sp      3 sp      4 sp
+TOOLS                           
+                 Jeweler's Tools     18 gp     25 gp     38 gp
+                Resizing Jewelry      8 gp      1 pp     15 gp
+                         Set Gem   23% gem   23% gem   30% gem
+                    Stonecutting   23% gem   25% gem   30% gem
+JEWELRY                         
+       Custom Adamantine Jewelry  Gem+70pp  Gem+80pp  Gem+100pp
+             Custom Gold Jewelry  Gem+38gp  Gem+50gp  Gem+75gp
+          Custom Mithril Jewelry  Gem+40pp  Gem+50pp  Gem+75pp
+         Custom Platinum Jewelry  Gem+38pp  Gem+50pp  Gem+75pp
+           Custom Silver Jewelry   Gem+4gp   Gem+5gp   Gem+8gp
+
+    Gem Name         Amount         Low       Mid      High
+         Azurite       11           8 gp     10 gp     15 gp
+    Banded Agate       10           8 gp     10 gp     15 gp
+     Blue Quartz       13           8 gp     10 gp     15 gp
+       Eye Agate       11           8 gp     10 gp     15 gp
+        Hematite       10           8 gp     10 gp     15 gp
+    Lapis Lazuli        9           8 gp     10 gp     15 gp
+       Malachite       10           8 gp     10 gp     15 gp
+      Moss Agate       10           8 gp     10 gp     15 gp
+        Obsidian        9           8 gp     10 gp     15 gp
+   Rhodochrosite       13           8 gp     10 gp     15 gp
+       Tiger Eye       11           8 gp     10 gp     15 gp
+       Turquoise       11           8 gp     10 gp     15 gp
+      Bloodstone        7          38 gp     50 gp     75 gp
+       Carnelian        7          38 gp     50 gp     75 gp
+      Chalcedony        7          38 gp     50 gp     75 gp
+     Chrysoprase        5          38 gp     50 gp     75 gp
+         Citrine        6          38 gp     50 gp     75 gp
+          Jasper        5          38 gp     50 gp     75 gp
+       Moonstone        7          38 gp     50 gp     75 gp
+            Onyx        6          38 gp     50 gp     75 gp
+          Quartz        7          38 gp     50 gp     75 gp
+        Sardonyx        5          38 gp     50 gp     75 gp
+Star Rose Quartz        6          38 gp     50 gp     75 gp
+          Zircon        5          38 gp     50 gp     75 gp
+           Amber        1          75 gp    100 gp    150 gp
+        Amethyst        2          75 gp    100 gp    150 gp
+     Chrysoberyl        1          75 gp    100 gp    150 gp
+           Coral        3          75 gp    100 gp    150 gp
+          Garnet        2          75 gp    100 gp    150 gp
+            Jade        1          75 gp    100 gp    150 gp
+             Jet        1          75 gp    100 gp    150 gp
+           Pearl        1          75 gp    100 gp    150 gp
+          Spinel        1          75 gp    100 gp    150 gp
+      Tourmaline        1          75 gp    100 gp    150 gp
+     Alexandrite        2         375 gp    500 gp    750 gp
+      Aquamarine        1         375 gp    500 gp    750 gp
+     Black Pearl        1         375 gp    500 gp    750 gp
+         Peridot        1         375 gp    500 gp    750 gp
+           Topaz        1         375 gp    500 gp    750 gp
+         Emerald        1         750 gp   1000 gp   1500 gp
+       Fire Opal        1         750 gp   1000 gp   1500 gp
+       Star Ruby        1         750 gp   1000 gp   1500 gp
+   Star Sapphire        1         750 gp   1000 gp   1500 gp
+
+Questions? See the Demagus True Reference PDF

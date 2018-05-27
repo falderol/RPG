@@ -1,0 +1,108 @@
+Adventurer's Emporium
+The Knight's Mother
+            Item Name                 Low       Mid       High   
+ARMOR                           
+                          Padded      3 gp      5 gp      8 gp
+                         Leather      7 gp      1 pp     15 gp
+                            Hide      7 sp      1 gp     15 gp
+WEAPONS                         
+                            Club      7 cp      1 sp      2 sp
+                          Dagger      1 gp      2 gp      3 gp
+                       Greatclub      1 sp      2 sp      3 sp
+                         Handaxe      3 gp      5 gp      8 gp
+                    Light Hammer      1 gp      2 gp      3 gp
+                    Quarterstaff      1 sp      2 sp      3 sp
+                           Spear      7 sp      1 gp      2 gp
+                  Light Crossbow     18 gp     25 gp     38 gp
+                            Dart      3 cp      5 cp      8 cp
+                        Shortbow     18 gp     25 gp     38 gp
+                           Sling      7 cp      1 sp      2 sp
+                            Whip      1 sp      2 sp      3 sp
+                         Blowgun      7 gp      1 pp     15 gp
+                  Heavy Crossbow     38 gp      5 pp     75 gp
+                         Longbow     38 gp      5 pp     75 gp
+GEAR                            
+                     Arrows (20)      7 sp      1 gp      2 gp
+            Blowgun Needles (50)      7 sp      1 gp      2 gp
+             Crossbow Bolts (20)      7 sp      1 gp      2 gp
+              Sling Bullets (20)      3 cp      4 cp      6 cp
+                        Backpack      1 gp      2 gp      3 gp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                    Glass Bottle      1 gp      2 gp      3 gp
+                          Candle      1 cp      1 cp      3 cp
+              Crossbow Bolt Case      7 sp      1 gp      2 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                  Chain (10 ft.)      3 gp      5 gp      8 gp
+                           Chest      3 gp      5 gp      8 gp
+                   Climber's Kit     18 gp     25 gp     38 gp
+              Traveler's Clothes      1 gp      2 gp      3 gp
+                         Crowbar      1 gp      2 gp      3 gp
+                           Flask      1 cp      2 cp      4 cp
+                  Grappling Hook      1 gp      2 gp      3 gp
+                          Hammer      7 sp      1 gp      2 gp
+                    Hunting Trap      3 gp      5 gp      8 gp
+                             Jug      1 cp      2 cp      3 cp
+                 Ladder (10 ft.)      7 cp      1 sp      2 sp
+                 Latern (hooded)      3 gp      5 gp      8 gp
+                        Mess Kit      1 sp      2 sp      3 sp
+                       Parchment      7 cp      1 sp      2 sp
+                   Pick (mining)      1 gp      2 gp      3 gp
+                           Piton      3 cp      5 cp      8 cp
+                   Pole (10 ft.)      3 cp      5 cp      1 sp
+                             Pot      1 gp      2 gp      3 gp
+                           Pouch      3 sp      5 sp      8 sp
+                          Pulley      7 sp      1 gp      2 gp
+                          Quiver      7 sp      1 gp      2 gp
+                  Ration (1 day)      3 sp      5 sp      8 sp
+              Hemp Rope (50 ft.)      7 sp      1 gp      2 gp
+                            Sack      1 cp      1 cp      2 cp
+                          Shovel      1 gp      2 gp      3 gp
+                  Signal Whistle      3 cp      5 cp      8 cp
+                            Tent      1 gp      2 gp      3 gp
+                       Tinderbox      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+                            Bait      3 cp      5 cp      8 cp
+                  Fishing Tackle      7 sp      1 gp      2 gp
+                         Rowboat     38 gp      5 pp     75 gp
+TOOLS                           
+            Cartographer's Tools     11 gp     15 gp     23 gp
+                   Herbalism Kit      3 gp      5 gp      8 gp
+               Navigator's Tools     18 gp     25 gp     38 gp
+FOODSTUFFS                      
+                  Apples (1 lb.)      1 cp      2 cp      1 sp
+           Common Brandy (1 qt.)      2 sp      3 sp      5 sp
+                   Bread (1 lb.)      5 cp      8 cp      1 sp
+           Common Cheese (1 lb.)      1 sp     15 cp      2 sp
+                   Cider (1 qt.)      2 sp      3 sp      5 sp
+                    Corn (1 lb.)      4 cp      6 cp      8 cp
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+                Cornmeal (1 lb.)      6 cp      8 cp      1 sp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+                  Garlic (1 lb.)      2 cp      3 cp      5 cp
+                   Honey (1 qt.)      6 cp      7 cp      8 cp
+                    Mead (1 qt.)      3 sp      5 sp      8 sp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                  Onions (1 lb.)      1 cp      2 cp      5 cp
+         Popcorn Kernels (1 lb.)      1 sp     12 cp     14 cp
+                Potatoes (1 lb.)      1 cp      2 cp      3 cp
+                    Rice (1 lb.)      1 cp      1 cp      2 cp
+                    Salt (1 lb.)      3 cp      5 cp      8 cp
+           Common Spirit (1 qt.)      2 sp      3 sp      5 sp
+                  Tallow (1 lb.)      4 sp      6 sp      8 sp
+                   Wheat (1 lb.)      1 cp      2 cp      3 cp
+             Common Wine (1 lb.)      1 sp      2 sp      3 sp
+DISHES                          
+                         Biscuts      7 cp      1 sp      2 sp
+                        Hardtack      6 cp      8 cp      1 sp
+                      Beef Jerky     16 sp      2 gp      3 gp
+                        Pemmican     16 sp      2 gp      3 gp
+                     Salted Pork      9 sp     12 sp      2 gp
+                      Sauerkraut      1 cp      2 cp      4 cp
+                         Chorizo      2 sp     22 cp     26 cp
+             Beef Summer Sausage     32 cp     34 cp     38 cp
+                         Biscuts     18 cp      2 sp     24 cp
+
+Questions? See the Demagus True Reference PDF

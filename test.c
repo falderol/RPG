@@ -85,7 +85,7 @@ void townnameGen(FILE * storeHere){
 	strcpy(first[35],"Kin");
 	strcpy(first[36],"Ler");
 	strcpy(first[37],"Orrin");
-	strcpy(first[38],"Maccles");
+	strcpy(first[38],"Maccels");
 	strcpy(first[39],"Skarg");
 	strcpy(first[40],"Bull");
 	strcpy(first[41],"Black");
@@ -176,6 +176,24 @@ int main(int argc, char* argv[]){
 	srand(time(NULL));
 	uint8_t doMe = 1;
 	uint8_t settlementSize = (rand()%20)+1;
+	
+	uint8_t numAE = 0;
+	uint8_t numALC = 0;
+	uint8_t numARC = 0;
+	uint8_t numBAK = 0;
+	uint8_t numBRB = 0;
+	uint8_t numBLK = 0;
+	uint8_t numBOK = 0;
+	uint8_t numBCH = 0;
+	uint8_t numFLC = 0;
+	uint8_t numGEN = 0;
+	uint8_t numLEA = 0;
+	uint8_t numMUS = 0;
+	uint8_t numTLR = 0;
+	uint8_t numTVN = 0;
+	uint8_t numSRN = 0;
+	uint8_t numJWL = 0;
+	
 	if(settlementSize == 20){
 		if (((rand()%20)+1)==20){
 			fprintf(townFile, "The City of ");
@@ -194,62 +212,62 @@ int main(int argc, char* argv[]){
 					case 2:
 					case 3:
 					case 4:
-						shopGen(filename, 13,flags, rand());
+						++numTVN;
 						break;
 					case 5:
-						shopGen(filename, 8,flags, rand());
+						++numFLC;
 						break;
 					case 6:
-						shopGen(filename, 10,flags, rand());
+						++numLEA;
 						break;
 					case 7:
 					case 8:
 					case 9:
-						shopGen(filename, 9,flags, rand());
+						++numGEN;
 						break;
 					case 10:
 					case 11:
-						shopGen(filename, 05,flags, rand());
+						++numBLK;
 						break;
 					case 12:
 					case 13:
-						shopGen(filename, 12,flags, rand());
+						++numTLR;
 						break;
 					case 14:
-						shopGen(filename, 0,flags, rand());
+						++numAE;
 						break;
 					case 15:
-						shopGen(filename, 2,flags, rand());
+						++numARC;
 						break;
 					case 16:
-						shopGen(filename, 1,flags, rand());
+						++numALC;
 						break;
 					case 17:
 					case 18:
-						shopGen(filename, 14,flags, rand());
+						++numSRN;
 						break;
 					case 19:
 					case 20:
 						switch((rand()%8)+1){
 							case 1:
-								shopGen(filename, 11,flags, rand());
+								++numMUS;
 								break;
 							case 2:
-								shopGen(filename, 06,flags, rand());
+								++numBOK;
 								break;
 							case 3:
-								shopGen(filename, 15,flags, rand());
+								++numJWL;
 								break;
 							case 4:
 							case 5:
-								shopGen(filename, 7,flags, rand());
+								++numBCH;
 								break;
 							case 6:
 							case 7:
-								shopGen(filename, 3,flags, rand());
+								++numBAK;
 								break;
 							case 8:
-								shopGen(filename, 4,flags, rand());
+								++numBRB;
 								break;
 							default:
 								break;
@@ -257,11 +275,7 @@ int main(int argc, char* argv[]){
 					default:
 						break;
 				}
-				townFile = fopen(filename, "a+");
-				fprintf(townFile,"\n\n");
-				fclose(townFile);
 			}
-			
 			doMe = 0;
 		}
 		else{
@@ -270,7 +284,7 @@ int main(int argc, char* argv[]){
 	}
 	if (doMe){
 		int population = (abs(rand()%8)+1)*10*settlementSize;
-		if (population < 300){
+		if (population < 500){
 			fprintf(townFile, "The Village of ");
 		}
 		else{
@@ -281,69 +295,68 @@ int main(int argc, char* argv[]){
 		fclose(townFile);
 		uint8_t shopAmount = (settlementSize/3)+3;
 		for (int i = 0; i < shopAmount; ++i){
-			
 			uint8_t shopnum = 0;
 			switch((rand()%20)+1){
 				case 1:
 				case 2:
 				case 3:
 				case 4:
-					shopGen(filename, 13,flags, rand());
+					++numTVN;
 					break;
 				case 5:
-					shopGen(filename, 8,flags, rand());
+					++numFLC;
 					break;
 				case 6:
-					shopGen(filename, 10,flags, rand());
+					++numLEA;
 					break;
 				case 7:
 				case 8:
 				case 9:
-					shopGen(filename, 9,flags, rand());
+					++numGEN;
 					break;
 				case 10:
 				case 11:
-					shopGen(filename, 05,flags, rand());
+					++numBLK;
 					break;
 				case 12:
 				case 13:
-					shopGen(filename, 12,flags, rand());
+					++numTLR;
 					break;
 				case 14:
-					shopGen(filename, 0,flags, rand());
+					++numAE;
 					break;
 				case 15:
-					shopGen(filename, 2,flags, rand());
+					++numARC;
 					break;
 				case 16:
-					shopGen(filename, 1,flags, rand());
+					++numALC;
 					break;
 				case 17:
 				case 18:
-					shopGen(filename, 14,flags, rand());
+					++numSRN;
 					break;
 				case 19:
 				case 20:
 					switch((rand()%8)+1){
 						case 1:
-							shopGen(filename, 11,flags, rand());
+							++numMUS;
 							break;
 						case 2:
-							shopGen(filename, 06,flags, rand());
+							++numBOK;
 							break;
 						case 3:
-							shopGen(filename, 15,flags, rand());
+							++numJWL;
 							break;
 						case 4:
 						case 5:
-							shopGen(filename, 7,flags, rand());
+							++numBCH;
 							break;
 						case 6:
 						case 7:
-							shopGen(filename, 3,flags, rand());
+							++numBAK;
 							break;
 						case 8:
-							shopGen(filename, 4,flags, rand());
+							++numBRB;
 							break;
 						default:
 							break;
@@ -351,10 +364,105 @@ int main(int argc, char* argv[]){
 				default:
 					break;
 			}
-			townFile = fopen(filename, "a+");
-			fprintf(townFile,"\n\n");
-			fclose(townFile);
 		}
 	}
+	
+	for (int i = 0; i < numAE; ++i){
+		shopGen(filename, 0, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numALC; ++i){
+		shopGen(filename, 1, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numARC; ++i){
+		shopGen(filename, 2, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numBAK; ++i){
+		shopGen(filename, 3, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numBRB; ++i){
+		shopGen(filename, 4, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numBLK; ++i){
+		shopGen(filename, 5, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numBOK; ++i){
+		shopGen(filename, 6, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numBCH; ++i){
+		shopGen(filename, 7, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numFLC; ++i){
+		shopGen(filename, 8, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numGEN; ++i){
+		shopGen(filename, 9, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numLEA; ++i){
+		shopGen(filename, 10, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numMUS; ++i){
+		shopGen(filename, 11, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numTLR; ++i){
+		shopGen(filename, 12, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numTVN; ++i){
+		shopGen(filename, 13, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numSRN; ++i){
+		shopGen(filename, 14, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	for (int i = 0; i < numJWL; ++i){
+		shopGen(filename, 15, flags, rand());
+		townFile = fopen(filename, "a+");
+		fprintf(townFile,"\n\n");
+		fclose(townFile);
+	}
+	
 	return 0;
 }

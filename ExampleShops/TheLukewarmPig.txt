@@ -1,0 +1,11 @@
+Fletcher
+The Lukewarm Pig
+            Item Name                 Low       Mid       High   
+SIMPLE WEAPONS                  
+                        Shortbow     18 gp     25 gp     38 gp
+MARTIAL WEAPONS                 
+GEAR                            
+                     Arrows (20)      7 sp      1 gp      2 gp
+WOOD                            
+
+Questions? See the Demagus True Reference PDF

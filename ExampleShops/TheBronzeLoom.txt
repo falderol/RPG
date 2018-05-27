@@ -1,0 +1,26 @@
+Bakery
+The Bronze Loom
+            Item Name                 Low       Mid       High   
+FOODSTUFFS                      
+                    Corn (1 lb.)      4 cp      6 cp      8 cp
+               Feed Corn (1 lb.)      1 cp      1 cp      2 cp
+              Sweet Corn (1 lb.)      8 cp      1 sp     12 cp
+                Cornmeal (1 lb.)      6 cp      8 cp      1 sp
+          Sweet Cornmeal (1 lb.)     12 cp     15 cp     18 cp
+                   Flour (1 lb.)      4 cp      5 cp      7 cp
+                    Nuts (1 lb.)      3 cp      5 cp      8 cp
+                    Salt (1 lb.)      3 cp      5 cp      8 cp
+DISHES                          
+                   Bread (slice)      2 cp      3 cp      5 cp
+                    Bread (loaf)      6 cp      8 cp      1 sp
+             White Bread (slice)      4 cp      6 cp      1 sp
+              White Bread (loaf)     14 cp     16 cp      2 sp
+               Cornbread (slice)      3 cp      4 cp      5 cp
+                Cornbread (loaf)      8 cp     11 cp     14 cp
+         Sweet Cornbread (slice)      5 cp      6 cp      7 cp
+          Sweet Cornbread (loaf)     15 cp     18 cp     22 cp
+                Cheese Dumplings     12 cp     15 cp     18 cp
+                Potato Dumplings      2 cp      3 cp      4 cp
+             Vegetable Dumplings      7 cp      1 sp     12 cp
+
+Questions? See the Demagus True Reference PDF

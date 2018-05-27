@@ -1,0 +1,21 @@
+Music Store
+The Arcadian Dragon
+            Item Name                 Low       Mid       High   
+INSTRUMENTS                     
+                            Drum      4 gp      6 gp      9 gp
+                        Dulcimer      4 gp      6 gp      9 gp
+                           Flute      1 gp      2 gp      3 gp
+                    Glockenspiel      8 gp      1 pp     15 gp
+                            Horn      2 gp      3 gp      5 gp
+                            Lyre     22 gp      3 pp     45 gp
+                        Mandolin     22 gp      3 pp     45 gp
+                            Oboe     15 gp      2 pp      3 pp
+                         Ocarina      9 gp     12 gp     18 gp
+                           Shawm      1 gp      2 gp      3 gp
+                         Trumpet     15 gp      2 pp      3 pp
+                            Viol     22 gp      3 pp     45 gp
+TOOLS                           
+SERVICES                        
+                    Music Lesson      5 sp      1 gp      2 gp
+
+Questions? See the Demagus True Reference PDF

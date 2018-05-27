@@ -1,0 +1,81 @@
+The Village of Mackion
+Population: 40
+
+
+Tailor
+The Short Chick
+            Item Name                 Low       Mid       High   
+GEAR                            
+                          Basket      3 sp      4 sp      6 sp
+                         Blanket      3 sp      5 sp      8 sp
+                           Pouch      3 sp      5 sp      8 sp
+                            Sack      1 cp      1 cp      2 cp
+                            Tent      1 gp      2 gp      3 gp
+CLOTHES                         
+                          Common      3 sp      5 sp      8 sp
+TOOLS                           
+TEXTILES                        
+              Canvas (1 sq. yd.)      7 cp      1 sp      2 sp
+
+Questions? See the Demagus True Reference PDF
+
+
+Tailor
+The Drinking Mirror
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Backpack      1 gp      2 gp      3 gp
+                          Basket      3 sp      4 sp      6 sp
+                         Bedroll      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+                           Pouch      3 sp      5 sp      8 sp
+                            Sack      1 cp      1 cp      2 cp
+                            Tent      1 gp      2 gp      3 gp
+CLOTHES                         
+                          Common      3 sp      5 sp      8 sp
+                         Costume      3 sp      5 sp      8 sp
+                            Fine     13 gp     15 gp     23 gp
+                           Robes      7 sp      1 gp      2 gp
+                      Traveler's      1 gp      2 gp      3 gp
+TOOLS                           
+                  Weaver's Tools      7 sp      1 gp      2 gp
+TEXTILES                        
+              Canvas (1 sq. yd.)      7 cp      1 sp      2 sp
+               Linen (1 sq. yd.)      4 gp      5 gp      7 gp
+                Silk (1 sq. yd.)      8 gp      1 pp     13 gp
+
+Questions? See the Demagus True Reference PDF
+
+
+Shrine
+Our Dancing Spectere
+            Item Name                 Low       Mid       High   
+GEAR                            
+                        Alms Box      3 gp      5 gp      8 gp
+                            Bell      7 sp      1 gp      2 gp
+                         Blanket      3 sp      5 sp      8 sp
+               Book of Scripture     18 gp     25 gp     38 gp
+                     Scroll Case      7 sp      1 gp      2 gp
+                          Censer      3 sp      5 sp      2 gp
+                       Chalk (1)      1 cp      1 cp      2 cp
+                           Flask      1 cp      2 cp      2 cp
+                    Healer's Kit      3 sp      5 sp      8 sp
+                     Holy Symbol      3 gp      5 gp      8 gp
+              Holy Water (flask)     18 gp     25 gp     38 gp
+                 Incense (block)      1 cp      1 cp      2 cp
+                 Ink (1 fl. oz.)      7 gp      1 pp     15 gp
+                         Ink Pen      1 cp      2 cp      3 cp
+                Lantern (hooded)      3 gp      5 gp      8 gp
+                     Oil (flask)      7 cp      1 sp      2 sp
+                   Parchment (1)      7 cp      1 sp      2 sp
+                          Ration      3 sp      5 sp      8 sp
+                           Torch      1 cp      1 cp      2 cp
+                            Vial      7 sp      1 gp      2 gp
+                       Waterskin      1 sp      2 sp      3 sp
+TOOLS                           
+         Calligrapher's Supplies      7 gp      1 pp     15 gp
+                   Herbalism Kit      3 gp      5 gp      8 gp
+
+Questions? See the Demagus True Reference PDF
+
+
