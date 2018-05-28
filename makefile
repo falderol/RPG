@@ -1,11 +1,11 @@
-all: shopGen test
+all: shopGen settlementGen
 
 shopGen: shopGen.c
-	gcc -o shopGen shopGen.c
+	gcc shopGen shopGen.c
 
-test: test.c
-	gcc -o test test.c
+settlementGen: settlementGen.c
+	gcc -o settlementGen settlementGen.c
 
 clean:
-	rm test
+	rm settlementGen
 	rm shopGen
