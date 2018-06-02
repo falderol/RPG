@@ -221,8 +221,9 @@ int main(int argc, char* argv[]){
 	uint8_t numJWL = 0;
 	uint8_t numSHOPS = 0;
 	int population;
+	settlementSize = 20;
 	if(settlementSize == 20){
-		if (((rand()%20)+1)>15){
+		if (1){//((rand()%20)+1)>15){
 			fprintf(townFile, "The City of ");
 			townnameGen(townFile);
 			population = ((rand()%5)+1)*10*settlementSize*5;
@@ -661,7 +662,7 @@ int main(int argc, char* argv[]){
 	//////////
 	// Place Roads and Rivers
 	
-	uint8_t numRoadRiv = (rand()%4)+2;
+	uint8_t numRoadRiv = (rand()%(settlementSize/4))+2;
 	if (settlementSize == 20){
 		++numRoadRiv;
 	}
@@ -672,11 +673,11 @@ int main(int argc, char* argv[]){
 		int startY = 0;
 		uint8_t riverRoad = rand()%3;
 		switch(startSide){
-			case 0://North
+			case 0:// Travel North
 				startX = rand()%(mapWidth/4)*2+(mapWidth/4);
 				startY = 2;
 				while((startX < mapWidth-8)&&(startX > 7)&&(startY <= mapHeight-3)&&(startY >= 2)){
-					if((riverRoad)||(hasRiver>1)){//road
+					if((riverRoad)||(hasRiver>3)){//road
 						map[startY][startX] = 'H';
 						map[startY][startX-2] = 'H';
 						map[startY][startX+2] = 'H';
@@ -689,15 +690,32 @@ int main(int argc, char* argv[]){
 						
 					}
 					else{//river
-						map[startY][startX] = 'W';
-						map[startY][startX-2] = 'W';
-						map[startY][startX+2] = 'W';
-						map[startY+1][startX] = 'W';
-						map[startY+1][startX-2] = 'W';
-						map[startY+1][startX+2] = 'W';
-						map[startY-1][startX] = 'W';
-						map[startY-1][startX-2] = 'W';
-						map[startY-1][startX+2] = 'W';
+						if((startY+2<mapHeight)? (map[startY+2][startX] != 'W') : 1 ){
+							map[startY][startX] = 'W';
+							map[startY][startX-2] = 'W';
+							map[startY][startX+2] = 'W';
+							map[startY+1][startX] = 'W';
+							map[startY+1][startX-2] = 'W';
+							map[startY+1][startX+2] = 'W';
+							map[startY-1][startX] = 'W';
+							map[startY-1][startX-2] = 'W';
+							map[startY-1][startX+2] = 'W';
+						}
+						else {
+							map[startY][startX] = 'W';
+							map[startY][startX-2] = 'W';
+							map[startY][startX+2] = 'W';
+							map[startY+1][startX] = 'W';
+							map[startY+1][startX-2] = 'W';
+							map[startY+1][startX+2] = 'W';
+							map[startY-1][startX] = 'W';
+							map[startY-1][startX-2] = 'W';
+							map[startY-1][startX+2] = 'W';
+							map[startY+2][startX] = 'W';
+							map[startY+2][startX-2] = 'W';
+							map[startY+2][startX+2] = 'W';
+							break;
+						}
 					}
 					if(rand()%2){
 						++startY;
@@ -717,11 +735,11 @@ int main(int argc, char* argv[]){
 					++hasRiver;
 				}
 				break;
-			case 1://South
+			case 1://Travel South
 				startX = rand()%(mapWidth/4)*2+(mapWidth/4);
 				startY = mapHeight-3;
 				while((startX <= mapWidth-4)&&(startX >= 3)&&(startY <= mapHeight-3)&&(startY >= 2)){
-					if((riverRoad)||(hasRiver>1)){//road
+					if((riverRoad)||(hasRiver>3)){//road
 						map[startY][startX] = 'H';
 						map[startY][startX-2] = 'H';
 						map[startY][startX+2] = 'H';
@@ -734,15 +752,33 @@ int main(int argc, char* argv[]){
 						
 					}
 					else{//river
-						map[startY][startX] = 'W';
-						map[startY][startX-2] = 'W';
-						map[startY][startX+2] = 'W';
-						map[startY+1][startX] = 'W';
-						map[startY+1][startX-2] = 'W';
-						map[startY+1][startX+2] = 'W';
-						map[startY-1][startX] = 'W';
-						map[startY-1][startX-2] = 'W';
-						map[startY-1][startX+2] = 'W';
+						if((startY-2>0)? (map[startY-2][startX] != 'W') : 1 ){
+							map[startY][startX] = 'W';
+							map[startY][startX-2] = 'W';
+							map[startY][startX+2] = 'W';
+							map[startY+1][startX] = 'W';
+							map[startY+1][startX-2] = 'W';
+							map[startY+1][startX+2] = 'W';
+							map[startY-1][startX] = 'W';
+							map[startY-1][startX-2] = 'W';
+							map[startY-1][startX+2] = 'W';
+						}
+						else {
+							map[startY][startX] = 'W';
+							map[startY][startX-2] = 'W';
+							map[startY][startX+2] = 'W';
+							map[startY+1][startX] = 'W';
+							map[startY+1][startX-2] = 'W';
+							map[startY+1][startX+2] = 'W';
+							map[startY-1][startX] = 'W';
+							map[startY-1][startX-2] = 'W';
+							map[startY-1][startX+2] = 'W';
+							map[startY-2][startX] = 'W';
+							map[startY-2][startX-2] = 'W';
+							map[startY-2][startX+2] = 'W';
+							
+							break;
+						}
 					}
 					if(rand()%2){
 						--startY;
@@ -762,11 +798,11 @@ int main(int argc, char* argv[]){
 					++hasRiver;
 				}
 				break;
-			case 2://East
+			case 2:// Travel East
 				startX = 3;
 				startY = rand()%(mapHeight/2)+(mapHeight/4);
 				while((startX <= mapWidth-4)&&(startX >= 3)&&(startY <= mapHeight-3)&&(startY >= 2)){
-					if((riverRoad)||(hasRiver>1)){//road
+					if((riverRoad)||(hasRiver>3)){//road
 						map[startY][startX] = 'H';
 						map[startY][startX-2] = 'H';
 						map[startY][startX+2] = 'H';
@@ -779,15 +815,32 @@ int main(int argc, char* argv[]){
 						
 					}
 					else{//river
-						map[startY][startX] = 'W';
-						map[startY][startX-2] = 'W';
-						map[startY][startX+2] = 'W';
-						map[startY+1][startX] = 'W';
-						map[startY+1][startX-2] = 'W';
-						map[startY+1][startX+2] = 'W';
-						map[startY-1][startX] = 'W';
-						map[startY-1][startX-2] = 'W';
-						map[startY-1][startX+2] = 'W';
+						if((startX+4>0)? (map[startY][startX+4] != 'W') : 1 ){
+							map[startY][startX] = 'W';
+							map[startY][startX-2] = 'W';
+							map[startY][startX+2] = 'W';
+							map[startY+1][startX] = 'W';
+							map[startY+1][startX-2] = 'W';
+							map[startY+1][startX+2] = 'W';
+							map[startY-1][startX] = 'W';
+							map[startY-1][startX-2] = 'W';
+							map[startY-1][startX+2] = 'W';
+						}
+						else {
+							map[startY][startX] = 'W';
+							map[startY][startX-2] = 'W';
+							map[startY][startX+2] = 'W';
+							map[startY+1][startX] = 'W';
+							map[startY+1][startX-2] = 'W';
+							map[startY+1][startX+2] = 'W';
+							map[startY-1][startX] = 'W';
+							map[startY-1][startX-2] = 'W';
+							map[startY-1][startX+2] = 'W';
+							map[startY+1][startX+4] = 'W';
+							map[startY][startX+4] = 'W';
+							map[startY-1][startX+4] = 'W';
+							break;
+						}
 					}
 					if(rand()%2){
 						++startX;
@@ -806,11 +859,11 @@ int main(int argc, char* argv[]){
 					++hasRiver;
 				}
 				break;
-			case 3://West
+			case 3://Travel West
 				startX = mapWidth-4;
 				startY = rand()%(mapHeight/2)+(mapHeight/4);
 				while((startX <= mapWidth-4)&&(startX >= 3)&&(startY <= mapHeight-3)&&(startY >= 2)){
-					if((riverRoad)||(hasRiver>1)){//road
+					if((riverRoad)||(hasRiver>3)){//road
 						map[startY][startX] = 'H';
 						map[startY][startX-2] = 'H';
 						map[startY][startX+2] = 'H';
@@ -823,15 +876,32 @@ int main(int argc, char* argv[]){
 						
 					}
 					else{//river
-						map[startY][startX] = 'W';
-						map[startY][startX-2] = 'W';
-						map[startY][startX+2] = 'W';
-						map[startY+1][startX] = 'W';
-						map[startY+1][startX-2] = 'W';
-						map[startY+1][startX+2] = 'W';
-						map[startY-1][startX] = 'W';
-						map[startY-1][startX-2] = 'W';
-						map[startY-1][startX+2] = 'W';
+						if((startX-4<mapWidth)? (map[startY][startX-4] != 'W') : 1 ){
+							map[startY][startX] = 'W';
+							map[startY][startX-2] = 'W';
+							map[startY][startX+2] = 'W';
+							map[startY+1][startX] = 'W';
+							map[startY+1][startX-2] = 'W';
+							map[startY+1][startX+2] = 'W';
+							map[startY-1][startX] = 'W';
+							map[startY-1][startX-2] = 'W';
+							map[startY-1][startX+2] = 'W';
+						}
+						else {
+							map[startY][startX] = 'W';
+							map[startY][startX-2] = 'W';
+							map[startY][startX+2] = 'W';
+							map[startY+1][startX] = 'W';
+							map[startY+1][startX-2] = 'W';
+							map[startY+1][startX+2] = 'W';
+							map[startY-1][startX] = 'W';
+							map[startY-1][startX-2] = 'W';
+							map[startY-1][startX+2] = 'W';
+							map[startY+1][startX-4] = 'W';
+							map[startY][startX-4] = 'W';
+							map[startY-1][startX-4] = 'W';
+							break;
+						}
 					}
 					if(rand()%2){
 						--startX;
@@ -867,6 +937,20 @@ int main(int argc, char* argv[]){
 	strcpy(squareBuilding[3], "|          |");
 	strcpy(squareBuilding[4], "|          |");
 	strcpy(squareBuilding[5], "|__________|");
+	
+	uint8_t roundBuildingHeight = 10;
+	uint8_t roundBuildingWidth = 20;
+	char roundBuilding[roundBuildingHeight][roundBuildingWidth];
+	strcpy(roundBuilding[0], "     __________     ");
+	strcpy(roundBuilding[1], "   _|          |_   ");
+	strcpy(roundBuilding[2], " _|              |_ ");
+	strcpy(roundBuilding[3], "|                  |");
+	strcpy(roundBuilding[4], "|                  |");
+	strcpy(roundBuilding[5], "|                  |");
+	strcpy(roundBuilding[6], "|                  |");
+	strcpy(roundBuilding[7], "|_                _|");
+	strcpy(roundBuilding[8], "  |_            _|  ");
+	strcpy(roundBuilding[9], "    |__________|   ");
 	
 	uint8_t rectLongBuildingHeight = 12;
 	uint8_t rectLongBuildingWidth = 12;
@@ -958,6 +1042,68 @@ int main(int argc, char* argv[]){
 	strcpy(lUpRightBuilding[10], "|          |           ");
 	strcpy(lUpRightBuilding[11], "|__________|           ");
 	
+	uint8_t lTRightBuildingHeight = 12;
+	uint8_t lTRightBuildingWidth = 24;
+	char lTRightBuilding[lTRightBuildingHeight][lTRightBuildingWidth];
+	strcpy(lTRightBuilding[0],  " __________            ");
+	strcpy(lTRightBuilding[1],  "|          |           ");
+	strcpy(lTRightBuilding[2],  "|          |           ");
+	strcpy(lTRightBuilding[3],  "|          |__________ ");
+	strcpy(lTRightBuilding[4],  "|                     |");
+	strcpy(lTRightBuilding[5],  "|                     |");
+	strcpy(lTRightBuilding[6],  "|                     |");
+	strcpy(lTRightBuilding[7],  "|                     |");
+	strcpy(lTRightBuilding[8],  "|           __________|");
+	strcpy(lTRightBuilding[9],  "|          |           ");
+	strcpy(lTRightBuilding[10], "|          |           ");
+	strcpy(lTRightBuilding[11], "|__________|           ");
+	
+	uint8_t lTLeftBuildingHeight = 12;
+	uint8_t lTLeftBuildingWidth = 24;
+	char lTLeftBuilding[lTLeftBuildingHeight][lTLeftBuildingWidth];
+	strcpy(lTLeftBuilding[0],  "            __________ ");
+	strcpy(lTLeftBuilding[1],  "           |          |");
+	strcpy(lTLeftBuilding[2],  "           |          |");
+	strcpy(lTLeftBuilding[3],  " __________|          |");
+	strcpy(lTLeftBuilding[4],  "|                     |");
+	strcpy(lTLeftBuilding[5],  "|                     |");
+	strcpy(lTLeftBuilding[6],  "|                     |");
+	strcpy(lTLeftBuilding[7],  "|                     |");
+	strcpy(lTLeftBuilding[8],  "|__________           |");
+	strcpy(lTLeftBuilding[9],  "           |          |");
+	strcpy(lTLeftBuilding[10], "           |          |");
+	strcpy(lTLeftBuilding[11], "           |__________|");
+	
+	uint8_t lTDownBuildingHeight = 12;
+	uint8_t lTDownBuildingWidth = 24;
+	char lTDownBuilding[lTDownBuildingHeight][lTDownBuildingWidth];
+	strcpy(lTDownBuilding[0],  " ______________________");
+	strcpy(lTDownBuilding[1],  "|                      |");
+	strcpy(lTDownBuilding[2],  "|                      |");
+	strcpy(lTDownBuilding[3],  "|                      |");
+	strcpy(lTDownBuilding[4],  "|                      |");
+	strcpy(lTDownBuilding[5],  "|_____            _____|");
+	strcpy(lTDownBuilding[6],  "      |          |      ");
+	strcpy(lTDownBuilding[7],  "      |          |      ");
+	strcpy(lTDownBuilding[8],  "      |          |      ");
+	strcpy(lTDownBuilding[9],  "      |          |      ");
+	strcpy(lTDownBuilding[10], "      |          |      ");
+	strcpy(lTDownBuilding[11], "      |__________|      ");
+	
+	uint8_t lTUpBuildingHeight = 12;
+	uint8_t lTUpBuildingWidth = 24;
+	char lTUpBuilding[lTUpBuildingHeight][lTUpBuildingWidth];
+	strcpy(lTUpBuilding[1], "        _________       ");
+	strcpy(lTUpBuilding[2], "       |         |      ");
+	strcpy(lTUpBuilding[3], "       |         |      ");
+	strcpy(lTUpBuilding[4], "       |         |      ");
+	strcpy(lTUpBuilding[5], "       |         |      ");
+	strcpy(lTUpBuilding[6], " ______|         |_____ ");
+	strcpy(lTUpBuilding[7], "|                      |");
+	strcpy(lTUpBuilding[8], "|                      |");
+	strcpy(lTUpBuilding[9], "|                      |");
+	strcpy(lTUpBuilding[10],"|                      |");
+	strcpy(lTUpBuilding[11],"|______________________|");
 	
 	printf("There are %u shops\n", numSHOPS);
 	printf("There are %d people\n", population);
@@ -987,7 +1133,7 @@ int main(int argc, char* argv[]){
 		}
 		++noSuccess;
 		uint8_t numSimpleBuildingType = 2;
-		uint8_t numBuildingTypes = 12;
+		uint8_t numBuildingTypes = 17;
 		uint8_t chooseBuilding = rand()%numBuildingTypes;
 		if(currentBuilding < numSHOPS){
 			chooseBuilding = rand()%(numBuildingTypes-numSimpleBuildingType)+numSimpleBuildingType;
@@ -1029,15 +1175,60 @@ int main(int argc, char* argv[]){
 						else{//Space not empty
 						}
 					}
-					else{// Cant fits square building
+					else{// Cant fits building
 					}
 				}
 				else{// Can't fit building
 				}
 				break;
 			case 2:
+				if(randX < (mapWidth-roundBuildingWidth-1)){
+					if(randY < (mapHeight-roundBuildingHeight-1)){// Can fit roundBuilding in map
+						if (
+							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&
+							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&
+							(map[randY+2][randX-1]==' ')&&(map[randY+2][randX]==' ')&&(map[randY+2][randX+1]==' ')&&(map[randY+2][randX+2]==' ')&&(map[randY+2][randX+3]==' ')&&(map[randY+2][randX+4]==' ')&&(map[randY+2][randX+5]==' ')&&(map[randY+2][randX+6]==' ')&&(map[randY+2][randX+7]==' ')&&(map[randY+2][randX+8]==' ')&&(map[randY+2][randX+9]==' ')&&(map[randY+2][randX+10]==' ')&&(map[randY+2][randX+11]==' ')&&(map[randY+2][randX+12]==' ')&&(map[randY+2][randX+13]==' ')&&(map[randY+2][randX+14]==' ')&&(map[randY+2][randX+15]==' ')&&(map[randY+2][randX+16]==' ')&&(map[randY+2][randX+17]==' ')&&(map[randY+2][randX+18]==' ')&&(map[randY+2][randX+19]==' ')&&(map[randY+2][randX+20]==' ')&&
+							(map[randY+3][randX-1]==' ')&&(map[randY+3][randX]==' ')&&(map[randY+3][randX+1]==' ')&&(map[randY+3][randX+2]==' ')&&(map[randY+3][randX+3]==' ')&&(map[randY+3][randX+4]==' ')&&(map[randY+3][randX+5]==' ')&&(map[randY+3][randX+6]==' ')&&(map[randY+3][randX+7]==' ')&&(map[randY+3][randX+8]==' ')&&(map[randY+3][randX+9]==' ')&&(map[randY+3][randX+10]==' ')&&(map[randY+3][randX+11]==' ')&&(map[randY+3][randX+12]==' ')&&(map[randY+3][randX+13]==' ')&&(map[randY+3][randX+14]==' ')&&(map[randY+3][randX+15]==' ')&&(map[randY+3][randX+16]==' ')&&(map[randY+3][randX+17]==' ')&&(map[randY+3][randX+18]==' ')&&(map[randY+3][randX+19]==' ')&&(map[randY+3][randX+20]==' ')&&
+							(map[randY+4][randX-1]==' ')&&(map[randY+4][randX]==' ')&&(map[randY+4][randX+1]==' ')&&(map[randY+4][randX+2]==' ')&&(map[randY+4][randX+3]==' ')&&(map[randY+4][randX+4]==' ')&&(map[randY+4][randX+5]==' ')&&(map[randY+4][randX+6]==' ')&&(map[randY+4][randX+7]==' ')&&(map[randY+4][randX+8]==' ')&&(map[randY+4][randX+9]==' ')&&(map[randY+4][randX+10]==' ')&&(map[randY+4][randX+11]==' ')&&(map[randY+4][randX+12]==' ')&&(map[randY+4][randX+13]==' ')&&(map[randY+4][randX+14]==' ')&&(map[randY+4][randX+15]==' ')&&(map[randY+4][randX+16]==' ')&&(map[randY+4][randX+17]==' ')&&(map[randY+4][randX+18]==' ')&&(map[randY+4][randX+19]==' ')&&(map[randY+4][randX+20]==' ')&&
+							(map[randY+5][randX-1]==' ')&&(map[randY+5][randX]==' ')&&(map[randY+5][randX+1]==' ')&&(map[randY+5][randX+2]==' ')&&(map[randY+5][randX+3]==' ')&&(map[randY+5][randX+4]==' ')&&(map[randY+5][randX+5]==' ')&&(map[randY+5][randX+6]==' ')&&(map[randY+5][randX+7]==' ')&&(map[randY+5][randX+8]==' ')&&(map[randY+5][randX+9]==' ')&&(map[randY+5][randX+10]==' ')&&(map[randY+5][randX+11]==' ')&&(map[randY+5][randX+12]==' ')&&(map[randY+5][randX+13]==' ')&&(map[randY+5][randX+14]==' ')&&(map[randY+5][randX+15]==' ')&&(map[randY+5][randX+16]==' ')&&(map[randY+5][randX+17]==' ')&&(map[randY+5][randX+18]==' ')&&(map[randY+5][randX+19]==' ')&&(map[randY+5][randX+20]==' ')&&
+							(map[randY+6][randX-1]==' ')&&(map[randY+6][randX]==' ')&&(map[randY+6][randX+1]==' ')&&(map[randY+6][randX+2]==' ')&&(map[randY+6][randX+3]==' ')&&(map[randY+6][randX+4]==' ')&&(map[randY+6][randX+5]==' ')&&(map[randY+6][randX+6]==' ')&&(map[randY+6][randX+7]==' ')&&(map[randY+6][randX+8]==' ')&&(map[randY+6][randX+9]==' ')&&(map[randY+6][randX+10]==' ')&&(map[randY+6][randX+11]==' ')&&(map[randY+6][randX+12]==' ')&&(map[randY+6][randX+13]==' ')&&(map[randY+6][randX+14]==' ')&&(map[randY+6][randX+15]==' ')&&(map[randY+6][randX+16]==' ')&&(map[randY+6][randX+17]==' ')&&(map[randY+6][randX+18]==' ')&&(map[randY+6][randX+19]==' ')&&(map[randY+6][randX+20]==' ')&&
+							(map[randY+7][randX-1]==' ')&&(map[randY+7][randX]==' ')&&(map[randY+7][randX+1]==' ')&&(map[randY+7][randX+2]==' ')&&(map[randY+7][randX+3]==' ')&&(map[randY+7][randX+4]==' ')&&(map[randY+7][randX+5]==' ')&&(map[randY+7][randX+6]==' ')&&(map[randY+7][randX+7]==' ')&&(map[randY+7][randX+8]==' ')&&(map[randY+7][randX+9]==' ')&&(map[randY+7][randX+10]==' ')&&(map[randY+7][randX+11]==' ')&&(map[randY+7][randX+12]==' ')&&(map[randY+7][randX+13]==' ')&&(map[randY+7][randX+14]==' ')&&(map[randY+7][randX+15]==' ')&&(map[randY+7][randX+16]==' ')&&(map[randY+7][randX+17]==' ')&&(map[randY+7][randX+18]==' ')&&(map[randY+7][randX+19]==' ')&&(map[randY+7][randX+20]==' ')&&
+							(map[randY+8][randX-1]==' ')&&(map[randY+8][randX]==' ')&&(map[randY+8][randX+1]==' ')&&(map[randY+8][randX+2]==' ')&&(map[randY+8][randX+3]==' ')&&(map[randY+8][randX+4]==' ')&&(map[randY+8][randX+5]==' ')&&(map[randY+8][randX+6]==' ')&&(map[randY+8][randX+7]==' ')&&(map[randY+8][randX+8]==' ')&&(map[randY+8][randX+9]==' ')&&(map[randY+8][randX+10]==' ')&&(map[randY+8][randX+11]==' ')&&(map[randY+8][randX+12]==' ')&&(map[randY+8][randX+13]==' ')&&(map[randY+8][randX+14]==' ')&&(map[randY+8][randX+15]==' ')&&(map[randY+8][randX+16]==' ')&&(map[randY+8][randX+17]==' ')&&(map[randY+8][randX+18]==' ')&&(map[randY+8][randX+19]==' ')&&(map[randY+8][randX+20]==' ')&&
+							(map[randY+9][randX-1]==' ')&&(map[randY+9][randX]==' ')&&(map[randY+9][randX+1]==' ')&&(map[randY+9][randX+2]==' ')&&(map[randY+9][randX+3]==' ')&&(map[randY+9][randX+4]==' ')&&(map[randY+9][randX+5]==' ')&&(map[randY+9][randX+6]==' ')&&(map[randY+9][randX+7]==' ')&&(map[randY+9][randX+8]==' ')&&(map[randY+9][randX+9]==' ')&&(map[randY+9][randX+10]==' ')&&(map[randY+9][randX+11]==' ')&&(map[randY+9][randX+12]==' ')&&(map[randY+9][randX+13]==' ')&&(map[randY+9][randX+14]==' ')&&(map[randY+9][randX+15]==' ')&&(map[randY+9][randX+16]==' ')&&(map[randY+9][randX+17]==' ')&&(map[randY+9][randX+18]==' ')&&(map[randY+9][randX+19]==' ')&&(map[randY+9][randX+20]==' ')
+						){
+							for (int i = 0; i < roundBuildingHeight; ++i){
+								for (int j = 0; j < roundBuildingWidth; ++j){
+									if (currentBuilding < numSHOPS){
+										if((i==5)&&(j==9)){
+											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+										}
+										else if((i==5)&&(j==10)){
+											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+										}
+										else{
+											map[i+randY][j+randX] = roundBuilding[i][j];
+										}
+									}
+									else{
+										map[i+randY][j+randX] = roundBuilding[i][j];
+									}
+								}
+							}	
+							++currentBuilding;
+							--noSuccess;
+						}
+						else{//Space not empty
+						}
+					}
+					else{// Cant fits round building
+					}
+				}
+				else{// Can't fit building
+				}
+				break;
 			case 3:
 			case 4:
+			case 5:
 				if(randX < (mapWidth-rectLongBuildingWidth-1)){
 					if(randY < (mapHeight-rectLongBuildingHeight-1)){// Can fit rectLongBuilding in map
 						if (
@@ -1079,7 +1270,7 @@ int main(int argc, char* argv[]){
 							
 						}
 					}
-					else{// Cant fits square building
+					else{// Cant fits building
 						
 					}
 				}
@@ -1087,9 +1278,9 @@ int main(int argc, char* argv[]){
 					
 				}
 				break;
-			case 5:
 			case 6:
 			case 7:
+			case 8:
 				if(randX < (mapWidth-rectWideBuildingWidth-1)){
 					if(randY < (mapHeight-rectWideBuildingHeight-1)){// Can fit rectWideBuilding in map
 						if (
@@ -1134,7 +1325,7 @@ int main(int argc, char* argv[]){
 					
 				}
 				break;
-			case 8: // DownLeft
+			case 9: // DownLeft
 				if(randX < (mapWidth-lDownLeftBuildingWidth-1)){
 					if(randY < (mapHeight-lDownLeftBuildingHeight-1)){// Can fit lDownLeftBuilding in map
 						if (
@@ -1155,10 +1346,10 @@ int main(int argc, char* argv[]){
 							for (int i = 0; i < lDownLeftBuildingHeight; ++i){
 								for (int j = 0; j < lDownLeftBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
-										if((i==9)&&(j==11)){
+										if((i==9)&&(j==16)){
 											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
 										}
-										else if((i==9)&&(j==12)){
+										else if((i==9)&&(j==17)){
 											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
 										}
 										else{
@@ -1185,7 +1376,7 @@ int main(int argc, char* argv[]){
 					
 				}
 				break;
-			case 9://DownRight
+			case 10://DownRight
 				if(randX < (mapWidth-lDownRightBuildingWidth-1)){
 					if(randY < (mapHeight-lDownRightBuildingHeight-1)){// Can fit lDownRightBuilding in map
 						if (
@@ -1205,10 +1396,10 @@ int main(int argc, char* argv[]){
 							for (int i = 0; i < lDownRightBuildingHeight; ++i){
 								for (int j = 0; j < lDownRightBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
-										if((i==9)&&(j==11)){
+										if((i==9)&&(j==5)){
 											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
 										}
-										else if((i==9)&&(j==12)){
+										else if((i==9)&&(j==6)){
 											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
 										}
 										else{
@@ -1235,7 +1426,7 @@ int main(int argc, char* argv[]){
 					
 				}
 				break;
-			case 10://UpLeft
+			case 11://UpLeft
 				if(randX < (mapWidth-lUpLeftBuildingWidth-1)){
 					if(randY < (mapHeight-lUpLeftBuildingHeight-1)){// Can fit lUpLeftBuilding in map
 						if (
@@ -1256,10 +1447,10 @@ int main(int argc, char* argv[]){
 							for (int i = 0; i < lUpLeftBuildingHeight; ++i){
 								for (int j = 0; j < lUpLeftBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
-										if((i==3)&&(j==11)){
+										if((i==3)&&(j==16)){
 											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
 										}
-										else if((i==3)&&(j==12)){
+										else if((i==3)&&(j==17)){
 											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
 										}
 										else{
@@ -1286,7 +1477,7 @@ int main(int argc, char* argv[]){
 					
 				}
 				break;
-			case 11://UpRight
+			case 12://UpRight
 				if(randX < (mapWidth-lUpRightBuildingWidth-1)){
 					if(randY < (mapHeight-lUpRightBuildingHeight-1)){// Can fit lUpRightBuilding in map
 						if (
@@ -1307,10 +1498,10 @@ int main(int argc, char* argv[]){
 							for (int i = 0; i < lUpRightBuildingHeight; ++i){
 								for (int j = 0; j < lUpRightBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
-										if((i==3)&&(j==11)){
+										if((i==3)&&(j==5)){
 											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
 										}
-										else if((i==3)&&(j==12)){
+										else if((i==3)&&(j==6)){
 											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
 										}
 										else{
@@ -1330,6 +1521,210 @@ int main(int argc, char* argv[]){
 						}
 					}
 					else{// Cant fits lUpRight building
+						
+					}
+				}
+				else{// Can't fit building
+					
+				}
+				break;
+			case 13:
+				if(randX < (mapWidth-lTRightBuildingWidth-1)){
+					if(randY < (mapHeight-lTRightBuildingHeight-1)){// Can fit lTRightBuilding in map
+						if (
+							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
+							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
+							(map[randY+2][randX-1]==' ')&&(map[randY+2][randX]==' ')&&(map[randY+2][randX+1]==' ')&&(map[randY+2][randX+2]==' ')&&(map[randY+2][randX+3]==' ')&&(map[randY+2][randX+4]==' ')&&(map[randY+2][randX+5]==' ')&&(map[randY+2][randX+6]==' ')&&(map[randY+2][randX+7]==' ')&&(map[randY+2][randX+8]==' ')&&(map[randY+2][randX+9]==' ')&&(map[randY+2][randX+10]==' ')&&(map[randY+2][randX+11]==' ')&&(map[randY+2][randX+12]==' ')&&(map[randY+2][randX+13]==' ')&&(map[randY+2][randX+14]==' ')&&(map[randY+2][randX+15]==' ')&&(map[randY+2][randX+16]==' ')&&(map[randY+2][randX+17]==' ')&&(map[randY+2][randX+18]==' ')&&(map[randY+2][randX+19]==' ')&&(map[randY+2][randX+20]==' ')&&(map[randY+2][randX+21]==' ')&&(map[randY+2][randX+22]==' ')&&(map[randY+2][randX+23]==' ')&&(map[randY+2][randX+24]==' ')&&
+							(map[randY+3][randX-1]==' ')&&(map[randY+3][randX]==' ')&&(map[randY+3][randX+1]==' ')&&(map[randY+3][randX+2]==' ')&&(map[randY+3][randX+3]==' ')&&(map[randY+3][randX+4]==' ')&&(map[randY+3][randX+5]==' ')&&(map[randY+3][randX+6]==' ')&&(map[randY+3][randX+7]==' ')&&(map[randY+3][randX+8]==' ')&&(map[randY+3][randX+9]==' ')&&(map[randY+3][randX+10]==' ')&&(map[randY+3][randX+11]==' ')&&(map[randY+3][randX+12]==' ')&&(map[randY+3][randX+13]==' ')&&(map[randY+3][randX+14]==' ')&&(map[randY+3][randX+15]==' ')&&(map[randY+3][randX+16]==' ')&&(map[randY+3][randX+17]==' ')&&(map[randY+3][randX+18]==' ')&&(map[randY+3][randX+19]==' ')&&(map[randY+3][randX+20]==' ')&&(map[randY+3][randX+21]==' ')&&(map[randY+3][randX+22]==' ')&&(map[randY+3][randX+23]==' ')&&(map[randY+3][randX+24]==' ')&&
+							(map[randY+4][randX-1]==' ')&&(map[randY+4][randX]==' ')&&(map[randY+4][randX+1]==' ')&&(map[randY+4][randX+2]==' ')&&(map[randY+4][randX+3]==' ')&&(map[randY+4][randX+4]==' ')&&(map[randY+4][randX+5]==' ')&&(map[randY+4][randX+6]==' ')&&(map[randY+4][randX+7]==' ')&&(map[randY+4][randX+8]==' ')&&(map[randY+4][randX+9]==' ')&&(map[randY+4][randX+10]==' ')&&(map[randY+4][randX+11]==' ')&&(map[randY+4][randX+12]==' ')&&(map[randY+4][randX+13]==' ')&&(map[randY+4][randX+14]==' ')&&(map[randY+4][randX+15]==' ')&&(map[randY+4][randX+16]==' ')&&(map[randY+4][randX+17]==' ')&&(map[randY+4][randX+18]==' ')&&(map[randY+4][randX+19]==' ')&&(map[randY+4][randX+20]==' ')&&(map[randY+4][randX+21]==' ')&&(map[randY+4][randX+22]==' ')&&(map[randY+4][randX+23]==' ')&&(map[randY+4][randX+24]==' ')&&
+							(map[randY+5][randX-1]==' ')&&(map[randY+5][randX]==' ')&&(map[randY+5][randX+1]==' ')&&(map[randY+5][randX+2]==' ')&&(map[randY+5][randX+3]==' ')&&(map[randY+5][randX+4]==' ')&&(map[randY+5][randX+5]==' ')&&(map[randY+5][randX+6]==' ')&&(map[randY+5][randX+7]==' ')&&(map[randY+5][randX+8]==' ')&&(map[randY+5][randX+9]==' ')&&(map[randY+5][randX+10]==' ')&&(map[randY+5][randX+11]==' ')&&(map[randY+5][randX+12]==' ')&&(map[randY+5][randX+13]==' ')&&(map[randY+5][randX+14]==' ')&&(map[randY+5][randX+15]==' ')&&(map[randY+5][randX+16]==' ')&&(map[randY+5][randX+17]==' ')&&(map[randY+5][randX+18]==' ')&&(map[randY+5][randX+19]==' ')&&(map[randY+5][randX+20]==' ')&&(map[randY+5][randX+21]==' ')&&(map[randY+5][randX+22]==' ')&&(map[randY+5][randX+23]==' ')&&(map[randY+5][randX+24]==' ')&&
+							(map[randY+6][randX-1]==' ')&&(map[randY+6][randX]==' ')&&(map[randY+6][randX+1]==' ')&&(map[randY+6][randX+2]==' ')&&(map[randY+6][randX+3]==' ')&&(map[randY+6][randX+4]==' ')&&(map[randY+6][randX+5]==' ')&&(map[randY+6][randX+6]==' ')&&(map[randY+6][randX+7]==' ')&&(map[randY+6][randX+8]==' ')&&(map[randY+6][randX+9]==' ')&&(map[randY+6][randX+10]==' ')&&(map[randY+6][randX+11]==' ')&&(map[randY+6][randX+12]==' ')&&(map[randY+6][randX+13]==' ')&&(map[randY+6][randX+14]==' ')&&(map[randY+6][randX+15]==' ')&&(map[randY+6][randX+16]==' ')&&(map[randY+6][randX+17]==' ')&&(map[randY+6][randX+18]==' ')&&(map[randY+6][randX+19]==' ')&&(map[randY+6][randX+20]==' ')&&(map[randY+6][randX+21]==' ')&&(map[randY+6][randX+22]==' ')&&(map[randY+6][randX+23]==' ')&&(map[randY+6][randX+24]==' ')&&
+							(map[randY+7][randX-1]==' ')&&(map[randY+7][randX]==' ')&&(map[randY+7][randX+1]==' ')&&(map[randY+7][randX+2]==' ')&&(map[randY+7][randX+3]==' ')&&(map[randY+7][randX+4]==' ')&&(map[randY+7][randX+5]==' ')&&(map[randY+7][randX+6]==' ')&&(map[randY+7][randX+7]==' ')&&(map[randY+7][randX+8]==' ')&&(map[randY+7][randX+9]==' ')&&(map[randY+7][randX+10]==' ')&&(map[randY+7][randX+11]==' ')&&(map[randY+7][randX+12]==' ')&&(map[randY+7][randX+13]==' ')&&(map[randY+7][randX+14]==' ')&&(map[randY+7][randX+15]==' ')&&(map[randY+7][randX+16]==' ')&&(map[randY+7][randX+17]==' ')&&(map[randY+7][randX+18]==' ')&&(map[randY+7][randX+19]==' ')&&(map[randY+7][randX+20]==' ')&&(map[randY+7][randX+21]==' ')&&(map[randY+7][randX+22]==' ')&&(map[randY+7][randX+23]==' ')&&(map[randY+7][randX+24]==' ')&&
+							(map[randY+8][randX-1]==' ')&&(map[randY+8][randX]==' ')&&(map[randY+8][randX+1]==' ')&&(map[randY+8][randX+2]==' ')&&(map[randY+8][randX+3]==' ')&&(map[randY+8][randX+4]==' ')&&(map[randY+8][randX+5]==' ')&&(map[randY+8][randX+6]==' ')&&(map[randY+8][randX+7]==' ')&&(map[randY+8][randX+8]==' ')&&(map[randY+8][randX+9]==' ')&&(map[randY+8][randX+10]==' ')&&(map[randY+8][randX+11]==' ')&&(map[randY+8][randX+12]==' ')&&(map[randY+8][randX+13]==' ')&&(map[randY+8][randX+14]==' ')&&(map[randY+8][randX+15]==' ')&&(map[randY+8][randX+16]==' ')&&(map[randY+8][randX+17]==' ')&&(map[randY+8][randX+18]==' ')&&(map[randY+8][randX+19]==' ')&&(map[randY+8][randX+20]==' ')&&(map[randY+8][randX+21]==' ')&&(map[randY+8][randX+22]==' ')&&(map[randY+8][randX+23]==' ')&&(map[randY+8][randX+24]==' ')&&
+							(map[randY+9][randX-1]==' ')&&(map[randY+9][randX]==' ')&&(map[randY+9][randX+1]==' ')&&(map[randY+9][randX+2]==' ')&&(map[randY+9][randX+3]==' ')&&(map[randY+9][randX+4]==' ')&&(map[randY+9][randX+5]==' ')&&(map[randY+9][randX+6]==' ')&&(map[randY+9][randX+7]==' ')&&(map[randY+9][randX+8]==' ')&&(map[randY+9][randX+9]==' ')&&(map[randY+9][randX+10]==' ')&&(map[randY+9][randX+11]==' ')&&(map[randY+9][randX+12]==' ')&&(map[randY+9][randX+13]==' ')&&(map[randY+9][randX+14]==' ')&&(map[randY+9][randX+15]==' ')&&(map[randY+9][randX+16]==' ')&&(map[randY+9][randX+17]==' ')&&(map[randY+9][randX+18]==' ')&&(map[randY+9][randX+19]==' ')&&(map[randY+9][randX+20]==' ')&&(map[randY+9][randX+21]==' ')&&(map[randY+9][randX+22]==' ')&&(map[randY+9][randX+23]==' ')&&(map[randY+9][randX+24]==' ')&&
+							(map[randY+10][randX-1]==' ')&&(map[randY+10][randX]==' ')&&(map[randY+10][randX+1]==' ')&&(map[randY+10][randX+2]==' ')&&(map[randY+10][randX+3]==' ')&&(map[randY+10][randX+4]==' ')&&(map[randY+10][randX+5]==' ')&&(map[randY+10][randX+6]==' ')&&(map[randY+10][randX+7]==' ')&&(map[randY+10][randX+8]==' ')&&(map[randY+10][randX+9]==' ')&&(map[randY+10][randX+10]==' ')&&(map[randY+10][randX+11]==' ')&&(map[randY+10][randX+12]==' ')&&(map[randY+10][randX+13]==' ')&&(map[randY+10][randX+14]==' ')&&(map[randY+10][randX+15]==' ')&&(map[randY+10][randX+16]==' ')&&(map[randY+10][randX+17]==' ')&&(map[randY+10][randX+18]==' ')&&(map[randY+10][randX+19]==' ')&&(map[randY+10][randX+20]==' ')&&(map[randY+10][randX+21]==' ')&&(map[randY+10][randX+22]==' ')&&(map[randY+10][randX+23]==' ')&&(map[randY+10][randX+24]==' ')&&
+							(map[randY+11][randX-1]==' ')&&(map[randY+11][randX]==' ')&&(map[randY+11][randX+1]==' ')&&(map[randY+11][randX+2]==' ')&&(map[randY+11][randX+3]==' ')&&(map[randY+11][randX+4]==' ')&&(map[randY+11][randX+5]==' ')&&(map[randY+11][randX+6]==' ')&&(map[randY+11][randX+7]==' ')&&(map[randY+11][randX+8]==' ')&&(map[randY+11][randX+9]==' ')&&(map[randY+11][randX+10]==' ')&&(map[randY+11][randX+11]==' ')&&(map[randY+11][randX+12]==' ')&&(map[randY+11][randX+13]==' ')&&(map[randY+11][randX+14]==' ')&&(map[randY+11][randX+15]==' ')&&(map[randY+11][randX+16]==' ')&&(map[randY+11][randX+17]==' ')&&(map[randY+11][randX+18]==' ')&&(map[randY+11][randX+19]==' ')&&(map[randY+11][randX+20]==' ')&&(map[randY+11][randX+21]==' ')&&(map[randY+11][randX+22]==' ')&&(map[randY+11][randX+23]==' ')&&(map[randY+11][randX+24]==' ')
+						   ){
+							
+							for (int i = 0; i < lTRightBuildingHeight; ++i){
+								for (int j = 0; j < lTRightBuildingWidth; ++j){
+									if (currentBuilding < numSHOPS){
+										if((i==6)&&(j==5)){
+											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+										}
+										else if((i==6)&&(j==6)){
+											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+										}
+										else{
+											map[i+randY][j+randX] = lTRightBuilding[i][j];
+										}
+									}
+									else{
+										map[i+randY][j+randX] = lTRightBuilding[i][j];
+									}
+								}
+							}	
+							++currentBuilding;
+							--noSuccess;
+						}
+						else{//Space not empty
+							
+						}
+					}
+					else{// Cant fits lTRight building
+						
+					}
+				}
+				else{// Can't fit building
+					
+				}
+				break;
+			case 14:
+				if(randX < (mapWidth-lTLeftBuildingWidth-1)){
+					if(randY < (mapHeight-lTLeftBuildingHeight-1)){// Can fit lTLeftBuilding in map
+						if (
+							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
+							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
+							(map[randY+2][randX-1]==' ')&&(map[randY+2][randX]==' ')&&(map[randY+2][randX+1]==' ')&&(map[randY+2][randX+2]==' ')&&(map[randY+2][randX+3]==' ')&&(map[randY+2][randX+4]==' ')&&(map[randY+2][randX+5]==' ')&&(map[randY+2][randX+6]==' ')&&(map[randY+2][randX+7]==' ')&&(map[randY+2][randX+8]==' ')&&(map[randY+2][randX+9]==' ')&&(map[randY+2][randX+10]==' ')&&(map[randY+2][randX+11]==' ')&&(map[randY+2][randX+12]==' ')&&(map[randY+2][randX+13]==' ')&&(map[randY+2][randX+14]==' ')&&(map[randY+2][randX+15]==' ')&&(map[randY+2][randX+16]==' ')&&(map[randY+2][randX+17]==' ')&&(map[randY+2][randX+18]==' ')&&(map[randY+2][randX+19]==' ')&&(map[randY+2][randX+20]==' ')&&(map[randY+2][randX+21]==' ')&&(map[randY+2][randX+22]==' ')&&(map[randY+2][randX+23]==' ')&&(map[randY+2][randX+24]==' ')&&
+							(map[randY+3][randX-1]==' ')&&(map[randY+3][randX]==' ')&&(map[randY+3][randX+1]==' ')&&(map[randY+3][randX+2]==' ')&&(map[randY+3][randX+3]==' ')&&(map[randY+3][randX+4]==' ')&&(map[randY+3][randX+5]==' ')&&(map[randY+3][randX+6]==' ')&&(map[randY+3][randX+7]==' ')&&(map[randY+3][randX+8]==' ')&&(map[randY+3][randX+9]==' ')&&(map[randY+3][randX+10]==' ')&&(map[randY+3][randX+11]==' ')&&(map[randY+3][randX+12]==' ')&&(map[randY+3][randX+13]==' ')&&(map[randY+3][randX+14]==' ')&&(map[randY+3][randX+15]==' ')&&(map[randY+3][randX+16]==' ')&&(map[randY+3][randX+17]==' ')&&(map[randY+3][randX+18]==' ')&&(map[randY+3][randX+19]==' ')&&(map[randY+3][randX+20]==' ')&&(map[randY+3][randX+21]==' ')&&(map[randY+3][randX+22]==' ')&&(map[randY+3][randX+23]==' ')&&(map[randY+3][randX+24]==' ')&&
+							(map[randY+4][randX-1]==' ')&&(map[randY+4][randX]==' ')&&(map[randY+4][randX+1]==' ')&&(map[randY+4][randX+2]==' ')&&(map[randY+4][randX+3]==' ')&&(map[randY+4][randX+4]==' ')&&(map[randY+4][randX+5]==' ')&&(map[randY+4][randX+6]==' ')&&(map[randY+4][randX+7]==' ')&&(map[randY+4][randX+8]==' ')&&(map[randY+4][randX+9]==' ')&&(map[randY+4][randX+10]==' ')&&(map[randY+4][randX+11]==' ')&&(map[randY+4][randX+12]==' ')&&(map[randY+4][randX+13]==' ')&&(map[randY+4][randX+14]==' ')&&(map[randY+4][randX+15]==' ')&&(map[randY+4][randX+16]==' ')&&(map[randY+4][randX+17]==' ')&&(map[randY+4][randX+18]==' ')&&(map[randY+4][randX+19]==' ')&&(map[randY+4][randX+20]==' ')&&(map[randY+4][randX+21]==' ')&&(map[randY+4][randX+22]==' ')&&(map[randY+4][randX+23]==' ')&&(map[randY+4][randX+24]==' ')&&
+							(map[randY+5][randX-1]==' ')&&(map[randY+5][randX]==' ')&&(map[randY+5][randX+1]==' ')&&(map[randY+5][randX+2]==' ')&&(map[randY+5][randX+3]==' ')&&(map[randY+5][randX+4]==' ')&&(map[randY+5][randX+5]==' ')&&(map[randY+5][randX+6]==' ')&&(map[randY+5][randX+7]==' ')&&(map[randY+5][randX+8]==' ')&&(map[randY+5][randX+9]==' ')&&(map[randY+5][randX+10]==' ')&&(map[randY+5][randX+11]==' ')&&(map[randY+5][randX+12]==' ')&&(map[randY+5][randX+13]==' ')&&(map[randY+5][randX+14]==' ')&&(map[randY+5][randX+15]==' ')&&(map[randY+5][randX+16]==' ')&&(map[randY+5][randX+17]==' ')&&(map[randY+5][randX+18]==' ')&&(map[randY+5][randX+19]==' ')&&(map[randY+5][randX+20]==' ')&&(map[randY+5][randX+21]==' ')&&(map[randY+5][randX+22]==' ')&&(map[randY+5][randX+23]==' ')&&(map[randY+5][randX+24]==' ')&&
+							(map[randY+6][randX-1]==' ')&&(map[randY+6][randX]==' ')&&(map[randY+6][randX+1]==' ')&&(map[randY+6][randX+2]==' ')&&(map[randY+6][randX+3]==' ')&&(map[randY+6][randX+4]==' ')&&(map[randY+6][randX+5]==' ')&&(map[randY+6][randX+6]==' ')&&(map[randY+6][randX+7]==' ')&&(map[randY+6][randX+8]==' ')&&(map[randY+6][randX+9]==' ')&&(map[randY+6][randX+10]==' ')&&(map[randY+6][randX+11]==' ')&&(map[randY+6][randX+12]==' ')&&(map[randY+6][randX+13]==' ')&&(map[randY+6][randX+14]==' ')&&(map[randY+6][randX+15]==' ')&&(map[randY+6][randX+16]==' ')&&(map[randY+6][randX+17]==' ')&&(map[randY+6][randX+18]==' ')&&(map[randY+6][randX+19]==' ')&&(map[randY+6][randX+20]==' ')&&(map[randY+6][randX+21]==' ')&&(map[randY+6][randX+22]==' ')&&(map[randY+6][randX+23]==' ')&&(map[randY+6][randX+24]==' ')&&
+							(map[randY+7][randX-1]==' ')&&(map[randY+7][randX]==' ')&&(map[randY+7][randX+1]==' ')&&(map[randY+7][randX+2]==' ')&&(map[randY+7][randX+3]==' ')&&(map[randY+7][randX+4]==' ')&&(map[randY+7][randX+5]==' ')&&(map[randY+7][randX+6]==' ')&&(map[randY+7][randX+7]==' ')&&(map[randY+7][randX+8]==' ')&&(map[randY+7][randX+9]==' ')&&(map[randY+7][randX+10]==' ')&&(map[randY+7][randX+11]==' ')&&(map[randY+7][randX+12]==' ')&&(map[randY+7][randX+13]==' ')&&(map[randY+7][randX+14]==' ')&&(map[randY+7][randX+15]==' ')&&(map[randY+7][randX+16]==' ')&&(map[randY+7][randX+17]==' ')&&(map[randY+7][randX+18]==' ')&&(map[randY+7][randX+19]==' ')&&(map[randY+7][randX+20]==' ')&&(map[randY+7][randX+21]==' ')&&(map[randY+7][randX+22]==' ')&&(map[randY+7][randX+23]==' ')&&(map[randY+7][randX+24]==' ')&&
+							(map[randY+8][randX-1]==' ')&&(map[randY+8][randX]==' ')&&(map[randY+8][randX+1]==' ')&&(map[randY+8][randX+2]==' ')&&(map[randY+8][randX+3]==' ')&&(map[randY+8][randX+4]==' ')&&(map[randY+8][randX+5]==' ')&&(map[randY+8][randX+6]==' ')&&(map[randY+8][randX+7]==' ')&&(map[randY+8][randX+8]==' ')&&(map[randY+8][randX+9]==' ')&&(map[randY+8][randX+10]==' ')&&(map[randY+8][randX+11]==' ')&&(map[randY+8][randX+12]==' ')&&(map[randY+8][randX+13]==' ')&&(map[randY+8][randX+14]==' ')&&(map[randY+8][randX+15]==' ')&&(map[randY+8][randX+16]==' ')&&(map[randY+8][randX+17]==' ')&&(map[randY+8][randX+18]==' ')&&(map[randY+8][randX+19]==' ')&&(map[randY+8][randX+20]==' ')&&(map[randY+8][randX+21]==' ')&&(map[randY+8][randX+22]==' ')&&(map[randY+8][randX+23]==' ')&&(map[randY+8][randX+24]==' ')&&
+							(map[randY+9][randX-1]==' ')&&(map[randY+9][randX]==' ')&&(map[randY+9][randX+1]==' ')&&(map[randY+9][randX+2]==' ')&&(map[randY+9][randX+3]==' ')&&(map[randY+9][randX+4]==' ')&&(map[randY+9][randX+5]==' ')&&(map[randY+9][randX+6]==' ')&&(map[randY+9][randX+7]==' ')&&(map[randY+9][randX+8]==' ')&&(map[randY+9][randX+9]==' ')&&(map[randY+9][randX+10]==' ')&&(map[randY+9][randX+11]==' ')&&(map[randY+9][randX+12]==' ')&&(map[randY+9][randX+13]==' ')&&(map[randY+9][randX+14]==' ')&&(map[randY+9][randX+15]==' ')&&(map[randY+9][randX+16]==' ')&&(map[randY+9][randX+17]==' ')&&(map[randY+9][randX+18]==' ')&&(map[randY+9][randX+19]==' ')&&(map[randY+9][randX+20]==' ')&&(map[randY+9][randX+21]==' ')&&(map[randY+9][randX+22]==' ')&&(map[randY+9][randX+23]==' ')&&(map[randY+9][randX+24]==' ')&&
+							(map[randY+10][randX-1]==' ')&&(map[randY+10][randX]==' ')&&(map[randY+10][randX+1]==' ')&&(map[randY+10][randX+2]==' ')&&(map[randY+10][randX+3]==' ')&&(map[randY+10][randX+4]==' ')&&(map[randY+10][randX+5]==' ')&&(map[randY+10][randX+6]==' ')&&(map[randY+10][randX+7]==' ')&&(map[randY+10][randX+8]==' ')&&(map[randY+10][randX+9]==' ')&&(map[randY+10][randX+10]==' ')&&(map[randY+10][randX+11]==' ')&&(map[randY+10][randX+12]==' ')&&(map[randY+10][randX+13]==' ')&&(map[randY+10][randX+14]==' ')&&(map[randY+10][randX+15]==' ')&&(map[randY+10][randX+16]==' ')&&(map[randY+10][randX+17]==' ')&&(map[randY+10][randX+18]==' ')&&(map[randY+10][randX+19]==' ')&&(map[randY+10][randX+20]==' ')&&(map[randY+10][randX+21]==' ')&&(map[randY+10][randX+22]==' ')&&(map[randY+10][randX+23]==' ')&&(map[randY+10][randX+24]==' ')&&
+							(map[randY+11][randX-1]==' ')&&(map[randY+11][randX]==' ')&&(map[randY+11][randX+1]==' ')&&(map[randY+11][randX+2]==' ')&&(map[randY+11][randX+3]==' ')&&(map[randY+11][randX+4]==' ')&&(map[randY+11][randX+5]==' ')&&(map[randY+11][randX+6]==' ')&&(map[randY+11][randX+7]==' ')&&(map[randY+11][randX+8]==' ')&&(map[randY+11][randX+9]==' ')&&(map[randY+11][randX+10]==' ')&&(map[randY+11][randX+11]==' ')&&(map[randY+11][randX+12]==' ')&&(map[randY+11][randX+13]==' ')&&(map[randY+11][randX+14]==' ')&&(map[randY+11][randX+15]==' ')&&(map[randY+11][randX+16]==' ')&&(map[randY+11][randX+17]==' ')&&(map[randY+11][randX+18]==' ')&&(map[randY+11][randX+19]==' ')&&(map[randY+11][randX+20]==' ')&&(map[randY+11][randX+21]==' ')&&(map[randY+11][randX+22]==' ')&&(map[randY+11][randX+23]==' ')&&(map[randY+11][randX+24]==' ')
+						   ){
+							
+							for (int i = 0; i < lTLeftBuildingHeight; ++i){
+								for (int j = 0; j < lTLeftBuildingWidth; ++j){
+									if (currentBuilding < numSHOPS){
+										if((i==6)&&(j==16)){
+											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+										}
+										else if((i==6)&&(j==17)){
+											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+										}
+										else{
+											map[i+randY][j+randX] = lTLeftBuilding[i][j];
+										}
+									}
+									else{
+										map[i+randY][j+randX] = lTLeftBuilding[i][j];
+									}
+								}
+							}	
+							++currentBuilding;
+							--noSuccess;
+						}
+						else{//Space not empty
+							
+						}
+					}
+					else{// Cant fits lTLeft building
+						
+					}
+				}
+				else{// Can't fit building
+					
+				}
+				break;
+			case 15:
+				if(randX < (mapWidth-lTUpBuildingWidth-1)){
+					if(randY < (mapHeight-lTUpBuildingHeight-1)){// Can fit lTUpBuilding in map
+						if (
+							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
+							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
+							(map[randY+2][randX-1]==' ')&&(map[randY+2][randX]==' ')&&(map[randY+2][randX+1]==' ')&&(map[randY+2][randX+2]==' ')&&(map[randY+2][randX+3]==' ')&&(map[randY+2][randX+4]==' ')&&(map[randY+2][randX+5]==' ')&&(map[randY+2][randX+6]==' ')&&(map[randY+2][randX+7]==' ')&&(map[randY+2][randX+8]==' ')&&(map[randY+2][randX+9]==' ')&&(map[randY+2][randX+10]==' ')&&(map[randY+2][randX+11]==' ')&&(map[randY+2][randX+12]==' ')&&(map[randY+2][randX+13]==' ')&&(map[randY+2][randX+14]==' ')&&(map[randY+2][randX+15]==' ')&&(map[randY+2][randX+16]==' ')&&(map[randY+2][randX+17]==' ')&&(map[randY+2][randX+18]==' ')&&(map[randY+2][randX+19]==' ')&&(map[randY+2][randX+20]==' ')&&(map[randY+2][randX+21]==' ')&&(map[randY+2][randX+22]==' ')&&(map[randY+2][randX+23]==' ')&&(map[randY+2][randX+24]==' ')&&
+							(map[randY+3][randX-1]==' ')&&(map[randY+3][randX]==' ')&&(map[randY+3][randX+1]==' ')&&(map[randY+3][randX+2]==' ')&&(map[randY+3][randX+3]==' ')&&(map[randY+3][randX+4]==' ')&&(map[randY+3][randX+5]==' ')&&(map[randY+3][randX+6]==' ')&&(map[randY+3][randX+7]==' ')&&(map[randY+3][randX+8]==' ')&&(map[randY+3][randX+9]==' ')&&(map[randY+3][randX+10]==' ')&&(map[randY+3][randX+11]==' ')&&(map[randY+3][randX+12]==' ')&&(map[randY+3][randX+13]==' ')&&(map[randY+3][randX+14]==' ')&&(map[randY+3][randX+15]==' ')&&(map[randY+3][randX+16]==' ')&&(map[randY+3][randX+17]==' ')&&(map[randY+3][randX+18]==' ')&&(map[randY+3][randX+19]==' ')&&(map[randY+3][randX+20]==' ')&&(map[randY+3][randX+21]==' ')&&(map[randY+3][randX+22]==' ')&&(map[randY+3][randX+23]==' ')&&(map[randY+3][randX+24]==' ')&&
+							(map[randY+4][randX-1]==' ')&&(map[randY+4][randX]==' ')&&(map[randY+4][randX+1]==' ')&&(map[randY+4][randX+2]==' ')&&(map[randY+4][randX+3]==' ')&&(map[randY+4][randX+4]==' ')&&(map[randY+4][randX+5]==' ')&&(map[randY+4][randX+6]==' ')&&(map[randY+4][randX+7]==' ')&&(map[randY+4][randX+8]==' ')&&(map[randY+4][randX+9]==' ')&&(map[randY+4][randX+10]==' ')&&(map[randY+4][randX+11]==' ')&&(map[randY+4][randX+12]==' ')&&(map[randY+4][randX+13]==' ')&&(map[randY+4][randX+14]==' ')&&(map[randY+4][randX+15]==' ')&&(map[randY+4][randX+16]==' ')&&(map[randY+4][randX+17]==' ')&&(map[randY+4][randX+18]==' ')&&(map[randY+4][randX+19]==' ')&&(map[randY+4][randX+20]==' ')&&(map[randY+4][randX+21]==' ')&&(map[randY+4][randX+22]==' ')&&(map[randY+4][randX+23]==' ')&&(map[randY+4][randX+24]==' ')&&
+							(map[randY+5][randX-1]==' ')&&(map[randY+5][randX]==' ')&&(map[randY+5][randX+1]==' ')&&(map[randY+5][randX+2]==' ')&&(map[randY+5][randX+3]==' ')&&(map[randY+5][randX+4]==' ')&&(map[randY+5][randX+5]==' ')&&(map[randY+5][randX+6]==' ')&&(map[randY+5][randX+7]==' ')&&(map[randY+5][randX+8]==' ')&&(map[randY+5][randX+9]==' ')&&(map[randY+5][randX+10]==' ')&&(map[randY+5][randX+11]==' ')&&(map[randY+5][randX+12]==' ')&&(map[randY+5][randX+13]==' ')&&(map[randY+5][randX+14]==' ')&&(map[randY+5][randX+15]==' ')&&(map[randY+5][randX+16]==' ')&&(map[randY+5][randX+17]==' ')&&(map[randY+5][randX+18]==' ')&&(map[randY+5][randX+19]==' ')&&(map[randY+5][randX+20]==' ')&&(map[randY+5][randX+21]==' ')&&(map[randY+5][randX+22]==' ')&&(map[randY+5][randX+23]==' ')&&(map[randY+5][randX+24]==' ')&&
+							(map[randY+6][randX-1]==' ')&&(map[randY+6][randX]==' ')&&(map[randY+6][randX+1]==' ')&&(map[randY+6][randX+2]==' ')&&(map[randY+6][randX+3]==' ')&&(map[randY+6][randX+4]==' ')&&(map[randY+6][randX+5]==' ')&&(map[randY+6][randX+6]==' ')&&(map[randY+6][randX+7]==' ')&&(map[randY+6][randX+8]==' ')&&(map[randY+6][randX+9]==' ')&&(map[randY+6][randX+10]==' ')&&(map[randY+6][randX+11]==' ')&&(map[randY+6][randX+12]==' ')&&(map[randY+6][randX+13]==' ')&&(map[randY+6][randX+14]==' ')&&(map[randY+6][randX+15]==' ')&&(map[randY+6][randX+16]==' ')&&(map[randY+6][randX+17]==' ')&&(map[randY+6][randX+18]==' ')&&(map[randY+6][randX+19]==' ')&&(map[randY+6][randX+20]==' ')&&(map[randY+6][randX+21]==' ')&&(map[randY+6][randX+22]==' ')&&(map[randY+6][randX+23]==' ')&&(map[randY+6][randX+24]==' ')&&
+							(map[randY+7][randX-1]==' ')&&(map[randY+7][randX]==' ')&&(map[randY+7][randX+1]==' ')&&(map[randY+7][randX+2]==' ')&&(map[randY+7][randX+3]==' ')&&(map[randY+7][randX+4]==' ')&&(map[randY+7][randX+5]==' ')&&(map[randY+7][randX+6]==' ')&&(map[randY+7][randX+7]==' ')&&(map[randY+7][randX+8]==' ')&&(map[randY+7][randX+9]==' ')&&(map[randY+7][randX+10]==' ')&&(map[randY+7][randX+11]==' ')&&(map[randY+7][randX+12]==' ')&&(map[randY+7][randX+13]==' ')&&(map[randY+7][randX+14]==' ')&&(map[randY+7][randX+15]==' ')&&(map[randY+7][randX+16]==' ')&&(map[randY+7][randX+17]==' ')&&(map[randY+7][randX+18]==' ')&&(map[randY+7][randX+19]==' ')&&(map[randY+7][randX+20]==' ')&&(map[randY+7][randX+21]==' ')&&(map[randY+7][randX+22]==' ')&&(map[randY+7][randX+23]==' ')&&(map[randY+7][randX+24]==' ')&&
+							(map[randY+8][randX-1]==' ')&&(map[randY+8][randX]==' ')&&(map[randY+8][randX+1]==' ')&&(map[randY+8][randX+2]==' ')&&(map[randY+8][randX+3]==' ')&&(map[randY+8][randX+4]==' ')&&(map[randY+8][randX+5]==' ')&&(map[randY+8][randX+6]==' ')&&(map[randY+8][randX+7]==' ')&&(map[randY+8][randX+8]==' ')&&(map[randY+8][randX+9]==' ')&&(map[randY+8][randX+10]==' ')&&(map[randY+8][randX+11]==' ')&&(map[randY+8][randX+12]==' ')&&(map[randY+8][randX+13]==' ')&&(map[randY+8][randX+14]==' ')&&(map[randY+8][randX+15]==' ')&&(map[randY+8][randX+16]==' ')&&(map[randY+8][randX+17]==' ')&&(map[randY+8][randX+18]==' ')&&(map[randY+8][randX+19]==' ')&&(map[randY+8][randX+20]==' ')&&(map[randY+8][randX+21]==' ')&&(map[randY+8][randX+22]==' ')&&(map[randY+8][randX+23]==' ')&&(map[randY+8][randX+24]==' ')&&
+							(map[randY+9][randX-1]==' ')&&(map[randY+9][randX]==' ')&&(map[randY+9][randX+1]==' ')&&(map[randY+9][randX+2]==' ')&&(map[randY+9][randX+3]==' ')&&(map[randY+9][randX+4]==' ')&&(map[randY+9][randX+5]==' ')&&(map[randY+9][randX+6]==' ')&&(map[randY+9][randX+7]==' ')&&(map[randY+9][randX+8]==' ')&&(map[randY+9][randX+9]==' ')&&(map[randY+9][randX+10]==' ')&&(map[randY+9][randX+11]==' ')&&(map[randY+9][randX+12]==' ')&&(map[randY+9][randX+13]==' ')&&(map[randY+9][randX+14]==' ')&&(map[randY+9][randX+15]==' ')&&(map[randY+9][randX+16]==' ')&&(map[randY+9][randX+17]==' ')&&(map[randY+9][randX+18]==' ')&&(map[randY+9][randX+19]==' ')&&(map[randY+9][randX+20]==' ')&&(map[randY+9][randX+21]==' ')&&(map[randY+9][randX+22]==' ')&&(map[randY+9][randX+23]==' ')&&(map[randY+9][randX+24]==' ')&&
+							(map[randY+10][randX-1]==' ')&&(map[randY+10][randX]==' ')&&(map[randY+10][randX+1]==' ')&&(map[randY+10][randX+2]==' ')&&(map[randY+10][randX+3]==' ')&&(map[randY+10][randX+4]==' ')&&(map[randY+10][randX+5]==' ')&&(map[randY+10][randX+6]==' ')&&(map[randY+10][randX+7]==' ')&&(map[randY+10][randX+8]==' ')&&(map[randY+10][randX+9]==' ')&&(map[randY+10][randX+10]==' ')&&(map[randY+10][randX+11]==' ')&&(map[randY+10][randX+12]==' ')&&(map[randY+10][randX+13]==' ')&&(map[randY+10][randX+14]==' ')&&(map[randY+10][randX+15]==' ')&&(map[randY+10][randX+16]==' ')&&(map[randY+10][randX+17]==' ')&&(map[randY+10][randX+18]==' ')&&(map[randY+10][randX+19]==' ')&&(map[randY+10][randX+20]==' ')&&(map[randY+10][randX+21]==' ')&&(map[randY+10][randX+22]==' ')&&(map[randY+10][randX+23]==' ')&&(map[randY+10][randX+24]==' ')&&
+							(map[randY+11][randX-1]==' ')&&(map[randY+11][randX]==' ')&&(map[randY+11][randX+1]==' ')&&(map[randY+11][randX+2]==' ')&&(map[randY+11][randX+3]==' ')&&(map[randY+11][randX+4]==' ')&&(map[randY+11][randX+5]==' ')&&(map[randY+11][randX+6]==' ')&&(map[randY+11][randX+7]==' ')&&(map[randY+11][randX+8]==' ')&&(map[randY+11][randX+9]==' ')&&(map[randY+11][randX+10]==' ')&&(map[randY+11][randX+11]==' ')&&(map[randY+11][randX+12]==' ')&&(map[randY+11][randX+13]==' ')&&(map[randY+11][randX+14]==' ')&&(map[randY+11][randX+15]==' ')&&(map[randY+11][randX+16]==' ')&&(map[randY+11][randX+17]==' ')&&(map[randY+11][randX+18]==' ')&&(map[randY+11][randX+19]==' ')&&(map[randY+11][randX+20]==' ')&&(map[randY+11][randX+21]==' ')&&(map[randY+11][randX+22]==' ')&&(map[randY+11][randX+23]==' ')&&(map[randY+11][randX+24]==' ')
+						   ){
+							
+							for (int i = 0; i < lTUpBuildingHeight; ++i){
+								for (int j = 0; j < lTUpBuildingWidth; ++j){
+									if (currentBuilding < numSHOPS){
+										if((i==9)&&(j==11)){
+											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+										}
+										else if((i==9)&&(j==12)){
+											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+										}
+										else{
+											map[i+randY][j+randX] = lTUpBuilding[i][j];
+										}
+									}
+									else{
+										map[i+randY][j+randX] = lTUpBuilding[i][j];
+									}
+								}
+							}	
+							++currentBuilding;
+							--noSuccess;
+						}
+						else{//Space not empty
+							
+						}
+					}
+					else{// Cant fits lTUp building
+						
+					}
+				}
+				else{// Can't fit building
+					
+				}
+				break;
+			case 16:
+				if(randX < (mapWidth-lTDownBuildingWidth-1)){
+					if(randY < (mapHeight-lTDownBuildingHeight-1)){// Can fit lTDownBuilding in map
+						if (
+							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
+							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
+							(map[randY+2][randX-1]==' ')&&(map[randY+2][randX]==' ')&&(map[randY+2][randX+1]==' ')&&(map[randY+2][randX+2]==' ')&&(map[randY+2][randX+3]==' ')&&(map[randY+2][randX+4]==' ')&&(map[randY+2][randX+5]==' ')&&(map[randY+2][randX+6]==' ')&&(map[randY+2][randX+7]==' ')&&(map[randY+2][randX+8]==' ')&&(map[randY+2][randX+9]==' ')&&(map[randY+2][randX+10]==' ')&&(map[randY+2][randX+11]==' ')&&(map[randY+2][randX+12]==' ')&&(map[randY+2][randX+13]==' ')&&(map[randY+2][randX+14]==' ')&&(map[randY+2][randX+15]==' ')&&(map[randY+2][randX+16]==' ')&&(map[randY+2][randX+17]==' ')&&(map[randY+2][randX+18]==' ')&&(map[randY+2][randX+19]==' ')&&(map[randY+2][randX+20]==' ')&&(map[randY+2][randX+21]==' ')&&(map[randY+2][randX+22]==' ')&&(map[randY+2][randX+23]==' ')&&(map[randY+2][randX+24]==' ')&&
+							(map[randY+3][randX-1]==' ')&&(map[randY+3][randX]==' ')&&(map[randY+3][randX+1]==' ')&&(map[randY+3][randX+2]==' ')&&(map[randY+3][randX+3]==' ')&&(map[randY+3][randX+4]==' ')&&(map[randY+3][randX+5]==' ')&&(map[randY+3][randX+6]==' ')&&(map[randY+3][randX+7]==' ')&&(map[randY+3][randX+8]==' ')&&(map[randY+3][randX+9]==' ')&&(map[randY+3][randX+10]==' ')&&(map[randY+3][randX+11]==' ')&&(map[randY+3][randX+12]==' ')&&(map[randY+3][randX+13]==' ')&&(map[randY+3][randX+14]==' ')&&(map[randY+3][randX+15]==' ')&&(map[randY+3][randX+16]==' ')&&(map[randY+3][randX+17]==' ')&&(map[randY+3][randX+18]==' ')&&(map[randY+3][randX+19]==' ')&&(map[randY+3][randX+20]==' ')&&(map[randY+3][randX+21]==' ')&&(map[randY+3][randX+22]==' ')&&(map[randY+3][randX+23]==' ')&&(map[randY+3][randX+24]==' ')&&
+							(map[randY+4][randX-1]==' ')&&(map[randY+4][randX]==' ')&&(map[randY+4][randX+1]==' ')&&(map[randY+4][randX+2]==' ')&&(map[randY+4][randX+3]==' ')&&(map[randY+4][randX+4]==' ')&&(map[randY+4][randX+5]==' ')&&(map[randY+4][randX+6]==' ')&&(map[randY+4][randX+7]==' ')&&(map[randY+4][randX+8]==' ')&&(map[randY+4][randX+9]==' ')&&(map[randY+4][randX+10]==' ')&&(map[randY+4][randX+11]==' ')&&(map[randY+4][randX+12]==' ')&&(map[randY+4][randX+13]==' ')&&(map[randY+4][randX+14]==' ')&&(map[randY+4][randX+15]==' ')&&(map[randY+4][randX+16]==' ')&&(map[randY+4][randX+17]==' ')&&(map[randY+4][randX+18]==' ')&&(map[randY+4][randX+19]==' ')&&(map[randY+4][randX+20]==' ')&&(map[randY+4][randX+21]==' ')&&(map[randY+4][randX+22]==' ')&&(map[randY+4][randX+23]==' ')&&(map[randY+4][randX+24]==' ')&&
+							(map[randY+5][randX-1]==' ')&&(map[randY+5][randX]==' ')&&(map[randY+5][randX+1]==' ')&&(map[randY+5][randX+2]==' ')&&(map[randY+5][randX+3]==' ')&&(map[randY+5][randX+4]==' ')&&(map[randY+5][randX+5]==' ')&&(map[randY+5][randX+6]==' ')&&(map[randY+5][randX+7]==' ')&&(map[randY+5][randX+8]==' ')&&(map[randY+5][randX+9]==' ')&&(map[randY+5][randX+10]==' ')&&(map[randY+5][randX+11]==' ')&&(map[randY+5][randX+12]==' ')&&(map[randY+5][randX+13]==' ')&&(map[randY+5][randX+14]==' ')&&(map[randY+5][randX+15]==' ')&&(map[randY+5][randX+16]==' ')&&(map[randY+5][randX+17]==' ')&&(map[randY+5][randX+18]==' ')&&(map[randY+5][randX+19]==' ')&&(map[randY+5][randX+20]==' ')&&(map[randY+5][randX+21]==' ')&&(map[randY+5][randX+22]==' ')&&(map[randY+5][randX+23]==' ')&&(map[randY+5][randX+24]==' ')&&
+							(map[randY+6][randX-1]==' ')&&(map[randY+6][randX]==' ')&&(map[randY+6][randX+1]==' ')&&(map[randY+6][randX+2]==' ')&&(map[randY+6][randX+3]==' ')&&(map[randY+6][randX+4]==' ')&&(map[randY+6][randX+5]==' ')&&(map[randY+6][randX+6]==' ')&&(map[randY+6][randX+7]==' ')&&(map[randY+6][randX+8]==' ')&&(map[randY+6][randX+9]==' ')&&(map[randY+6][randX+10]==' ')&&(map[randY+6][randX+11]==' ')&&(map[randY+6][randX+12]==' ')&&(map[randY+6][randX+13]==' ')&&(map[randY+6][randX+14]==' ')&&(map[randY+6][randX+15]==' ')&&(map[randY+6][randX+16]==' ')&&(map[randY+6][randX+17]==' ')&&(map[randY+6][randX+18]==' ')&&(map[randY+6][randX+19]==' ')&&(map[randY+6][randX+20]==' ')&&(map[randY+6][randX+21]==' ')&&(map[randY+6][randX+22]==' ')&&(map[randY+6][randX+23]==' ')&&(map[randY+6][randX+24]==' ')&&
+							(map[randY+7][randX-1]==' ')&&(map[randY+7][randX]==' ')&&(map[randY+7][randX+1]==' ')&&(map[randY+7][randX+2]==' ')&&(map[randY+7][randX+3]==' ')&&(map[randY+7][randX+4]==' ')&&(map[randY+7][randX+5]==' ')&&(map[randY+7][randX+6]==' ')&&(map[randY+7][randX+7]==' ')&&(map[randY+7][randX+8]==' ')&&(map[randY+7][randX+9]==' ')&&(map[randY+7][randX+10]==' ')&&(map[randY+7][randX+11]==' ')&&(map[randY+7][randX+12]==' ')&&(map[randY+7][randX+13]==' ')&&(map[randY+7][randX+14]==' ')&&(map[randY+7][randX+15]==' ')&&(map[randY+7][randX+16]==' ')&&(map[randY+7][randX+17]==' ')&&(map[randY+7][randX+18]==' ')&&(map[randY+7][randX+19]==' ')&&(map[randY+7][randX+20]==' ')&&(map[randY+7][randX+21]==' ')&&(map[randY+7][randX+22]==' ')&&(map[randY+7][randX+23]==' ')&&(map[randY+7][randX+24]==' ')&&
+							(map[randY+8][randX-1]==' ')&&(map[randY+8][randX]==' ')&&(map[randY+8][randX+1]==' ')&&(map[randY+8][randX+2]==' ')&&(map[randY+8][randX+3]==' ')&&(map[randY+8][randX+4]==' ')&&(map[randY+8][randX+5]==' ')&&(map[randY+8][randX+6]==' ')&&(map[randY+8][randX+7]==' ')&&(map[randY+8][randX+8]==' ')&&(map[randY+8][randX+9]==' ')&&(map[randY+8][randX+10]==' ')&&(map[randY+8][randX+11]==' ')&&(map[randY+8][randX+12]==' ')&&(map[randY+8][randX+13]==' ')&&(map[randY+8][randX+14]==' ')&&(map[randY+8][randX+15]==' ')&&(map[randY+8][randX+16]==' ')&&(map[randY+8][randX+17]==' ')&&(map[randY+8][randX+18]==' ')&&(map[randY+8][randX+19]==' ')&&(map[randY+8][randX+20]==' ')&&(map[randY+8][randX+21]==' ')&&(map[randY+8][randX+22]==' ')&&(map[randY+8][randX+23]==' ')&&(map[randY+8][randX+24]==' ')&&
+							(map[randY+9][randX-1]==' ')&&(map[randY+9][randX]==' ')&&(map[randY+9][randX+1]==' ')&&(map[randY+9][randX+2]==' ')&&(map[randY+9][randX+3]==' ')&&(map[randY+9][randX+4]==' ')&&(map[randY+9][randX+5]==' ')&&(map[randY+9][randX+6]==' ')&&(map[randY+9][randX+7]==' ')&&(map[randY+9][randX+8]==' ')&&(map[randY+9][randX+9]==' ')&&(map[randY+9][randX+10]==' ')&&(map[randY+9][randX+11]==' ')&&(map[randY+9][randX+12]==' ')&&(map[randY+9][randX+13]==' ')&&(map[randY+9][randX+14]==' ')&&(map[randY+9][randX+15]==' ')&&(map[randY+9][randX+16]==' ')&&(map[randY+9][randX+17]==' ')&&(map[randY+9][randX+18]==' ')&&(map[randY+9][randX+19]==' ')&&(map[randY+9][randX+20]==' ')&&(map[randY+9][randX+21]==' ')&&(map[randY+9][randX+22]==' ')&&(map[randY+9][randX+23]==' ')&&(map[randY+9][randX+24]==' ')&&
+							(map[randY+10][randX-1]==' ')&&(map[randY+10][randX]==' ')&&(map[randY+10][randX+1]==' ')&&(map[randY+10][randX+2]==' ')&&(map[randY+10][randX+3]==' ')&&(map[randY+10][randX+4]==' ')&&(map[randY+10][randX+5]==' ')&&(map[randY+10][randX+6]==' ')&&(map[randY+10][randX+7]==' ')&&(map[randY+10][randX+8]==' ')&&(map[randY+10][randX+9]==' ')&&(map[randY+10][randX+10]==' ')&&(map[randY+10][randX+11]==' ')&&(map[randY+10][randX+12]==' ')&&(map[randY+10][randX+13]==' ')&&(map[randY+10][randX+14]==' ')&&(map[randY+10][randX+15]==' ')&&(map[randY+10][randX+16]==' ')&&(map[randY+10][randX+17]==' ')&&(map[randY+10][randX+18]==' ')&&(map[randY+10][randX+19]==' ')&&(map[randY+10][randX+20]==' ')&&(map[randY+10][randX+21]==' ')&&(map[randY+10][randX+22]==' ')&&(map[randY+10][randX+23]==' ')&&(map[randY+10][randX+24]==' ')&&
+							(map[randY+11][randX-1]==' ')&&(map[randY+11][randX]==' ')&&(map[randY+11][randX+1]==' ')&&(map[randY+11][randX+2]==' ')&&(map[randY+11][randX+3]==' ')&&(map[randY+11][randX+4]==' ')&&(map[randY+11][randX+5]==' ')&&(map[randY+11][randX+6]==' ')&&(map[randY+11][randX+7]==' ')&&(map[randY+11][randX+8]==' ')&&(map[randY+11][randX+9]==' ')&&(map[randY+11][randX+10]==' ')&&(map[randY+11][randX+11]==' ')&&(map[randY+11][randX+12]==' ')&&(map[randY+11][randX+13]==' ')&&(map[randY+11][randX+14]==' ')&&(map[randY+11][randX+15]==' ')&&(map[randY+11][randX+16]==' ')&&(map[randY+11][randX+17]==' ')&&(map[randY+11][randX+18]==' ')&&(map[randY+11][randX+19]==' ')&&(map[randY+11][randX+20]==' ')&&(map[randY+11][randX+21]==' ')&&(map[randY+11][randX+22]==' ')&&(map[randY+11][randX+23]==' ')&&(map[randY+11][randX+24]==' ')
+						   ){
+							
+							for (int i = 0; i < lTDownBuildingHeight; ++i){
+								for (int j = 0; j < lTDownBuildingWidth; ++j){
+									if (currentBuilding < numSHOPS){
+										if((i==3)&&(j==11)){
+											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+										}
+										else if((i==3)&&(j==12)){
+											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+										}
+										else{
+											map[i+randY][j+randX] = lTDownBuilding[i][j];
+										}
+									}
+									else{
+										map[i+randY][j+randX] = lTDownBuilding[i][j];
+									}
+								}
+							}	
+							++currentBuilding;
+							--noSuccess;
+						}
+						else{//Space not empty
+							
+						}
+					}
+					else{// Cant fits lTDown building
 						
 					}
 				}
