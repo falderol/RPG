@@ -1,10 +1,14 @@
+#include "settlementGen.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
 #include <time.h>
 
-#include "shopGen.c"
+#include "itoa.h"
+#include "shopGen.h"
+#include "nameGen.h"
 
 #define NAME_LENGTH 32
 
@@ -45,6 +49,7 @@
 //"Bit 11 - Urban
 
 void settlementCommandReminder(){
+	printf("Command format is: ");
 	printf(".\\programName <storageLoc.txt> <flags>\n");
 	printf("Supported Flags are:\n");
 	printf("Bit 00 - Magical\n");
@@ -62,139 +67,8 @@ void settlementCommandReminder(){
 	printf("I.E. a magical frontier forest would be 31\n");
 }
 
-void townnameGen(FILE * storeHere){
-	uint8_t numFirst = 57;
-	char first[numFirst][NAME_LENGTH];
-	strcpy(first[0],"Milwau");
-	strcpy(first[1],"Madi");
-	strcpy(first[2],"Keno");
-	strcpy(first[3],"Green");
-	strcpy(first[4],"Blue");
-	strcpy(first[5],"Red");
-	strcpy(first[6],"Yellow");
-	strcpy(first[7],"Wauke");
-	strcpy(first[8],"Osh");
-	strcpy(first[9],"Winne");
-	strcpy(first[10],"Champ");
-	strcpy(first[11],"Chica");
-	strcpy(first[12],"Urban");
-	strcpy(first[13],"Winth");
-	strcpy(first[14],"Winne");
-	strcpy(first[15],"Lond");
-	strcpy(first[16],"Up");
-	strcpy(first[17],"Eden");
-	strcpy(first[18],"Edin");
-	strcpy(first[19],"Ham");
-	strcpy(first[20],"Minne");
-	strcpy(first[21],"Rock");
-	strcpy(first[21],"River");
-	strcpy(first[23],"Spring");
-	strcpy(first[24],"Aur");
-	strcpy(first[25],"Joil");
-	strcpy(first[26],"Elg");
-	strcpy(first[27],"Peor");
-	strcpy(first[28],"Rac");
-	strcpy(first[29],"Sup");
-	strcpy(first[30],"Du");
-	strcpy(first[31],"Roch");
-	strcpy(first[32],"Dul");
-	strcpy(first[33],"Mad");
-	strcpy(first[34],"Dun");
-	strcpy(first[35],"Kin");
-	strcpy(first[36],"Ler");
-	strcpy(first[37],"Orrin");
-	strcpy(first[38],"Maccels");
-	strcpy(first[39],"Skarg");
-	strcpy(first[40],"Bull");
-	strcpy(first[41],"Black");
-	strcpy(first[42],"Jarl");
-	strcpy(first[43],"Knight");
-	strcpy(first[44],"Earth");
-	strcpy(first[45],"Old");
-	strcpy(first[46],"New");
-	strcpy(first[47],"North");
-	strcpy(first[48],"South");
-	strcpy(first[49],"East");
-	strcpy(first[50],"West");
-	strcpy(first[51],"Dame");
-	strcpy(first[52],"Storm");
-	strcpy(first[53],"White");
-	strcpy(first[54],"Mud");
-	strcpy(first[55],"Burr");
-	strcpy(first[56],"Mack");
-	
-	uint8_t numLast = 57;
-	char last[numLast][NAME_LENGTH];
-	strcpy(last[0],"ton");
-	strcpy(last[1],"in");
-	strcpy(last[2],"ville");
-	strcpy(last[3],"shire");
-	strcpy(last[4],"on");
-	strcpy(last[5],"field");
-	strcpy(last[6],"town");
-	strcpy(last[7],"sha");
-	strcpy(last[8],"ine");
-	strcpy(last[9],"ton");
-	strcpy(last[10],"kee");
-	strcpy(last[11],"go");
-	strcpy(last[12],"ion");
-	strcpy(last[13],"an");
-	strcpy(last[14],"son");
-	strcpy(last[15],"gan");
-	strcpy(last[16],"ing");
-	strcpy(last[17],"ane");
-	strcpy(last[18],"ay");
-	strcpy(last[19],"sin");
-	strcpy(last[20],"field");
-	strcpy(last[21],"aire");
-	strcpy(last[22],"osh");
-	strcpy(last[23],"ago");
-	strcpy(last[24],"land");
-	strcpy(last[25],"mer");
-	strcpy(last[26],"ange");
-	strcpy(last[27],"ana");
-	strcpy(last[28],"port");
-	strcpy(last[29],"rop");
-	strcpy(last[30],"borough");
-	strcpy(last[31],"polis");
-	strcpy(last[32],"ford");
-	strcpy(last[33],"fort");
-	strcpy(last[34],"dem");
-	strcpy(last[35],"ora");
-	strcpy(last[36],"et");
-	strcpy(last[37],"aign");
-	strcpy(last[38],"ia");
-	strcpy(last[39],"ois");
-	strcpy(last[40],"ota");
-	strcpy(last[41],"uth");
-	strcpy(last[42],"burg");
-	strcpy(last[43],"castel");
-	strcpy(last[44],"wich");
-	strcpy(last[45],"caster");
-	strcpy(last[46],"stey");
-	strcpy(last[47],"ick");
-	strcpy(last[48],"ness");
-	strcpy(last[49],"run");
-	strcpy(last[50],"scar");
-	strcpy(last[51],"vein");
-	strcpy(last[52],"garde");
-	strcpy(last[53],"wind");
-	strcpy(last[54],"cliffe");
-	strcpy(last[55],"shade");
-	strcpy(last[56],"holde");
-	
-	fprintf(storeHere,"%s%s\n", first[rand()%numFirst],last[rand()%numLast]);
-}	
-
-
-int main(int argc, char* argv[]){
-	if (argc != 3){
-		settlementCommandReminder();
-		return -1;
-	}
-	char* filename = argv[1];
+void settlementGen(char * filename, uint16_t flags ){
 	FILE * townFile = fopen(filename, "w+");
-	uint16_t flags = atoi(argv[2]);
 	srand(time(NULL));
 	
 	char townFileName[64];
@@ -221,9 +95,9 @@ int main(int argc, char* argv[]){
 	uint8_t numJWL = 0;
 	uint8_t numSHOPS = 0;
 	int population;
-	settlementSize = 20;
+	settlementSize = rand()%20+1;
 	if(settlementSize == 20){
-		if (1){//((rand()%20)+1)>15){
+		if (((rand()%20)+1)>15){
 			fprintf(townFile, "The City of ");
 			townnameGen(townFile);
 			population = ((rand()%5)+1)*10*settlementSize*5;
@@ -1155,10 +1029,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < squareBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==3)&&(j==5)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==3)&&(j==6)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = squareBuilding[i][j];
@@ -1200,10 +1074,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < roundBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==5)&&(j==9)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==5)&&(j==10)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = roundBuilding[i][j];
@@ -1249,10 +1123,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < rectLongBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==6)&&(j==5)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==6)&&(j==6)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = rectLongBuilding[i][j];
@@ -1296,10 +1170,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < rectWideBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==3)&&(j==11)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==3)&&(j==12)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = rectWideBuilding[i][j];
@@ -1347,10 +1221,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < lDownLeftBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==9)&&(j==16)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==9)&&(j==17)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = lDownLeftBuilding[i][j];
@@ -1397,10 +1271,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < lDownRightBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==9)&&(j==5)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==9)&&(j==6)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = lDownRightBuilding[i][j];
@@ -1448,10 +1322,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < lUpLeftBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==3)&&(j==16)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==3)&&(j==17)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = lUpLeftBuilding[i][j];
@@ -1499,10 +1373,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < lUpRightBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==3)&&(j==5)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==3)&&(j==6)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = lUpRightBuilding[i][j];
@@ -1550,10 +1424,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < lTRightBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==6)&&(j==5)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==6)&&(j==6)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = lTRightBuilding[i][j];
@@ -1601,10 +1475,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < lTLeftBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==6)&&(j==16)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==6)&&(j==17)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = lTLeftBuilding[i][j];
@@ -1652,10 +1526,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < lTUpBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==9)&&(j==11)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==9)&&(j==12)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = lTUpBuilding[i][j];
@@ -1703,10 +1577,10 @@ int main(int argc, char* argv[]){
 								for (int j = 0; j < lTDownBuildingWidth; ++j){
 									if (currentBuilding < numSHOPS){
 										if((i==3)&&(j==11)){
-											itoa(currentBuilding/10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding/10,&map[i+randY][j+randX]);
 										}
 										else if((i==3)&&(j==12)){
-											itoa(currentBuilding%10,&map[i+randY][j+randX],10);
+											myitoa(currentBuilding%10,&map[i+randY][j+randX]);
 										}
 										else{
 											map[i+randY][j+randX] = lTDownBuilding[i][j];
@@ -1776,5 +1650,4 @@ int main(int argc, char* argv[]){
 	
 	printf("Full Settlement has been generated\n");
 	
-	return 0;
 }

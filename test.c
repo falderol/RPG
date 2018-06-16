@@ -4,9 +4,8 @@
 #include <string.h>
 #include <time.h>
 
-#include "shopGen.c"
-#include "settlementGen.c"
-#define NAME_LENGTH 32
+#include "settlementGen.h"
+#include "itoa.h"
 
 //////////
 // How to format shopgen command
@@ -44,6 +43,14 @@
 //"Bit 10 - Rural
 //"Bit 11 - Urban
 
-int main (){
+int main (int8_t argc, char* argv[]){
+	if(argc != 3){
+		settlementCommandReminder();
+		return -1;
+	}
+	char* filename = argv[1];
+	uint16_t flags = atoi(argv[2]);
+	
+	settlementGen(argv[1], atoi(argv[2]) );
 	return 0;
 }
