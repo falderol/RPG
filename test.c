@@ -51,6 +51,7 @@ int main (int8_t argc, char* argv[]){
 	char* filename = argv[1];
 	uint16_t flags = atoi(argv[2]);
 	
+	srand(time(NULL));
 	settlementGen(argv[1], atoi(argv[2]) );
 	return 0;
 }

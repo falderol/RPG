@@ -69,8 +69,7 @@ void settlementCommandReminder(){
 
 void settlementGen(char * filename, uint16_t flags ){
 	FILE * townFile = fopen(filename, "w+");
-	srand(time(NULL));
-	
+	//srand(time(NULL); /* Replace with windows and linux specific funtion if you keep here */
 	char townFileName[64];
 	strcpy(townFileName, filename);
 	
@@ -109,7 +108,7 @@ void settlementGen(char * filename, uint16_t flags ){
 			fclose(townFile);
 			uint8_t shopAmount = (settlementSize/3)*(rand()%4+rand()%4+5);
 			for (int i = 0; i < shopAmount; ++i){
-				uint8_t shopnum = 0;
+				//uint8_t shopnum = 0;
 				switch((rand()%20)+1){
 					case 1:
 					case 2:
@@ -198,7 +197,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fclose(townFile);
 		uint8_t shopAmount = (settlementSize/3)+3;
 		for (int i = 0; i < shopAmount; ++i){
-			uint8_t shopnum = 0;
+			//uint8_t shopnum = 0;
 			switch((rand()%20)+1){
 				case 1:
 				case 2:
@@ -536,7 +535,7 @@ void settlementGen(char * filename, uint16_t flags ){
 	//////////
 	// Place Roads and Rivers
 	
-	uint8_t numRoadRiv = (rand()%(settlementSize/4))+2;
+	uint8_t numRoadRiv = (rand()%((settlementSize/4)+1)+1);
 	if (settlementSize == 20){
 		++numRoadRiv;
 	}
@@ -805,179 +804,194 @@ void settlementGen(char * filename, uint16_t flags ){
 	uint8_t squareBuildingHeight = 6;
 	uint8_t squareBuildingWidth = 12;
 	char squareBuilding[squareBuildingHeight][squareBuildingWidth];
-	strcpy(squareBuilding[0], " __________ ");
-	strcpy(squareBuilding[1], "|          |");
-	strcpy(squareBuilding[2], "|          |");
-	strcpy(squareBuilding[3], "|          |");
-	strcpy(squareBuilding[4], "|          |");
-	strcpy(squareBuilding[5], "|__________|");
+	sprintf(squareBuilding[0],"%12s", " __________ ");
+	sprintf(squareBuilding[1],"%12s", "|          |");
+	sprintf(squareBuilding[2],"%12s", "|          |");
+	sprintf(squareBuilding[3],"%12s", "|          |");
+	sprintf(squareBuilding[4],"%12s", "|          |");
+	sprintf(squareBuilding[5],"%12s", "|__________|");
 	
 	uint8_t roundBuildingHeight = 10;
 	uint8_t roundBuildingWidth = 20;
 	char roundBuilding[roundBuildingHeight][roundBuildingWidth];
-	strcpy(roundBuilding[0], "     __________     ");
-	strcpy(roundBuilding[1], "   _|          |_   ");
-	strcpy(roundBuilding[2], " _|              |_ ");
-	strcpy(roundBuilding[3], "|                  |");
-	strcpy(roundBuilding[4], "|                  |");
-	strcpy(roundBuilding[5], "|                  |");
-	strcpy(roundBuilding[6], "|                  |");
-	strcpy(roundBuilding[7], "|_                _|");
-	strcpy(roundBuilding[8], "  |_            _|  ");
-	strcpy(roundBuilding[9], "    |__________|   ");
+	sprintf(roundBuilding[0],"%20s", "     __________     ");
+	sprintf(roundBuilding[1],"%20s", "   _|          |_   ");
+	sprintf(roundBuilding[2],"%20s", " _|              |_ ");
+	sprintf(roundBuilding[3],"%20s", "|                  |");
+	sprintf(roundBuilding[4],"%20s", "|                  |");
+	sprintf(roundBuilding[5],"%20s", "|                  |");
+	sprintf(roundBuilding[6],"%20s", "|                  |");
+	sprintf(roundBuilding[7],"%20s", "|_                _|");
+	sprintf(roundBuilding[8],"%20s", "  |_            _|  ");
+	sprintf(roundBuilding[9],"%20s", "    |__________|    ");
 	
 	uint8_t rectLongBuildingHeight = 12;
 	uint8_t rectLongBuildingWidth = 12;
 	char rectLongBuilding[rectLongBuildingHeight][rectLongBuildingWidth];
-	strcpy(rectLongBuilding[0],  " __________ ");
-	strcpy(rectLongBuilding[1],  "|          |");
-	strcpy(rectLongBuilding[2],  "|          |");
-	strcpy(rectLongBuilding[3],  "|          |");
-	strcpy(rectLongBuilding[4],  "|          |");
-	strcpy(rectLongBuilding[5],  "|          |");
-	strcpy(rectLongBuilding[6],  "|          |");
-	strcpy(rectLongBuilding[7],  "|          |");
-	strcpy(rectLongBuilding[8],  "|          |");
-	strcpy(rectLongBuilding[9],  "|          |");
-	strcpy(rectLongBuilding[10], "|          |");
-	strcpy(rectLongBuilding[11], "|__________|");
+	sprintf(rectLongBuilding[0],"%12s",  " __________ ");
+	sprintf(rectLongBuilding[1],"%12s",  "|          |");
+	sprintf(rectLongBuilding[2],"%12s",  "|          |");
+	sprintf(rectLongBuilding[3],"%12s",  "|          |");
+	sprintf(rectLongBuilding[4],"%12s",  "|          |");
+	sprintf(rectLongBuilding[5],"%12s",  "|          |");
+	sprintf(rectLongBuilding[6],"%12s",  "|          |");
+	sprintf(rectLongBuilding[7],"%12s",  "|          |");
+	sprintf(rectLongBuilding[8],"%12s",  "|          |");
+	sprintf(rectLongBuilding[9],"%12s",  "|          |");
+	sprintf(rectLongBuilding[10],"%12s", "|          |");
+	sprintf(rectLongBuilding[11],"%12s", "|__________|");
 	
 	uint8_t rectWideBuildingHeight = 6;
 	uint8_t rectWideBuildingWidth = 24;
 	char rectWideBuilding[rectWideBuildingHeight][rectWideBuildingWidth];
-	strcpy(rectWideBuilding[0], " ______________________ ");
-	strcpy(rectWideBuilding[1], "|                      |");
-	strcpy(rectWideBuilding[2], "|                      |");
-	strcpy(rectWideBuilding[3], "|                      |");
-	strcpy(rectWideBuilding[4], "|                      |");
-	strcpy(rectWideBuilding[5], "|______________________|");
+	sprintf(rectWideBuilding[0],"%24s", " ______________________ ");
+	sprintf(rectWideBuilding[1],"%24s", "|                      |");
+	sprintf(rectWideBuilding[2],"%24s", "|                      |");
+	sprintf(rectWideBuilding[3],"%24s", "|                      |");
+	sprintf(rectWideBuilding[4],"%24s", "|                      |");
+	sprintf(rectWideBuilding[5],"%24s", "|______________________|");
 	
 	uint8_t lDownLeftBuildingHeight = 12;
 	uint8_t lDownLeftBuildingWidth = 24;
 	char lDownLeftBuilding[lDownLeftBuildingHeight][lDownLeftBuildingWidth];
-	strcpy(lDownLeftBuilding[0],  "             __________ ");
-	strcpy(lDownLeftBuilding[1],  "            |          |");
-	strcpy(lDownLeftBuilding[2],  "            |          |");
-	strcpy(lDownLeftBuilding[3],  "            |          |");
-	strcpy(lDownLeftBuilding[4],  "            |          |");
-	strcpy(lDownLeftBuilding[5],  "            |          |");
-	strcpy(lDownLeftBuilding[6],  " ___________|          |");
-	strcpy(lDownLeftBuilding[7],  "|                      |");
-	strcpy(lDownLeftBuilding[8],  "|                      |");
-	strcpy(lDownLeftBuilding[9],  "|                      |");
-	strcpy(lDownLeftBuilding[10], "|                      |");
-	strcpy(lDownLeftBuilding[11], "|______________________|");
+	sprintf(lDownLeftBuilding[0],"%24s",  "             __________ ");
+	sprintf(lDownLeftBuilding[1],"%24s",  "            |          |");
+	sprintf(lDownLeftBuilding[2],"%24s",  "            |          |");
+	sprintf(lDownLeftBuilding[3],"%24s",  "            |          |");
+	sprintf(lDownLeftBuilding[4],"%24s",  "            |          |");
+	sprintf(lDownLeftBuilding[5],"%24s",  "            |          |");
+	sprintf(lDownLeftBuilding[6],"%24s",  " ___________|          |");
+	sprintf(lDownLeftBuilding[7],"%24s",  "|                      |");
+	sprintf(lDownLeftBuilding[8],"%24s",  "|                      |");
+	sprintf(lDownLeftBuilding[9],"%24s",  "|                      |");
+	sprintf(lDownLeftBuilding[10],"%24s", "|                      |");
+	sprintf(lDownLeftBuilding[11],"%24s", "|______________________|");
 	
 	uint8_t lDownRightBuildingHeight = 12;
 	uint8_t lDownRightBuildingWidth = 24;
 	char lDownRightBuilding[lDownRightBuildingHeight][lDownRightBuildingWidth];
-	strcpy(lDownRightBuilding[0],  " __________            ");
-	strcpy(lDownRightBuilding[1],  "|          |           ");
-	strcpy(lDownRightBuilding[2],  "|          |           ");
-	strcpy(lDownRightBuilding[3],  "|          |           ");
-	strcpy(lDownRightBuilding[4],  "|          |           ");
-	strcpy(lDownRightBuilding[5],  "|          |           ");
-	strcpy(lDownRightBuilding[6],  "|          |___________");
-	strcpy(lDownRightBuilding[7],  "|                      |");
-	strcpy(lDownRightBuilding[8],  "|                      |");
-	strcpy(lDownRightBuilding[9],  "|                      |");
-	strcpy(lDownRightBuilding[10], "|                      |");
-	strcpy(lDownRightBuilding[11], "|______________________|");
+	sprintf(lDownRightBuilding[0],"%24s",  " __________             ");
+	sprintf(lDownRightBuilding[1],"%24s",  "|          |            ");
+	sprintf(lDownRightBuilding[2],"%24s",  "|          |            ");
+	sprintf(lDownRightBuilding[3],"%24s",  "|          |            ");
+	sprintf(lDownRightBuilding[4],"%24s",  "|          |            ");
+	sprintf(lDownRightBuilding[5],"%24s",  "|          |            ");
+	sprintf(lDownRightBuilding[6],"%24s",  "|          |___________ ");
+	sprintf(lDownRightBuilding[7],"%24s",  "|                      |");
+	sprintf(lDownRightBuilding[8],"%24s",  "|                      |");
+	sprintf(lDownRightBuilding[9],"%24s",  "|                      |");
+	sprintf(lDownRightBuilding[10],"%24s", "|                      |");
+	sprintf(lDownRightBuilding[11],"%24s", "|______________________|");
 	
 	uint8_t lUpLeftBuildingHeight = 12;
 	uint8_t lUpLeftBuildingWidth = 24;
 	char lUpLeftBuilding[lUpLeftBuildingHeight][lUpLeftBuildingWidth];
-	strcpy(lUpLeftBuilding[0],  " ______________________ ");
-	strcpy(lUpLeftBuilding[1],  "|                      |");
-	strcpy(lUpLeftBuilding[2],  "|                      |");
-	strcpy(lUpLeftBuilding[3],  "|                      |");
-	strcpy(lUpLeftBuilding[4],  "|                      |");
-	strcpy(lUpLeftBuilding[5],  "|___________           |");
-	strcpy(lUpLeftBuilding[6],  "            |          |");
-	strcpy(lUpLeftBuilding[7],  "            |          |");
-	strcpy(lUpLeftBuilding[8],  "            |          |");
-	strcpy(lUpLeftBuilding[9],  "            |          |");
-	strcpy(lUpLeftBuilding[10], "            |          |");
-	strcpy(lUpLeftBuilding[11], "            |__________|");
+	sprintf(lUpLeftBuilding[0],"%24s",  " ______________________ ");
+	sprintf(lUpLeftBuilding[1],"%24s",  "|                      |");
+	sprintf(lUpLeftBuilding[2],"%24s",  "|                      |");
+	sprintf(lUpLeftBuilding[3],"%24s",  "|                      |");
+	sprintf(lUpLeftBuilding[4],"%24s",  "|                      |");
+	sprintf(lUpLeftBuilding[5],"%24s",  "|___________           |");
+	sprintf(lUpLeftBuilding[6],"%24s",  "            |          |");
+	sprintf(lUpLeftBuilding[7],"%24s",  "            |          |");
+	sprintf(lUpLeftBuilding[8],"%24s",  "            |          |");
+	sprintf(lUpLeftBuilding[9],"%24s",  "            |          |");
+	sprintf(lUpLeftBuilding[10],"%24s", "            |          |");
+	sprintf(lUpLeftBuilding[11],"%24s", "            |__________|");
 	
 	uint8_t lUpRightBuildingHeight = 12;
 	uint8_t lUpRightBuildingWidth = 24;
 	char lUpRightBuilding[lUpRightBuildingHeight][lUpRightBuildingWidth];
-	strcpy(lUpRightBuilding[0],  " _____________________ ");
-	strcpy(lUpRightBuilding[1],  "|                     |");
-	strcpy(lUpRightBuilding[2],  "|                     |");
-	strcpy(lUpRightBuilding[3],  "|                     |");
-	strcpy(lUpRightBuilding[4],  "|                     |");
-	strcpy(lUpRightBuilding[5],  "|           __________|");
-	strcpy(lUpRightBuilding[6],  "|          |           ");
-	strcpy(lUpRightBuilding[7],  "|          |           ");
-	strcpy(lUpRightBuilding[8],  "|          |           ");
-	strcpy(lUpRightBuilding[9],  "|          |           ");
-	strcpy(lUpRightBuilding[10], "|          |           ");
-	strcpy(lUpRightBuilding[11], "|__________|           ");
+	sprintf(lUpRightBuilding[0],"%24s",  " _____________________ ");
+	sprintf(lUpRightBuilding[1],"%24s",  "|                     |");
+	sprintf(lUpRightBuilding[2],"%24s",  "|                     |");
+	sprintf(lUpRightBuilding[3],"%24s",  "|                     |");
+	sprintf(lUpRightBuilding[4],"%24s",  "|                     |");
+	sprintf(lUpRightBuilding[5],"%24s",  "|           __________|");
+	sprintf(lUpRightBuilding[6],"%24s",  "|          |           ");
+	sprintf(lUpRightBuilding[7],"%24s",  "|          |           ");
+	sprintf(lUpRightBuilding[8],"%24s",  "|          |           ");
+	sprintf(lUpRightBuilding[9],"%24s",  "|          |           ");
+	sprintf(lUpRightBuilding[10],"%24s", "|          |           ");
+	sprintf(lUpRightBuilding[11],"%24s", "|__________|           ");
 	
 	uint8_t lTRightBuildingHeight = 12;
 	uint8_t lTRightBuildingWidth = 24;
 	char lTRightBuilding[lTRightBuildingHeight][lTRightBuildingWidth];
-	strcpy(lTRightBuilding[0],  " __________            ");
-	strcpy(lTRightBuilding[1],  "|          |           ");
-	strcpy(lTRightBuilding[2],  "|          |           ");
-	strcpy(lTRightBuilding[3],  "|          |__________ ");
-	strcpy(lTRightBuilding[4],  "|                     |");
-	strcpy(lTRightBuilding[5],  "|                     |");
-	strcpy(lTRightBuilding[6],  "|                     |");
-	strcpy(lTRightBuilding[7],  "|                     |");
-	strcpy(lTRightBuilding[8],  "|           __________|");
-	strcpy(lTRightBuilding[9],  "|          |           ");
-	strcpy(lTRightBuilding[10], "|          |           ");
-	strcpy(lTRightBuilding[11], "|__________|           ");
+	sprintf(lTRightBuilding[0],"%24s",  " __________            ");
+	sprintf(lTRightBuilding[1],"%24s",  "|          |           ");
+	sprintf(lTRightBuilding[2],"%24s",  "|          |           ");
+	sprintf(lTRightBuilding[3],"%24s",  "|          |__________ ");
+	sprintf(lTRightBuilding[4],"%24s",  "|                     |");
+	sprintf(lTRightBuilding[5],"%24s",  "|                     |");
+	sprintf(lTRightBuilding[6],"%24s",  "|                     |");
+	sprintf(lTRightBuilding[7],"%24s",  "|                     |");
+	sprintf(lTRightBuilding[8],"%24s",  "|           __________|");
+	sprintf(lTRightBuilding[9],"%24s",  "|          |           ");
+	sprintf(lTRightBuilding[10],"%24s", "|          |           ");
+	sprintf(lTRightBuilding[11],"%24s", "|__________|           ");
 	
 	uint8_t lTLeftBuildingHeight = 12;
 	uint8_t lTLeftBuildingWidth = 24;
 	char lTLeftBuilding[lTLeftBuildingHeight][lTLeftBuildingWidth];
-	strcpy(lTLeftBuilding[0],  "            __________ ");
-	strcpy(lTLeftBuilding[1],  "           |          |");
-	strcpy(lTLeftBuilding[2],  "           |          |");
-	strcpy(lTLeftBuilding[3],  " __________|          |");
-	strcpy(lTLeftBuilding[4],  "|                     |");
-	strcpy(lTLeftBuilding[5],  "|                     |");
-	strcpy(lTLeftBuilding[6],  "|                     |");
-	strcpy(lTLeftBuilding[7],  "|                     |");
-	strcpy(lTLeftBuilding[8],  "|__________           |");
-	strcpy(lTLeftBuilding[9],  "           |          |");
-	strcpy(lTLeftBuilding[10], "           |          |");
-	strcpy(lTLeftBuilding[11], "           |__________|");
+	sprintf(lTLeftBuilding[0],"%24s",  "            __________ ");
+	sprintf(lTLeftBuilding[1],"%24s",  "           |          |");
+	sprintf(lTLeftBuilding[2],"%24s",  "           |          |");
+	sprintf(lTLeftBuilding[3],"%24s",  " __________|          |");
+	sprintf(lTLeftBuilding[4],"%24s",  "|                     |");
+	sprintf(lTLeftBuilding[5],"%24s",  "|                     |");
+	sprintf(lTLeftBuilding[6],"%24s",  "|                     |");
+	sprintf(lTLeftBuilding[7],"%24s",  "|                     |");
+	sprintf(lTLeftBuilding[8],"%24s",  "|__________           |");
+	sprintf(lTLeftBuilding[9],"%24s",  "           |          |");
+	sprintf(lTLeftBuilding[10],"%24s", "           |          |");
+	sprintf(lTLeftBuilding[11],"%24s", "           |__________|");
 	
 	uint8_t lTDownBuildingHeight = 12;
 	uint8_t lTDownBuildingWidth = 24;
 	char lTDownBuilding[lTDownBuildingHeight][lTDownBuildingWidth];
-	strcpy(lTDownBuilding[0],  " ______________________");
-	strcpy(lTDownBuilding[1],  "|                      |");
-	strcpy(lTDownBuilding[2],  "|                      |");
-	strcpy(lTDownBuilding[3],  "|                      |");
-	strcpy(lTDownBuilding[4],  "|                      |");
-	strcpy(lTDownBuilding[5],  "|_____            _____|");
-	strcpy(lTDownBuilding[6],  "      |          |      ");
-	strcpy(lTDownBuilding[7],  "      |          |      ");
-	strcpy(lTDownBuilding[8],  "      |          |      ");
-	strcpy(lTDownBuilding[9],  "      |          |      ");
-	strcpy(lTDownBuilding[10], "      |          |      ");
-	strcpy(lTDownBuilding[11], "      |__________|      ");
+	sprintf(lTDownBuilding[0],"%24s",  " ______________________ ");
+	sprintf(lTDownBuilding[1],"%24s",  "|                      |");
+	sprintf(lTDownBuilding[2],"%24s",  "|                      |");
+	sprintf(lTDownBuilding[3],"%24s",  "|                      |");
+	sprintf(lTDownBuilding[4],"%24s",  "|                      |");
+	sprintf(lTDownBuilding[5],"%24s",  "|_____            _____|");
+	sprintf(lTDownBuilding[6],"%24s",  "      |          |      ");
+	sprintf(lTDownBuilding[7],"%24s",  "      |          |      ");
+	sprintf(lTDownBuilding[8],"%24s",  "      |          |      ");
+	sprintf(lTDownBuilding[9],"%24s",  "      |          |      ");
+	sprintf(lTDownBuilding[10],"%24s", "      |          |      ");
+	sprintf(lTDownBuilding[11],"%24s", "      |__________|      ");
 	
 	uint8_t lTUpBuildingHeight = 12;
 	uint8_t lTUpBuildingWidth = 24;
 	char lTUpBuilding[lTUpBuildingHeight][lTUpBuildingWidth];
-	strcpy(lTUpBuilding[1], "        _________       ");
-	strcpy(lTUpBuilding[2], "       |         |      ");
-	strcpy(lTUpBuilding[3], "       |         |      ");
-	strcpy(lTUpBuilding[4], "       |         |      ");
-	strcpy(lTUpBuilding[5], "       |         |      ");
-	strcpy(lTUpBuilding[6], " ______|         |_____ ");
-	strcpy(lTUpBuilding[7], "|                      |");
-	strcpy(lTUpBuilding[8], "|                      |");
-	strcpy(lTUpBuilding[9], "|                      |");
-	strcpy(lTUpBuilding[10],"|                      |");
-	strcpy(lTUpBuilding[11],"|______________________|");
+	sprintf(lTUpBuilding[0],"%24s", "        _________       ");
+	sprintf(lTUpBuilding[1],"%24s", "       |         |      ");
+	sprintf(lTUpBuilding[2],"%24s", "       |         |      ");
+	sprintf(lTUpBuilding[3],"%24s", "       |         |      ");
+	sprintf(lTUpBuilding[4],"%24s", "       |         |      ");
+	sprintf(lTUpBuilding[5],"%24s", "       |         |      ");
+	sprintf(lTUpBuilding[6],"%24s", " ______|         |_____ ");
+	sprintf(lTUpBuilding[7],"%24s", "|                      |");
+	sprintf(lTUpBuilding[8],"%24s", "|                      |");
+	sprintf(lTUpBuilding[9],"%24s", "|                      |");
+	sprintf(lTUpBuilding[10],"%24s","|                      |");
+	sprintf(lTUpBuilding[11],"%24s","|______________________|");
+
+	/* Temp Fix */
+	squareBuilding[0][0] = ' ';
+	roundBuilding[0][0] = ' ';
+	rectLongBuilding[0][0] = ' ';
+	rectWideBuilding[0][0] = ' ';
+	lTDownBuilding[0][0] = ' ';
+	lTLeftBuilding[0][0] = ' ';
+	lTRightBuilding[0][0] = ' ';
+	lTUpBuilding[0][0] = ' ';
+	lUpLeftBuilding[0][0] = ' ';
+	lUpRightBuilding[0][0] = ' ';
+	lDownLeftBuilding[0][0] = ' ';
+	lDownRightBuilding[0][0] = ' ';
 	
 	printf("There are %u shops\n", numSHOPS);
 	printf("There are %d people\n", population);
