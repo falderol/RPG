@@ -108,7 +108,7 @@ int main (int argc, char* argv[]){
 			convertFromCPreminder();
 			return -1;
 		}
-		convertFromCp(atoi(argv[2]), atoi(argv[3]));
+		convertFromCP(atoi(argv[2]), atoi(argv[3]));
 	}
 	else{
 		commandReminder();

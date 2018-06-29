@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 void convertFromCPreminder();
-void convertFromCpAndStore(uint32_t cp, FILE * storeHere, uint8_t type);
-void convertFromCp(uint32_t cp, uint8_t type);
+void convertFromCPandStore(uint32_t cp, FILE * storeHere, uint8_t type);
+void convertFromCP(uint32_t cp, uint8_t type);
 
 #endif
