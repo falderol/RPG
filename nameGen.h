@@ -4,7 +4,9 @@
 #include <stdint.h>
 
 void nameGen(FILE* storeHere, uint16_t flags);
-void shopnameGen(FILE* storeHere);
-void townnameGen(FILE * storeHere);
+void shopnameGenAndStore(FILE* storeHere);
+void townnameGenAndStore(FILE * storeHere);
+void shopnameGen();
+void townnameGen();
 
 #endif

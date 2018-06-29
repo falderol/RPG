@@ -22,6 +22,6 @@ void makeTavern(FILE* storeHere, uint16_t flags);
 void makeShrine(FILE* storeHere, uint16_t flags);
 void makeJeweler(FILE* storeHere, uint16_t flags);
 void shopCommandReminder();
-int shopGen(char* filename,uint8_t shopNum,uint16_t flags, int seed);
+int shopGen(char* filename,uint8_t shopNum,uint16_t flags);
 
 #endif

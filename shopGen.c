@@ -999,11 +999,11 @@ void makeAdventurerEmporium(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -1360,11 +1360,11 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -1396,7 +1396,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Ingested");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(15000, storeHere);
+			convertFromCpAndStore(15000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 10 Constitution throw, on fail 1d12(6) poison damage and poisoned for 24 hours. On success half damage,\n                                                     creature isn’t poisoned.");
 			fprintf(storeHere, "\n");
@@ -1406,7 +1406,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Inhaled");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(50000, storeHere);
+			convertFromCpAndStore(50000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 13 Constitution or 3d6(10) poison damage, repeating throw at start of each of its turns taking 1d6(3) on\n                                                     successive fails. After three saves poison ends");
 			fprintf(storeHere, "\n");
@@ -1416,7 +1416,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Contact");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(20000, storeHere);
+			convertFromCpAndStore(20000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 13 Constitution or be poisoned for 1 minute. Poisoned creature is paralyzed. Repeat throw at end of each turn,\n                                                     ending on success.");
 			fprintf(storeHere, "\n");
@@ -1426,7 +1426,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Injury");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(20000, storeHere);
+			convertFromCpAndStore(20000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 13 Constitution or poisoned for 1 hour. If throw failed by 5 or more creatures is unconscious. Wakened by damage\n                                                     or if another creature takes an action to shake it awake.");
 			fprintf(storeHere, "\n");
@@ -1436,7 +1436,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Inhaled");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(30000, storeHere);
+			convertFromCpAndStore(30000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 15 Constitution or poisoned for 8 hours. Poisoned creature is unconscious. Wakened by damage or if another\n                                                     creature takes an action to shake it awake.");
 			fprintf(storeHere, "\n");
@@ -1446,7 +1446,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Ingested");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(1000, storeHere);
+			convertFromCpAndStore(1000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 10 Wisdom, on fail creature becomes infatuated with first creature it sees after ingesting for 1 hour. Creature\n                                                     refuses to leave the side of creature it is infatuated with and will resist violently if necessary.");
 			fprintf(storeHere, "\n");
@@ -1456,7 +1456,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Inhaled");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(25000, storeHere);
+			convertFromCpAndStore(25000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "Dc 15 Constitution or poisoned for 1 hour. Poisoned creature is blinded.");
 			fprintf(storeHere, "\n");
@@ -1466,7 +1466,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Inhaled");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(150000, storeHere);
+			convertFromCpAndStore(150000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "No effect until midnight. At midnight DC 17 Constitution or 9d6(31) poison damage. Half on success.");
 			fprintf(storeHere, "\n");
@@ -1476,7 +1476,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Contact");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(40000, storeHere);
+			convertFromCpAndStore(40000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 13 Constitution or poisoned for 24 hours. Poisoned creature is unconscious. Creature wakes if takes damage.");
 			fprintf(storeHere, "\n");
@@ -1486,7 +1486,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Ingested");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(25000, storeHere);
+			convertFromCpAndStore(25000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 16 Constitution or 1d6(3) poison damage and becomes poisoned. Repeat throw every 24 hours. Take 1d6(3) on\n                                                     failed save. Until poison ends damage dealt by poison cannot be healed. 7 successful saves end the effects. ");
 			fprintf(storeHere, "\n");
@@ -1496,7 +1496,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Injury");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(200000, storeHere);
+			convertFromCpAndStore(200000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 19 Constitution taking 12d6(42) poison damage on fail, half on success. ");
 			fprintf(storeHere, "\n");
@@ -1506,7 +1506,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Ingested");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(1000000, storeHere);
+			convertFromCpAndStore(1000000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "Upon ingestion creature dies. Dose must be ingested within 1 minute of the target coming within 5 feet, or\n                                                     they become immune to the dose.");
 			fprintf(storeHere, "\n");
@@ -1516,7 +1516,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Injury");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(20000, storeHere);
+			convertFromCpAndStore(20000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 11 Constitution taking 3d6(10) poison damage on fail, half on success.");
 			fprintf(storeHere, "\n");
@@ -1526,7 +1526,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Ingested");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(60000, storeHere);
+			convertFromCpAndStore(60000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 15 Constitution or poisoned for 4d6 hours. Poisoned creature is incapacitated.");
 			fprintf(storeHere, "\n");
@@ -1536,7 +1536,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Ingested");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(15000, storeHere);
+			convertFromCpAndStore(15000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "Dc 11 Constitution or poisoned for 1 hour. Poisoned creature can’t knowingly speak a lie.");
 			fprintf(storeHere, "\n");
@@ -1546,7 +1546,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "%9s", "Injury");
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(120000, storeHere);
+			convertFromCpAndStore(120000, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
 			fprintf(storeHere, "DC 15 Constitution taking 7d6(24) poison damage on a fail, half on a success.");
 			fprintf(storeHere, "\n");
@@ -1869,11 +1869,11 @@ void makeArcana(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -2223,11 +2223,11 @@ void makeBakery(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -2412,11 +2412,11 @@ void makeBarber(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -3054,11 +3054,11 @@ void makeBlacksmith(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -3286,11 +3286,11 @@ void makeBookstore(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -3727,11 +3727,11 @@ void makeButcher(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -3802,11 +3802,11 @@ void makeCobbler(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -4019,11 +4019,11 @@ void makeFletcher(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -4726,11 +4726,11 @@ void makeGeneral(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -4953,11 +4953,11 @@ void makeLeather(FILE* storeHere, uint16_t flags){
 				if (strcmp(inventory[i].name,"Barding (Mount Armor)")){
 					fprintf(storeHere, "%32s", inventory[i].name);
 					fprintf(storeHere, "%c", dividerChar);
-					convertFromCp(inventory[i].lowPrice, storeHere);
+					convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 					fprintf(storeHere, "%c", dividerChar);
-					convertFromCp(inventory[i].midPrice, storeHere);
+					convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 					fprintf(storeHere, "%c", dividerChar);
-					convertFromCp(inventory[i].highPrice, storeHere);
+					convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 					fprintf(storeHere, "\n");
 				}
 				else { // Is Barding
@@ -5203,11 +5203,11 @@ void makeMusic(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -5406,11 +5406,11 @@ void makeTailor(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -5976,11 +5976,11 @@ void makeTavern(FILE* storeHere, uint16_t flags){
 	fprintf(storeHere, "%-32s\n", inventory[0].name);
 	fprintf(storeHere, "%32s", "Pottage");
 	fprintf(storeHere, "%c", dividerChar);
-	convertFromCp(0, storeHere);
+	convertFromCpAndStore(0, storeHere, 0);
 	fprintf(storeHere, "%c", dividerChar);
-	convertFromCp(1, storeHere);
+	convertFromCpAndStore(1, storeHere, 0);
 	fprintf(storeHere, "%c", dividerChar);
-	convertFromCp(1, storeHere);
+	convertFromCpAndStore(1, storeHere, 0);
 	fprintf(storeHere, "\n");
 	int8_t numDishesServed = 8 + (rand()%5)-3;
 	uint8_t chosenDishes[numDishesServed];
@@ -6006,22 +6006,22 @@ void makeTavern(FILE* storeHere, uint16_t flags){
 		else{
 			fprintf(storeHere, "%32s", inventory[chooseMe].name);
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(inventory[chooseMe].lowPrice, storeHere);
+			convertFromCpAndStore(inventory[chooseMe].lowPrice, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(inventory[chooseMe].midPrice, storeHere);
+			convertFromCpAndStore(inventory[chooseMe].midPrice, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(inventory[chooseMe].highPrice, storeHere);
+			convertFromCpAndStore(inventory[chooseMe].highPrice, storeHere, 0);
 			fprintf(storeHere, "\n");
 		}
 	}
 	fprintf(storeHere, "%-32s\n", inventory[45].name);
 	fprintf(storeHere, "%32s", "Water");
 	fprintf(storeHere, "%c", dividerChar);
-	convertFromCp(0, storeHere);
+	convertFromCpAndStore(0, storeHere, 0);
 	fprintf(storeHere, "%c", dividerChar);
-	convertFromCp(0, storeHere);
+	convertFromCpAndStore(0, storeHere, 0);
 	fprintf(storeHere, "%c", dividerChar);
-	convertFromCp(1, storeHere);
+	convertFromCpAndStore(1, storeHere, 0);
 	fprintf(storeHere, "\n");
 	int8_t numDrinksServed = 4+(rand()%3)-1;
 	uint8_t chosenDrinks[numDrinksServed];
@@ -6047,11 +6047,11 @@ void makeTavern(FILE* storeHere, uint16_t flags){
 		else{
 			fprintf(storeHere, "%32s", inventory[chooseMe].name);
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(inventory[chooseMe].lowPrice, storeHere);
+			convertFromCpAndStore(inventory[chooseMe].lowPrice, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(inventory[chooseMe].midPrice, storeHere);
+			convertFromCpAndStore(inventory[chooseMe].midPrice, storeHere, 0);
 			fprintf(storeHere, "%c", dividerChar);
-			convertFromCp(inventory[chooseMe].highPrice, storeHere);
+			convertFromCpAndStore(inventory[chooseMe].highPrice, storeHere, 0);
 			fprintf(storeHere, "\n");
 		}
 	}
@@ -6312,11 +6312,11 @@ void makeShrine(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -6501,11 +6501,11 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ // Item is in stock
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].lowPrice, storeHere);
+				convertFromCpAndStore(inventory[i].lowPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].midPrice, storeHere);
+				convertFromCpAndStore(inventory[i].midPrice, storeHere, 0);
 				fprintf(storeHere, "%c", dividerChar);
-				convertFromCp(inventory[i].highPrice, storeHere);
+				convertFromCpAndStore(inventory[i].highPrice, storeHere, 0);
 				fprintf(storeHere, "\n");
 			}
 			else { // Item is out of stock or error
@@ -6834,119 +6834,118 @@ enum shopType{Adventurer, Alchemist, Arcana, Baker, Barber, Blacksmith, Book, Bu
 			  
 
 
-int shopGen(char* filename,uint8_t shopNum,uint16_t flags, int seed){
-	srand(seed);
+int shopGen(char* filename,uint8_t shopNum,uint16_t flags){
 	FILE * shopFile = fopen(filename, "a+");
 	switch(shopNum){
 		case 0:
 			fprintf(shopFile, "Adventurer's Emporium\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeAdventurerEmporium(shopFile, flags);
 			break;
 		case 1:
 			fprintf(shopFile, "Alchemist's Shop\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeAlchemist(shopFile, flags);
 			break;
 		case 2:
 			fprintf(shopFile, "Arcana Shop\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeArcana(shopFile, flags);
 			break;
 		case 3:
 			fprintf(shopFile, "Bakery\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeBakery(shopFile, flags);
 			break;
 		case 4:
 			fprintf(shopFile, "Barbershop\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeBarber(shopFile, flags);
 			break;
 		case 5:
 			fprintf(shopFile, "Blacksmith\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeBlacksmith(shopFile, flags);
 			break;
 		case 6:
 			fprintf(shopFile, "Bookstore\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeBookstore(shopFile, flags);
 			break;
 		case 7:
 			fprintf(shopFile, "Butcher Shop\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeButcher(shopFile, flags);
 			break;
 		case 8:
 			fprintf(shopFile, "Fletcher\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeFletcher(shopFile, flags);
 			break;
 		case 9:
 			fprintf(shopFile, "General Store\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeGeneral(shopFile, flags);
 			break;
 		case 10:
 			fprintf(shopFile, "Leatherworker's Shop\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeLeather(shopFile, flags);
 			break;
 		case 11:
 			fprintf(shopFile, "Music Store\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeMusic(shopFile, flags);
 			break;
 		case 12:
 			fprintf(shopFile, "Tailor\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeTailor(shopFile, flags);
 			break;
 		case 13:
 			fprintf(shopFile, "Tavern\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeTavern(shopFile, flags);
 			break;
 		case 14:
 			fprintf(shopFile, "Shrine\n");
 			fprintf(shopFile, "Our ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeShrine(shopFile, flags);
 			break;
 		case 15:
 			fprintf(shopFile, "Jeweler\n");
 			fprintf(shopFile, "The ");
-			shopnameGen(shopFile);// Store Owners Name
+			shopnameGenAndStore(shopFile);// Store Owners Name
 			//nameGen(shopFile, 0xFF);
 			makeJeweler(shopFile, flags);
 			break;
@@ -6972,56 +6971,56 @@ int main(int argc, char* argv[]){
 			case 0:
 				fprintf(shopFile, "Adventurer's Emporium\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeAdventurerEmporium(shopFile, flags);
 				break;
 			case 1:
 				fprintf(shopFile, "Alchemist's Shop\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeAlchemist(shopFile, flags);
 				break;
 			case 2:
 				fprintf(shopFile, "Arcana Shop\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeArcana(shopFile, flags);
 				break;
 			case 3:
 				fprintf(shopFile, "Bakery\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeBakery(shopFile, flags);
 				break;
 			case 4:
 				fprintf(shopFile, "Barbershop\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeBarber(shopFile, flags);
 				break;
 			case 5:
 				fprintf(shopFile, "Blacksmith\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeBlacksmith(shopFile, flags);
 				break;
 			case 6:
 				fprintf(shopFile, "Bookstore\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeBookstore(shopFile, flags);
 				break;
 			case 7:
 				fprintf(shopFile, "Butcher Shop\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeButcher(shopFile, flags);
 				break;
@@ -7029,56 +7028,56 @@ int main(int argc, char* argv[]){
 			case 8:
 				fprintf(shopFile, "Fletcher\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeFletcher(shopFile, flags);
 				break;
 			case 9:
 				fprintf(shopFile, "General Store\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeGeneral(shopFile, flags);
 				break;
 			case 10:
 				fprintf(shopFile, "Leatherworker's Shop\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeLeather(shopFile, flags);
 				break;
 			case 11:
 				fprintf(shopFile, "Music Store\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeMusic(shopFile, flags);
 				break;
 			case 12:
 				fprintf(shopFile, "Tailor\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeTailor(shopFile, flags);
 				break;
 			case 13:
 				fprintf(shopFile, "Tavern\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeTavern(shopFile, flags);
 				break;
 			case 14:
 				fprintf(shopFile, "Shrine\n");
 				fprintf(shopFile, "Our ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeShrine(shopFile, flags);
 				break;
 			case 15:
 				fprintf(shopFile, "Jeweler\n");
 				fprintf(shopFile, "The ");
-				shopnameGen(shopFile);// Store Owners Name
+				shopnameGenAndStore(shopFile);// Store Owners Name
 				//nameGen(shopFile, 0xFF);
 				makeJeweler(shopFile, flags);
 				break;

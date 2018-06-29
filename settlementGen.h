@@ -4,6 +4,6 @@
 #include <stdint.h>
 
 void settlementCommandReminder();
-void settlementGen(char * filename, uint16_t flags );
+void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags );
 
 #endif

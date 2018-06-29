@@ -14,7 +14,7 @@
 
 //////////
 // How to format shopgen command
-//shopGen(<FILENAME>,<SHOPNUM>,<FLAGS>, rand());
+//shopGen(<FILENAME>,<SHOPNUM>,<FLAGS>);
 //////////
 // Shop Guide
 //"00 - Adventurer's Emporium
@@ -50,31 +50,29 @@
 
 void settlementCommandReminder(){
 	printf("Command format is: ");
-	printf(".\\programName <storageLoc.txt> <flags>\n");
+	printf(".\\programName <storageLoc.txt> <size 1-100> <flags>\n");
 	printf("Supported Flags are:\n");
-	printf("Bit 00 - Magical\n");
-	printf("Bit 01 - Costal\n");
-	printf("Bit 02 - Rich\n");
-	printf("Bit 03 - Exotic\n");
-	printf("Bit 04 - Frontier\n");
-	printf("Bit 05 - Forest\n");
-	printf("Bit 06 - Industrial\n");
-	printf("Bit 07 - Mining\n");
-	printf("Bit 08 - Pious\n");
-    printf("Bit 09 - Agriculture\n");
-	printf("Bit 10 - Rural\n");
-	printf("Bit 11 - Urban\n");
-	printf("I.E. a magical frontier forest would be 31\n");
+	printf("Bit 00 - Magical     /* To include add    1 to the flag */\n");
+	printf("Bit 01 - Costal      /* To include add    2 to the flag */\n");
+	printf("Bit 02 - Rich        /* To include add    4 to the flag */\n");
+	printf("Bit 03 - Exotic      /* To include add    8 to the flag */\n");
+	printf("Bit 04 - Frontier    /* To include add   16 to the flag */\n");
+	printf("Bit 05 - Forest      /* To include add   32 to the flag */\n");
+	printf("Bit 06 - Industrial  /* To include add   64 to the flag */\n");
+	printf("Bit 07 - Mining      /* To include add  128 to the flag */\n");
+	printf("Bit 08 - Pious       /* To include add  256 to the flag */\n");
+    printf("Bit 09 - Agriculture /* To include add  512 to the flag */\n");
+	printf("Bit 10 - Rural       /* To include add 1024 to the flag */\n");
+	printf("Bit 11 - Urban       /* To include add 2048 to the flag */\n");
+	printf("I.E. a Magical, Frontier, Forest would be 49\n");
+	printf("I.E. a Rich, Pious, Urban area would be 2308\n");
 }
 
-void settlementGen(char * filename, uint16_t flags ){
+void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	FILE * townFile = fopen(filename, "w+");
 	//srand(time(NULL); /* Replace with windows and linux specific funtion if you keep here */
 	char townFileName[64];
 	strcpy(townFileName, filename);
-	
-	uint8_t doMe = 1;
-	uint8_t settlementSize = (rand()%20)+1;
 	
 	uint8_t numAE = 0;
 	uint8_t numALC = 0;
@@ -94,108 +92,101 @@ void settlementGen(char * filename, uint16_t flags ){
 	uint8_t numJWL = 0;
 	uint8_t numSHOPS = 0;
 	int population;
-	settlementSize = rand()%20+1;
-	if(settlementSize == 20){
-		if (((rand()%20)+1)>15){
-			fprintf(townFile, "The City of ");
-			townnameGen(townFile);
-			population = ((rand()%5)+1)*10*settlementSize*5;
-			population += ((rand()%5)+1)*10*settlementSize*5;
-			population += ((rand()%5)+1)*10*settlementSize*5;
-			population += ((rand()%5)+1)*10*settlementSize*5;
-			population += rand()%1000;
-			fprintf(townFile, "Population: %d\n\n\n",population);
-			fclose(townFile);
-			uint8_t shopAmount = (settlementSize/3)*(rand()%4+rand()%4+5);
-			for (int i = 0; i < shopAmount; ++i){
-				//uint8_t shopnum = 0;
-				switch((rand()%20)+1){
-					case 1:
-					case 2:
-					case 3:
-					case 4:
-						++numTVN;
-						break;
-					case 5:
-						++numFLC;
-						break;
-					case 6:
-						++numLEA;
-						break;
-					case 7:
-					case 8:
-					case 9:
-						++numGEN;
-						break;
-					case 10:
-					case 11:
-						++numBLK;
-						break;
-					case 12:
-					case 13:
-						++numTLR;
-						break;
-					case 14:
-						++numAE;
-						break;
-					case 15:
-						++numARC;
-						break;
-					case 16:
-						++numALC;
-						break;
-					case 17:
-					case 18:
-						++numSRN;
-						break;
-					case 19:
-					case 20:
-						switch((rand()%8)+1){
-							case 1:
-								++numMUS;
-								break;
-							case 2:
-								++numBOK;
-								break;
-							case 3:
-								++numJWL;
-								break;
-							case 4:
-							case 5:
-								++numBCH;
-								break;
-							case 6:
-							case 7:
-								++numBAK;
-								break;
-							case 8:
-								++numBRB;
-								break;
-							default:
-								break;
-						}
-					default:
-						break;
-				}
+	if(settlementSize >= 100){
+		fprintf(townFile, "The City of ");
+		townnameGenAndStore(townFile);
+		population = (((rand()%5)+1)*settlementSize*5);
+		population += (((rand()%5)+1)*settlementSize*5);
+		population += (((rand()%5)+1)*settlementSize*5);
+		population += (((rand()%5)+1)*settlementSize*5);
+		population += rand()%1000;
+		fprintf(townFile, "Population: %d\n\n\n",population);
+		fclose(townFile);
+		uint8_t shopAmount = (settlementSize/15)*(rand()%4+rand()%4+5)+rand()%7;
+		for (int i = 0; i < shopAmount; ++i){
+			//uint8_t shopnum = 0;
+			switch((rand()%20)+1){
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+					++numTVN;
+					break;
+				case 5:
+					++numFLC;
+					break;
+				case 6:
+					++numLEA;
+					break;
+				case 7:
+				case 8:
+				case 9:
+					++numGEN;
+					break;
+				case 10:
+				case 11:
+					++numBLK;
+					break;
+				case 12:
+				case 13:
+					++numTLR;
+					break;
+				case 14:
+					++numAE;
+					break;
+				case 15:
+					++numARC;
+					break;
+				case 16:
+					++numALC;
+					break;
+				case 17:
+				case 18:
+					++numSRN;
+					break;
+				case 19:
+				case 20:
+					switch((rand()%8)+1){
+						case 1:
+							++numMUS;
+							break;
+						case 2:
+							++numBOK;
+							break;
+						case 3:
+							++numJWL;
+							break;
+						case 4:
+						case 5:
+							++numBCH;
+							break;
+						case 6:
+						case 7:
+							++numBAK;
+							break;
+						case 8:
+							++numBRB;
+							break;
+						default:
+							break;
+					}
+				default:
+					break;
 			}
-			doMe = 0;
-		}
-		else{
-			
 		}
 	}
-	if (doMe){
-		population = (abs(rand()%8)+1)*10*settlementSize;
+	else {
+		population = (abs(rand()%8)+1)*settlementSize>>1;
 		if (population < 500){
 			fprintf(townFile, "The Village of ");
 		}
 		else{
 			fprintf(townFile, "The Town of ");
 		}
-		townnameGen(townFile);
+		townnameGenAndStore(townFile);
 		fprintf(townFile, "Population: %d\n\n\n",population);
 		fclose(townFile);
-		uint8_t shopAmount = (settlementSize/3)+3;
+		uint8_t shopAmount = (settlementSize/15)+3;
 		for (int i = 0; i < shopAmount; ++i){
 			//uint8_t shopnum = 0;
 			switch((rand()%20)+1){
@@ -274,7 +265,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 0, flags, rand());
+		shopGen(filename, 0, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -284,7 +275,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 1, flags, rand());
+		shopGen(filename, 1, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -294,7 +285,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 2, flags, rand());
+		shopGen(filename, 2, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -304,7 +295,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 3, flags, rand());
+		shopGen(filename, 3, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -314,7 +305,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 4, flags, rand());
+		shopGen(filename, 4, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -324,7 +315,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 5, flags, rand());
+		shopGen(filename, 5, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -334,7 +325,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 6, flags, rand());
+		shopGen(filename, 6, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -344,7 +335,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 7, flags, rand());
+		shopGen(filename, 7, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -354,7 +345,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 8, flags, rand());
+		shopGen(filename, 8, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -364,7 +355,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 9, flags, rand());
+		shopGen(filename, 9, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -374,7 +365,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 10, flags, rand());
+		shopGen(filename, 10, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -384,7 +375,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 11, flags, rand());
+		shopGen(filename, 11, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -394,7 +385,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 12, flags, rand());
+		shopGen(filename, 12, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -404,7 +395,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 13, flags, rand());
+		shopGen(filename, 13, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -414,7 +405,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 14, flags, rand());
+		shopGen(filename, 14, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -424,7 +415,7 @@ void settlementGen(char * filename, uint16_t flags ){
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 15, flags, rand());
+		shopGen(filename, 15, flags);
 		townFile = fopen(filename, "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
@@ -535,8 +526,8 @@ void settlementGen(char * filename, uint16_t flags ){
 	//////////
 	// Place Roads and Rivers
 	
-	uint8_t numRoadRiv = (rand()%((settlementSize/4)+1)+1);
-	if (settlementSize == 20){
+	uint8_t numRoadRiv = (rand()%((settlementSize/20)+1)+1);
+	if (settlementSize >= 100){
 		++numRoadRiv;
 	}
 	uint8_t hasRiver = 0;
