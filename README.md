@@ -22,6 +22,8 @@ On systems with make
 `.\test <command name> <command arguments>`
 
 # Notes
+I'm trying to make this work on windows an linux. If you run into an issue on either O.S. let me know.
+
 I'd love to eventaully put this all on a website. I just need to learn how to do web stuff first.
 
 This code is something i'm working on in my free time, for fun.
