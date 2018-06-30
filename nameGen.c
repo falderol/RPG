@@ -5,31 +5,33 @@
 #include<time.h>
 #define NAME_LENGTH 32
 
-//////////
-// NPC Name Generator
-// Takes in the location to print the name to
-// Also takes in flags for culture,
-// TODO
-// Define flag cultures 
-// Create list of firstnames and lastnames for each culture
-// Be able to combine the lists based on what flags are set
-// Choose a random firstname and last name
+/*************************************************************/
+/* NPC Name Generator                                        */
+/* Takes in the location to print the name to                */
+/* Also takes in flags for culture,                          */
+/* TODO                                                      */
+/* Define flag cultures                                      */
+/* Create list of firstnames and lastnames for each culture  */
+/* Be able to combine the lists based on what flags are set  */
+/* Choose a random firstname and last name                   */
+/*************************************************************/
 
 void nameGen(FILE* storeHere, uint16_t flags){
 
 }
 
-//////////
-// Generate the name of a shop
-// Create list of adjectives and nouns.
-// Choose a random entry on the list
+/************************************************/
+/* Generate the name of a shop                  */
+/* Create list of adjectives and nouns.         */
+/* Choose a random entry on the list            */
+/************************************************/
 
 void shopnameGenAndStore(FILE* storeHere){
 	int16_t numElements = 154;
 	char adjectives[numElements][NAME_LENGTH];
 	char nouns[numElements][NAME_LENGTH];
-	/////
-	// Have a program that formats this, this stuff is pasted in
+	/*************************************************************/
+	/* Have a program that formats this, this stuff is pasted in */
 	strcpy(adjectives[0], "Red");
 	strcpy(adjectives[1], "Blue");
 	strcpy(adjectives[2], "Green");
@@ -347,8 +349,8 @@ void shopnameGen(){
 	int16_t numElements = 154;
 	char adjectives[numElements][NAME_LENGTH];
 	char nouns[numElements][NAME_LENGTH];
-	/////
-	// Have a program that formats this, this stuff is pasted in
+	/*************************************************************/
+	/* Have a program that formats this, this stuff is pasted in */
 	strcpy(adjectives[0], "Red");
 	strcpy(adjectives[1], "Blue");
 	strcpy(adjectives[2], "Green");

@@ -1,4 +1,7 @@
-TARGET = nameGen convertFromCp onesCount itoa shopGen settlementGen test
+# I need to fix this eventualy. Still a bit new to makefiles, havent had to make
+# many myself. If i'm honest this is one i found somewhere that i've been 
+# dragging with me.
+TARGET = nameGen convertFromCp onesCount itoa shopGen settlementGen test regionGen
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall

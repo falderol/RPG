@@ -10,43 +10,42 @@
 #include "shopGen.h"
 #include "nameGen.h"
 
-#define NAME_LENGTH 32
-
-//////////
-// How to format shopgen command
-//shopGen(<FILENAME>,<SHOPNUM>,<FLAGS>);
-//////////
-// Shop Guide
-//"00 - Adventurer's Emporium
-//"01 - Alchemist's Shop
-//"02 - Arcana Shop
-//"03 - Bakery
-//"04 - Barber
-//"05 - Blacksmith
-//"06 - Bookstore
-//"07 - Butcher's Shop
-//"08 - Fletcher
-//"09 - General Store
-//"10 - Leatherworker's Shop
-//"11 - Music Store
-//"12 - Tailor
-//"13 - Tavern
-//"14 - Shrine
-//"15 - Jeweler
-//////////
-// Flags Guide
-//"Bit 00 - Magical
-//"Bit 01 - Costal
-//"Bit 02 - Rich
-//"Bit 03 - Exotic
-//"Bit 04 - Frontier
-//"Bit 05 - Forest
-//"Bit 06 - Industrial
-//"Bit 07 - Mining
-//"Bit 08 - Pious
-//"Bit 09 - Agriculture
-//"Bit 10 - Rural
-//"Bit 11 - Urban
+/************************************************/
+/* How to format shopgen command                */
+/*shopGen(<FILENAME>,<SHOPNUM>,<FLAGS>);        */
+/************************************************/
+/* Shop Guide                                   */
+/*"00 - Adventurer's Emporium                   */
+/*"01 - Alchemist's Shop                        */
+/*"02 - Arcana Shop                             */
+/*"03 - Bakery                                  */
+/*"04 - Barber                                  */
+/*"05 - Blacksmith                              */
+/*"06 - Bookstore                               */
+/*"07 - Butcher's Shop                          */
+/*"08 - Fletcher                                */
+/*"09 - General Store                           */
+/*"10 - Leatherworker's Shop                    */
+/*"11 - Music Store                             */
+/*"12 - Tailor                                  */
+/*"13 - Tavern                                  */
+/*"14 - Shrine                                  */
+/*"15 - Jeweler                                 */
+/************************************************/
+/* Flags Guide                                  */
+/*"Bit 00 - Magical                             */
+/*"Bit 01 - Costal                              */
+/*"Bit 02 - Rich                                */
+/*"Bit 03 - Exotic                              */
+/*"Bit 04 - Frontier                            */
+/*"Bit 05 - Forest                              */
+/*"Bit 06 - Industrial                          */
+/*"Bit 07 - Mining                              */
+/*"Bit 08 - Pious                               */
+/*"Bit 09 - Agriculture                         */
+/*"Bit 10 - Rural                               */
+/*"Bit 11 - Urban                               */
+/************************************************/
 
 void settlementCommandReminder(){
 	printf("Command format is: ");
@@ -70,7 +69,7 @@ void settlementCommandReminder(){
 
 void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	FILE * townFile = fopen(filename, "w+");
-	//srand(time(NULL); /* Replace with windows and linux specific funtion if you keep here */
+	/*srand(time(NULL); Replace with windows and linux specific funtion if you keep here */
 	char townFileName[64];
 	strcpy(townFileName, filename);
 	
@@ -104,7 +103,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		fclose(townFile);
 		uint8_t shopAmount = (settlementSize/15)*(rand()%4+rand()%4+5)+rand()%7;
 		for (int i = 0; i < shopAmount; ++i){
-			//uint8_t shopnum = 0;
+			/* uint8_t shopnum = 0; */
 			switch((rand()%20)+1){
 				case 1:
 				case 2:
@@ -176,7 +175,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		}
 	}
 	else {
-		population = (abs(rand()%8)+1)*settlementSize>>1;
+		population = (rand()%8+1)*settlementSize*5 + rand()%(settlementSize*3);
 		if (population < 500){
 			fprintf(townFile, "The Village of ");
 		}
@@ -188,7 +187,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		fclose(townFile);
 		uint8_t shopAmount = (settlementSize/15)+3;
 		for (int i = 0; i < shopAmount; ++i){
-			//uint8_t shopnum = 0;
+			/* uint8_t shopnum = 0; */
 			switch((rand()%20)+1){
 				case 1:
 				case 2:
@@ -421,9 +420,9 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		fclose(townFile);
 	}
 	printf("Settlement has been generated\n");
-	// End of city generation
-	// Number of buildings to number
-	// print a * border
+	/* End of city generation        */
+	/* Number of buildings to number */
+	/* print a * border              */
 	numSHOPS = numAE + numALC + numARC + numBAK + numBRB + numBLK + numBOK + numBCH + numFLC + numGEN + numLEA + numMUS + numTLR + numTVN + numSRN + numJWL;
     int mapHeight = 510;
 	int mapWidth = mapHeight * 2;
@@ -442,7 +441,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	strcpy(mapFilename, token);
 	strcat(mapFilename,"Map.txt");
 	FILE * townMapFile = fopen(mapFilename, "w+");
-	// Make Border
+	/* Make Border */
 	for (int i = 0; i < mapHeight; ++i){
 		for (int j = 0; j < mapWidth; ++j){
 			if(i == 0){
@@ -523,8 +522,8 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 			}
 		}
 	}
-	//////////
-	// Place Roads and Rivers
+	/************************************************/
+	/* Place Roads and Rivers                       */
 	
 	uint8_t numRoadRiv = (rand()%((settlementSize/20)+1)+1);
 	if (settlementSize >= 100){
@@ -537,11 +536,11 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		int startY = 0;
 		uint8_t riverRoad = rand()%3;
 		switch(startSide){
-			case 0:// Travel North
+			case 0:/* Travel North */
 				startX = rand()%(mapWidth/4)*2+(mapWidth/4);
 				startY = 2;
 				while((startX < mapWidth-8)&&(startX > 7)&&(startY <= mapHeight-3)&&(startY >= 2)){
-					if((riverRoad)||(hasRiver>3)){//road
+					if((riverRoad)||(hasRiver>3)){/* road */
 						map[startY][startX] = 'H';
 						map[startY][startX-2] = 'H';
 						map[startY][startX+2] = 'H';
@@ -553,7 +552,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 						map[startY-1][startX+2] = 'H';
 						
 					}
-					else{//river
+					else{/* river */
 						if((startY+2<mapHeight)? (map[startY+2][startX] != 'W') : 1 ){
 							map[startY][startX] = 'W';
 							map[startY][startX-2] = 'W';
@@ -599,11 +598,11 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 					++hasRiver;
 				}
 				break;
-			case 1://Travel South
+			case 1:/* Travel South */
 				startX = rand()%(mapWidth/4)*2+(mapWidth/4);
 				startY = mapHeight-3;
 				while((startX <= mapWidth-4)&&(startX >= 3)&&(startY <= mapHeight-3)&&(startY >= 2)){
-					if((riverRoad)||(hasRiver>3)){//road
+					if((riverRoad)||(hasRiver>3)){/* road */
 						map[startY][startX] = 'H';
 						map[startY][startX-2] = 'H';
 						map[startY][startX+2] = 'H';
@@ -615,7 +614,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 						map[startY-1][startX+2] = 'H';
 						
 					}
-					else{//river
+					else{/* river */
 						if((startY-2>0)? (map[startY-2][startX] != 'W') : 1 ){
 							map[startY][startX] = 'W';
 							map[startY][startX-2] = 'W';
@@ -662,11 +661,11 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 					++hasRiver;
 				}
 				break;
-			case 2:// Travel East
+			case 2:/* Travel East */
 				startX = 3;
 				startY = rand()%(mapHeight/2)+(mapHeight/4);
 				while((startX <= mapWidth-4)&&(startX >= 3)&&(startY <= mapHeight-3)&&(startY >= 2)){
-					if((riverRoad)||(hasRiver>3)){//road
+					if((riverRoad)||(hasRiver>3)){/* road */
 						map[startY][startX] = 'H';
 						map[startY][startX-2] = 'H';
 						map[startY][startX+2] = 'H';
@@ -678,7 +677,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 						map[startY-1][startX+2] = 'H';
 						
 					}
-					else{//river
+					else{/* river */
 						if((startX+4>0)? (map[startY][startX+4] != 'W') : 1 ){
 							map[startY][startX] = 'W';
 							map[startY][startX-2] = 'W';
@@ -723,11 +722,11 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 					++hasRiver;
 				}
 				break;
-			case 3://Travel West
+			case 3:/* Travel West */
 				startX = mapWidth-4;
 				startY = rand()%(mapHeight/2)+(mapHeight/4);
 				while((startX <= mapWidth-4)&&(startX >= 3)&&(startY <= mapHeight-3)&&(startY >= 2)){
-					if((riverRoad)||(hasRiver>3)){//road
+					if((riverRoad)||(hasRiver>3)){/* road */
 						map[startY][startX] = 'H';
 						map[startY][startX-2] = 'H';
 						map[startY][startX+2] = 'H';
@@ -739,7 +738,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 						map[startY-1][startX+2] = 'H';
 						
 					}
-					else{//river
+					else{/* river */
 						if((startX-4<mapWidth)? (map[startY][startX-4] != 'W') : 1 ){
 							map[startY][startX] = 'W';
 							map[startY][startX-2] = 'W';
@@ -789,8 +788,8 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		}
 	}
 	
-	//////////
-	// Place Buildings
+	/************************************************/
+	/* Place Buildings                              */
 	
 	uint8_t squareBuildingHeight = 6;
 	uint8_t squareBuildingWidth = 12;
@@ -994,19 +993,19 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	while(currentBuilding <= numBuildings){
 		int randX = ((rand()%((mapWidth/16)-1))*2)+2+(mapWidth/2-mapWidth/32);
 		int randY = ((rand()%((mapHeight/8)-1)))+2+(mapHeight/2-mapHeight/16);
-		if (noSuccess > 300){// Magic Number
+		if (noSuccess > 300){/* Magic Number */
 			randX = ((rand()%((mapWidth/2)-1))*2)+2;
 			randY = ((rand()%((mapHeight)-1)))+2;
 		}
-		else if (noSuccess > 210){//Magic Number
+		else if (noSuccess > 210){/* Magic Number */
 			randX = ((rand()%((mapWidth/4)-1))*2)+2+(mapWidth/2-mapWidth/8);
 			randY = ((rand()%((mapHeight/2)-1)))+2+(mapHeight/2-mapHeight/4);
 		}
-		else if (noSuccess > 120){//Magic Number
+		else if (noSuccess > 120){/* Magic Number */
 			randX = ((rand()%((mapWidth/8)-1))*2)+2+(mapWidth/2-mapWidth/16);
 			randY = ((rand()%((mapHeight/4)-1)))+2+(mapHeight/2-mapHeight/8);
 		}
-		else if (noSuccess > 30){//Magic Number
+		else if (noSuccess > 30){/* Magic Number */
 			randX = ((rand()%((mapWidth/10)-1))*2)+2+(mapWidth/2-mapWidth/20);
 			randY = ((rand()%((mapHeight/5)-1)))+2+(mapHeight/2-mapHeight/10);
 		}
@@ -1018,10 +1017,10 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 			chooseBuilding = rand()%(numBuildingTypes-numSimpleBuildingType)+numSimpleBuildingType;
 		}
 		switch(chooseBuilding){
-			case 0://square 25x25
+			case 0:/* square 25x25 */
 			case 1:
 				if(randX < (mapWidth-squareBuildingWidth-1)){
-					if(randY < (mapHeight-squareBuildingHeight-1)){// Can fit squareBuilding in map
+					if(randY < (mapHeight-squareBuildingHeight-1)){/* Can fit squareBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&
@@ -1051,18 +1050,18 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 						}
 					}
-					else{// Cant fits building
+					else{/* Cant fits building */
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 				}
 				break;
 			case 2:
 				if(randX < (mapWidth-roundBuildingWidth-1)){
-					if(randY < (mapHeight-roundBuildingHeight-1)){// Can fit roundBuilding in map
+					if(randY < (mapHeight-roundBuildingHeight-1)){/* Can fit roundBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&
@@ -1096,20 +1095,20 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 						}
 					}
-					else{// Cant fits round building
+					else{/* Cant fits round building */
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 				}
 				break;
 			case 3:
 			case 4:
 			case 5:
 				if(randX < (mapWidth-rectLongBuildingWidth-1)){
-					if(randY < (mapHeight-rectLongBuildingHeight-1)){// Can fit rectLongBuilding in map
+					if(randY < (mapHeight-rectLongBuildingHeight-1)){/* Can fit rectLongBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&
@@ -1145,15 +1144,15 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits building
+					else{/* Cant fits building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
@@ -1161,7 +1160,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 			case 7:
 			case 8:
 				if(randX < (mapWidth-rectWideBuildingWidth-1)){
-					if(randY < (mapHeight-rectWideBuildingHeight-1)){// Can fit rectWideBuilding in map
+					if(randY < (mapHeight-rectWideBuildingHeight-1)){/* Can fit rectWideBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
@@ -1192,21 +1191,21 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits rectWide building
+					else{/* Cant fits rectWide building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
-			case 9: // DownLeft
+			case 9: /* DownLeft */
 				if(randX < (mapWidth-lDownLeftBuildingWidth-1)){
-					if(randY < (mapHeight-lDownLeftBuildingHeight-1)){// Can fit lDownLeftBuilding in map
+					if(randY < (mapHeight-lDownLeftBuildingHeight-1)){/* Can fit lDownLeftBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
@@ -1243,21 +1242,21 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits lDownLeft building
+					else{/* Cant fits lDownLeft building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
-			case 10://DownRight
+			case 10:/* DownRight */
 				if(randX < (mapWidth-lDownRightBuildingWidth-1)){
-					if(randY < (mapHeight-lDownRightBuildingHeight-1)){// Can fit lDownRightBuilding in map
+					if(randY < (mapHeight-lDownRightBuildingHeight-1)){/* Can fit lDownRightBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
@@ -1293,21 +1292,21 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits lDownRight building
+					else{/* Cant fits lDownRight building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
-			case 11://UpLeft
+			case 11:/* UpLeft */
 				if(randX < (mapWidth-lUpLeftBuildingWidth-1)){
-					if(randY < (mapHeight-lUpLeftBuildingHeight-1)){// Can fit lUpLeftBuilding in map
+					if(randY < (mapHeight-lUpLeftBuildingHeight-1)){/* Can fit lUpLeftBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
@@ -1344,21 +1343,21 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits lUpLeft building
+					else{/* Cant fits lUpLeft building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
-			case 12://UpRight
+			case 12:/* UpRight */
 				if(randX < (mapWidth-lUpRightBuildingWidth-1)){
-					if(randY < (mapHeight-lUpRightBuildingHeight-1)){// Can fit lUpRightBuilding in map
+					if(randY < (mapHeight-lUpRightBuildingHeight-1)){/* Can fit lUpRightBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
@@ -1395,21 +1394,21 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits lUpRight building
+					else{/* Cant fits lUpRight building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
 			case 13:
 				if(randX < (mapWidth-lTRightBuildingWidth-1)){
-					if(randY < (mapHeight-lTRightBuildingHeight-1)){// Can fit lTRightBuilding in map
+					if(randY < (mapHeight-lTRightBuildingHeight-1)){/* Can fit lTRightBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
@@ -1446,21 +1445,21 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits lTRight building
+					else{/* Cant fits lTRight building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
 			case 14:
 				if(randX < (mapWidth-lTLeftBuildingWidth-1)){
-					if(randY < (mapHeight-lTLeftBuildingHeight-1)){// Can fit lTLeftBuilding in map
+					if(randY < (mapHeight-lTLeftBuildingHeight-1)){/* Can fit lTLeftBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
@@ -1497,21 +1496,21 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits lTLeft building
+					else{/* Cant fits lTLeft building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
 			case 15:
 				if(randX < (mapWidth-lTUpBuildingWidth-1)){
-					if(randY < (mapHeight-lTUpBuildingHeight-1)){// Can fit lTUpBuilding in map
+					if(randY < (mapHeight-lTUpBuildingHeight-1)){/* Can fit lTUpBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
@@ -1548,21 +1547,21 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits lTUp building
+					else{/* Cant fits lTUp building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
 			case 16:
 				if(randX < (mapWidth-lTDownBuildingWidth-1)){
-					if(randY < (mapHeight-lTDownBuildingHeight-1)){// Can fit lTDownBuilding in map
+					if(randY < (mapHeight-lTDownBuildingHeight-1)){/* Can fit lTDownBuilding in map */
 						if (
 							(map[randY][randX-1]==' ')&&(map[randY][randX]==' ')&&(map[randY][randX+1]==' ')&&(map[randY][randX+2]==' ')&&(map[randY][randX+3]==' ')&&(map[randY][randX+4]==' ')&&(map[randY][randX+5]==' ')&&(map[randY][randX+6]==' ')&&(map[randY][randX+7]==' ')&&(map[randY][randX+8]==' ')&&(map[randY][randX+9]==' ')&&(map[randY][randX+10]==' ')&&(map[randY][randX+11]==' ')&&(map[randY][randX+12]==' ')&&(map[randY][randX+13]==' ')&&(map[randY][randX+14]==' ')&&(map[randY][randX+15]==' ')&&(map[randY][randX+16]==' ')&&(map[randY][randX+17]==' ')&&(map[randY][randX+18]==' ')&&(map[randY][randX+19]==' ')&&(map[randY][randX+20]==' ')&&(map[randY][randX+21]==' ')&&(map[randY][randX+22]==' ')&&(map[randY][randX+23]==' ')&&(map[randY][randX+24]==' ')&&
 							(map[randY+1][randX-1]==' ')&&(map[randY+1][randX]==' ')&&(map[randY+1][randX+1]==' ')&&(map[randY+1][randX+2]==' ')&&(map[randY+1][randX+3]==' ')&&(map[randY+1][randX+4]==' ')&&(map[randY+1][randX+5]==' ')&&(map[randY+1][randX+6]==' ')&&(map[randY+1][randX+7]==' ')&&(map[randY+1][randX+8]==' ')&&(map[randY+1][randX+9]==' ')&&(map[randY+1][randX+10]==' ')&&(map[randY+1][randX+11]==' ')&&(map[randY+1][randX+12]==' ')&&(map[randY+1][randX+13]==' ')&&(map[randY+1][randX+14]==' ')&&(map[randY+1][randX+15]==' ')&&(map[randY+1][randX+16]==' ')&&(map[randY+1][randX+17]==' ')&&(map[randY+1][randX+18]==' ')&&(map[randY+1][randX+19]==' ')&&(map[randY+1][randX+20]==' ')&&(map[randY+1][randX+21]==' ')&&(map[randY+1][randX+22]==' ')&&(map[randY+1][randX+23]==' ')&&(map[randY+1][randX+24]==' ')&&
@@ -1599,15 +1598,15 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 							++currentBuilding;
 							--noSuccess;
 						}
-						else{//Space not empty
+						else{/* Space not empty */
 							
 						}
 					}
-					else{// Cant fits lTDown building
+					else{/* Cant fits lTDown building */
 						
 					}
 				}
-				else{// Can't fit building
+				else{/* Can't fit building */
 					
 				}
 				break;
@@ -1616,8 +1615,8 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		}
 	}
 	
-	//////////
-	// Print Map
+	/************************************************/
+	/* Print Map                                    */
 	for (int i = 0; i < mapHeight; ++i){
 		for (int j = 0; j < mapWidth; ++j){
 			fprintf(townMapFile,"%c", map[i][j]);
@@ -1626,11 +1625,11 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	}
 	fclose(townMapFile);
 	printf("Map has been generated\n");
-	// Open two files to be merged
+	/* Open two files to be merged */
 	townMapFile = fopen(mapFilename, "r");
 	townFile = fopen(townFileName, "r");
 	
-	// Open file to store the result
+	/* Open file to store the result */
 	printf("Town stored at: %s\nMap stored at: %s\n",townFileName, mapFilename);
 	strcat(token,"Full.txt");
 	printf("Combined stored at: %s\n",token);
