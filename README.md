@@ -110,7 +110,7 @@ On systems with make
 `.\test <command name> <command arguments>`
 
 ## Convert Output to Image
-The map is exactly 7168x7168 if you want to convert it from its .txt form to an image. I recomend you dont use the full file, as the length varies with the shop amount, and shop contents aren't very useful as an image. In other words, use the text files to find stuff, and the image if you need to import the map.
+The map is about 7168x6640 if you want to convert it from its .txt form to an image. I recomend you dont use the full file, as the length varies with the shop amount, and shop contents aren't very useful as an image. In other words, use the text files to find stuff, and the image if you need to import the map.
 
 `sudo convert -size 7168x6640 xc:white -font "FreeMono" -pointsize 12 -fill black -annotate +15+15 "@filenameMap.txt" filename.png`
 
