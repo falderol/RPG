@@ -68,9 +68,9 @@ void settlementCommandReminder(){
 }
 
 void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
-	FILE * townFile = fopen(filename, "w+");
+	FILE * townFile = fopen(filename, "w");
 	/*srand(time(NULL); Replace with windows and linux specific funtion if you keep here */
-	char townFileName[64];
+	char townFileName[128];
 	strcpy(townFileName, filename);
 	
 	uint8_t numAE = 0;
@@ -97,7 +97,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		population = (((rand()%5)+1)*settlementSize*5);
 		population += (((rand()%5)+1)*settlementSize*5);
 		population += (((rand()%5)+1)*settlementSize*5);
-		population += (((rand()%5)+1)*settlementSize*5);
+		//population += (((rand()%5)+1)*settlementSize*5);
 		population += rand()%1000;
 		fprintf(townFile, "Population: %d\n\n\n",population);
 		fclose(townFile);
@@ -175,8 +175,12 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		}
 	}
 	else {
-		population = (rand()%8+1)*settlementSize*2 + rand()%(settlementSize*5);
-		if (population < 500){
+		population = (rand()%7+1)*settlementSize + rand()%(settlementSize*5);
+		if (settlementSize <= 1){
+			population = 0;
+			fprintf(townFile, "The Abandoned %s of ", rand()%4 ? "Village" : "Town");
+		}
+		else if (population < 500){
 			fprintf(townFile, "The Village of ");
 		}
 		else{
@@ -440,7 +444,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	token = strtok(filename,".");
 	strcpy(mapFilename, token);
 	strcat(mapFilename,"Map.txt");
-	FILE * townMapFile = fopen(mapFilename, "w+");
+	FILE * townMapFile = fopen(mapFilename, "w");
 	/* Make Border */
 	for (int i = 0; i < mapHeight; ++i){
 		for (int j = 0; j < mapWidth; ++j){
@@ -1646,7 +1650,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	
 	/* Open file to store the result */
 	printf("Town stored at: %s\nMap stored at: %s\n",townFileName, mapFilename);
-	strcat(token,"Full.txt");
+	strcat(token,"Settlement.txt");
 	printf("Combined stored at: %s\n",token);
 	FILE *fullFile = fopen(token, "w");
 	char c;

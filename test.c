@@ -8,6 +8,7 @@
 #include "shopGen.h"
 #include "convertFromCp.h"
 #include "nameGen.h"
+#include "region.h"
 
 /************************************************/
 /* How to format shopgen command                */
@@ -109,6 +110,13 @@ int main (int argc, char* argv[]){
 			return -1;
 		}
 		convertFromCP(atoi(argv[2]), atoi(argv[3]));
+	}
+	else if (!(strcmp("regionGen", argv[1]))){
+		if(argc != 3){
+			regionCommandReminder();
+			return -1;
+		}
+		regionGen(argv[3]);
 	}
 	else{
 		commandReminder();
