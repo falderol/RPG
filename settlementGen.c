@@ -90,7 +90,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	uint8_t numSRN = 0;
 	uint8_t numJWL = 0;
 	uint8_t numSHOPS = 0;
-	int population;
+	int population = 0;
 	if(settlementSize >= 100){
 		fprintf(townFile, "The City of ");
 		townnameGenAndStore(townFile);
@@ -175,7 +175,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		}
 	}
 	else {
-		population = (rand()%8+1)*settlementSize*5 + rand()%(settlementSize*3);
+		population = (rand()%8+1)*settlementSize*2 + rand()%(settlementSize*5);
 		if (population < 500){
 			fprintf(townFile, "The Village of ");
 		}
@@ -185,7 +185,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		townnameGenAndStore(townFile);
 		fprintf(townFile, "Population: %d\n\n\n",population);
 		fclose(townFile);
-		uint8_t shopAmount = (settlementSize/15)+3;
+		uint8_t shopAmount = (settlementSize/15)+2+rand()%3;
 		for (int i = 0; i < shopAmount; ++i){
 			/* uint8_t shopnum = 0; */
 			switch((rand()%20)+1){
@@ -1612,6 +1612,21 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 				break;
 			default:
 				break;
+		}
+	}
+	/************************************************/
+	/* Add . in blank space                         */
+	uint8_t inside = 0;
+	for (int i = 1; i <mapHeight-1; i+=1){
+		for (int j = 0; j < mapWidth; j+=1){
+			if(map[i][j] == '|'){
+				inside = !inside;
+			}
+			if (!inside){
+				if ((map[i][j] == ' ')&&(j%2)){
+					map[i][j] = '.';
+				}
+			}
 		}
 	}
 	
