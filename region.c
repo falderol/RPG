@@ -33,6 +33,22 @@ void regionCommandReminder(){
 /*       | Transform |   E   |   E   |   0   |   0                    */
 /**********************************************************************/
 /* LAND                                                               */
+/*       |    Dry    |    Mid    |     Wet    | Very Wet              */
+/* ------|-----------|-----------|------------|----------             */       
+/* Artic | Tundra    | Tundra    | Tundra     | Tundra                */
+/*  Cold | Tagia     | Tagia     | Tagia      | Bog                   */
+/*   Mid | Shrubland | Prairie   | Forest     | Marsh                 */
+/*   Hot | Desert    | Savanna   | Rainforest | Swamp                 */
+/*                                                                    */
+/* If Height is above everything gets made one column drier           */
+/* If Height is below everything gets on column wetter                */ 
+/* Temperature is influenced by y cord                                */
+/* Moisture is influenced by proximity to water, and height           */
+/* work from the coastal tiles in, filling in tiles adjacent to those */
+/* already filled in each pass, a decrease in height from above sea   */
+/* level is a decrease in moisture. Start at mid or wet               */
+/* Height is determined by plate collision, random placement, then    */
+/* blobbing to fill in the rest of it                                 */
 /**********************************************************************/
 /* CITIES                                                             */
 /* Go through the array of the map, in hex pattern place cities every */
@@ -81,6 +97,50 @@ void regionCommandReminder(){
 /* If we roll for random settlements from 1 to 105 this means we will */
 /* have on average 15 cities, 86 towns, 203 villages, and 6 abandoned */
 /* settlements                                                        */
+/**********************************************************************/
+/* FLAGS                                                              */
+/* a 32 bit int will be used to represent each spot in the map.       */
+/* 16 bits are reserved for settlement information                    */
+/* 16 bits are reseved for world information                          */
+/* Bit 0 is the LSB, bit 31 is the MSB                                */
+/*                                                                    */
+/* Bit | Description | Caused By                                      */
+/* ----|-------------|------------------------------------------------*/
+/*  00 | Magical     | rand is called for 0.01*mapHeigh*mapWidth times*/
+/*  01 | Costal      | When a water tile meets a land tile            */
+/*  02 | Wealthy     | TBD                                            */
+/*  03 | Exotic      | Randomly blobbed on the map                    */
+/*  04 | Frontier    | TBD - Something to do with nearby settlements? */
+/*  05 | Forest      | TBD - Something to do with weather             */
+/*  06 | Industrial  | Resources and Town Level Pop                   */
+/*  07 | Mining      | Settlement near Mountain                       */
+/*  08 | Agriculture | Settlement in Farming Biome                    */
+/*  09 | Rural       | Settlement with village level pop in 4 tile    */
+/*     |             | radius                                         */
+/*  10 | Urban       | Settlement with city level pop in 4 tile radius*/
+/*  11 | TBD         | unassigned                                     */
+/*  12 | TBD         | unassigned                                     */
+/*  13 | TBD         | unassigned                                     */
+/*  14 | Firearms    | Optional flag if using firearms                */
+/*  15 | Invalid     | Marks the tile as invalid                      */
+/*  16 | West        | Randomly placed initial plate, then blobbed    */
+/*  17 | South       | Randomly placed initial plate, then blobbed    */
+/*  18 | East        | Randomly placed initial plate, then blobbed    */
+/*  19 | North       | Randomly placed initial plate, then blobbed    */
+/*  10 | Moisture    | Dry, Mid, Wet, invalid                         */
+/*  21 | Moisture    |                                                */
+/*  22 | Temperature | Tropical, temperate, subartic, artic           */
+/*  23 | Temperature |                                                */
+/*  24 | Height      | Below, at, above, invalid                      */
+/*  25 | Height      |                                                */
+/*  26 | TBD         | unassigned                                     */
+/*  27 | TBD         | unassigned                                     */
+/*  28 | TBD         | unassigned                                     */
+/*  29 | TBD         | unassigned                                     */
+/*  30 | TBD         | unassigned                                     */
+/*  31 | Land        | Initialy from plate collisions, then blobbed   */
+
+/* 3 dimension biome graph based on height, temperature, and moisture
 /**********************************************************************/
 int regionGen(char * filename){
     FILE * regionFile = fopen(filename, "w+");
