@@ -33,12 +33,29 @@ void regionCommandReminder(){
 /*       | Transform |   E   |   E   |   0   |   0                    */
 /**********************************************************************/
 /* LAND                                                               */
+/* I know the following isnt accurate, it's good enough for this      */
 /*       |    Dry    |    Mid    |     Wet    | Very Wet              */
 /* ------|-----------|-----------|------------|----------             */       
 /* Artic | Tundra    | Tundra    | Tundra     | Tundra                */
 /*  Cold | Tagia     | Tagia     | Tagia      | Bog                   */
-/*   Mid | Shrubland | Prairie   | Forest     | Marsh                 */
-/*   Hot | Desert    | Savanna   | Rainforest | Swamp                 */
+/*   Mid | Shrubland | Prairie   | Forest     | Swamp                 */
+/*   Hot | Desert    | Savanna   | Rainforest | Mangrove              */
+/*                                                                    */
+/*  Land Type | Unique Symbol | Simple Symbol | UTF-8                 */
+/* -----------|---------------|---------------|-------                */
+/*     Tundra |       A       |       A       |   ʭ                   */
+/*      Tagia |       T       |       T       |   †                   */
+/*        Bog |       B       |       ^       |   φ                   */
+/*  Shrubland |       ~       |       ~       |   ɷ                   */
+/*    Prairie |       P       |       ~       |   ~                   */
+/*     Forest |       F       |       T       |   Ŧ                   */
+/*      Swamp |       S       |       ^       |   Ψ                   */
+/*     Desert |       D       |               |                       */
+/*    Savanna |       V       |       +       |   ±                   */
+/* Rainforest |       R       |       T       |   ‡                   */
+/*   Mangrove |       ^       |       ^       |   ʎ                   */
+/*      Water |       .       |       .       |   .                   */
+/*   Mountain |       M       |       M       |   Δ                   */
 /*                                                                    */
 /* If Height is above everything gets made one column drier           */
 /* If Height is below everything gets on column wetter                */ 
@@ -139,8 +156,8 @@ void regionCommandReminder(){
 /*  29 | TBD         | unassigned                                     */
 /*  30 | TBD         | unassigned                                     */
 /*  31 | Land        | Initialy from plate collisions, then blobbed   */
-
-/* 3 dimension biome graph based on height, temperature, and moisture
+/*                                                                    */
+/*                                                                    */
 /**********************************************************************/
 int regionGen(char * filename){
     FILE * regionFile = fopen(filename, "w+");

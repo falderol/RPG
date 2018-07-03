@@ -6,7 +6,7 @@
 #include <string.h>
 #include <time.h>
 
-#include "onesCount.h"
+#include "utilities.h"
 #include "convertFromCp.h"
 #include "nameGen.h"
 
@@ -992,7 +992,7 @@ void makeAdventurerEmporium(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -1354,7 +1354,7 @@ void makeAlchemist(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -1864,7 +1864,7 @@ void makeArcana(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -2217,7 +2217,7 @@ void makeBakery(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -2405,7 +2405,7 @@ void makeBarber(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -3039,7 +3039,7 @@ void makeBlacksmith(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -3270,7 +3270,7 @@ void makeBookstore(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -3710,7 +3710,7 @@ void makeButcher(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -3784,7 +3784,7 @@ void makeCobbler(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -4000,7 +4000,7 @@ void makeFletcher(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -4706,7 +4706,7 @@ void makeGeneral(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -4931,7 +4931,7 @@ void makeLeather(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				if (strcmp(inventory[i].name,"Barding (Mount Armor)")){
 					fprintf(storeHere, "%32s", inventory[i].name);
 					fprintf(storeHere, "%c", dividerChar);
@@ -5181,7 +5181,7 @@ void makeMusic(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -5383,7 +5383,7 @@ void makeTailor(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -6290,7 +6290,7 @@ void makeShrine(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -6478,7 +6478,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 			if(inventory[i].stock == 0){ /* Section Title */
 				fprintf(storeHere, "%-32s\n", inventory[i].name);
 			}
-			else if (inventory[i].stock + ((rand()%3)-1) - onesCount(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
+			else if (inventory[i].stock + ((rand()%3)-1) - onesCount16(flags & inventory[i].biasFlags) <= shopStock){ /* Item is in stock */
 				fprintf(storeHere, "%32s", inventory[i].name);
 				fprintf(storeHere, "%c", dividerChar);
 				convertFromCPandStore(inventory[i].lowPrice, storeHere, 0);
@@ -6500,7 +6500,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 			}
 		}
 	}
-	if (2 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+	if (2 + ((rand()%3)-1) - onesCount16(flags & 0x85) <= shopStock){
 		fprintf(storeHere, "%32s", "Set Gem");
 		fprintf(storeHere, "%c", dividerChar);
 		fprintf(storeHere,"%9s","23%% gem");/* Low Jewelry Price */
@@ -6510,7 +6510,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 		fprintf(storeHere,"%9s","30%% gem");/* High Jewelry price */
 		fprintf(storeHere, "\n");
 	}
-	if (8 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+	if (8 + ((rand()%3)-1) - onesCount16(flags & 0x85) <= shopStock){
 		fprintf(storeHere, "%32s", "Stonecutting");
 		fprintf(storeHere, "%c", dividerChar);
 		fprintf(storeHere,"%9s","23%% gem");/* Low Jewelry Price */
@@ -6521,7 +6521,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 		fprintf(storeHere, "\n");
 	}
 	fprintf(storeHere, "%-32s\n", "JEWELRY");
-	if (19 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+	if (19 + ((rand()%3)-1) - onesCount16(flags & 0x85) <= shopStock){
 		fprintf(storeHere, "%32s", "Custom Adamantine Jewelry");
 		fprintf(storeHere, "%c", dividerChar);
 		fprintf(storeHere,"%9s","Gem+70pp");/* Low Jewelry Price */
@@ -6531,7 +6531,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 		fprintf(storeHere,"%10s","Gem+100pp");/* High Jewelry price */
 		fprintf(storeHere, "\n");
 	}
-	if (5 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+	if (5 + ((rand()%3)-1) - onesCount16(flags & 0x85) <= shopStock){
 		fprintf(storeHere, "%32s", "Custom Gold Jewelry");
 		fprintf(storeHere, "%c", dividerChar);
 		fprintf(storeHere,"%9s","Gem+38gp");/* Low Jewelry Price */
@@ -6541,7 +6541,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 		fprintf(storeHere,"%9s","Gem+75gp");/* High Jewelry price */
 		fprintf(storeHere, "\n");
 	}
-	if (17 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+	if (17 + ((rand()%3)-1) - onesCount16(flags & 0x85) <= shopStock){
 		fprintf(storeHere, "%32s", "Custom Mithril Jewelry");
 		fprintf(storeHere, "%c", dividerChar);
 		fprintf(storeHere,"%9s","Gem+40pp");/* Low Jewelry Price */
@@ -6551,7 +6551,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 		fprintf(storeHere,"%9s","Gem+75pp");/* High Jewelry price */
 		fprintf(storeHere, "\n");
 	}
-	if (15 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+	if (15 + ((rand()%3)-1) - onesCount16(flags & 0x85) <= shopStock){
 		fprintf(storeHere, "%32s", "Custom Platinum Jewelry");
 		fprintf(storeHere, "%c", dividerChar);
 		fprintf(storeHere,"%9s","Gem+38pp");/* Low Jewelry Price */
@@ -6561,7 +6561,7 @@ void makeJeweler(FILE* storeHere, uint16_t flags){
 		fprintf(storeHere,"%9s","Gem+75pp");/* High Jewelry price */
 		fprintf(storeHere, "\n");
 	}
-	if (2 + ((rand()%3)-1) - onesCount(flags & 0x85) <= shopStock){
+	if (2 + ((rand()%3)-1) - onesCount16(flags & 0x85) <= shopStock){
 		fprintf(storeHere, "%32s", "Custom Silver Jewelry");
 		fprintf(storeHere, "%c", dividerChar);
 		fprintf(storeHere,"%9s","Gem+4gp");/* Low Jewelry Price */
