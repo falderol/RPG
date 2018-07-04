@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "settlementGen.h"
 #include "flagDefines.h"
@@ -163,10 +164,94 @@ void regionCommandReminder(){
 /*                                                                    */
 /**********************************************************************/
 int regionGen(char * filename){
-    FILE * regionFile = fopen(filename, "w+");
-    char rawMap[REGION_WIDTH][REGION_HEIGHT];
-    char printMap[REGION_WIDTH*2][REGION_HEIGHT];
+    printf ("Storing region in %s\n", filename);
+    FILE * regionFile;
+    regionFile = fopen(filename, "w+");
+    uint32_t rawMap[REGION_WIDTH][REGION_HEIGHT];
+    memset(rawMap, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
 
+    //char printMap[REGION_WIDTH*2][REGION_HEIGHT];
+    uint8_t plateAmount = 32;
+    uint16_t randY;
+    uint16_t randX;
+    printf("Randomly placing plates...\n");
+    for (int i = 0; i < plateAmount; ++i){
+        randX = rand()%REGION_WIDTH;
+        randY = rand()%REGION_HEIGHT;
+        if (rawMap[randY][randX] == 0){
+            rawMap[randY][randX] = 1<<rand()%4;
+        }
+        else{
+            --i;
+        }
+    }
+    printf("Blobbing Plates...\n");
+    uint32_t tileAmount = 0;
+    while (tileAmount < (REGION_HEIGHT * REGION_WIDTH)-plateAmount){
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                if (!(rand()%4) && (rawMap[i][j] == 0)){
+                    switch(rand()%4){
+                        case 0: //North
+                            if (i==0){
+                                rawMap[i][j] = rawMap[REGION_HEIGHT-1][j];
+                            }
+                            else {
+                                rawMap[i][j] = rawMap[i-1][j];
+                            }
+                            if (rawMap[i][j] != 0){
+                                ++tileAmount;
+                            }
+                            break;
+                        case 1: //South
+                            if (i==REGION_HEIGHT-1){
+                                rawMap[i][j] = rawMap[0][j];
+                            }
+                            else {
+                                rawMap[i][j] = rawMap[i+1][j];
+                            }
+                            if (rawMap[i][j] != 0){
+                                ++tileAmount;
+                            }
+                            break;
+                        case 2: //East
+                            if (j==REGION_WIDTH-1){
+                                rawMap[i][j] = rawMap[i][0];
+                            }
+                            else {
+                                rawMap[i][j] = rawMap[i][j+1];
+                            }
+                            if (rawMap[i][j] != 0){
+                                ++tileAmount;
+                            }
+                            break;
+                        case 3: //West
+                            if (j==0){
+                                rawMap[i][j] = rawMap[i][REGION_WIDTH-1];
+                            }
+                            else {
+                                rawMap[i][j] = rawMap[i][j-1];
+                            }
+                            if (rawMap[i][j] != 0){
+                                ++tileAmount;
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+    }
+    
+
+    /********/
+    /* Temp */
+    for (int i = 0; i < REGION_HEIGHT; ++i){
+        for (int j = 0; j < REGION_WIDTH; ++j){
+            fprintf(regionFile, "%2u", rawMap[i][j]);
+        }
+        fprintf(regionFile, "\n");
+    }
+    printf("Closing file...\n");
     fclose(regionFile);
     return 0;
 }

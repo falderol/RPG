@@ -116,7 +116,7 @@ int main (int argc, char* argv[]){
 			regionCommandReminder();
 			return -1;
 		}
-		regionGen(argv[3]);
+		regionGen(argv[2]);
 	}
 	else{
 		commandReminder();
