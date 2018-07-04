@@ -3,9 +3,13 @@
 #include <stdlib.h>
 
 #include "settlementGen.h"
+#include "flagDefines.h"
+
+#define REGION_WIDTH 512
+#define REGION_HEIGHT 512
 
 void regionCommandReminder(){
-
+    printf("regionGen <filename.txt>\n");
 }
 /**********************************************************************/
 /* GENERAL                                                            */
@@ -123,19 +127,19 @@ void regionCommandReminder(){
 /*                                                                    */
 /* Bit | Description | Caused By                                      */
 /* ----|-------------|------------------------------------------------*/
-/*  00 | Magical     | rand is called for 0.01*mapHeigh*mapWidth times*/
-/*  01 | Costal      | When a water tile meets a land tile            */
-/*  02 | Wealthy     | TBD                                            */
-/*  03 | Exotic      | Randomly blobbed on the map                    */
-/*  04 | Frontier    | TBD - Something to do with nearby settlements? */
-/*  05 | Forest      | TBD - Something to do with weather             */
+/*  00 | Coastal     | When a water tile meets a land tile            */
+/*  01 | Mountain    | Initial plate collisions and surrounding tiles */
+/*  02 | Agriculture | Settlement in Farming Biome                    */
+/*  03 | Forest      | TBD - Something to do with weather             */
+/*  04 | Commerce    | TBD                                            */
+/*  05 | Frontier    | TBD - Something to do with nearby settlements? */
 /*  06 | Industrial  | Resources and Town Level Pop                   */
-/*  07 | Mining      | Settlement near Mountain                       */
-/*  08 | Agriculture | Settlement in Farming Biome                    */
-/*  09 | Rural       | Settlement with village level pop in 4 tile    */
+/*  07 | Rural       | Settlement with village level pop in 4 tile    */
 /*     |             | radius                                         */
-/*  10 | Urban       | Settlement with city level pop in 4 tile radius*/
-/*  11 | TBD         | unassigned                                     */
+/*  08 | Urban       | Settlement with city level pop in 4 tile radius*/
+/*  09 | Exotic      | Randomly blobbed on the map                    */
+/*  10 | Pious       | Randomly blobbed                               */
+/*  11 | Magical     | rand is called for 0.01*mapHeigh*mapWidth times*/
 /*  12 | TBD         | unassigned                                     */
 /*  13 | TBD         | unassigned                                     */
 /*  14 | Firearms    | Optional flag if using firearms                */
@@ -144,16 +148,15 @@ void regionCommandReminder(){
 /*  17 | South       | Randomly placed initial plate, then blobbed    */
 /*  18 | East        | Randomly placed initial plate, then blobbed    */
 /*  19 | North       | Randomly placed initial plate, then blobbed    */
-/*  10 | Moisture    | Dry, Mid, Wet, invalid                         */
+/*  20 | Moisture    | Dry, Mid, Wet, invalid                         */
 /*  21 | Moisture    |                                                */
 /*  22 | Temperature | Tropical, temperate, subartic, artic           */
-/*  23 | Temperature |                                                */
-/*  24 | Height      | Below, at, above, invalid                      */
-/*  25 | Height      |                                                */
-/*  26 | TBD         | unassigned                                     */
+/*  24 | Temperature |                                                */
+/*  25 | Height      | Below, at, above, invalid                      */
+/*  26 | Height      |                                                */
 /*  27 | TBD         | unassigned                                     */
 /*  28 | TBD         | unassigned                                     */
-/*  29 | TBD         | unassigned                                     */
+/*  28 | TBD         | unassigned                                     */
 /*  30 | TBD         | unassigned                                     */
 /*  31 | Land        | Initialy from plate collisions, then blobbed   */
 /*                                                                    */
@@ -161,6 +164,9 @@ void regionCommandReminder(){
 /**********************************************************************/
 int regionGen(char * filename){
     FILE * regionFile = fopen(filename, "w+");
+    char rawMap[REGION_WIDTH][REGION_HEIGHT];
+    char printMap[REGION_WIDTH*2][REGION_HEIGHT];
+
     fclose(regionFile);
     return 0;
 }

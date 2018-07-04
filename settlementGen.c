@@ -9,6 +9,7 @@
 #include "itoa.h"
 #include "shopGen.h"
 #include "nameGen.h"
+#include "flagDefines.h"
 
 /************************************************/
 /* How to format shopgen command                */
@@ -32,39 +33,25 @@
 /*"14 - Shrine                                  */
 /*"15 - Jeweler                                 */
 /************************************************/
-/* Flags Guide                                  */
-/*"Bit 00 - Magical                             */
-/*"Bit 01 - Costal                              */
-/*"Bit 02 - Rich                                */
-/*"Bit 03 - Exotic                              */
-/*"Bit 04 - Frontier                            */
-/*"Bit 05 - Forest                              */
-/*"Bit 06 - Industrial                          */
-/*"Bit 07 - Mining                              */
-/*"Bit 08 - Pious                               */
-/*"Bit 09 - Agriculture                         */
-/*"Bit 10 - Rural                               */
-/*"Bit 11 - Urban                               */
-/************************************************/
 
 void settlementCommandReminder(){
 	printf("Command format is: ");
 	printf(".\\programName <storageLoc.txt> <size 1-100> <flags>\n");
 	printf("Supported Flags are:\n");
-	printf("Bit 00 - Magical     /* To include add    1 to the flag */\n");
-	printf("Bit 01 - Costal      /* To include add    2 to the flag */\n");
-	printf("Bit 02 - Rich        /* To include add    4 to the flag */\n");
-	printf("Bit 03 - Exotic      /* To include add    8 to the flag */\n");
-	printf("Bit 04 - Frontier    /* To include add   16 to the flag */\n");
-	printf("Bit 05 - Forest      /* To include add   32 to the flag */\n");
+	printf("Bit 00 - Costal      /* To include add    1 to the flag */\n");
+	printf("Bit 01 - Mountain    /* To include add    2 to the flag */\n");
+	printf("Bit 02 - Agriculture /* To include add    4 to the flag */\n");
+	printf("Bit 03 - Forest      /* To include add    8 to the flag */\n");
+	printf("Bit 04 - Commerce    /* To include add   16 to the flag */\n");
+	printf("Bit 05 - Frontier    /* To include add   32 to the flag */\n");
 	printf("Bit 06 - Industrial  /* To include add   64 to the flag */\n");
-	printf("Bit 07 - Mining      /* To include add  128 to the flag */\n");
-	printf("Bit 08 - Pious       /* To include add  256 to the flag */\n");
-    printf("Bit 09 - Agriculture /* To include add  512 to the flag */\n");
-	printf("Bit 10 - Rural       /* To include add 1024 to the flag */\n");
-	printf("Bit 11 - Urban       /* To include add 2048 to the flag */\n");
+	printf("Bit 07 - Rural       /* To include add  128 to the flag */\n");
+	printf("Bit 08 - Urban       /* To include add  256 to the flag */\n");
+    printf("Bit 09 - Exotic      /* To include add  512 to the flag */\n");
+	printf("Bit 10 - Pious       /* To include add 1024 to the flag */\n");
+	printf("Bit 11 - Magical     /* To include add 2048 to the flag */\n");
 	printf("I.E. a Magical, Frontier, Forest would be 49\n");
-	printf("I.E. a Rich, Pious, Urban area would be 2308\n");
+	printf("I.E. a Commerce, Pious, Urban area would be 2308\n");
 }
 
 void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){

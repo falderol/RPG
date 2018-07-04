@@ -34,13 +34,13 @@
 /************************************************/
 /* Flags Guide                                  */
 /*"Bit 00 - Magical                             */
-/*"Bit 01 - Costal                              */
-/*"Bit 02 - Rich                                */
+/*"Bit 01 - Coastal                             */
+/*"Bit 02 - Commerce                            */
 /*"Bit 03 - Exotic                              */
 /*"Bit 04 - Frontier                            */
 /*"Bit 05 - Forest                              */
 /*"Bit 06 - Industrial                          */
-/*"Bit 07 - Mining                              */
+/*"Bit 07 - Mountain                            */
 /*"Bit 08 - Pious                               */
 /*"Bit 09 - Agriculture                         */
 /*"Bit 10 - Rural                               */
