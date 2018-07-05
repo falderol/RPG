@@ -16,62 +16,6 @@ void regionCommandReminder(){
 /* GENERAL                                                            */
 /* One tile will be 1 sq mile                                         */
 /**********************************************************************/
-/* PLATES                                                             */
-/* Standard Construction                                              */
-/* Bit 03 | Bit 02 | Bit 01 | Bit 00                                  */
-/*  North |   East |  South |   West                                  */
-/*                                                                    */
-/* Tile                Look    Look    Look    Look                   */
-/* Type  | Collision | North | South | East  | West                   */
-/* ------|-----------|-------|-------|-------|-------                 */
-/* North |   Diverge |   0   |  !N   |   E   |   W                    */
-/*       |  Converge |  !N   |   0   |   W   |   E                    */
-/*       | Transform |   0   |   0   |   S   |   S                    */
-/* South |   Diverge |   0   |  !S   |   E   |   W                    */
-/*       |  Converge |  !S   |   0   |   W   |   E                    */
-/*       | Transform |   0   |   0   |   N   |   N                    */
-/*  East |   Diverge |   N   |   S   |   0   |  !E                    */
-/*       |  Converge |   S   |   N   |  !E   |   0                    */
-/*       | Transform |   W   |   W   |   0   |   0                    */
-/*  West |   Diverge |   N   |   S   |   0   |  !W                    */
-/*       |  Converge |   S   |   N   |  !W   |   0                    */
-/*       | Transform |   E   |   E   |   0   |   0                    */
-/**********************************************************************/
-/* LAND                                                               */
-/* I know the following isnt accurate, it's good enough for this      */
-/*       |    Dry    |    Mid    |     Wet    | Very Wet              */
-/* ------|-----------|-----------|------------|----------             */       
-/* Artic | Tundra    | Tundra    | Tundra     | Tundra                */
-/*  Cold | Tagia     | Tagia     | Tagia      | Bog                   */
-/*   Mid | Shrubland | Prairie   | Forest     | Swamp                 */
-/*   Hot | Desert    | Savanna   | Rainforest | Mangrove              */
-/*                                                                    */
-/*  Land Type | Unique Symbol | Simple Symbol | UTF-8                 */
-/* -----------|---------------|---------------|-------                */
-/*     Tundra |       A       |       A       |   ʭ                   */
-/*      Tagia |       T       |       T       |   †                   */
-/*        Bog |       B       |       ^       |   φ                   */
-/*  Shrubland |       ~       |       ~       |   ɷ                   */
-/*    Prairie |       P       |       ~       |   ~                   */
-/*     Forest |       F       |       T       |   Ŧ                   */
-/*      Swamp |       S       |       ^       |   Ψ                   */
-/*     Desert |       D       |               |                       */
-/*    Savanna |       V       |       +       |   ±                   */
-/* Rainforest |       R       |       T       |   ‡                   */
-/*   Mangrove |       ^       |       ^       |   ʎ                   */
-/*      Water |       .       |       .       |   .                   */
-/*   Mountain |       M       |       M       |   Δ                   */
-/*                                                                    */
-/* If Height is above everything gets made one column drier           */
-/* If Height is below everything gets on column wetter                */ 
-/* Temperature is influenced by y cord                                */
-/* Moisture is influenced by proximity to water, and height           */
-/* work from the coastal tiles in, filling in tiles adjacent to those */
-/* already filled in each pass, a decrease in height from above sea   */
-/* level is a decrease in moisture. Start at mid or wet               */
-/* Height is determined by plate collision, random placement, then    */
-/* blobbing to fill in the rest of it                                 */
-/**********************************************************************/
 /* CITIES                                                             */
 /* Go through the array of the map, in hex pattern place cities every */
 /* 6 miles if there is land                                           */
@@ -185,6 +129,12 @@ int regionGen(char * filename){
             --i;
         }
     }
+
+    /**************************************/
+    /* Initial Plate Construction         */
+    /* Make plates moving in one of the   */
+    /* four cardinal directions.          */
+    /**************************************/
     printf("Blobbing Plates...\n");
     uint32_t tileAmount = 0;
     while (tileAmount < (REGION_HEIGHT * REGION_WIDTH)-plateAmount){
@@ -247,13 +197,117 @@ int regionGen(char * filename){
             }
         }
     }
-    
+/**********************************************************************/
+/* PLATES                                                             */
+/* Standard Construction                                              */
+/* Bit 03 | Bit 02 | Bit 01 | Bit 00                                  */
+/* -------|--------|--------|-------                                  */
+/*  North |   East |  South |   West                                  */
+/*                                                                    */
+/* Tile                Look    Look    Look    Look                   */
+/* Type  | Collision | North | South | East  | West                   */
+/* ------|-----------|-------|-------|-------|-------                 */
+/* North |   Diverge |   0   |  !N   |   E   |   W                    */
+/*       |  Converge |  !N   |   0   |   W   |   E                    */
+/*       | Transform |   0   |   0   |   S   |   S                    */
+/* South |   Diverge |   0   |  !S   |   E   |   W                    */
+/*       |  Converge |  !S   |   0   |   W   |   E                    */
+/*       | Transform |   0   |   0   |   N   |   N                    */
+/*  East |   Diverge |   N   |   S   |   0   |  !E                    */
+/*       |  Converge |   S   |   N   |  !E   |   0                    */
+/*       | Transform |   W   |   W   |   0   |   0                    */
+/*  West |   Diverge |   N   |   S   |   0   |  !W                    */
+/*       |  Converge |   S   |   N   |  !W   |   0                    */
+/*       | Transform |   E   |   E   |   0   |   0                    */
+/**********************************************************************/
+/* LAND                                                               */
+/* I know the following isnt accurate, it's good enough for this      */
+/*       |    Dry    |    Mid    |     Wet    | Very Wet              */
+/* ------|-----------|-----------|------------|----------             */       
+/* Artic | Tundra    | Tundra    | Tundra     | Tundra                */
+/*  Cold | Tagia     | Tagia     | Tagia      | Bog                   */
+/*   Mid | Shrubland | Prairie   | Forest     | Swamp                 */
+/*   Hot | Desert    | Savanna   | Rainforest | Mangrove              */
+/*                                                                    */
+/*  Land Type | Unique Symbol | Simple Symbol | UTF-8                 */
+/* -----------|---------------|---------------|-------                */
+/*     Tundra |       A       |       A       |   ʭ                   */
+/*      Tagia |       T       |       T       |   †                   */
+/*        Bog |       B       |       ^       |   φ                   */
+/*  Shrubland |       ~       |       ~       |   ɷ                   */
+/*    Prairie |       P       |       ~       |   ~                   */
+/*     Forest |       F       |       T       |   Ŧ                   */
+/*      Swamp |       S       |       ^       |   Ψ                   */
+/*     Desert |       D       |               |                       */
+/*    Savanna |       V       |       +       |   ±                   */
+/* Rainforest |       R       |       T       |   ‡                   */
+/*   Mangrove |       ^       |       ^       |   ʎ                   */
+/*      Water |       .       |       .       |   .                   */
+/*   Mountain |       M       |       M       |   Δ                   */
+/*                                                                    */
+/* If Height is above everything gets made one column drier           */
+/* If Height is below everything gets on column wetter                */ 
+/* Temperature is influenced by y cord                                */
+/* Moisture is influenced by proximity to water, and height           */
+/* work from the coastal tiles in, filling in tiles adjacent to those */
+/* already filled in each pass, a decrease in height from above sea   */
+/* level is a decrease in moisture. Start at mid or wet               */
+/* Height is determined by plate collision, random placement, then    */
+/* blobbing to fill in the rest of it                                 */
+/**********************************************************************/
+    for(int i = 0; i < REGION_HEIGHT; ++i){
+        for(int j = 0; j < REGION_WIDTH; ++j){
+            switch(rawMap[i][j]){
+                case 1 : /* tile is west */
+                    if (i == 0){ /* look north */
+                        if((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>3)&1){ /* if north land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    else { /* look north */
+                        if((rawMap[i+1][j]>>1)&1){ /* if south land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    if (i = REGION_HEIGHT-1){ /* look south */
+                        if((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>1)&1){ /* if south land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    else { /* look south */
+                        if((rawMap[i+1][j]>>3)&1){ /* if north land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    if (j == 0){ /* look west */
+                        if(!((rawMap[i][REGION_WIDTH-1]>>0)&1)){ /* if not west land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    else { /* look west */
+                        if(!((rawMap[i][j+1]>>0)&1)){ /* if not west land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    break;
+                case 2: /* tile is south */
 
+                    break;
+                case 4: /* tile is east */
+
+                    break;
+                case 8: /* tile is north */
+
+                    break;
+            }
+        }
+    }
+    
     /********/
     /* Temp */
     for (int i = 0; i < REGION_HEIGHT; ++i){
         for (int j = 0; j < REGION_WIDTH; ++j){
-            fprintf(regionFile, "%2u", rawMap[i][j]);
+            fprintf(regionFile, "%2s", rawMap[i][j]);
         }
         fprintf(regionFile, "\n");
     }
