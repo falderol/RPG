@@ -167,10 +167,10 @@ int regionGen(char * filename){
     printf ("Storing region in %s\n", filename);
     FILE * regionFile;
     regionFile = fopen(filename, "w+");
-    uint32_t rawMap[REGION_WIDTH][REGION_HEIGHT];
+    uint32_t rawMap[REGION_HEIGHT][REGION_WIDTH];
     memset(rawMap, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
-
-    //char printMap[REGION_WIDTH*2][REGION_HEIGHT];
+    uint32_t rawMapMask[REGION_HEIGHT][REGION_WIDTH];
+    memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
     uint8_t plateAmount = 32;
     uint16_t randY;
     uint16_t randX;
@@ -188,56 +188,62 @@ int regionGen(char * filename){
     printf("Blobbing Plates...\n");
     uint32_t tileAmount = 0;
     while (tileAmount < (REGION_HEIGHT * REGION_WIDTH)-plateAmount){
+        memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
         for (int i = 0; i < REGION_HEIGHT; ++i){
             for (int j = 0; j < REGION_WIDTH; ++j){
                 if (!(rand()%4) && (rawMap[i][j] == 0)){
                     switch(rand()%4){
                         case 0: //North
                             if (i==0){
-                                rawMap[i][j] = rawMap[REGION_HEIGHT-1][j];
+                                rawMapMask[i][j] = rawMap[REGION_HEIGHT][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2];
                             }
                             else {
-                                rawMap[i][j] = rawMap[i-1][j];
+                                rawMapMask[i][j] = rawMap[i-1][j];
                             }
-                            if (rawMap[i][j] != 0){
+                            if (rawMapMask[i][j] != 0){
                                 ++tileAmount;
                             }
                             break;
                         case 1: //South
                             if (i==REGION_HEIGHT-1){
-                                rawMap[i][j] = rawMap[0][j];
+                                rawMapMask[i][j] = rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2];
                             }
                             else {
-                                rawMap[i][j] = rawMap[i+1][j];
+                                rawMapMask[i][j] = rawMap[i+1][j];
                             }
-                            if (rawMap[i][j] != 0){
+                            if (rawMapMask[i][j] != 0){
                                 ++tileAmount;
                             }
                             break;
                         case 2: //East
                             if (j==REGION_WIDTH-1){
-                                rawMap[i][j] = rawMap[i][0];
+                                rawMapMask[i][j] = rawMap[i][0];
                             }
                             else {
-                                rawMap[i][j] = rawMap[i][j+1];
+                                rawMapMask[i][j] = rawMap[i][j+1];
                             }
-                            if (rawMap[i][j] != 0){
+                            if (rawMapMask[i][j] != 0){
                                 ++tileAmount;
                             }
                             break;
                         case 3: //West
                             if (j==0){
-                                rawMap[i][j] = rawMap[i][REGION_WIDTH-1];
+                                rawMapMask[i][j] = rawMap[i][REGION_WIDTH-1];
                             }
                             else {
-                                rawMap[i][j] = rawMap[i][j-1];
+                                rawMapMask[i][j] = rawMap[i][j-1];
                             }
-                            if (rawMap[i][j] != 0){
+                            if (rawMapMask[i][j] != 0){
                                 ++tileAmount;
                             }
                             break;
                     }
                 }
+            }
+        }
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                rawMap[i][j] |= rawMapMask[i][j];
             }
         }
     }
