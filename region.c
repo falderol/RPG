@@ -115,7 +115,7 @@ int regionGen(char * filename){
     memset(rawMap, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
     uint32_t rawMapMask[REGION_HEIGHT][REGION_WIDTH];
     memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
-    uint8_t plateAmount = 32;
+    uint8_t plateAmount = 16;
     uint16_t randY;
     uint16_t randX;
     printf("Randomly placing plates...\n");
@@ -269,7 +269,7 @@ int regionGen(char * filename){
                             rawMap[i][j] |= 0x80000000;
                         }
                     }
-                    if (i = REGION_HEIGHT-1){ /* look south */
+                    if (i == REGION_HEIGHT-1){ /* look south */
                         if((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>1)&1){ /* if south land */
                             rawMap[i][j] |= 0x80000000;
                         }
@@ -294,7 +294,36 @@ int regionGen(char * filename){
 
                     break;
                 case 4: /* tile is east */
-
+                    if (i == 0){ /* look north */
+                        if((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>3)&1){ /* if north land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    else { /* look north */
+                        if((rawMap[i+1][j]>>1)&1){ /* if south land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    if (i == REGION_HEIGHT-1){ /* look south */
+                        if((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>1)&1){ /* if south land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    else { /* look south */
+                        if((rawMap[i+1][j]>>3)&1){ /* if north land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    if (j == REGION_WIDTH-1){ /* look east */
+                        if(!((rawMap[i][0]>>2)&1)){ /* if not east land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
+                    else { /* look east */
+                        if(!((rawMap[i][j-1]>>2)&1)){ /* if not east land */
+                            rawMap[i][j] |= 0x80000000;
+                        }
+                    }
                     break;
                 case 8: /* tile is north */
 
@@ -307,7 +336,7 @@ int regionGen(char * filename){
     /* Temp */
     for (int i = 0; i < REGION_HEIGHT; ++i){
         for (int j = 0; j < REGION_WIDTH; ++j){
-            fprintf(regionFile, "%2s", rawMap[i][j]);
+            fprintf(regionFile, "%2s", (rawMap[i][j]&0x80000000) ? "#" : ".");
         }
         fprintf(regionFile, "\n");
     }
