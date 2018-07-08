@@ -115,9 +115,12 @@ int regionGen(char * filename){
     memset(rawMap, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
     uint32_t rawMapMask[REGION_HEIGHT][REGION_WIDTH];
     memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
-    uint8_t plateAmount = 16;
+    uint8_t plateAmount = 16+rand()%16;
     uint16_t randY;
     uint16_t randX;
+    uint16_t randXgroup;
+    uint16_t randYgroup;
+    uint32_t loopAmount;
     printf("Randomly placing plates...\n");
     for (int i = 0; i < plateAmount; ++i){
         randX = rand()%REGION_WIDTH;
@@ -258,70 +261,74 @@ int regionGen(char * filename){
 /* Height is determined by plate collision, random placement, then    */
 /* blobbing to fill in the rest of it                                 */
 /**********************************************************************/
+/* I hate to do this but it looks better                              */
+/**********************************************************************/
+    
+    printf("Placing Initial Mountains...\n");
     for(int i = 0; i < REGION_HEIGHT; ++i){
         for(int j = 0; j < REGION_WIDTH; ++j){
             switch(rawMap[i][j]>>16){
                 case 1 : /* tile is west */
                     if (i == 0){ /* look north */
                         if ((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>19)&1){ /* if north land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look north */
                         if ((rawMap[i-1][j]>>17)&1){ /* if south land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     if (i == REGION_HEIGHT-1){ /* look south */
                         if ((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>17)&1){ /* if south land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look south */
                         if ((rawMap[i+1][j]>>19)&1){ /* if north land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     if (j == 0){ /* look west */
                         if (!((rawMap[i][REGION_WIDTH-1]>>16)&1)){ /* if not west land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look west */
                         if (!((rawMap[i][j-1]>>16)&1)){ /* if not west land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     break;
                 case 2: /* tile is south */
                     if (j == REGION_WIDTH-1){ /* look east */
                         if ((rawMap[i][j+1]>>16)&1){ /* if west land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look east */
                         if ((rawMap[i][j+1]>>16)&1){ /* if west land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     if (i == REGION_HEIGHT-1){ /* look south */
                         if (!((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>19)&1)){ /* if not north land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look south */
                         if (!((rawMap[i+1][j]>>17)&1)){ /* if not south land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     if (j == 0){ /* look west */
                         if ((rawMap[i][REGION_WIDTH-1]>>18)&1){ /* if east land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look west */
                         if ((rawMap[i][j-1]>>18)&1){ /* if east land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     break;
@@ -329,78 +336,157 @@ int regionGen(char * filename){
                 case 4: /* tile is east */
                     if (i == 0){ /* look north */
                         if ((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>19)&1){ /* if north land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look north */
                         if ((rawMap[i-1][j]>>17)&1){ /* if south land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     if (i == REGION_HEIGHT-1){ /* look south */
                         if ((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>17)&1){ /* if south land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look south */
                         if ((rawMap[i+1][j]>>19)&1){ /* if north land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     if (j == REGION_WIDTH-1){ /* look east */
                         if (!((rawMap[i][0]>>18)&1)){ /* if not east land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look east */
                         if (!((rawMap[i][j+1]>>18)&1)){ /* if not east land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     break;
                 case 8: /* tile is north */
                     if (j == REGION_WIDTH-1){ /* look east */
                         if ((rawMap[i][j+1]>>16)&1){ /* if west land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look east */
                         if ((rawMap[i][j+1]>>16)&1){ /* if west land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     if (i == 0){ /* look north */
                         if (!((rawMap[i][(j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2]>>17)&1)){ /* if not south land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look north */
                         if (!((rawMap[i-1][j]>>19)&1)){ /* if not north land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     if (j == 0){ /* look west */
                         if ((rawMap[i][REGION_WIDTH-1]>>18)&1){ /* if east land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     else { /* look west */
                         if ((rawMap[i][j-1]>>18)&1){ /* if east land */
-                            rawMap[i][j] |= 0x80000002;
+                            rawMap[i][j] |= 0x2;
                         }
                     }
                     break;
             }
         }
     }
-    printf("Placing initial land...\n");
+    printf("Placing land seed...\n");
+    uint8_t landSeedAmount = 8 + rand()%4;
+    uint16_t dispersalRange = 64;
+    for (int i = 0; i < landSeedAmount; ++i){
+        randXgroup = (rand()%(REGION_WIDTH-dispersalRange*2))+dispersalRange;
+        randYgroup = (rand()%(REGION_HEIGHT-dispersalRange*2))+dispersalRange;
+        loopAmount = rand()%8 + 8;
+        for (int j = 0; j < loopAmount; ++j){
+            randX = randYgroup + rand()%dispersalRange - dispersalRange/2;
+            randY = randXgroup + rand()%dispersalRange - dispersalRange/2;
+            rawMap[randY][randX] |= 0x80000000;
+        }
+
+
+    }
+    printf ("Blobbing land...\n");
+    uint16_t landLoopAmount = 256 + rand()%64;
+    for (int h = 0; h < landLoopAmount; ++h){
+        memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                if (!(rand()%4) && (rawMap[i][j] & 0x80000000)){
+                    uint8_t landBias;
+                    landBias = rand()%6;
+                    if (landBias > 3){
+                        landBias = ((rawMap[i][j] >> 16) & 0xF);
+                        if (landBias == 2){
+                            landBias = 1;
+                        }
+                        else if (landBias == 4){
+                            landBias = 2;
+                        }
+                        else if (landBias == 8){
+                            landBias = 3;
+                        }
+                    }
+                    switch(landBias){
+                        case 0: //North
+                            if (i==0){
+                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                rawMapMask[i][overBorderLoc] |= 0x80000000;
+                            }
+                            else {
+                                rawMapMask[i-1][j] |= 0x80000000;
+                            }
+                            break;
+                        case 1: //South
+                            if (i==REGION_HEIGHT-1){
+                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                rawMapMask[i][overBorderLoc] = 0x80000000;
+                            }
+                            else {
+                                rawMapMask[i+1][j] |= 0x80000000;
+                            }
+                            break;
+                        case 2: //East
+                            if (j==REGION_WIDTH-1){
+                                rawMapMask[i][0] |= 0x80000000;
+                            }
+                            else {
+                                rawMapMask[i][j+1] |= 0x80000000;
+                            }
+                            break;
+                        case 3: //West
+                            if (j==0){
+                                rawMapMask[i][REGION_WIDTH-1] |= 0x80000000;
+                            }
+                            else {
+                                rawMapMask[i][j-1] |= 0x80000000;
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                rawMap[i][j] |= rawMapMask[i][j];
+            }
+        }
+    }
+
+    printf("Fuzifying Coastal Areas...\n");
     /**********************************************************************/
-    /* LAND PLACEMENT 1                                                   */
-    /* For each nonland tile have a 1 in 32 chance to become a land tile   */
-    /* and adjacent tile is a land tile, 1 in 16 if adjacent tile is       */
-    /* moving in the same direction                                       */
+    /* Fuzzy Coast                                                        */
     /**********************************************************************/
-    uint8_t loopAmount = 32 + rand()%4;
+    loopAmount = (REGION_WIDTH+REGION_HEIGHT)/32 + rand()%((REGION_WIDTH+REGION_HEIGHT)/128);
     for (int loop = 0; loop < loopAmount; ++loop){
         memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
         for (int i = 0; i < REGION_HEIGHT; ++i){
@@ -493,16 +579,131 @@ int regionGen(char * filename){
                 rawMap[i][j] |= rawMapMask[i][j];
             }
         }
+        /**********************************************************************/
+        /* Add some islands                                                   */
+        /**********************************************************************/
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                if((rawMap[i][j]&0x2)&&!(rand()%1024)){
+                    rawMap[i][j] |= 0x80000001;
+                }
+                if (!(rand()%((REGION_WIDTH*REGION_HEIGHT)))){
+                    rawMap[i][j] |= 0x80000001;
+                }
+            }
+        }
+    }
+    /**********************************************************************/
+    /* Increase Mountains                                                 */
+    /**********************************************************************/
+    printf("Enlarging Mountains...\n");
+    loopAmount = 16 + rand()%4;
+    for (int loop = 0; loop < loopAmount; ++loop){
+        memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                if (!(rand()%4) && !(rawMap[i][j]&0x8000002)){
+                    switch(rand()%4){
+                        case 0: /* North */
+                            if (i==0){
+                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                if((rawMap[i][overBorderLoc] & 0x2) != 0){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][overBorderLoc];
+                                }
+                                else if (rand()%2){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][overBorderLoc];
+                                }
+                            }
+                            else {
+                                if((rawMap[i-1][j] & 0x8) != 0){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i-1][j];
+                                }
+                                else if (rand()%2){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i-1][j];
+                                }
+                            }
+                            break;
+
+                        case 1: /* South  */
+                            if (i==REGION_HEIGHT-1){
+                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                if((rawMap[i][overBorderLoc] & 0x8) != 0){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][overBorderLoc];
+                                }
+                                else if (rand()%2){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][overBorderLoc];
+                                }
+                            }
+                            else {
+                                if((rawMap[i+1][j] & 0x2) != 0){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i+1][j];
+                                }
+                                else if (rand()%2){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i+1][j];
+                                }
+                            }
+                            break;
+
+                        case 2: /* East */
+                            if (j==REGION_WIDTH-1){
+                                if ((rawMap[i][0] & 0x4) != 0){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][0];
+                                }
+                                else if (rand()%2){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][0];
+                                }
+                            }
+                            else {
+                                if ((rawMap[i][0] & 0x4) != 0){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][j+1];
+                                }
+                                else if (rand()%2){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][j+1];
+                                }
+                            }
+                            break;
+
+                        case 3: /* West */
+                            if (j==0){
+                                if ((rawMap[i][REGION_WIDTH-1] & 0x1) != 0){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][REGION_WIDTH-1];
+                                }
+                                else if (rand()%2){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][REGION_WIDTH-1];
+                                }
+                            }
+                            else {
+                                if ((rawMap[i][0] & 0x1) != 0){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][j-1];
+                                }
+                                else if (rand()%2){
+                                    rawMapMask[i][j] |= 0x2 & rawMap[i][j-1];
+                                }
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                rawMap[i][j] |= rawMapMask[i][j];
+            }
+        }
     }
     /********/
     /* Temp */
     for (int i = 0; i < REGION_HEIGHT; ++i){
         for (int j = 0; j < REGION_WIDTH; ++j){
-            if (rawMap[i][j]&0x80000000){
-                fprintf(regionFile, "%2s","#");
+            
+            if ((rawMap[i][j]&0x80000000)&&(rawMap[i][j]&0x2)){
+                fprintf(regionFile, "%2s","M");
+            }
+            else if (rawMap[i][j]&0x80000000){
+                fprintf(regionFile, "%2s","*");
             }
             else{
-                fprintf(regionFile, "%2d",rawMap[i][j]>>16);
+                fprintf(regionFile, "%2s",".");
             }
         }
         fprintf(regionFile, "\n");
