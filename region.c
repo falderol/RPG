@@ -248,7 +248,7 @@ int regionGen(char * filename){
 /*    Savanna |       V       |       +       |   ±                   */
 /* Rainforest |       R       |       T       |   ‡                   */
 /*   Mangrove |       ^       |       ^       |   ʎ                   */
-/*      Water |       .       |       .       |   .                   */
+/*      Water |       .       |       .       |   ▓                   */
 /*   Mountain |       M       |       M       |   Δ                   */
 /*                                                                    */
 /* If Height is above everything gets made one column drier           */
@@ -694,16 +694,20 @@ int regionGen(char * filename){
     /********/
     /* Temp */
     for (int i = 0; i < REGION_HEIGHT; ++i){
-        for (int j = 0; j < REGION_WIDTH; ++j){
-            
-            if ((rawMap[i][j]&0x80000000)&&(rawMap[i][j]&0x2)){
-                fprintf(regionFile, "%2s","M");
-            }
-            else if (rawMap[i][j]&0x80000000){
-                fprintf(regionFile, "%2s","*");
+        for (int j = 0; j < REGION_WIDTH*2; ++j){
+            if (j%2){
+                if ((rawMap[i][j/2]&0x80000000)&&(rawMap[i][j]&0x2)){/* Mountain */
+                    fprintf(regionFile, "%s","Δ");
+                }
+                else if (rawMap[i][j/2]&0x80000000){ /* Default Land */
+                    fprintf(regionFile, "%s","~");
+                }
+                else{ /* Water */
+                    fprintf(regionFile, "%s","▓");
+                }
             }
             else{
-                fprintf(regionFile, "%2s",".");
+                fprintf(regionFile, "%s"," ");
             }
         }
         fprintf(regionFile, "\n");
