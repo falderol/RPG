@@ -76,7 +76,11 @@ The map is about 7168x6640 if you want to convert it from its .txt form to an im
 ### Linux
 You might have to change the imagemagik policy settings.
 
-`sudo convert -size 7168x6640 xc:white -font "FreeMono" -pointsize 12 -fill black -annotate +15+15 "@filename.txt" filename.png`
+`sudo convert -size 6144x6656 xc:white -font "Unifont" -pointsize 12 -fill black -annotate +15+15 "@filename.txt" filename.png`
+
+Don't have Unifont? Download it here http://www.unifoundry.com/unifont.html
+
+Alternitively you can use another monospace font that supports the utf 8 charecter set.
 
 # Notes
 I'm trying to make this work on windows an linux. If you run into an issue on either O.S. let me know.
