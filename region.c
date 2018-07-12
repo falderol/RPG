@@ -693,9 +693,43 @@ int regionGen(char * filename){
     }
     /********/
     /* Temp */
+    uint16_t settlementNumber = 0;
+    uint8_t hasSettlement = 0; /* CLEAN THIS UP YOU LAZY PERSON */
+    uint8_t digitPlaced = 0;
+    uint16_t cityDetails[2048];
     for (int i = 0; i < REGION_HEIGHT; ++i){
         for (int j = 0; j < REGION_WIDTH*2; ++j){
-            if (j%2){
+            if (digitPlaced >= 4){
+                digitPlaced = 0;
+            }
+            if (!(i%8 || (((j+1)/2)+4)%16) || !((i+5)%8 || (((j+1)/2)+12)%16) ){ /* Simple City Placement DIGIT 0, DIGIT 1 UPDATE ME */
+                if(rawMap[i][((j+1)/2)]&0x80000000){// If land
+                    hasSettlement = 1;
+                    cityDetails[settlementNumber] = rawMap[i][(j+1)/2] & 0xFFFF;
+                }
+                if ((j%2) && hasSettlement){
+                    fprintf(regionFile, "%d", (settlementNumber/1000)%10);
+                    digitPlaced += 1;
+                }
+            }
+            else if (hasSettlement){/* Simple City Placement DIGIT 3 */
+                if(digitPlaced == 1){
+                    fprintf(regionFile, "%d", (settlementNumber/100)%10);
+                    digitPlaced += 1;
+                }
+                else if(digitPlaced == 2){
+                    fprintf(regionFile, "%d", (settlementNumber/10)%10);
+                    digitPlaced += 1;
+                }
+                else{
+                    fprintf(regionFile, "%d", (settlementNumber%10));
+                    digitPlaced = 0;
+                    settlementNumber +=1;
+                    hasSettlement = 0;
+                }
+            }
+
+            if ((j%2)&&(digitPlaced<=0)){
                 if ((rawMap[i][j/2]&0x80000000)&&(rawMap[i][j]&0x2)){/* Mountain */
                     fprintf(regionFile, "%s","Δ");
                 }
@@ -706,13 +740,24 @@ int regionGen(char * filename){
                     fprintf(regionFile, "%s","▓");
                 }
             }
-            else{
+            else if (digitPlaced<=0){
                 fprintf(regionFile, "%s"," ");
             }
         }
         fprintf(regionFile, "\n");
     }
-    printf("Closing file...\n");
+    printf("Finishing World Map...\n");
+#if 0
     fclose(regionFile);
+    printf("Generating Settlements...");
+    for (int i = 0; i < settlementNumber; ++i){
+        regionFile = fopen(filename, "a+");
+        fprintf(regionFile, "SETTLEMENT %04d\n",i);
+        fclose(regionFile);
+        printf("SETTLEMENT %04d\n", i);
+        settlementGen(filename, rand()%100, cityDetails[i]);
+    }
+#endif
+    printf("Finished Generating World...\n");
     return 0;
 }

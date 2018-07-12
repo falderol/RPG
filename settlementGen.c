@@ -55,7 +55,7 @@ void settlementCommandReminder(){
 }
 
 void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
-	FILE * townFile = fopen(filename, "w");
+	FILE * townFile = fopen("tempTown.txt", "w");
 	/*srand(time(NULL); Replace with windows and linux specific funtion if you keep here */
 	char townFileName[128];
 	strcpy(townFileName, filename);
@@ -162,7 +162,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 		}
 	}
 	else {
-		population = (rand()%7+1)*settlementSize + rand()%(settlementSize*5);
+		population = (rand()%7+1)*settlementSize + rand()%(settlementSize*5+1);
 		if (settlementSize <= 1){
 			population = 0;
 			fprintf(townFile, "The Abandoned %s of ", rand()%4 ? "Village" : "Town");
@@ -251,162 +251,162 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	}
 	int currentShopPrinting = 0;
 	for (int i = 0; i < numAE; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 0, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 0, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numALC; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 1, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 1, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numARC; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 2, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 2, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numBAK; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 3, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 3, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numBRB; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 4, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 4, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numBLK; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 5, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 5, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numBOK; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 6, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 6, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numBCH; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 7, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 7, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numFLC; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 8, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 8, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numGEN; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 9, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 9, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numLEA; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 10, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 10, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numMUS; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 11, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 11, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numTLR; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 12, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 12, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numTVN; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 13, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 13, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numSRN; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 14, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 14, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
 	for (int i = 0; i < numJWL; ++i){
-		townFile = fopen(filename, "a+");
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile, "BUILDING %02d\n", currentShopPrinting);
 		fclose(townFile);
 		++currentShopPrinting;
-		shopGen(filename, 15, flags);
-		townFile = fopen(filename, "a+");
+		shopGen("tempTown.txt", 15, flags);
+		townFile = fopen("tempTown.txt", "a+");
 		fprintf(townFile,"\n\n");
 		fclose(townFile);
 	}
@@ -423,15 +423,8 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 			map[i][j] = ' ';
 		}
 	}
-	char* token;
-	char mapFilename[64];
-	for (int i = 0; i < 64; ++i){
-		mapFilename[i] = '\0';
-	}
-	token = strtok(filename,".");
-	strcpy(mapFilename, token);
-	strcat(mapFilename,"Map.txt");
-	FILE * townMapFile = fopen(mapFilename, "w");
+	
+	FILE * townMapFile = fopen("tempSettleMap.txt", "w");
 	/* Make Border */
 	for (int i = 0; i < mapHeight; ++i){
 		for (int j = 0; j < mapWidth; ++j){
@@ -1632,14 +1625,14 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 	fclose(townMapFile);
 	printf("Map has been generated\n");
 	/* Open two files to be merged */
-	townMapFile = fopen(mapFilename, "r");
-	townFile = fopen(townFileName, "r");
+	townMapFile = fopen("tempTown.txt", "r");
+	townFile = fopen("tempSettleMap.txt", "r");
 	
 	/* Open file to store the result */
-	printf("Town stored at: %s\nMap stored at: %s\n",townFileName, mapFilename);
-	strcat(token,"Settlement.txt");
-	printf("Combined stored at: %s\n",token);
-	FILE *fullFile = fopen(token, "w");
+	//printf("Town stored at: %s\nMap stored at: %s\n",townFileName, mapFilename);
+	//strcat(token,"Settlement.txt");
+	//printf("Combined stored at: %s\n",token);
+	FILE *fullFile = fopen(filename, "a+");
 	char c;
  
 	if (townFile == NULL || townMapFile == NULL || fullFile == NULL)
