@@ -148,7 +148,7 @@ int regionGen(char * filename){
             for (int j = 0; j < REGION_WIDTH; ++j){
                 if (!(rand()%4) && (rawMap[i][j] == 0)){
                     switch(rand()%4){
-                        case 0: //North
+                        case 0: /* North */
                             if (i==0){
                                 overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 rawMapMask[i][j] = (rawMap[i][overBorderLoc] & (0xA<<16)) ? rawMap[i][overBorderLoc]  ^ (0xA<<16) : rawMap[i][overBorderLoc];
@@ -160,7 +160,7 @@ int regionGen(char * filename){
                                 ++tileAmount;
                             }
                             break;
-                        case 1: //South
+                        case 1: /* South */
                             if (i==REGION_HEIGHT-1){
                                 overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 rawMapMask[i][j] = (rawMap[i][overBorderLoc] & (0xA<<16)) ? rawMap[i][overBorderLoc]  ^ (0xA<<16) : rawMap[i][overBorderLoc];
@@ -172,7 +172,7 @@ int regionGen(char * filename){
                                 ++tileAmount;
                             }
                             break;
-                        case 2: //East
+                        case 2: /* East */
                             if (j==REGION_WIDTH-1){
                                 rawMapMask[i][j] = rawMap[i][0];
                             }
@@ -183,7 +183,7 @@ int regionGen(char * filename){
                                 ++tileAmount;
                             }
                             break;
-                        case 3: //West
+                        case 3: /* West */
                             if (j==0){
                                 rawMapMask[i][j] = rawMap[i][REGION_WIDTH-1];
                             }
@@ -438,7 +438,7 @@ int regionGen(char * filename){
                         }
                     }
                     switch(landBias){
-                        case 0: //North
+                        case 0: /* North */
                             if (i==0){
                                 overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 rawMapMask[i][overBorderLoc] |= 0x80000000;
@@ -447,7 +447,7 @@ int regionGen(char * filename){
                                 rawMapMask[i-1][j] |= 0x80000000;
                             }
                             break;
-                        case 1: //South
+                        case 1: /* South */
                             if (i==REGION_HEIGHT-1){
                                 overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 rawMapMask[i][overBorderLoc] = 0x80000000;
@@ -456,7 +456,7 @@ int regionGen(char * filename){
                                 rawMapMask[i+1][j] |= 0x80000000;
                             }
                             break;
-                        case 2: //East
+                        case 2: /* East */
                             if (j==REGION_WIDTH-1){
                                 rawMapMask[i][0] |= 0x80000000;
                             }
@@ -464,7 +464,7 @@ int regionGen(char * filename){
                                 rawMapMask[i][j+1] |= 0x80000000;
                             }
                             break;
-                        case 3: //West
+                        case 3: /* West */
                             if (j==0){
                                 rawMapMask[i][REGION_WIDTH-1] |= 0x80000000;
                             }
@@ -739,11 +739,12 @@ int regionGen(char * filename){
     uint16_t cityDetails[2048];
     for (int i = 0; i < REGION_HEIGHT; ++i){
         for (int j = 0; j < REGION_WIDTH*2; ++j){
+            /* Possibly replace with three digits of Hex, sould lost one less tile */
             if (digitPlaced >= 4){
                 digitPlaced = 0;
             }
             if (!(i%8 || (((j+1)/2)+4)%16) || !((i+5)%8 || (((j+1)/2)+12)%16) ){ /* Simple City Placement DIGIT 0, DIGIT 1 UPDATE ME */
-                if(rawMap[i][((j+1)/2)]&0x80000000){// If land
+                if(rawMap[i][((j+1)/2)]&0x80000000){/* If land */
                     hasSettlement = 1;
                     cityDetails[settlementNumber] = rawMap[i][(j+1)/2] & 0xFFFF;
                 }
