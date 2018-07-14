@@ -15,6 +15,7 @@ void regionCommandReminder(){
 /**********************************************************************/
 /* GENERAL                                                            */
 /* One tile will be 1 sq mile                                         */
+/* This whole thing is lazily written and needs to be fixed           */
 /**********************************************************************/
 /* CITIES                                                             */
 /* Go through the array of the map, in hex pattern place cities every */
@@ -149,7 +150,7 @@ int regionGen(char * filename){
                     switch(rand()%4){
                         case 0: //North
                             if (i==0){
-                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 rawMapMask[i][j] = (rawMap[i][overBorderLoc] & (0xA<<16)) ? rawMap[i][overBorderLoc]  ^ (0xA<<16) : rawMap[i][overBorderLoc];
                             }
                             else {
@@ -161,7 +162,7 @@ int regionGen(char * filename){
                             break;
                         case 1: //South
                             if (i==REGION_HEIGHT-1){
-                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 rawMapMask[i][j] = (rawMap[i][overBorderLoc] & (0xA<<16)) ? rawMap[i][overBorderLoc]  ^ (0xA<<16) : rawMap[i][overBorderLoc];
                             }
                             else {
@@ -439,7 +440,7 @@ int regionGen(char * filename){
                     switch(landBias){
                         case 0: //North
                             if (i==0){
-                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 rawMapMask[i][overBorderLoc] |= 0x80000000;
                             }
                             else {
@@ -448,7 +449,7 @@ int regionGen(char * filename){
                             break;
                         case 1: //South
                             if (i==REGION_HEIGHT-1){
-                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 rawMapMask[i][overBorderLoc] = 0x80000000;
                             }
                             else {
@@ -495,7 +496,7 @@ int regionGen(char * filename){
                     switch(rand()%4){
                         case 0: /* North */
                             if (i==0){
-                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 if((rawMap[i][overBorderLoc] & 0x2) != 0){
                                     rawMapMask[i][j] |= 0x80000000 & rawMap[i][overBorderLoc];
                                 }
@@ -515,7 +516,7 @@ int regionGen(char * filename){
 
                         case 1: /* South  */
                             if (i==REGION_HEIGHT-1){
-                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 if((rawMap[i][overBorderLoc] & 0x8) != 0){
                                     rawMapMask[i][j] |= 0x80000000 & rawMap[i][overBorderLoc];
                                 }
@@ -606,7 +607,7 @@ int regionGen(char * filename){
                     switch(rand()%4){
                         case 0: /* North */
                             if (i==0){
-                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 if((rawMap[i][overBorderLoc] & 0x2) != 0){
                                     rawMapMask[i][j] |= 0x2 & rawMap[i][overBorderLoc];
                                 }
@@ -626,7 +627,7 @@ int regionGen(char * filename){
 
                         case 1: /* South  */
                             if (i==REGION_HEIGHT-1){
-                                overBorderLoc = (j-REGION_HEIGHT/2 > 0) ? j-REGION_HEIGHT/2 : j+REGION_HEIGHT/2;
+                                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
                                 if((rawMap[i][overBorderLoc] & 0x8) != 0){
                                     rawMapMask[i][j] |= 0x2 & rawMap[i][overBorderLoc];
                                 }
@@ -691,6 +692,45 @@ int regionGen(char * filename){
             }
         }
     }
+    /**********************************************************************/
+    /* Set coast tiles                                                    */
+    /**********************************************************************/
+    for (int i = 0; i < REGION_HEIGHT; ++i){
+        for (int j = 0; j < REGION_WIDTH; ++j){
+            if (i == 0){
+                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
+                if((!(rawMap[i][overBorderLoc] & 0x80000000) || !(rawMap[i+1][j] & 0x80000000) || !(rawMap[i][j+1] & 0x80000000) || !(rawMap[i][j-1] & 0x80000000) || !(rawMap[i+1][j+1] & 0x80000000) || !(rawMap[i][overBorderLoc + 1] & 0x80000000) || !(rawMap[i+1][j-1] & 0x80000000) || !(rawMap[i][overBorderLoc - 1] & 0x80000000)) 
+                   && (rawMap[i][j] & 0x80000000)){
+                    rawMap[i][j] |= 1;
+                }
+            }
+            if (i == REGION_HEIGHT-1){
+                overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
+                if((!(rawMap[i][overBorderLoc] & 0x80000000) || !(rawMap[i-1][j] & 0x80000000) || !(rawMap[i][j+1] & 0x80000000) || !(rawMap[i][j-1] & 0x80000000) || !(rawMap[i-1][j+1] & 0x80000000) || !(rawMap[i][overBorderLoc + 1] & 0x80000000) || !(rawMap[i-1][j-1] & 0x80000000) || !(rawMap[i][overBorderLoc - 1] & 0x80000000)) 
+                   && (rawMap[i][j] & 0x80000000)){
+                    rawMap[i][j] |= 1;
+                }
+            }
+            else if (j == 0){
+                if((!(rawMap[i+1][j] & 0x80000000) || !(rawMap[i-1][j] & 0x80000000) || !(rawMap[i][j+1] & 0x80000000) || !(rawMap[i][REGION_WIDTH-1] & 0x80000000) || !(rawMap[i+1][j+1] & 0x80000000) || !(rawMap[i-1][j+1] & 0x80000000) || !(rawMap[i+1][REGION_WIDTH-1] & 0x80000000) || !(rawMap[i-1][REGION_WIDTH-1] & 0x80000000)) 
+                   && (rawMap[i][j] & 0x80000000)){
+                    rawMap[i][j] |= 1;
+                }
+            }
+            else if (j == REGION_WIDTH-1){
+                if((!(rawMap[i+1][j] & 0x80000000) || !(rawMap[i-1][j] & 0x80000000) || !(rawMap[i][0] & 0x80000000) || !(rawMap[i][j-1] & 0x80000000) || !(rawMap[i+1][0] & 0x80000000) || !(rawMap[i-1][0] & 0x80000000) || !(rawMap[i+1][j-1] & 0x80000000) || !(rawMap[i-1][j-1] & 0x80000000)) 
+                   && (rawMap[i][j] & 0x80000000)){
+                    rawMap[i][j] |= 1;
+                }
+            }
+            else{
+               if((!(rawMap[i+1][j] & 0x80000000) || !(rawMap[i-1][j] & 0x80000000) || !(rawMap[i+1][j+1] & 0x80000000) || !(rawMap[i-1][j+1] & 0x80000000) || !(rawMap[i+1][j-1] & 0x80000000) || !(rawMap[i-1][j-1] & 0x80000000) || !(rawMap[i][j+1] & 0x80000000) || !(rawMap[i][j-1] & 0x80000000)) 
+               && (rawMap[i][j] & 0x80000000)){
+                    rawMap[i][j] |= 1;
+                } 
+            }
+        }
+    }
     /********/
     /* Temp */
     uint16_t settlementNumber = 0;
@@ -730,8 +770,11 @@ int regionGen(char * filename){
             }
 
             if ((j%2)&&(digitPlaced<=0)){
-                if ((rawMap[i][j/2]&0x80000000)&&(rawMap[i][j]&0x2)){/* Mountain */
+                if ((rawMap[i][j/2]&0x80000000)&&(rawMap[i][j/2]&0x2)){/* Mountain */
                     fprintf(regionFile, "%s","Δ");
+                }
+                else if ((rawMap[i][j/2]&0x80000000)&&(rawMap[i][j/2]&0x1)){/* Coast */
+                    fprintf(regionFile, "%s","#");
                 }
                 else if (rawMap[i][j/2]&0x80000000){ /* Default Land */
                     fprintf(regionFile, "%s","~");
@@ -748,6 +791,11 @@ int regionGen(char * filename){
     }
     printf("Finishing World Map...\n");
 #if 0
+    /* Alternitively make a list of seeds for the srand(). If we call the same */
+    /* seed we always get the same result with all our rands. This can be used */
+    /* to generate a queried settlement on demand, and have it always be the   */
+    /* same. We would also need to include pop and flags                       */
+    /* 8 bit for pop, 16 for flags, 32 for random seed                         */ 
     fclose(regionFile);
     printf("Generating Settlements...");
     for (int i = 0; i < settlementNumber; ++i){
