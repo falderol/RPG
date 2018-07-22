@@ -71,7 +71,10 @@ Each symbol on the map represents a 1 mile x 1 mile square.
 |Symbol| Meaning
 |:-:|:-----------:|
 | ▓ | Water       |
-| ~ | Plains      |
+| ± | Savanna     |
+| ~ | Prairie     |
+| † | Tagia       |
+| ʭ | Tundra      |
 | Δ | Mountain    |
 
 # Simple Compile and Run
