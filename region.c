@@ -403,15 +403,26 @@ int regionGen(char * filename){
     }
     printf("Placing land seed...\n");
     uint8_t landSeedAmount = 8 + rand()%4;
+    uint8_t numMisses;
     uint16_t dispersalRange = 64;
     for (int i = 0; i < landSeedAmount; ++i){
         randXgroup = (rand()%(REGION_WIDTH-dispersalRange*2))+dispersalRange;
         randYgroup = (rand()%(REGION_HEIGHT-dispersalRange*2))+dispersalRange;
-        loopAmount = rand()%8 + 8;
+        loopAmount = rand()%16 + 16;
+        numMisses = 0;
         for (int j = 0; j < loopAmount; ++j){
             randX = randYgroup + rand()%dispersalRange - dispersalRange/2;
             randY = randXgroup + rand()%dispersalRange - dispersalRange/2;
-            rawMap[randY][randX] |= 0x80000000;
+            if (rawMap[randX][randY] & 0x2){
+                rawMap[randY][randX] |= 0x80000000;
+            }
+            else {
+                ++numMisses;
+                if(numMisses == loopAmount){
+                    --i;
+                    break;
+                }
+            }
         }
 
 
