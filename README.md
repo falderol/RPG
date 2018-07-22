@@ -64,6 +64,16 @@ This is the section i am currently working on in my free time. It involves the m
 
 You will see a section of code that autogenerates all of the settlements in this region that is being generated. I recomend that your do not use this. It tends to create a text file that is about 750 MiB in size. Instead generate the settlements using `.\test autoSettlementGen <filename.txt> <flags>` where the flags are what you see for the location on the map. Alternatively use `.\test settlementGen <filename.txt> <size> <flags>` if you want to determine the size of the settlement. Trust me, your players will not get to all of the 1000+ settlements that are normaly generated. If you insist on making the full thing you can uncomment and compile the code yourself. I want you to have a little idea what you are doing before you do it.
 
+### Key
+
+Each symbol on the map represents a 1 mile x 1 mile square.
+
+|Symbol| Meaning
+|:-:|:-----------:|
+| ▓ | Water       |
+| ~ | Plains      |
+| Δ | Mountain    |
+
 # Simple Compile and Run
 ## Compile
 On systems without make
