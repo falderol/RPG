@@ -5,6 +5,7 @@
 
 #include "settlementGen.h"
 #include "flagDefines.h"
+#include "mapKey.h"
 
 #define REGION_WIDTH 512
 #define REGION_HEIGHT 512
@@ -108,7 +109,7 @@ void regionCommandReminder(){
 /*                                                                    */
 /**********************************************************************/
 int regionGen(char * filename){
-    printf ("Storing region in %s\n", filename);
+    printf ("Storing Region in %s\n", filename);
     FILE * regionFile;
     regionFile = fopen(filename, "w+");
     uint32_t rawMap[REGION_HEIGHT][REGION_WIDTH];
@@ -121,7 +122,7 @@ int regionGen(char * filename){
     uint16_t randXgroup;
     uint16_t randYgroup;
     uint32_t loopAmount;
-    printf("Randomly placing plates...\n");
+    printf("Randomly Placing Plates...\n");
     for (int i = 0; i < plateAmount; ++i){
         randX = rand()%REGION_WIDTH;
         randY = rand()%REGION_HEIGHT;
@@ -231,7 +232,7 @@ int regionGen(char * filename){
 /*       |    Dry    |    Mid    |     Wet    | Very Wet              */
 /* ------|-----------|-----------|------------|----------             */
 /* Artic | Tundra    | Tundra    | Tundra     | Tundra                */
-/*  Cold | Tagia     | Tagia     | Tagia      | Bog                   */
+/*  Cold | Tagia     | Tagia     | Forest     | Bog                   */
 /*   Mid | Shrubland | Prairie   | Forest     | Swamp                 */
 /*   Hot | Desert    | Savanna   | Rainforest | Mangrove              */
 /*                                                                    */
@@ -401,7 +402,7 @@ int regionGen(char * filename){
         }
     }
     //#if 0
-    printf("Placing land seed...\n");
+    printf("Placing Land Seed...\n");
     uint8_t landSeedAmount = 8 + rand()%4;
     uint16_t dispersalRange = 64;
     uint16_t numMisses;
@@ -429,7 +430,7 @@ int regionGen(char * filename){
 
 
     }
-    printf ("Blobbing land...\n");
+    printf ("Blobbing Land...\n");
     uint16_t landLoopAmount = 256 + rand()%64;
     for (int h = 0; h < landLoopAmount; ++h){
         memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
@@ -708,7 +709,7 @@ int regionGen(char * filename){
     /**********************************************************************/
     /* Set random lakes                                                   */
     /**********************************************************************/
-    printf("Adding some random lakes...\n");
+    printf("Adding Random Lakes...\n");
     for (int i = 0; i < (REGION_HEIGHT*REGION_WIDTH)/1024; ++i){
         rawMap[rand()%REGION_HEIGHT][rand()%REGION_WIDTH] &= 0x7FFFFFFF;
     }
@@ -774,7 +775,7 @@ int regionGen(char * filename){
     /**********************************************************************/
     /* Set coast tiles                                                    */
     /**********************************************************************/
-    printf("Marking costal files...\n");
+    printf("Marking Coastal Tiles...\n");
     for (int i = 0; i < REGION_HEIGHT; ++i){
         for (int j = 0; j < REGION_WIDTH; ++j){
             if (i == 0){
@@ -816,7 +817,7 @@ int regionGen(char * filename){
     /**********************************************************************/
     /* Basic way to set temperatures                                      */
     /**********************************************************************/
-    printf("Determining temperatures...\n");
+    printf("Determining Temperatures...\n");
     for (int i = 0; i < REGION_HEIGHT; ++i){
         for (int j = 0; j < REGION_HEIGHT; ++j){
             if ((i <= REGION_HEIGHT/8)|| (i > (REGION_HEIGHT/8) * 7)){
@@ -838,7 +839,7 @@ int regionGen(char * filename){
                     rawMap[i][j] |= FLAG_TEMP_TEMPERATE;
                 }
             }
-            else if ((i <= (REGION_HEIGHT/8)*3) || (i > (REGION_HEIGHT/8) * 5 - REGION_HEIGHT/64)){
+            else if ((i <= (REGION_HEIGHT/8)*3 + REGION_HEIGHT/32) || (i > (REGION_HEIGHT/8) * 5 - REGION_HEIGHT/32)){
                 if(rawMap[i][j]&FLAG_MOUNTAIN){/* If mountain colder */
                     rawMap[i][j] |= FLAG_TEMP_SUBARTIC;
                 }
@@ -846,7 +847,7 @@ int regionGen(char * filename){
                     rawMap[i][j] |= FLAG_TEMP_TEMPERATE;
                 }
             }
-            else if (i <= (REGION_HEIGHT/8)*5+REGION_HEIGHT/64){/* If mountain colder */
+            else if (i <= (REGION_HEIGHT/8)*5-REGION_HEIGHT/32){/* If mountain colder */
                 if(rawMap[i][j]&FLAG_MOUNTAIN){
                     rawMap[i][j] |= FLAG_TEMP_TEMPERATE;
                 }
@@ -931,15 +932,83 @@ int regionGen(char * filename){
     /**********************************************************************/
     /* Set initial moisture                                               */
     /**********************************************************************/
-    printf("Setting initial moisture...\n");
+    printf("Setting Moistness...\n");
     for (int i = 0; i < REGION_HEIGHT; ++i){
         for (int j = 0; j < REGION_WIDTH; ++j){
             if (!(rawMap[i][j] & FLAG_LAND)){
-                rawMap[i][j] |= 0x300000; /* Set moisture to four */
+                rawMap[i][j] |= FLAG_MOIST_VERYWET;
             }
         }
     }
-    //#endif
+    loopAmount = 64;
+    uint8_t surroundingMoisture;
+    uint8_t currentMoisture;
+    for (int h = 0; h < loopAmount; ++h){
+        memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
+        for (int i = 1; i < REGION_HEIGHT-1; ++i){ /* put in edge handling */
+            for (int j = 1; j < REGION_WIDTH-1; ++j){ /* put in edge handling */
+                surroundingMoisture = (((rawMap[i-1][j]&FLAG_MOIST_VERYWET)>>20) + ((rawMap[i+1][j]&FLAG_MOIST_VERYWET)>>20) + ((rawMap[i][j-1]&FLAG_MOIST_VERYWET)>>20) + ((rawMap[i][j+1]&FLAG_MOIST_VERYWET)>>20));
+                currentMoisture = (rawMap[i][j]&FLAG_MOIST_VERYWET)>>20;
+                if ((surroundingMoisture > 0) && (surroundingMoisture <= 4) && !(rand()%4) && (currentMoisture < FLAG_MOIST_MID>>20) && !(rawMap[i][j]&FLAG_MOUNTAIN)){
+                    rawMapMask[i][j] |= FLAG_MOIST_MID;
+                }
+                else {
+                    rawMapMask[i][j] |= rawMap[i][j];
+                }        
+            }
+        }
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                rawMap[i][j] &= (0xFFFFFFFF ^ FLAG_MOIST_VERYWET);
+                rawMap[i][j] |= rawMapMask[i][j];
+            }
+        }
+    }
+    loopAmount = loopAmount/3;
+    for (int h = 0; h < loopAmount; ++h){
+        memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
+        for (int i = 1; i < REGION_HEIGHT-1; ++i){ /* put in edge handling */
+            for (int j = 1; j < REGION_WIDTH-1; ++j){ /* put in edge handling */
+                surroundingMoisture = (((rawMap[i-1][j]&FLAG_MOIST_VERYWET)>>20) + ((rawMap[i+1][j]&FLAG_MOIST_VERYWET)>>20) + ((rawMap[i][j-1]&FLAG_MOIST_VERYWET)>>20) + ((rawMap[i][j+1]&FLAG_MOIST_VERYWET)>>20));
+                currentMoisture = (rawMap[i][j]&FLAG_MOIST_VERYWET)>>20;
+                if ((surroundingMoisture > 4) && (surroundingMoisture <= 8) && !(rand()%3) && (currentMoisture < FLAG_MOIST_WET>>20) && !(rawMap[i][j]&FLAG_MOUNTAIN)){
+                    rawMapMask[i][j] |= FLAG_MOIST_WET;
+                }
+                
+                else {
+                    rawMapMask[i][j] |= rawMap[i][j];
+                }        
+            }
+        }
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                rawMap[i][j] &= (0xFFFFFFFF ^ FLAG_MOIST_VERYWET);
+                rawMap[i][j] |= rawMapMask[i][j];
+            }
+        }
+    }
+    loopAmount = loopAmount/2;
+    for (int h = 0; h < loopAmount; ++h){
+        memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
+        for (int i = 1; i < REGION_HEIGHT-1; ++i){ /* put in edge handling */
+            for (int j = 1; j < REGION_WIDTH-1; ++j){ /* put in edge handling */
+                surroundingMoisture = (((rawMap[i-1][j]&FLAG_MOIST_VERYWET)>>20) + ((rawMap[i+1][j]&FLAG_MOIST_VERYWET)>>20) + ((rawMap[i][j-1]&FLAG_MOIST_VERYWET)>>20) + ((rawMap[i][j+1]&FLAG_MOIST_VERYWET)>>20));
+                currentMoisture = (rawMap[i][j]&FLAG_MOIST_VERYWET)>>20;
+                if ((surroundingMoisture > 8) && !(rand()%8) && !(rawMap[i][j]&FLAG_MOUNTAIN)){
+                    rawMapMask[i][j] |= FLAG_MOIST_VERYWET;
+                }
+                else {
+                    rawMapMask[i][j] |= rawMap[i][j];
+                }        
+            }
+        }
+        for (int i = 0; i < REGION_HEIGHT; ++i){
+            for (int j = 0; j < REGION_WIDTH; ++j){
+                rawMap[i][j] &= (0xFFFFFFFF ^ FLAG_MOIST_VERYWET);
+                rawMap[i][j] |= rawMapMask[i][j];
+            }
+        }
+    }
     /********/
     /* Temp */
     uint16_t settlementNumber = 0;
@@ -981,24 +1050,54 @@ int regionGen(char * filename){
 
             if ((j%2)&&(digitPlaced<=0)){
                 if ((rawMap[i][j/2]&FLAG_LAND)&&(rawMap[i][j/2]&FLAG_MOUNTAIN)){/* Mountain */
-                    fprintf(regionFile, "%s","Δ");
+                    fprintf(regionFile, "%s",MOUNTAIN);
                 }
                 else if (rawMap[i][j/2]&FLAG_LAND){ /* Default Land */
                     if ((rawMap[i][j/2]&FLAG_TEMP_TROPICAL) == FLAG_TEMP_TROPICAL){ /* Tropical Temperatures */
-                        fprintf(regionFile, "%s","±");
+                        if((rawMap[i][j/2]&FLAG_MOIST_VERYWET) == FLAG_MOIST_VERYWET){ /* Mangrove */
+                            fprintf(regionFile, "%s",MANGROVE);
+                        }
+                        else if (rawMap[i][j/2]&FLAG_MOIST_WET){ /* Rainforest */
+                            fprintf(regionFile, "%s",RAINFOREST);
+                        }
+                        else if (rawMap[i][j/2]&FLAG_MOIST_MID){ /* SAVANNA */
+                            fprintf(regionFile, "%s",SAVANNA);
+                        }
+                        else { /* Desert */
+                            fprintf(regionFile, "%s",DESERT);
+                        }
                     }
                     else if (rawMap[i][j/2]&FLAG_TEMP_TEMPERATE){ /* Temperate Temperatures */
-                        fprintf(regionFile, "%s","~");
+                        if((rawMap[i][j/2]&FLAG_MOIST_VERYWET) == FLAG_MOIST_VERYWET){ /* Swamp */
+                            fprintf(regionFile, "%s",SWAMP);
+                        }
+                        else if (rawMap[i][j/2]&FLAG_MOIST_WET){ /* Forest */
+                            fprintf(regionFile, "%s",FOREST);
+                        }
+                        else if (rawMap[i][j/2]&FLAG_MOIST_MID){ /* Prairie */
+                            fprintf(regionFile, "%s",PRAIRIE);
+                        }
+                        else { /* Shrubland */
+                            fprintf(regionFile, "%s",SHRUBLAND);
+                        }
                     }
                     else if (rawMap[i][j/2]&FLAG_TEMP_SUBARTIC){ /* Subartic Temperatures */
-                        fprintf(regionFile, "%s","†");
+                        if((rawMap[i][j/2]&FLAG_MOIST_VERYWET) == FLAG_MOIST_VERYWET){/* Bog */
+                            fprintf(regionFile, "%s",BOG);
+                        }
+                        else if (rawMap[i][j/2]&FLAG_MOIST_WET){ /* Forest */
+                            fprintf(regionFile, "%s",FOREST);
+                        }
+                        else {
+                            fprintf(regionFile, "%s",TAGIA); /* Tagia */
+                        }
                     }
                     else { /* Artic Temperatures */
-                        fprintf(regionFile, "%s","ʭ");
+                        fprintf(regionFile, "%s",TUNDRA); /* Tundra */
                     }
                 }
                 else{ /* Water */
-                    fprintf(regionFile, "%s","▓");
+                    fprintf(regionFile, "%s",WATER);
                 }
             }
             else if (digitPlaced<=0){
@@ -1007,6 +1106,22 @@ int regionGen(char * filename){
         }
         fprintf(regionFile, "\n");
     }
+    fprintf(regionFile, "\nKEY\n");
+    fprintf(regionFile, "    BIOME    | SYMBOL\n");
+    fprintf(regionFile, "-------------|-------\n");
+    fprintf(regionFile, "       WATER |    %s\n", WATER);
+    fprintf(regionFile, "    MOUNTAIN |    %s\n", MOUNTAIN);
+    fprintf(regionFile, "      TUNDRA |    %s\n", TUNDRA);
+    fprintf(regionFile, "       TAGIA |    %s\n", TAGIA);
+    fprintf(regionFile, "         BOG |    %s\n", BOG);
+    fprintf(regionFile, "   SHRUBLAND |    %s\n", SHRUBLAND);
+    fprintf(regionFile, "     PRAIRIE |    %s\n", PRAIRIE);
+    fprintf(regionFile, "      FOREST |    %s\n", FOREST);
+    fprintf(regionFile, "       SWAMP |    %s\n", SWAMP);
+    fprintf(regionFile, "      DESERT |    %s\n", DESERT);
+    fprintf(regionFile, "     SAVANNA |    %s\n", SAVANNA);
+    fprintf(regionFile, "  RAINFOREST |    %s\n", RAINFOREST);
+    fprintf(regionFile, "    MANGROVE |    %s\n", MANGROVE);
     printf("Finishing World Map...\n");
 #if 0
     /* Alternitively make a list of seeds for the srand(). If we call the same */
