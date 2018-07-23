@@ -71,11 +71,19 @@ Each symbol on the map represents a 1 mile x 1 mile square.
 |Symbol| Meaning
 |:-:|:-----------:|
 | ▓ | Water       |
-| ± | Savanna     |
-| ~ | Prairie     |
-| † | Tagia       |
-| ʭ | Tundra      |
 | Δ | Mountain    |
+| ʭ | Tundra      |
+| † | Tagia       |
+| φ | Bog         |
+| ɷ | Shrubland   |
+| ~ | Prairie     |
+| Ŧ | Forest      |
+| Ψ | Swamp       |
+|   | Desert      |
+| ± | Savanna     |
+| ‡ | Rainforest  |
+| ʎ | Mangrove    |
+
 
 # Simple Compile and Run
 ## Compile
