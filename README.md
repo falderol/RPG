@@ -60,7 +60,7 @@ Each symbol on the map represents a 5 foot x 5 foot square, or one tile.
 
 ## Region Gen
 
-This is the section i am currently working on in my free time. It involves the most fine tunning in a desperate attempt to make a world that always feels right.
+`.\test regionGen <filename.txt>`
 
 You will see a section of code that autogenerates all of the settlements in this region that is being generated. I recomend that your do not use this. It tends to create a text file that is about 750 MiB in size. Instead generate the settlements using `.\test autoSettlementGen <filename.txt> <flags>` where the flags are what you see for the location on the map. Alternatively use `.\test settlementGen <filename.txt> <size> <flags>` if you want to determine the size of the settlement. Trust me, your players will not get to all of the 1000+ settlements that are normaly generated. If you insist on making the full thing you can uncomment and compile the code yourself. I want you to have a little idea what you are doing before you do it.
 
@@ -103,7 +103,7 @@ The map is about 7168x6640 if you want to convert it from its .txt form to an im
 ### Linux
 You might have to change the imagemagik policy settings.
 
-`sudo convert -size 6144x6656 xc:white -font "Unifont" -pointsize 12 -fill black -annotate +15+15 "@filename.txt" filename.png`
+`sudo convert -size 6152x6664 xc:white -font "Unifont" -pointsize 12 -fill black -annotate +15+15 "@filename.txt" filename.png`
 
 Don't have Unifont? Download it here http://www.unifoundry.com/unifont.html
 
