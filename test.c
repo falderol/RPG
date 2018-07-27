@@ -4,11 +4,11 @@
 #include <string.h>
 #include <time.h>
 
-#include "settlementGen.h"
-#include "shopGen.h"
-#include "convertFromCp.h"
-#include "nameGen.h"
-#include "region.h"
+#include "WorldGen/settlementGen.h"
+#include "WorldGen/shopGen.h"
+#include "RPGutilities/convertFromCp.h"
+#include "WorldGen/nameGen.h"
+#include "WorldGen/region.h"
 
 /************************************************/
 /* How to format shopgen command                */

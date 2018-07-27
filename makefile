@@ -1,27 +1,14 @@
-# I need to fix this eventualy. Still a bit new to makefiles, havent had to make
-# many myself. If i'm honest this is one i found somewhere that i've been 
-# dragging with me.
-TARGET = nameGen convertFromCp utilities itoa shopGen settlementGen test regionGen
-LIBS = -lm
-CC = gcc
-CFLAGS = -g -Wall
+#Simple Makefile
 
-.PHONY: default all clean
-
-default: $(TARGET)
-all: default
-
-OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c))
-HEADERS = $(wildcard *.h)
-
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-.PRECIOUS: $(TARGET) $(OBJECTS)
-
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -Wall $(LIBS) -o $@
+all:
+	cd RPGutilities; make all
+	cd Utilities; make all
+	cd WorldGen; make all
+	gcc -Wall RPGutilities/convertFromCp.o Utilities/itoa.o Utilities/utilities.o WorldGen/nameGen.o WorldGen/shopGen.o WorldGen/settlementGen.o WorldGen/region.o test.c -o test
 
 clean:
+	cd RPGutilities; make clean
+	cd Utilities; make clean
+	cd WorldGen; make clean
 	-rm -f *.o
-	-rm -f $(TARGET)
+

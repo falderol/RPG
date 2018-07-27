@@ -63,7 +63,7 @@ Each symbol on the map represents a 5 foot x 5 foot square, or one tile.
 |:-:|:-----------:|
 | . | Empty Space |
 | H | Road        |
-| ▓ | Water       |
+| W | Water       |
 
 ## Region Gen
 
