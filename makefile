@@ -8,8 +8,8 @@ obj = $(src:.c=.o)
 CC = gcc
 FLAGS = -Wall
 
-all: $(obj)
-	$(CC) -o $@ $^ $(FLAGS)
+test: $(obj)
+	$(CC) $(FLAGS) -o $@ $^
 
 .PHONY: clean
 clean:
