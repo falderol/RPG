@@ -13,6 +13,8 @@ Alot of this stuff is poorly written. I'm sorry. Sometimes i will go back and ma
   6. convertFromCP.c - A piece of code that converts copper pieces into other currencies.
   7. region.c - A piece of code that generates a world.
 ## Demagus True Reference
+This is the reference document that started it all. Honestly it is a whole lot more useful than this code. This stuff this code automates is just a section of it. But yeah, it is a logically orginized reference that contains a bunch of useful information. Everything from material properties and price to common hazards. Recommended amount of enemies in an encounter to food dishes and their prices. Check it out. Let me know if i got something wrong or there is something you belive i need to add.
+
 
 ## General
 ### Flags
