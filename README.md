@@ -105,7 +105,7 @@ Each symbol on the map represents a 1 mile x 1 mile square.
 
 On systems with make
 
-`make all`
+`make test`
 
 ## Run
 `.\test <command name> <command arguments>`
