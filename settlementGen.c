@@ -11,6 +11,10 @@
 #include "nameGen.h"
 #include "flagDefines.h"
 
+#define RIVER '▓'
+#define ROAD 'H'
+#define EMPTY '.'
+
 /************************************************/
 /* How to format shopgen command                */
 /*shopGen(<FILENAME>,<SHOPNUM>,<FLAGS>);        */
@@ -525,42 +529,42 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 				startY = 2;
 				while((startX < mapWidth-8)&&(startX > 7)&&(startY <= mapHeight-3)&&(startY >= 2)){
 					if((riverRoad)||(hasRiver>3)){/* road */
-						map[startY][startX] = 'H';
-						map[startY][startX-2] = 'H';
-						map[startY][startX+2] = 'H';
-						map[startY+1][startX] = 'H';
-						map[startY+1][startX-2] = 'H';
-						map[startY+1][startX+2] = 'H';
-						map[startY-1][startX] = 'H';
-						map[startY-1][startX-2] = 'H';
-						map[startY-1][startX+2] = 'H';
+						map[startY][startX] = ROAD;
+						map[startY][startX-2] = ROAD;
+						map[startY][startX+2] = ROAD;
+						map[startY+1][startX] = ROAD;
+						map[startY+1][startX-2] = ROAD;
+						map[startY+1][startX+2] = ROAD;
+						map[startY-1][startX] = ROAD;
+						map[startY-1][startX-2] = ROAD;
+						map[startY-1][startX+2] = ROAD;
 						
 					}
 					else{/* river */
-						if((startY+2<mapHeight)? (map[startY+2][startX] != 'W') : 1 ){
-							map[startY][startX] = 'W';
-							map[startY][startX-2] = 'W';
-							map[startY][startX+2] = 'W';
-							map[startY+1][startX] = 'W';
-							map[startY+1][startX-2] = 'W';
-							map[startY+1][startX+2] = 'W';
-							map[startY-1][startX] = 'W';
-							map[startY-1][startX-2] = 'W';
-							map[startY-1][startX+2] = 'W';
+						if((startY+2<mapHeight)? (map[startY+2][startX] != RIVER) : 1 ){
+							map[startY][startX] = RIVER;
+							map[startY][startX-2] = RIVER;
+							map[startY][startX+2] = RIVER;
+							map[startY+1][startX] = RIVER;
+							map[startY+1][startX-2] = RIVER;
+							map[startY+1][startX+2] = RIVER;
+							map[startY-1][startX] = RIVER;
+							map[startY-1][startX-2] = RIVER;
+							map[startY-1][startX+2] = RIVER;
 						}
 						else {
-							map[startY][startX] = 'W';
-							map[startY][startX-2] = 'W';
-							map[startY][startX+2] = 'W';
-							map[startY+1][startX] = 'W';
-							map[startY+1][startX-2] = 'W';
-							map[startY+1][startX+2] = 'W';
-							map[startY-1][startX] = 'W';
-							map[startY-1][startX-2] = 'W';
-							map[startY-1][startX+2] = 'W';
-							map[startY+2][startX] = 'W';
-							map[startY+2][startX-2] = 'W';
-							map[startY+2][startX+2] = 'W';
+							map[startY][startX] = RIVER;
+							map[startY][startX-2] = RIVER;
+							map[startY][startX+2] = RIVER;
+							map[startY+1][startX] = RIVER;
+							map[startY+1][startX-2] = RIVER;
+							map[startY+1][startX+2] = RIVER;
+							map[startY-1][startX] = RIVER;
+							map[startY-1][startX-2] = RIVER;
+							map[startY-1][startX+2] = RIVER;
+							map[startY+2][startX] = RIVER;
+							map[startY+2][startX-2] = RIVER;
+							map[startY+2][startX+2] = RIVER;
 							break;
 						}
 					}
@@ -587,42 +591,42 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 				startY = mapHeight-3;
 				while((startX <= mapWidth-4)&&(startX >= 3)&&(startY <= mapHeight-3)&&(startY >= 2)){
 					if((riverRoad)||(hasRiver>3)){/* road */
-						map[startY][startX] = 'H';
-						map[startY][startX-2] = 'H';
-						map[startY][startX+2] = 'H';
-						map[startY+1][startX] = 'H';
-						map[startY+1][startX-2] = 'H';
-						map[startY+1][startX+2] = 'H';
-						map[startY-1][startX] = 'H';
-						map[startY-1][startX-2] = 'H';
-						map[startY-1][startX+2] = 'H';
+						map[startY][startX] = ROAD;
+						map[startY][startX-2] = ROAD;
+						map[startY][startX+2] = ROAD;
+						map[startY+1][startX] = ROAD;
+						map[startY+1][startX-2] = ROAD;
+						map[startY+1][startX+2] = ROAD;
+						map[startY-1][startX] = ROAD;
+						map[startY-1][startX-2] = ROAD;
+						map[startY-1][startX+2] = ROAD;
 						
 					}
 					else{/* river */
-						if((startY-2>0)? (map[startY-2][startX] != 'W') : 1 ){
-							map[startY][startX] = 'W';
-							map[startY][startX-2] = 'W';
-							map[startY][startX+2] = 'W';
-							map[startY+1][startX] = 'W';
-							map[startY+1][startX-2] = 'W';
-							map[startY+1][startX+2] = 'W';
-							map[startY-1][startX] = 'W';
-							map[startY-1][startX-2] = 'W';
-							map[startY-1][startX+2] = 'W';
+						if((startY-2>0)? (map[startY-2][startX] != RIVER) : 1 ){
+							map[startY][startX] = RIVER;
+							map[startY][startX-2] = RIVER;
+							map[startY][startX+2] = RIVER;
+							map[startY+1][startX] = RIVER;
+							map[startY+1][startX-2] = RIVER;
+							map[startY+1][startX+2] = RIVER;
+							map[startY-1][startX] = RIVER;
+							map[startY-1][startX-2] = RIVER;
+							map[startY-1][startX+2] = RIVER;
 						}
 						else {
-							map[startY][startX] = 'W';
-							map[startY][startX-2] = 'W';
-							map[startY][startX+2] = 'W';
-							map[startY+1][startX] = 'W';
-							map[startY+1][startX-2] = 'W';
-							map[startY+1][startX+2] = 'W';
-							map[startY-1][startX] = 'W';
-							map[startY-1][startX-2] = 'W';
-							map[startY-1][startX+2] = 'W';
-							map[startY-2][startX] = 'W';
-							map[startY-2][startX-2] = 'W';
-							map[startY-2][startX+2] = 'W';
+							map[startY][startX] = RIVER;
+							map[startY][startX-2] = RIVER;
+							map[startY][startX+2] = RIVER;
+							map[startY+1][startX] = RIVER;
+							map[startY+1][startX-2] = RIVER;
+							map[startY+1][startX+2] = RIVER;
+							map[startY-1][startX] = RIVER;
+							map[startY-1][startX-2] = RIVER;
+							map[startY-1][startX+2] = RIVER;
+							map[startY-2][startX] = RIVER;
+							map[startY-2][startX-2] = RIVER;
+							map[startY-2][startX+2] = RIVER;
 							
 							break;
 						}
@@ -650,42 +654,42 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 				startY = rand()%(mapHeight/2)+(mapHeight/4);
 				while((startX <= mapWidth-4)&&(startX >= 3)&&(startY <= mapHeight-3)&&(startY >= 2)){
 					if((riverRoad)||(hasRiver>3)){/* road */
-						map[startY][startX] = 'H';
-						map[startY][startX-2] = 'H';
-						map[startY][startX+2] = 'H';
-						map[startY+1][startX] = 'H';
-						map[startY+1][startX-2] = 'H';
-						map[startY+1][startX+2] = 'H';
-						map[startY-1][startX] = 'H';
-						map[startY-1][startX-2] = 'H';
-						map[startY-1][startX+2] = 'H';
+						map[startY][startX] = ROAD;
+						map[startY][startX-2] = ROAD;
+						map[startY][startX+2] = ROAD;
+						map[startY+1][startX] = ROAD;
+						map[startY+1][startX-2] = ROAD;
+						map[startY+1][startX+2] = ROAD;
+						map[startY-1][startX] = ROAD;
+						map[startY-1][startX-2] = ROAD;
+						map[startY-1][startX+2] = ROAD;
 						
 					}
 					else{/* river */
-						if((startX+4>0)? (map[startY][startX+4] != 'W') : 1 ){
-							map[startY][startX] = 'W';
-							map[startY][startX-2] = 'W';
-							map[startY][startX+2] = 'W';
-							map[startY+1][startX] = 'W';
-							map[startY+1][startX-2] = 'W';
-							map[startY+1][startX+2] = 'W';
-							map[startY-1][startX] = 'W';
-							map[startY-1][startX-2] = 'W';
-							map[startY-1][startX+2] = 'W';
+						if((startX+4>0)? (map[startY][startX+4] != RIVER) : 1 ){
+							map[startY][startX] = RIVER;
+							map[startY][startX-2] = RIVER;
+							map[startY][startX+2] = RIVER;
+							map[startY+1][startX] = RIVER;
+							map[startY+1][startX-2] = RIVER;
+							map[startY+1][startX+2] = RIVER;
+							map[startY-1][startX] = RIVER;
+							map[startY-1][startX-2] = RIVER;
+							map[startY-1][startX+2] = RIVER;
 						}
 						else {
-							map[startY][startX] = 'W';
-							map[startY][startX-2] = 'W';
-							map[startY][startX+2] = 'W';
-							map[startY+1][startX] = 'W';
-							map[startY+1][startX-2] = 'W';
-							map[startY+1][startX+2] = 'W';
-							map[startY-1][startX] = 'W';
-							map[startY-1][startX-2] = 'W';
-							map[startY-1][startX+2] = 'W';
-							map[startY+1][startX+4] = 'W';
-							map[startY][startX+4] = 'W';
-							map[startY-1][startX+4] = 'W';
+							map[startY][startX] = RIVER;
+							map[startY][startX-2] = RIVER;
+							map[startY][startX+2] = RIVER;
+							map[startY+1][startX] = RIVER;
+							map[startY+1][startX-2] = RIVER;
+							map[startY+1][startX+2] = RIVER;
+							map[startY-1][startX] = RIVER;
+							map[startY-1][startX-2] = RIVER;
+							map[startY-1][startX+2] = RIVER;
+							map[startY+1][startX+4] = RIVER;
+							map[startY][startX+4] = RIVER;
+							map[startY-1][startX+4] = RIVER;
 							break;
 						}
 					}
@@ -711,42 +715,42 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 				startY = rand()%(mapHeight/2)+(mapHeight/4);
 				while((startX <= mapWidth-4)&&(startX >= 3)&&(startY <= mapHeight-3)&&(startY >= 2)){
 					if((riverRoad)||(hasRiver>3)){/* road */
-						map[startY][startX] = 'H';
-						map[startY][startX-2] = 'H';
-						map[startY][startX+2] = 'H';
-						map[startY+1][startX] = 'H';
-						map[startY+1][startX-2] = 'H';
-						map[startY+1][startX+2] = 'H';
-						map[startY-1][startX] = 'H';
-						map[startY-1][startX-2] = 'H';
-						map[startY-1][startX+2] = 'H';
+						map[startY][startX] = ROAD;
+						map[startY][startX-2] = ROAD;
+						map[startY][startX+2] = ROAD;
+						map[startY+1][startX] = ROAD;
+						map[startY+1][startX-2] = ROAD;
+						map[startY+1][startX+2] = ROAD;
+						map[startY-1][startX] = ROAD;
+						map[startY-1][startX-2] = ROAD;
+						map[startY-1][startX+2] = ROAD;
 						
 					}
 					else{/* river */
-						if((startX-4<mapWidth)? (map[startY][startX-4] != 'W') : 1 ){
-							map[startY][startX] = 'W';
-							map[startY][startX-2] = 'W';
-							map[startY][startX+2] = 'W';
-							map[startY+1][startX] = 'W';
-							map[startY+1][startX-2] = 'W';
-							map[startY+1][startX+2] = 'W';
-							map[startY-1][startX] = 'W';
-							map[startY-1][startX-2] = 'W';
-							map[startY-1][startX+2] = 'W';
+						if((startX-4<mapWidth)? (map[startY][startX-4] != RIVER) : 1 ){
+							map[startY][startX] = RIVER;
+							map[startY][startX-2] = RIVER;
+							map[startY][startX+2] = RIVER;
+							map[startY+1][startX] = RIVER;
+							map[startY+1][startX-2] = RIVER;
+							map[startY+1][startX+2] = RIVER;
+							map[startY-1][startX] = RIVER;
+							map[startY-1][startX-2] = RIVER;
+							map[startY-1][startX+2] = RIVER;
 						}
 						else {
-							map[startY][startX] = 'W';
-							map[startY][startX-2] = 'W';
-							map[startY][startX+2] = 'W';
-							map[startY+1][startX] = 'W';
-							map[startY+1][startX-2] = 'W';
-							map[startY+1][startX+2] = 'W';
-							map[startY-1][startX] = 'W';
-							map[startY-1][startX-2] = 'W';
-							map[startY-1][startX+2] = 'W';
-							map[startY+1][startX-4] = 'W';
-							map[startY][startX-4] = 'W';
-							map[startY-1][startX-4] = 'W';
+							map[startY][startX] = RIVER;
+							map[startY][startX-2] = RIVER;
+							map[startY][startX+2] = RIVER;
+							map[startY+1][startX] = RIVER;
+							map[startY+1][startX-2] = RIVER;
+							map[startY+1][startX+2] = RIVER;
+							map[startY-1][startX] = RIVER;
+							map[startY-1][startX-2] = RIVER;
+							map[startY-1][startX+2] = RIVER;
+							map[startY+1][startX-4] = RIVER;
+							map[startY][startX-4] = RIVER;
+							map[startY-1][startX-4] = RIVER;
 							break;
 						}
 					}
@@ -1608,7 +1612,7 @@ void settlementGen(char * filename, uint8_t settlementSize, uint16_t flags ){
 			}
 			if (!inside){
 				if ((map[i][j] == ' ')&&(j%2)){
-					map[i][j] = '.';
+					map[i][j] = EMPTY;
 				}
 			}
 		}
