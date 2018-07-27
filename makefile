@@ -13,4 +13,4 @@ test: $(obj)
 
 .PHONY: clean
 clean:
-	rm -f $(obj) all
+	rm -f $(obj) test
