@@ -116,7 +116,7 @@ int regionGen(char * filename){
     memset(rawMap, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
     uint32_t rawMapMask[REGION_HEIGHT][REGION_WIDTH];
     memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
-    uint8_t plateAmount = 16+rand()%16;
+    uint8_t plateAmount = 20+rand()%10;
     uint16_t randY;
     uint16_t randX;
     uint16_t randXgroup;
@@ -403,7 +403,7 @@ int regionGen(char * filename){
     }
     //#if 0
     printf("Placing Land Seed...\n");
-    uint8_t landSeedAmount = 8 + rand()%4;
+    uint8_t landSeedAmount = 12 + rand()%8;
     uint16_t dispersalRange = 64;
     uint16_t numMisses;
     uint16_t toManyFails = dispersalRange*dispersalRange*2; /* Good change to try every tile in the 64 before it fails*/
@@ -431,12 +431,12 @@ int regionGen(char * filename){
 
     }
     printf ("Blobbing Land...\n");
-    uint16_t landLoopAmount = 256 + rand()%64;
+    uint16_t landLoopAmount = 640 + rand()%64;
     for (int h = 0; h < landLoopAmount; ++h){
         memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
         for (int i = 0; i < REGION_HEIGHT; ++i){
             for (int j = 0; j < REGION_WIDTH; ++j){
-                if (!(rand()%4) && (rawMap[i][j] & FLAG_LAND)){
+                if (!(rand()%10) && (rawMap[i][j] & FLAG_LAND)){
                     uint8_t landBias;
                     landBias = rand()%6;
                     if (landBias > 3){
@@ -505,7 +505,7 @@ int regionGen(char * filename){
         memset(rawMapMask, '\0', sizeof(uint32_t)*REGION_WIDTH*REGION_HEIGHT);
         for (int i = 0; i < REGION_HEIGHT; ++i){
             for (int j = 0; j < REGION_WIDTH; ++j){
-                if (!(rand()%4) && !(rawMap[i][j]&FLAG_LAND)){
+                if (!(rand()%8) && !(rawMap[i][j]&FLAG_LAND)){
                     switch(rand()%4){
                         case 0: /* North */
                             if (i==0){
@@ -598,7 +598,7 @@ int regionGen(char * filename){
         /**********************************************************************/
         for (int i = 0; i < REGION_HEIGHT; ++i){
             for (int j = 0; j < REGION_WIDTH; ++j){
-                if((rawMap[i][j]&FLAG_MOUNTAIN)&&!(rand()%1024)){
+                if((rawMap[i][j]&FLAG_MOUNTAIN)&&!(rand()%2048)){
                     rawMap[i][j] |= (FLAG_LAND + FLAG_COASTAL);
                 }
                 if (!(rand()%((REGION_WIDTH*REGION_HEIGHT)/2))){
@@ -861,11 +861,11 @@ int regionGen(char * filename){
             }
         }
     }
-    loopAmount = 4;
+    loopAmount = 16;
     for (int h = 0; h < loopAmount; ++h){
         for (int i = 1; i < REGION_HEIGHT-1; ++i){
             for (int j = 0; j < REGION_WIDTH; ++j){
-                switch(rand()%4){
+                switch(rand()%16){
                     case 0: /* North */
                         if (i==0){
                             overBorderLoc = (j-REGION_WIDTH/2 > 0) ? j-REGION_WIDTH/2 : j+REGION_WIDTH/2;
