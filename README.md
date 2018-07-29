@@ -24,7 +24,7 @@ test.c - A rough framework for the functions that i am currently working on.
   
   nameGen.c - A rough piece of code with a couple random name generators.
   
-  region.c - A piece of code that generates a world.
+  worldGen.c - A piece of code that generates a world.
 
 ## Demagus True Reference
 This is the reference document that started it all. Honestly it is a whole lot more useful than this code. This stuff this code automates is just a section of it. But yeah, it is a logically orginized reference that contains a bunch of useful information. Everything from material properties and price to common hazards. Recommended amount of enemies in an encounter to food dishes and their prices. Check it out. Let me know if i got something wrong or there is something you belive i need to add.
@@ -83,7 +83,7 @@ Each symbol on the map represents a 5 foot x 5 foot square, or one tile.
 
 ## Region Gen
 
-`.\test regionGen <filename.txt>`
+`.\test worldGen <filename.txt>`
 
 THis piece of code automaticaly generates a world complete with several biomes. The numbers on the map represent settlement locations. You can generate the settlements using `.\test autoSettlementGen <filename.txt> <flags>` where the flags are described in the settlement section. Alternatively use `.\test settlementGen <filename.txt> <size> <flags>` if you want to determine the size of the settlement. 
 

@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-void regionCommandReminder();
-void regionGen();
+void worldCommandReminder();
+void worldGen();
 
 #endif

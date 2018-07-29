@@ -8,7 +8,7 @@
 #include "WorldGen/shopGen.h"
 #include "RPGutilities/convertFromCp.h"
 #include "WorldGen/nameGen.h"
-#include "WorldGen/region.h"
+#include "WorldGen/worldGen.h"
 
 /************************************************/
 /* How to format shopgen command                */
@@ -111,12 +111,12 @@ int main (int argc, char* argv[]){
 		}
 		convertFromCP(atoi(argv[2]), atoi(argv[3]));
 	}
-	else if (!(strcmp("regionGen", argv[1]))){
+	else if (!(strcmp("worldGen", argv[1]))){
 		if(argc != 3){
-			regionCommandReminder();
+			worldCommandReminder();
 			return -1;
 		}
-		regionGen(argv[2]);
+		worldGen(argv[2]);
 	}
 	else{
 		commandReminder();
