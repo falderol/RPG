@@ -1,9 +1,0 @@
-Test Shop
-            Item Name               Low         Mid       High   
-ARMOR                           
-                          Padded      3 gp      5 gp      8 gp
-                         Leather      7 gp      1 pp     15 gp
-                         Studded            OUT OF STOCK         
-                            Hide      7 sp      1 gp     15 gp
-WEAPONS                         
-                            Club      7 cp      1 sp      2 sp

@@ -4,11 +4,11 @@
 #include <string.h>
 #include <time.h>
 
-#include "settlementGen.h"
-#include "shopGen.h"
-#include "convertFromCp.h"
-#include "nameGen.h"
-#include "region.h"
+#include "WorldGen/settlementGen.h"
+#include "WorldGen/shopGen.h"
+#include "RPGutilities/convertFromCp.h"
+#include "WorldGen/nameGen.h"
+#include "WorldGen/region.h"
 
 /************************************************/
 /* How to format shopgen command                */
@@ -34,13 +34,13 @@
 /************************************************/
 /* Flags Guide                                  */
 /*"Bit 00 - Magical                             */
-/*"Bit 01 - Costal                              */
-/*"Bit 02 - Rich                                */
+/*"Bit 01 - Coastal                             */
+/*"Bit 02 - Commerce                            */
 /*"Bit 03 - Exotic                              */
 /*"Bit 04 - Frontier                            */
 /*"Bit 05 - Forest                              */
 /*"Bit 06 - Industrial                          */
-/*"Bit 07 - Mining                              */
+/*"Bit 07 - Mountain                            */
 /*"Bit 08 - Pious                               */
 /*"Bit 09 - Agriculture                         */
 /*"Bit 10 - Rural                               */
@@ -116,7 +116,7 @@ int main (int argc, char* argv[]){
 			regionCommandReminder();
 			return -1;
 		}
-		regionGen(argv[3]);
+		regionGen(argv[2]);
 	}
 	else{
 		commandReminder();
