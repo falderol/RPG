@@ -75,39 +75,48 @@ void worldCommandReminder(){
 /* Bit 0 is the LSB, bit 31 is the MSB                                */
 /*                                                                    */
 /* Bit | Description | Caused By                                      */
-/* ----|-------------|------------------------------------------------*/
-/*  00 | Coastal     | When a water tile meets a land tile            */
+/* ----|-------------|----------------------------------------------- */
+/*  00 | Costal      | When a water tile meets a land tile            */
 /*  01 | Mountain    | Initial plate collisions and surrounding tiles */
 /*  02 | Agriculture | Settlement in Farming Biome                    */
 /*  03 | Forest      | TBD - Something to do with weather             */
+/* ----|-------------|----------------------------------------------- */
 /*  04 | Commerce    | TBD                                            */
 /*  05 | Frontier    | TBD - Something to do with nearby settlements? */
 /*  06 | Industrial  | Resources and Town Level Pop                   */
 /*  07 | Rural       | Settlement with village level pop in 4 tile    */
 /*     |             | radius                                         */
+/* ----|-------------|----------------------------------------------- */
 /*  08 | Urban       | Settlement with city level pop in 4 tile radius*/
 /*  09 | Exotic      | Randomly blobbed on the map                    */
 /*  10 | Pious       | Randomly blobbed                               */
 /*  11 | Magical     | rand is called for 0.01*mapHeigh*mapWidth times*/
+/* ----|-------------|----------------------------------------------- */
 /*  12 | TBD         | unassigned                                     */
 /*  13 | TBD         | unassigned                                     */
 /*  14 | Firearms    | Optional flag if using firearms                */
 /*  15 | Invalid     | Marks the tile as invalid                      */
+/* ----|-------------|----------------------------------------------- */
 /*  16 | West        | Randomly placed initial plate, then blobbed    */
 /*  17 | South       | Randomly placed initial plate, then blobbed    */
 /*  18 | East        | Randomly placed initial plate, then blobbed    */
 /*  19 | North       | Randomly placed initial plate, then blobbed    */
+/* ----|-------------|----------------------------------------------- */
 /*  20 | Moisture    | Dry, Mid, Wet, invalid                         */
 /*  21 | Moisture    |                                                */
 /*  22 | Temperature | Tropical, temperate, subartic, artic           */
-/*  24 | Temperature |                                                */
-/*  25 | Height      | Below, at, above, invalid                      */
-/*  26 | Height      |                                                */
+/*  23 | Temperature |                                                */
+/* ----|-------------|----------------------------------------------- */
+/*  24 | Height      | Below, at, above, invalid                      */
+/*  25 | Height      |                                                */
+/*  26 | TBD         | unassigned                                     */
 /*  27 | TBD         | unassigned                                     */
-/*  28 | TBD         | unassigned                                     */
+/* ----|-------------|----------------------------------------------- */
+/*  29 | TBD         | unassigned                                     */
 /*  28 | TBD         | unassigned                                     */
 /*  30 | TBD         | unassigned                                     */
 /*  31 | Land        | Initialy from plate collisions, then blobbed   */
+/* ----|-------------|----------------------------------------------- */
 /*                                                                    */
 /**********************************************************************/
 void worldGen(char * filename){
@@ -124,7 +133,7 @@ void worldGen(char * filename){
     uint16_t randXgroup;
     uint16_t randYgroup;
     uint32_t loopAmount;
-    printf("Randomly Placing Plates...\n");
+    printf("Randomly Seeding Plates\n");
     for (int i = 0; i < plateAmount; ++i){
         randX = rand()%WORLD_WIDTH;
         randY = rand()%WORLD_HEIGHT;
@@ -135,13 +144,14 @@ void worldGen(char * filename){
             --i;
         }
     }
+    
 
     /**************************************/
     /* Initial Plate Construction         */
     /* Make plates moving in one of the   */
     /* four cardinal directions.          */
     /**************************************/
-    printf("Blobbing Plates...\n");
+    printf("Blobbing Plates\n");
     uint32_t tileAmount = 0;
     uint16_t overBorderLoc = 0;
     while (tileAmount < (WORLD_HEIGHT * WORLD_WIDTH)-plateAmount){
@@ -206,6 +216,7 @@ void worldGen(char * filename){
             }
         }
     }
+    
 /**********************************************************************/
 /* PLATES                                                             */
 /* Standard Construction                                              */
@@ -267,7 +278,7 @@ void worldGen(char * filename){
 /* I hate to do this but it looks better                              */
 /**********************************************************************/
     
-    printf("Placing Initial Mountains...\n");
+    printf("Placing Initial Mountains\n");
     for(int i = 0; i < WORLD_HEIGHT; ++i){
         for(int j = 0; j < WORLD_WIDTH; ++j){
             switch(rawMap[i][j]>>16){
@@ -403,8 +414,8 @@ void worldGen(char * filename){
             }
         }
     }
-    //#if 0
-    printf("Placing Land Seed...\n");
+    
+    printf("Placing Land Seed\n");
     uint8_t landSeedAmount = 12 + rand()%8;
     uint16_t dispersalRange = 64;
     uint16_t numMisses;
@@ -432,7 +443,8 @@ void worldGen(char * filename){
 
 
     }
-    printf ("Blobbing Land...\n");
+    
+    printf ("Blobbing Land\n");
     uint16_t landLoopAmount = 640 + rand()%64;
     for (int h = 0; h < landLoopAmount; ++h){
         memset(rawMapMask, '\0', sizeof(uint32_t)*WORLD_WIDTH*WORLD_HEIGHT);
@@ -498,7 +510,8 @@ void worldGen(char * filename){
             }
         }
     }
-    printf("Fuzifying Coastal Areas...\n");
+    
+    printf("Fuzifying Coastal Areas\n");
     /**********************************************************************/
     /* Fuzzy Coast                                                        */
     /**********************************************************************/
@@ -609,11 +622,11 @@ void worldGen(char * filename){
             }
         }
     }
-
+    
     /**********************************************************************/
     /* Increase Mountains                                                 */
     /**********************************************************************/
-    printf("Enlarging Mountains...\n");
+    printf("Enlarging Mountains\n");
     loopAmount = 16 + rand()%4;
     for (int loop = 0; loop < loopAmount; ++loop){
         memset(rawMapMask, '\0', sizeof(uint32_t)*WORLD_WIDTH*WORLD_HEIGHT);
@@ -708,10 +721,11 @@ void worldGen(char * filename){
             }
         }
     }
+    
     /**********************************************************************/
     /* Set random lakes                                                   */
     /**********************************************************************/
-    printf("Adding Random Lakes...\n");
+    printf("Adding Random Lakes\n");
     for (int i = 0; i < (WORLD_HEIGHT*WORLD_WIDTH)/1024; ++i){
         rawMap[rand()%WORLD_HEIGHT][rand()%WORLD_WIDTH] &= 0x7FFFFFFF;
     }
@@ -774,10 +788,11 @@ void worldGen(char * filename){
             }
         }
     }
+    
     /**********************************************************************/
     /* Set coast tiles                                                    */
     /**********************************************************************/
-    printf("Marking Coastal Tiles...\n");
+    printf("Marking Coastal Tiles\n");
     for (int i = 0; i < WORLD_HEIGHT; ++i){
         for (int j = 0; j < WORLD_WIDTH; ++j){
             if (i == 0){
@@ -814,12 +829,11 @@ void worldGen(char * filename){
             }
         }
     }
+    
     /**********************************************************************/
     /* Set initial temperature                                            */
     /**********************************************************************/
-    /* Basic way to set temperatures                                      */
-    /**********************************************************************/
-    printf("Determining Temperatures...\n");
+    printf("Determining Temperatures\n");
     for (int i = 0; i < WORLD_HEIGHT; ++i){
         for (int j = 0; j < WORLD_HEIGHT; ++j){
             if ((i <= WORLD_HEIGHT/8)|| (i > (WORLD_HEIGHT/8) * 7)){
@@ -930,11 +944,12 @@ void worldGen(char * filename){
             }
         }
     }
+    
     /* Smooth out temperatures with a little bit of randomness */
     /**********************************************************************/
     /* Set initial moisture                                               */
     /**********************************************************************/
-    printf("Setting Moistness...\n");
+    printf("Setting Moistness\n");
     for (int i = 0; i < WORLD_HEIGHT; ++i){
         for (int j = 0; j < WORLD_WIDTH; ++j){
             if (!(rawMap[i][j] & FLAG_LAND)){
@@ -1011,8 +1026,36 @@ void worldGen(char * filename){
             }
         }
     }
-    /********/
-    /* Temp */
+    
+    /*****************************/
+    /* Add flags                 */
+    printf("Seeding Flags\n");
+    for (int i = 1; i < WORLD_HEIGHT-1; ++i){
+        for (int j = 1; j < WORLD_WIDTH-1; ++j){
+            /* Set Forested Flag */
+            rawMap[i][j] |= (((rawMap[i][j] & FLAG_MOIST_VERYWET) == FLAG_MOIST_WET) && (!(rawMap[i][j] & FLAG_TEMP_TROPICAL))) ? FLAG_FOREST : 0;
+            rawMap[i][j] |= (((rawMap[i][j] & FLAG_MOIST_VERYWET) == FLAG_MOIST_VERYWET) && ((rawMap[i][j] & FLAG_TEMP_TROPICAL) == FLAG_TEMP_TROPICAL)) ? FLAG_FOREST : 0;
+            /* Set Agriculture Flag */
+            rawMap[i][j] |= (((rawMap[i][j] & FLAG_MOIST_VERYWET) == FLAG_MOIST_DRY) && ((rawMap[i][j] & FLAG_TEMP_TROPICAL) == FLAG_TEMP_TEMPERATE)) ? FLAG_AGRICULTURE : 0;
+            rawMap[i][j] |= (((rawMap[i][j] & FLAG_MOIST_VERYWET) == FLAG_MOIST_MID) && ((rawMap[i][j] & FLAG_TEMP_TROPICAL) == FLAG_TEMP_TEMPERATE)) ? FLAG_AGRICULTURE : 0;
+            rawMap[i][j] |= (((rawMap[i][j] & FLAG_MOIST_VERYWET) == FLAG_MOIST_MID) && ((rawMap[i][j] & FLAG_TEMP_TROPICAL) == FLAG_TEMP_TROPICAL)) ? FLAG_AGRICULTURE : 0;
+            rawMap[i][j] |= (!(rand()%4) && ((rawMap[i][j] & FLAG_MOIST_VERYWET) == FLAG_MOIST_VERYWET) && ((rawMap[i][j] & FLAG_TEMP_TROPICAL) == FLAG_TEMP_TEMPERATE)) ? FLAG_AGRICULTURE : 0;
+            /* Set Frontier Flag */
+            rawMap[i][j] |= ((rawMap[i][j] & FLAG_TEMP_TROPICAL) == FLAG_TEMP_SUBARTIC) ? FLAG_FRONTIER : 0;
+            rawMap[i][j] |= ((rawMap[i][j] & FLAG_TEMP_TROPICAL) == FLAG_TEMP_ARTIC) ? FLAG_FRONTIER : 0;
+            /* Set Commerce Flag */
+            rawMap[i][j] |= (((rawMap[i][j] & FLAG_COASTAL) && !(rand()%8)) || !(rand()%128)) ? FLAG_COMMERCE: 0;
+            /* Seed Magical Flag */
+            rawMap[i][j] |= (!(rand()%128)) ? FLAG_MAGICAL : 0;
+            rawMap[i][j] |= (!(rand()%128) && (rawMap[i][j]&FLAG_LAND)) ? FLAG_MAGICAL : 0;
+            /* Seed Pious Flag */
+            rawMap[i][j] |= (!(rand()%128) && (rawMap[i][j]&FLAG_LAND)) ? FLAG_PIOUS : 0;
+        }
+    }
+    
+    /************/
+    /* Make Map */
+    printf("Making Map\n");
     uint16_t settlementNumber = 0;
     uint8_t hasSettlement = 0; /* CLEAN THIS UP YOU LAZY PERSON */
     uint8_t digitPlaced = 0;
@@ -1027,14 +1070,14 @@ void worldGen(char * filename){
             if (!(i%8 || (((j+1)/2)+4)%16) || !((i+5)%8 || (((j+1)/2)+12)%16) ){ /* Simple City Placement DIGIT 0, DIGIT 1 UPDATE ME */
                 if(rawMap[i][((j+1)/2)]&FLAG_LAND){/* If land */
                     hasSettlement = 1;
-                    cityDetails[settlementNumber] = rawMap[i][(j+1)/2] & 0xFFFF;
+                    cityDetails[settlementNumber] = rawMap[i][(j+1)/2] & 0xFFFF | rawMap[i][(j+3)/2] & 0xFFFF | rawMap[i][(j-1)/2] & 0xFFFF | rawMap[i+1][(j+1)/2] & 0xFFFF | rawMap[i+1][(j+3)/2] & 0xFFFF | rawMap[i+1][(j-1)/2] & 0xFFFF | rawMap[i-1][(j+1)/2] & 0xFFFF | rawMap[i-1][(j+3)/2] & 0xFFFF | rawMap[i-1][(j-1)/2] & 0xFFFF; /* Flags of all areas withing 1 tile of settlement */
                     /* City Size Calculation */
                     citySizes[settlementNumber] = (rawMap[i][(j+1)/2] & FLAG_TEMP_TROPICAL)>>22;
                     if (citySizes[settlementNumber] == 3){
-                        citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE)*3 + rand()%100 - 10;
+                        citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE)*3 + rand()%105 - 10;
                     }
                     else if (citySizes[settlementNumber] == 2){
-                        citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE)*4 + rand()%100 - 10;
+                        citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE)*3 + rand()%105 - 2;
                     }
                     else if (citySizes[settlementNumber] == 1){
                         citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE)*3 + rand()%100 - 15;
@@ -1146,13 +1189,59 @@ void worldGen(char * filename){
     fprintf(worldFile, "\nSUGGESTED SETTLEMENT FLAGS AND SIZES\n");
     fprintf(worldFile, "\n");
 
+    
+
     for (int i = 0; i < settlementNumber; ++i){
         fprintf(worldFile, "Settlement %d:\n", i); /* Settement Number */
         fprintf(worldFile, "    Size: %d\n", citySizes[i]);
-        fprintf(worldFile, "    Flags: %d\n", cityDetails[i]);
+        if (citySizes[i] >70){
+            cityDetails[i] |= FLAG_URBAN;
+        }
+        else if (citySizes[i] > 0){
+            cityDetails[i] |= FLAG_RURAL;
+        }
+        fprintf(worldFile, "    Flag Num: %d\n", cityDetails[i]);
+        fprintf(worldFile, "    Flags:");
+        if(cityDetails[i] & FLAG_COASTAL){
+            fprintf(worldFile, " Coastal");
+        }
+        if(cityDetails[i] & FLAG_MOUNTAIN){
+            fprintf(worldFile, " Mountain");
+        }
+        if(cityDetails[i] & FLAG_AGRICULTURE){
+            fprintf(worldFile, " Agricultural");
+        }
+        if(cityDetails[i] & FLAG_FOREST){
+            fprintf(worldFile, " Forest");
+        }
+        if(cityDetails[i] & FLAG_COMMERCE){
+            fprintf(worldFile, " Trading");
+        }
+        if(cityDetails[i] & FLAG_FRONTIER){
+            fprintf(worldFile, " Frontier");
+        }
+        if(cityDetails[i] & FLAG_INDUSTRIAL){
+            fprintf(worldFile, " Industrial");
+        }
+        if(cityDetails[i] & FLAG_RURAL){
+            fprintf(worldFile, " Rural");
+        }
+        if(cityDetails[i] & FLAG_URBAN){
+            fprintf(worldFile, " Urban");
+        }
+        if(cityDetails[i] & FLAG_EXOTIC){
+            fprintf(worldFile, " Exotic");
+        }
+        if(cityDetails[i] & FLAG_PIOUS){
+            fprintf(worldFile, " Pious");
+        }
+        if(cityDetails[i] & FLAG_MAGICAL){
+            fprintf(worldFile, " Magical");
+        }
+        fprintf(worldFile, "\n");
     }
 
-    printf("Finishing World Map...\n");
+    printf("Finishing Map\n");
 #if 0
     /* Alternitively make a list of seeds for the srand(). If we call the same */
     /* seed we always get the same result with all our rands. This can be used */
@@ -1169,5 +1258,5 @@ void worldGen(char * filename){
         settlementGen(filename, rand()%100, cityDetails[i]);
     }
 #endif
-    printf("Finished Generating World...\n");
+    printf("Finished Generating World\n");
 }
