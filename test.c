@@ -55,6 +55,7 @@ void commandReminder(){
 	printf("shopnameGen\n");
 	printf("townnameGen\n");
 	printf("convertFromCP <cp value> <currency type>\n");
+	printf("worldGen <filename>\n");
 	printf("\nFor more info on any of these commands type them without any arguments\n");
 }
 

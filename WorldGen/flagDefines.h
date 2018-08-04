@@ -38,6 +38,8 @@
 
 #define FLAG_LAND 0x80000000
 
+#define FLAG_SETTLEMENT_SIZE 0xDD1
+
 #endif
 
 /* Bit | Description | Caused By                                      */

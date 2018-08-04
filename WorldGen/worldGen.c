@@ -7,6 +7,7 @@
 #include "flagDefines.h"
 #include "mapKey.h"
 #include "worldGen.h"
+#include "../Utilities/utilities.h"
 
 #define WORLD_WIDTH 512
 #define WORLD_HEIGHT 512
@@ -1016,6 +1017,7 @@ void worldGen(char * filename){
     uint8_t hasSettlement = 0; /* CLEAN THIS UP YOU LAZY PERSON */
     uint8_t digitPlaced = 0;
     uint16_t cityDetails[2048];
+    int8_t citySizes[2048];
     for (int i = 0; i < WORLD_HEIGHT; ++i){
         for (int j = 0; j < WORLD_WIDTH*2; ++j){
             /* Possibly replace with three digits of Hex, sould lost one less tile */
@@ -1026,6 +1028,23 @@ void worldGen(char * filename){
                 if(rawMap[i][((j+1)/2)]&FLAG_LAND){/* If land */
                     hasSettlement = 1;
                     cityDetails[settlementNumber] = rawMap[i][(j+1)/2] & 0xFFFF;
+                    /* City Size Calculation */
+                    citySizes[settlementNumber] = (rawMap[i][(j+1)/2] & FLAG_TEMP_TROPICAL)>>22;
+                    if (citySizes[settlementNumber] == 3){
+                        citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE)*3 + rand()%100 - 10;
+                    }
+                    else if (citySizes[settlementNumber] == 2){
+                        citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE)*4 + rand()%100 - 10;
+                    }
+                    else if (citySizes[settlementNumber] == 1){
+                        citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE)*3 + rand()%100 - 15;
+                    }
+                    else if (citySizes[settlementNumber] == 0){
+                        citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE) + rand()%100 - 30;
+                    }
+                    else {
+                        citySizes[settlementNumber] = onesCount16(cityDetails[settlementNumber] & FLAG_SETTLEMENT_SIZE) + rand()%100;
+                    }
                 }
                 if ((j%2) && hasSettlement){
                     fprintf(worldFile, "%d", (settlementNumber/1000)%10);
@@ -1123,6 +1142,16 @@ void worldGen(char * filename){
     fprintf(worldFile, "     SAVANNA |    %s\n", SAVANNA);
     fprintf(worldFile, "  RAINFOREST |    %s\n", RAINFOREST);
     fprintf(worldFile, "    MANGROVE |    %s\n", MANGROVE);
+
+    fprintf(worldFile, "\nSUGGESTED SETTLEMENT FLAGS AND SIZES\n");
+    fprintf(worldFile, "\n");
+
+    for (int i = 0; i < settlementNumber; ++i){
+        fprintf(worldFile, "Settlement %d:\n", i); /* Settement Number */
+        fprintf(worldFile, "    Size: %d\n", citySizes[i]);
+        fprintf(worldFile, "    Flags: %d\n", cityDetails[i]);
+    }
+
     printf("Finishing World Map...\n");
 #if 0
     /* Alternitively make a list of seeds for the srand(). If we call the same */
