@@ -32,7 +32,7 @@ This is the reference document that started it all. Honestly it is a whole lot m
 
 ## General
 ### Flags
-Flags are used to be more specific about the area that something is in. I.E. if whatevers using the flags is in a magical frontier forest the flag value would be 49.
+Flags are used to be more specific about the area that something is in. I.E. if whatevers using the flags is in a magical frontier forest the flag value would be 2088.
 
 |**Bit 11**  |**Bit 10**  |**Bit 09**  |**Bit 08**  |**Bit 07**  |**Bit 06**  |
 |:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
