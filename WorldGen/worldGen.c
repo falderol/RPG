@@ -1,3 +1,5 @@
+#include "worldGen.h"
+
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,7 +8,6 @@
 #include "settlementGen.h"
 #include "flagDefines.h"
 #include "mapKey.h"
-#include "worldGen.h"
 #include "../Utilities/utilities.h"
 
 #define WORLD_WIDTH 512
@@ -119,6 +120,7 @@ void worldCommandReminder(){
 /* ----|-------------|----------------------------------------------- */
 /*                                                                    */
 /**********************************************************************/
+
 void worldGen(char * filename){
     printf ("Storing Region in %s\n", filename);
     FILE * worldFile;
@@ -138,7 +140,7 @@ void worldGen(char * filename){
         randX = rand()%WORLD_WIDTH;
         randY = rand()%WORLD_HEIGHT;
         if (rawMap[randY][randX] == 0){
-            rawMap[randY][randX] = (1<<rand()%4)<<16;
+            rawMap[randY][randX] = (1<<rand()%4)<<16; /* Generate one of the plate movement flags at random */
         }
         else{
             --i;
@@ -154,7 +156,7 @@ void worldGen(char * filename){
     printf("Blobbing Plates\n");
     uint32_t tileAmount = 0;
     uint16_t overBorderLoc = 0;
-    while (tileAmount < (WORLD_HEIGHT * WORLD_WIDTH)-plateAmount){
+    while (tileAmount < ((WORLD_HEIGHT * WORLD_WIDTH)-plateAmount-32)){ /* -32 should create a pass in some of the mountain ranges */
         memset(rawMapMask, '\0', sizeof(uint32_t)*WORLD_WIDTH*WORLD_HEIGHT);
         for (int i = 0; i < WORLD_HEIGHT; ++i){
             for (int j = 0; j < WORLD_WIDTH; ++j){
@@ -163,7 +165,7 @@ void worldGen(char * filename){
                         case 0: /* North */
                             if (i==0){
                                 overBorderLoc = (j-WORLD_WIDTH/2 > 0) ? j-WORLD_WIDTH/2 : j+WORLD_WIDTH/2;
-                                rawMapMask[i][j] = (rawMap[i][overBorderLoc] & (FLAG_NORTH + FLAG_SOUTH)) ? rawMap[i][overBorderLoc]  ^ (FLAG_NORTH + FLAG_SOUTH) : rawMap[i][overBorderLoc];
+                                rawMapMask[i][j] = (rawMap[i][overBorderLoc] & (FLAG_NORTH | FLAG_SOUTH)) ? rawMap[i][overBorderLoc]  ^ (FLAG_NORTH | FLAG_SOUTH) : rawMap[i][overBorderLoc];
                             }
                             else {
                                 rawMapMask[i][j] = rawMap[i-1][j];
@@ -175,7 +177,7 @@ void worldGen(char * filename){
                         case 1: /* South */
                             if (i==WORLD_HEIGHT-1){
                                 overBorderLoc = (j-WORLD_WIDTH/2 > 0) ? j-WORLD_WIDTH/2 : j+WORLD_WIDTH/2;
-                                rawMapMask[i][j] = (rawMap[i][overBorderLoc] & (FLAG_NORTH + FLAG_SOUTH)) ? rawMap[i][overBorderLoc]  ^ (FLAG_NORTH + FLAG_SOUTH) : rawMap[i][overBorderLoc];
+                                rawMapMask[i][j] = (rawMap[i][overBorderLoc] & (FLAG_NORTH | FLAG_SOUTH)) ? rawMap[i][overBorderLoc]  ^ (FLAG_NORTH | FLAG_SOUTH) : rawMap[i][overBorderLoc];
                             }
                             else {
                                 rawMapMask[i][j] = rawMap[i+1][j];

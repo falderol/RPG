@@ -4,6 +4,6 @@
 #include <stdint.h>
 
 void worldCommandReminder();
-void worldGen();
+void worldGen(char * filename);
 
 #endif
