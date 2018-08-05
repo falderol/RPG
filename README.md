@@ -127,27 +127,78 @@ On systems with make:
 `make test`
 
 On linux:
+
 `
 gcc    -c -o RPGutilities/convertFromCp.o RPGutilities/convertFromCp.c
+`
+
+`
 gcc    -c -o Utilities/utilities.o Utilities/utilities.c
+`
+
+`
 gcc    -c -o Utilities/itoa.o Utilities/itoa.c
+`
+
+`
 gcc    -c -o WorldGen/nameGen.o WorldGen/nameGen.c
+`
+
+`
 gcc    -c -o WorldGen/settlementGen.o WorldGen/settlementGen.c
+`
+
+`
 gcc    -c -o WorldGen/shopGen.o WorldGen/shopGen.c
+`
+
+`
 gcc    -c -o WorldGen/worldGen.o WorldGen/worldGen.c
+`
+
+`
 gcc    -c -o test.o test.c
+`
+
+`
 gcc -Wall -o test RPGutilities/convertFromCp.o Utilities/utilities.o Utilities/itoa.o WorldGen/worldGen.o WorldGen/nameGen.o WorldGen/settlementGen.o WorldGen/shopGen.o test.o
 `
+
 On windows:
+
 `
 gcc    -c -o RPGutilities/convertFromCp.o RPGutilities/convertFromCp.c
+`
+
+`
 gcc    -c -o Utilities/utilities.o Utilities/utilities.c
+`
+
+`
 gcc    -c -o Utilities/itoa.o Utilities/itoa.c
+`
+
+`
 gcc    -c -o WorldGen/nameGen.o WorldGen/nameGen.c
+`
+
+`
 gcc    -c -o WorldGen/settlementGen.o WorldGen/settlementGen.c
+`
+
+`
 gcc    -c -o WorldGen/shopGen.o WorldGen/shopGen.c
+`
+
+`
 gcc    -c -o WorldGen/worldGen.o WorldGen/worldGen.c -Wl,--stack,4194304
+`
+
+`
 gcc    -c -o test.o test.c
+`
+
+`
 gcc -Wall -o test RPGutilities/convertFromCp.o Utilities/utilities.o Utilities/itoa.o WorldGen/worldGen.o WorldGen/nameGen.o WorldGen/settlementGen.o WorldGen/shopGen.o test.o -Wl,--stack,4194304
 `
 
