@@ -91,6 +91,13 @@ I did write code that automaticaly generates all the settlements. The issue with
 
 What i recomend is to make a fair amount of settlements with the settlementGen tool before, or on the fly during play and just name them the number on the map. It's fairly quick. Either ignore the flags completely, or set them if you city a small bit of bias in the shops. Set the size personally, either keeping in mind the 80 vilages to 19 towns to 1 city ratio, or making them based on what the story or players desire.
 
+Rivers are hard to generate well and harder to show in ascii. Don't have something i am comfertable with yet. When i do i will add them.
+
+On windows this command blows the stack. Add 
+
+-Wl,--stack,4194304
+
+after the compile command.
 ### Key
 
 Each symbol on the map represents a 1 mile x 1 mile square.
@@ -115,9 +122,34 @@ Each symbol on the map represents a 1 mile x 1 mile square.
 # Simple Compile and Run
 ## Compile
 
-On systems with make
+On systems with make:
 
 `make test`
+
+On linux:
+`
+gcc    -c -o RPGutilities/convertFromCp.o RPGutilities/convertFromCp.c
+gcc    -c -o Utilities/utilities.o Utilities/utilities.c
+gcc    -c -o Utilities/itoa.o Utilities/itoa.c
+gcc    -c -o WorldGen/nameGen.o WorldGen/nameGen.c
+gcc    -c -o WorldGen/settlementGen.o WorldGen/settlementGen.c
+gcc    -c -o WorldGen/shopGen.o WorldGen/shopGen.c
+gcc    -c -o WorldGen/worldGen.o WorldGen/worldGen.c
+gcc    -c -o test.o test.c
+gcc -Wall -o test RPGutilities/convertFromCp.o Utilities/utilities.o Utilities/itoa.o WorldGen/worldGen.o WorldGen/nameGen.o WorldGen/settlementGen.o WorldGen/shopGen.o test.o
+`
+On windows:
+`
+gcc    -c -o RPGutilities/convertFromCp.o RPGutilities/convertFromCp.c
+gcc    -c -o Utilities/utilities.o Utilities/utilities.c
+gcc    -c -o Utilities/itoa.o Utilities/itoa.c
+gcc    -c -o WorldGen/nameGen.o WorldGen/nameGen.c
+gcc    -c -o WorldGen/settlementGen.o WorldGen/settlementGen.c
+gcc    -c -o WorldGen/shopGen.o WorldGen/shopGen.c
+gcc    -c -o WorldGen/worldGen.o WorldGen/worldGen.c -Wl,--stack,4194304
+gcc    -c -o test.o test.c
+gcc -Wall -o test RPGutilities/convertFromCp.o Utilities/utilities.o Utilities/itoa.o WorldGen/worldGen.o WorldGen/nameGen.o WorldGen/settlementGen.o WorldGen/shopGen.o test.o -Wl,--stack,4194304
+`
 
 ## Run
 `.\test <command name> <command arguments>`
