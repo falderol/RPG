@@ -222,7 +222,7 @@ I'm trying to make this work on windows an linux. If you run into an issue on ei
 
 I'd love to eventaully put this all on a website. I just need to learn how to do web stuff first.
 
-This code is something i'm working on in my free time, for fun.
+This code is very poorly written. I am in the proccess of fixing it.
 
 Comments or Suggestions? Contact me at:
 
