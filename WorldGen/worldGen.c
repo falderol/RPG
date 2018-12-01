@@ -154,11 +154,18 @@ void worldGen(char * filename){
     printf("Blobbing Plates\n");
     uint32_t tileAmount = 0;
     uint16_t overBorderLoc = 0;
+    uint8_t irregularity = 0;
+    uint16_t count = 0;
     while (tileAmount < (WORLD_HEIGHT * WORLD_WIDTH)-plateAmount){
+        ++count;
         memset(rawMapMask, '\0', sizeof(uint32_t)*WORLD_WIDTH*WORLD_HEIGHT);
         for (int i = 0; i < WORLD_HEIGHT; ++i){
             for (int j = 0; j < WORLD_WIDTH; ++j){
-                if (!(rand()%4) && (rawMap[i][j] == 0)){
+                irregularity = rand()%4;
+                if (count > 0xFF){
+                    irregularity = 0;
+                }
+                if (!(irregularity) && (rawMap[i][j] == 0)){
                     switch(rand()%4){
                         case 0: /* North */
                             if (i==0){
@@ -246,7 +253,7 @@ void worldGen(char * filename){
 /* ------|-----------|-----------|------------|----------             */
 /* Artic | Tundra    | Tundra    | Tundra     | Tundra                */
 /*  Cold | Tagia     | Tagia     | Forest     | Bog                   */
-/*   Mid | Shrubland | Prairie   | Forest     | Swamp                 */
+/*   Mid | Prairie   | Shrubland | Forest     | Swamp                 */
 /*   Hot | Desert    | Savanna   | Rainforest | Mangrove              */
 /*                                                                    */
 /*  Land Type | Unique Symbol | Simple Symbol | UTF-8                 */
@@ -285,64 +292,64 @@ void worldGen(char * filename){
                 case 1 : /* tile is west */
                     if (i == 0){ /* look north */
                         if ((rawMap[i][(j-WORLD_HEIGHT/2 > 0) ? j-WORLD_HEIGHT/2 : j+WORLD_HEIGHT/2]>>19)&1){ /* if north land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look north */
                         if ((rawMap[i-1][j]>>17)&1){ /* if south land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     if (i == WORLD_HEIGHT-1){ /* look south */
                         if ((rawMap[i][(j-WORLD_HEIGHT/2 > 0) ? j-WORLD_HEIGHT/2 : j+WORLD_HEIGHT/2]>>17)&1){ /* if south land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look south */
                         if ((rawMap[i+1][j]>>19)&1){ /* if north land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     if (j == 0){ /* look west */
                         if (!((rawMap[i][WORLD_WIDTH-1]>>16)&1)){ /* if not west land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look west */
                         if (!((rawMap[i][j-1]>>16)&1)){ /* if not west land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     break;
                 case 2: /* tile is south */
                     if (j == WORLD_WIDTH-1){ /* look east */
                         if ((rawMap[i][j+1]>>16)&1){ /* if west land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look east */
                         if ((rawMap[i][j+1]>>16)&1){ /* if west land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     if (i == WORLD_HEIGHT-1){ /* look south */
                         if (!((rawMap[i][(j-WORLD_HEIGHT/2 > 0) ? j-WORLD_HEIGHT/2 : j+WORLD_HEIGHT/2]>>19)&1)){ /* if not north land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look south */
                         if (!((rawMap[i+1][j]>>17)&1)){ /* if not south land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     if (j == 0){ /* look west */
                         if ((rawMap[i][WORLD_WIDTH-1]>>18)&1){ /* if east land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look west */
                         if ((rawMap[i][j-1]>>18)&1){ /* if east land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     break;
@@ -350,64 +357,64 @@ void worldGen(char * filename){
                 case 4: /* tile is east */
                     if (i == 0){ /* look north */
                         if ((rawMap[i][(j-WORLD_HEIGHT/2 > 0) ? j-WORLD_HEIGHT/2 : j+WORLD_HEIGHT/2]>>19)&1){ /* if north land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look north */
                         if ((rawMap[i-1][j]>>17)&1){ /* if south land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     if (i == WORLD_HEIGHT-1){ /* look south */
                         if ((rawMap[i][(j-WORLD_HEIGHT/2 > 0) ? j-WORLD_HEIGHT/2 : j+WORLD_HEIGHT/2]>>17)&1){ /* if south land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look south */
                         if ((rawMap[i+1][j]>>19)&1){ /* if north land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     if (j == WORLD_WIDTH-1){ /* look east */
                         if (!((rawMap[i][0]>>18)&1)){ /* if not east land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look east */
                         if (!((rawMap[i][j+1]>>18)&1)){ /* if not east land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     break;
                 case 8: /* tile is north */
                     if (j == WORLD_WIDTH-1){ /* look east */
                         if ((rawMap[i][j+1]>>16)&1){ /* if west land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look east */
                         if ((rawMap[i][j+1]>>16)&1){ /* if west land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     if (i == 0){ /* look north */
                         if (!((rawMap[i][(j-WORLD_HEIGHT/2 > 0) ? j-WORLD_HEIGHT/2 : j+WORLD_HEIGHT/2]>>17)&1)){ /* if not south land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look north */
                         if (!((rawMap[i-1][j]>>19)&1)){ /* if not north land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     if (j == 0){ /* look west */
                         if ((rawMap[i][WORLD_WIDTH-1]>>18)&1){ /* if east land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     else { /* look west */
                         if ((rawMap[i][j-1]>>18)&1){ /* if east land */
-                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_MID;
+                            rawMap[i][j] |= FLAG_MOUNTAIN + FLAG_MOIST_WET;
                         }
                     }
                     break;
@@ -740,7 +747,6 @@ void worldGen(char * filename){
     loopAmount = 256;
     for (int h = 0; h < loopAmount; ++h){
         for (int i = 1; i < WORLD_HEIGHT-1; ++i){
-            printf("%d\n",i/(WORLD_HEIGHT/6));
             for (int j = 1; j < WORLD_WIDTH-1; ++j){
                 if (rand()%3){
                     switch((i-1)/(WORLD_HEIGHT/6)){
@@ -753,7 +759,7 @@ void worldGen(char * filename){
                                     }
                                     else{
                                         if (((rawMap[i][j]&FLAG_MOIST_VERYWET)>>20)>1){
-                                            rawMapMask[i+1][j-1] = rawMap[i][j]-FLAG_MOIST_MID;
+                                            rawMapMask[i+1][j-1] = rawMap[i][j]-FLAG_MOIST_WET;
                                         }
                                     }
                                 }
@@ -767,7 +773,7 @@ void worldGen(char * filename){
                                     }
                                     else{
                                         if (((rawMap[i][j]&FLAG_MOIST_VERYWET)>>20)>1){
-                                            rawMapMask[i-1][j+1] = rawMap[i][j]-FLAG_MOIST_MID;
+                                            rawMapMask[i-1][j+1] = rawMap[i][j]-FLAG_MOIST_WET;
                                         }
                                     }
                                 }
@@ -781,7 +787,7 @@ void worldGen(char * filename){
                                     }
                                     else{
                                         if (((rawMap[i][j]&FLAG_MOIST_VERYWET)>>20)>1){
-                                            rawMapMask[i+1][j+1] = rawMap[i][j]-FLAG_MOIST_MID;
+                                            rawMapMask[i+1][j+1] = rawMap[i][j]-FLAG_MOIST_WET;
                                         }
                                     }
                                 }
@@ -796,7 +802,7 @@ void worldGen(char * filename){
                                     }
                                     else{
                                         if (((rawMap[i][j]&FLAG_MOIST_VERYWET)>>20)>1){
-                                            rawMapMask[i-1][j-1] = rawMap[i][j]-FLAG_MOIST_MID;
+                                            rawMapMask[i-1][j-1] = rawMap[i][j]-FLAG_MOIST_WET;
                                         }
                                     }
                                 }
@@ -816,10 +822,39 @@ void worldGen(char * filename){
     /* Set random lakes                                                   */
     /**********************************************************************/
     printf("Adding Random Lakes\n");
-    for (int i = 0; i < (WORLD_HEIGHT*WORLD_WIDTH)/1024; ++i){
-        randX = rand()%WORLD_HEIGHT;
-        randY = rand()%WORLD_WIDTH;
-        rawMap[randX][randY] = (rawMap[randX][randY]&(~(FLAG_LAND+FLAG_MOIST_VERYWET))) | FLAG_MOIST_VERYWET;
+    for (int i = 0; i < 2*(WORLD_HEIGHT*WORLD_WIDTH)/1024; ++i){
+        randX = rand()%WORLD_WIDTH;
+        randY = rand()%WORLD_HEIGHT;
+        uint8_t largeLake = rand()%7;
+        uint8_t keepGoing = 1;
+        while (keepGoing){
+            rawMap[randX][randY] = (rawMap[randX][randY]&(~(FLAG_LAND+FLAG_MOIST_VERYWET))) | FLAG_MOIST_VERYWET;
+            switch(largeLake){
+                case 0:
+                    randX +=1;
+                    if (randX >= WORLD_WIDTH){
+                        randX = 0;
+                    }
+                case 1:
+                    randX -=1;
+                    if (randX <= 0){
+                        randX = WORLD_HEIGHT-1;
+                    }
+                case 2:
+                    randY +=1;
+                    if (randY >= WORLD_HEIGHT){
+                        randY = WORLD_HEIGHT-1;
+                    }
+                case 3:
+                    randY -=1;
+                    if (randY<=0){
+                        randY = 0;
+                    }
+                default:
+                    keepGoing = 0;
+                    break;
+            }
+        }
     }
     printf("Further Fuzifying Coast\n");
     loopAmount = 1 + rand()%2;
@@ -1042,7 +1077,7 @@ void worldGen(char * filename){
     /* Set moisture                                                       */
     /**********************************************************************/
     /* FIXME Add Border Handling                                          */
-    loopAmount = 2 + rand()%4;
+    loopAmount = 4 + rand()%2;
     for (int h = 0; h < loopAmount; ++h){
         for (int i = 1; i < WORLD_HEIGHT-1; ++i){
             for (int j = 1; j < WORLD_WIDTH-1; ++j){
@@ -1112,6 +1147,66 @@ void worldGen(char * filename){
                     default:
                         rawMapMask[i][j] = rawMap[i][j];
                         break;
+                }
+            }
+        }
+        for (int i = 1; i < WORLD_HEIGHT-1; ++i){
+            for (int j = 1; j < WORLD_WIDTH-1; ++j){
+                rawMap[i][j] = rawMapMask[i][j];
+            }
+        }
+    }
+    printf("Prairie Reduction\n");
+    loopAmount = 12 +rand()%4;
+    for (int h = 0; h < loopAmount; ++h){
+        for (int i = 1; i < WORLD_HEIGHT-1; ++i){
+            for (int j = 1; j < WORLD_WIDTH-1; ++j){
+                if ((rawMap[i][j]&(FLAG_MOIST_VERYWET|FLAG_TEMP_TROPICAL))==(FLAG_MOIST_DRY|FLAG_TEMP_TEMPERATE)){
+                    switch(rand()%16){
+                        case 0:
+                            if (rawMap[i+1][j]&(FLAG_MOIST_VERYWET)){
+                                rawMapMask[i][j] = (rawMap[i][j]&(~FLAG_MOIST_VERYWET)) + (rawMap[i+1][j]&(FLAG_MOIST_MID)); 
+                            }
+                            break;
+                        case 1:
+                            if (rawMap[i+1][j+1]&(FLAG_MOIST_VERYWET)){
+                                rawMapMask[i][j] = (rawMap[i][j]&(~FLAG_MOIST_VERYWET)) + (rawMap[i+1][j+1]&(FLAG_MOIST_MID)); 
+                            }
+                            break;
+                        case 2:
+                            if (rawMap[i+1][j-1]&(FLAG_MOIST_VERYWET)){
+                                rawMapMask[i][j] = (rawMap[i][j]&(~FLAG_MOIST_VERYWET)) + (rawMap[i+1][j-1]&(FLAG_MOIST_MID)); 
+                            }
+                            break;
+                        case 3:
+                            if (rawMap[i-1][j]&(FLAG_MOIST_VERYWET)){
+                                rawMapMask[i][j] = (rawMap[i][j]&(~FLAG_MOIST_VERYWET)) + (rawMap[i-1][j]&(FLAG_MOIST_MID));
+                            }
+                            break;
+                        case 4:
+                            if (rawMap[i-1][j+1]&(FLAG_MOIST_VERYWET)){
+                                rawMapMask[i][j] = (rawMap[i][j]&(~FLAG_MOIST_VERYWET)) + (rawMap[i-1][j+1]&(FLAG_MOIST_MID));
+                            }
+                            break;
+                        case 5:
+                            if (rawMap[i-1][j-1]&(FLAG_MOIST_VERYWET)){
+                                rawMapMask[i][j] = (rawMap[i][j]&(~FLAG_MOIST_VERYWET)) + (rawMap[i-1][j-1]&(FLAG_MOIST_MID));
+                            }
+                            break;
+                        case 6:
+                            if (rawMap[i][j+1]&(FLAG_MOIST_VERYWET)){
+                                rawMapMask[i][j] = (rawMap[i][j]&(~FLAG_MOIST_VERYWET)) + (rawMap[i][j+1]&(FLAG_MOIST_MID));
+                            }
+                            break;
+                        case 7:
+                            if (rawMap[i][j-1]&(FLAG_MOIST_VERYWET)){
+                                rawMapMask[i][j] = (rawMap[i][j]&(~FLAG_MOIST_VERYWET)) + (rawMap[i][j-1]&(FLAG_MOIST_MID));
+                            }
+                            break;
+                        default:
+                            rawMapMask[i][j] = rawMap[i][j];
+                            break;
+                    }
                 }
             }
         }
@@ -1231,11 +1326,11 @@ void worldGen(char * filename){
                         else if (rawMap[i][j/2]&FLAG_MOIST_WET){ /* Forest */
                             fprintf(worldFile, "%s",FOREST);
                         }
-                        else if (rawMap[i][j/2]&FLAG_MOIST_MID){ /* Prairie */
-                            fprintf(worldFile, "%s",PRAIRIE);
-                        }
-                        else { /* Shrubland */
+                        else if (rawMap[i][j/2]&FLAG_MOIST_MID){ /* Shrubland */
                             fprintf(worldFile, "%s",SHRUBLAND);
+                        }
+                        else { /* Prairie */
+                            fprintf(worldFile, "%s",PRAIRIE);
                         }
                     }
                     else if (rawMap[i][j/2]&FLAG_TEMP_SUBARTIC){ /* Subartic Temperatures */
