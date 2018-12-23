@@ -2978,7 +2978,7 @@ void makeBlacksmith(FILE* storeHere, uint16_t flags){
 	inventory[99].stock = 4;
 	inventory[99].biasFlags = FLAG_MOUNTAIN + FLAG_COMMERCE + FLAG_INDUSTRIAL+FLAG_MAGICAL;
 	/* Mercury */
-	strcpy(inventory[100].name,"Bronze (1 lb.)");
+	strcpy(inventory[100].name,"Mercury (1 lb.)");
 	inventory[100].lowPrice = 500;
 	inventory[100].midPrice = 700;
 	inventory[100].highPrice = 1000;
