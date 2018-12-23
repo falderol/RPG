@@ -4117,7 +4117,7 @@ void makeGeneral(FILE* storeHere, uint16_t flags){
 	inventory[10].stock = 5;
 	inventory[10].biasFlags = FLAG_INDUSTRIAL + FLAG_MAGICAL;
 	/* Hammer */
-	strcpy(inventory[11].name,"Abacus");
+	strcpy(inventory[11].name,"Hammer");
 	inventory[11].lowPrice = 70;
 	inventory[11].midPrice = 100;
 	inventory[11].highPrice = 200;
