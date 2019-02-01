@@ -2120,8 +2120,8 @@ void makeBakery(FILE* storeHere, uint16_t flags){
 	inventory[35].highPrice = 18;
 	inventory[35].stock = 7;
 	inventory[35].biasFlags = FLAG_AGRICULTURE;
-	/* Potatoe Dumplings */
-	strcpy(inventory[36].name,"Potatoe Dumplings");
+	/* Potato Dumplings */
+	strcpy(inventory[36].name,"Potato Dumplings");
 	inventory[36].lowPrice = 2;
 	inventory[36].midPrice = 3;
 	inventory[36].highPrice = 4;
@@ -4377,8 +4377,8 @@ void makeGeneral(FILE* storeHere, uint16_t flags){
 	inventory[53].highPrice = 3;
 	inventory[53].stock = 2;
 	inventory[53].biasFlags = FLAG_RURAL + FLAG_AGRICULTURE;
-	/* Beer */
-	strcpy(inventory[54].name,"Beer (1 qt.)");
+	/* Lager */
+	strcpy(inventory[54].name,"Lager (1 qt.)");
 	inventory[54].lowPrice = 7;
 	inventory[54].midPrice = 10;
 	inventory[54].highPrice = 20;
@@ -5508,8 +5508,8 @@ void makeTavern(FILE* storeHere, uint16_t flags){
 	inventory[11].highPrice = 18;
 	inventory[11].stock = 0;
 	inventory[11].biasFlags = 0;
-	/* Potatoe Dumplings */
-	strcpy(inventory[12].name,"Potatoe Dumplings");
+	/* Potato Dumplings */
+	strcpy(inventory[12].name,"Potato Dumplings");
 	inventory[12].lowPrice = 2;
 	inventory[12].midPrice = 3;
 	inventory[12].highPrice = 4;
@@ -5655,15 +5655,15 @@ void makeTavern(FILE* storeHere, uint16_t flags){
 	inventory[32].highPrice = 50;
 	inventory[32].stock = 0;
 	inventory[32].biasFlags = 0;
-	/* Baked Potatoe */
-	strcpy(inventory[33].name,"Baked Potatoe");
+	/* Baked Potato */
+	strcpy(inventory[33].name,"Baked Potato");
 	inventory[33].lowPrice = 1;
 	inventory[33].midPrice = 1;
 	inventory[33].highPrice = 2;
 	inventory[33].stock = 0;
 	inventory[33].biasFlags = 0;
-	/* Fried Potatoe */
-	strcpy(inventory[34].name,"Fried Potatoe");
+	/* Fried Potato */
+	strcpy(inventory[34].name,"Fried Potato");
 	inventory[34].lowPrice = 1;
 	inventory[34].midPrice = 2;
 	inventory[34].highPrice = 4;
@@ -5820,8 +5820,8 @@ void makeTavern(FILE* storeHere, uint16_t flags){
 	inventory[55].highPrice = 20;
 	inventory[55].stock = 0;
 	inventory[55].biasFlags = 0;
-	/* Beer */
-	strcpy(inventory[56].name,"Beer");
+	/* lager */
+	strcpy(inventory[56].name,"Lager");
 	inventory[56].lowPrice = 7;
 	inventory[56].midPrice = 10;
 	inventory[56].highPrice = 20;
@@ -6819,98 +6819,110 @@ int shopGen(char* filename,uint8_t shopNum,uint16_t flags){
 		case 0:
 			fprintf(shopFile, "Adventurer's Emporium\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May have quests for adventurers\n");
 			makeAdventurerEmporium(shopFile, flags);
 			break;
 		case 1:
 			fprintf(shopFile, "Alchemist's Shop\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire those skilled at alchemy, brewing, or herbalism for 2 gp a day.\n");
 			makeAlchemist(shopFile, flags);
 			break;
 		case 2:
 			fprintf(shopFile, "Arcana Shop\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
 			makeArcana(shopFile, flags);
 			break;
 		case 3:
 			fprintf(shopFile, "Bakery\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire those skilled at baking for 2 gp a day\n");
 			makeBakery(shopFile, flags);
 			break;
 		case 4:
 			fprintf(shopFile, "Barbershop\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
 			makeBarber(shopFile, flags);
 			break;
 		case 5:
 			fprintf(shopFile, "Blacksmith\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire those skilled at blacksmithing for 2 gp a day");
 			makeBlacksmith(shopFile, flags);
 			break;
 		case 6:
 			fprintf(shopFile, "Bookstore\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire academics, those knowledgeable in library sciences, bookbinders, or printers for 2 gp a day.\n");
 			makeBookstore(shopFile, flags);
 			break;
 		case 7:
 			fprintf(shopFile, "Butcher Shop\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire people skilled at butchering animals for 2 gp a day.\n");
 			makeButcher(shopFile, flags);
 			break;
 		case 8:
 			fprintf(shopFile, "Fletcher\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire people skilled at fletching for 2 gp a day.\n");
 			makeFletcher(shopFile, flags);
 			break;
 		case 9:
 			fprintf(shopFile, "General Store\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire unskilled labor for 2 sp a day.\n");
 			makeGeneral(shopFile, flags);
 			break;
 		case 10:
 			fprintf(shopFile, "Leatherworker's Shop\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire people skilled at leatherworking for 2 gp a day.\n");
 			makeLeather(shopFile, flags);
 			break;
 		case 11:
 			fprintf(shopFile, "Music Store\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
 			makeMusic(shopFile, flags);
 			break;
 		case 12:
 			fprintf(shopFile, "Tailor\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire people skilled at weaving or tailoring for 2 gp a day.\n");
 			makeTailor(shopFile, flags);
 			break;
 		case 13:
 			fprintf(shopFile, "Tavern\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire people skilled at cooking or entertaining for 2 gp a day.\n");
 			makeTavern(shopFile, flags);
 			break;
 		case 14:
 			fprintf(shopFile, "Shrine\n");
 			fprintf(shopFile, "Our ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "Provides basic shelter and food for free.\n");
 			makeShrine(shopFile, flags);
 			break;
 		case 15:
 			fprintf(shopFile, "Jeweler\n");
 			fprintf(shopFile, "The ");
-			shopnameGenAndStore(shopFile);/* Store Owners Name */
-			
+			shopnameGenAndStore(shopFile);/* Store Name */
+			fprintf(shopFile, "May hire people skilled at making jewelry for 2 gp a day.\n");
 			makeJeweler(shopFile, flags);
 			break;
 		default:
